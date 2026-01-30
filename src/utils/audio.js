@@ -6,18 +6,17 @@
 // Sound categories
 const SOUND_CATEGORIES = {
   // Hunting/killing related sections use gun sound
-  gun: ['legendary-animals', 'hunter', 'weapons', 'weapons-expert', 'bounties'],
+  gun: ['legendary-animals', 'hunter', 'weapons', 'weapons-expert', 'bounties',
+         'cig-gunslingers', 'sharpshooter', 'bandit', 'cig-fight'],
   
   // Stranger missions, treasures, collectibles, companion activities use done sound
   done: ['strangers', 'treasures', 'collectibles', 'missable', 'companion-activities', 
-         'camp-requests', 'talismans', 'graves',
-         'cig-gunslingers', 'cig-stage', 'cig-travel', 'cig-fauna', 'cig-horses', 
-         'cig-fight', 'cig-aquatic', 'cig-views', 'cig-engineering', 'cig-prominent', 
+         'camp-requests', 'talismans', 'graves', 'cig-stage', 'cig-travel', 'cig-fauna', 'cig-horses', 
+         'cig-aquatic', 'cig-views', 'cig-engineering', 'cig-prominent', 
          'cig-baseball', 'cig-sports'],
   
   // Everything else uses done2 sound
-  done2: ['quickstart', 'satchel', 'camp', 'bandit', 'explorer', 
-          'herbalist', 'sharpshooter', 'horseman', 'survivalist', 'gambler', 'journal']
+  done2: ['quickstart', 'satchel', 'camp', 'explorer', 'herbalist', 'horseman', 'survivalist', 'gambler', 'journal']
 };
 
 // Pre-load audio files

@@ -6,7 +6,7 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { $ } from '../utils/dom.js';
-import { CHECKLIST_SECTIONS } from '../data/checklist-data.js';
+import { CHECKLIST_SECTIONS } from '../data/index.js';
 import { Storage } from '../utils/storage.js';
 
 let mapInstance = null;

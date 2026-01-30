@@ -4,7 +4,7 @@
  */
 
 import { $, $$ } from '../utils/dom.js';
-import { CHECKLIST_SECTIONS, NAV_CATEGORIES } from '../data/checklist-data.js';
+import { CHECKLIST_SECTIONS, NAV_CATEGORIES } from '../data/index.js';
 
 // Navigation category structure (grouped sections)
 const DEFAULT_NAV_CATEGORIES = [
@@ -110,13 +110,35 @@ function renderNavSection(section) {
   
   // Clean title (remove roman numerals)
   const cleanTitle = section.title.replace(/^[IVXLCDM]+\.\s*/, '');
-  const itemCount = section.items?.length || 0;
+  
+  // Count all items including subItems
+  let total = 0;
+  let completed = 0;
+  
+  section.items?.forEach(item => {
+    if (item.subItems && item.subItems.length > 0) {
+      // Count subItems instead of parent
+      total += item.subItems.length;
+      item.subItems.forEach(sub => {
+        const key = `rdr_check_${sub.id}`;
+        if (localStorage.getItem(key) === 'true') completed++;
+      });
+    } else {
+      // Count regular item
+      total++;
+      const key = `rdr_check_${item.id}`;
+      if (localStorage.getItem(key) === 'true') completed++;
+    }
+  });
+  
+  const isComplete = total > 0 && completed === total;
+  const hasProgress = completed > 0;
   
   return `
-    <a href="#${section.id}" class="nav-section-link" data-section="${section.id}">
+    <a href="#${section.id}" class="nav-section-link ${isComplete ? 'section-complete' : ''}" data-section="${section.id}">
       <span class="nav-section-icon">${section.icon || '•'}</span>
       <span class="nav-section-title">${cleanTitle}</span>
-      <span class="nav-section-count">${itemCount}</span>
+      <span class="nav-section-count ${hasProgress ? 'has-progress' : ''}">${completed}/${total}</span>
     </a>
   `;
 }
@@ -275,9 +297,12 @@ function filterMainContent(query) {
     // Reset - show all items and restore normal view
     $$('.checklist-item').forEach(item => item.classList.remove('search-hidden'));
     $$('.tip').forEach(tip => tip.classList.remove('search-hidden'));
+    $$('.sub-items-panel').forEach(panel => panel.classList.remove('search-hidden'));
+    $$('.sub-item').forEach(sub => sub.classList.remove('search-hidden'));
     
     // Restore checklist-group visibility based on their header's collapsed state
     $$('.checklist-group').forEach(group => {
+      group.classList.remove('search-expanded'); // Remove search expand flag
       const sectionId = group.id;
       const header = document.querySelector(`.section-header[data-section="${sectionId}"]`);
       if (header) {
@@ -291,17 +316,42 @@ function filterMainContent(query) {
     return;
   }
   
+  // During search: show ALL sections (override collapsed state)
+  $$('.checklist-group').forEach(group => {
+    group.classList.remove('hidden');
+    group.classList.add('search-expanded');
+  });
+  
+  // Search through all items including subItems
   $$('.checklist-item').forEach(item => {
     const text = item.textContent?.toLowerCase() || '';
     const tip = item.nextElementSibling;
     const tipText = tip?.classList.contains('tip') ? tip.textContent?.toLowerCase() || '' : '';
     
-    if (text.includes(query) || tipText.includes(query)) {
+    // Also check subItems within this item's panel
+    const subPanel = item.closest('.item-wrapper')?.querySelector('.sub-items-panel');
+    let subMatch = false;
+    if (subPanel) {
+      const subItems = subPanel.querySelectorAll('.sub-item');
+      subItems.forEach(sub => {
+        const subText = sub.textContent?.toLowerCase() || '';
+        if (subText.includes(query)) {
+          subMatch = true;
+          sub.classList.remove('search-hidden');
+        } else {
+          sub.classList.add('search-hidden');
+        }
+      });
+    }
+    
+    if (text.includes(query) || tipText.includes(query) || subMatch) {
       item.classList.remove('search-hidden');
       if (tip?.classList.contains('tip')) tip.classList.remove('search-hidden');
+      if (subPanel) subPanel.classList.remove('search-hidden');
     } else {
       item.classList.add('search-hidden');
       if (tip?.classList.contains('tip')) tip.classList.add('search-hidden');
+      if (subPanel && !subMatch) subPanel.classList.add('search-hidden');
     }
   });
 }
@@ -341,6 +391,54 @@ function updateNavStats() {
     </div>
     <span class="nav-stats-text">${completed}/${total} (${percentage}%)</span>
   `;
+  
+  // Also refresh individual section counts in sidebar
+  refreshSectionCounts();
+}
+
+/**
+ * Refresh all section counts in sidebar based on current checkbox states
+ */
+function refreshSectionCounts() {
+  CHECKLIST_SECTIONS.forEach(section => {
+    if (!section.items) return;
+    
+    const navLink = $(`.nav-section-link[data-section="${section.id}"]`);
+    if (!navLink) return;
+    
+    // Count items including subItems
+    let total = 0;
+    let completed = 0;
+    
+    section.items.forEach(item => {
+      if (item.subItems && item.subItems.length > 0) {
+        // Count subItems instead of parent
+        total += item.subItems.length;
+        item.subItems.forEach(sub => {
+          const key = `rdr_check_${sub.id}`;
+          if (localStorage.getItem(key) === 'true') completed++;
+        });
+      } else {
+        // Count regular item
+        total++;
+        const key = `rdr_check_${item.id}`;
+        if (localStorage.getItem(key) === 'true') completed++;
+      }
+    });
+    
+    // Update count display
+    const countEl = navLink.querySelector('.nav-section-count');
+    if (countEl) {
+      countEl.textContent = `${completed}/${total}`;
+      
+      // Update styling classes
+      const isComplete = total > 0 && completed === total;
+      const hasProgress = completed > 0;
+      
+      countEl.classList.toggle('has-progress', hasProgress);
+      navLink.classList.toggle('section-complete', isComplete);
+    }
+  });
 }
 
 // Export for external updates

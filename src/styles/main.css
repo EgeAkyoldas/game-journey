@@ -441,7 +441,6 @@ body {
   width: 100%;
   height: 100%;
   line-height: 1;
-  padding-bottom: 1px;
 }
 
 .checklist-item .item-text.completed {
@@ -474,6 +473,158 @@ body {
   font-size: 1rem;
   color: var(--color-faded);
   line-height: 1.4;
+}
+
+/* ===================================
+   REWARD TAGS
+   =================================== */
+.checklist-item .item-text .reward-tag {
+  @apply ml-2 px-2 py-0.5 text-xs rounded;
+  background: linear-gradient(135deg, var(--color-gold), #b8860b);
+  color: white;
+  font-family: var(--font-mono);
+  font-weight: normal;
+}
+
+/* ===================================
+   SUB-ITEMS (Nested Checklists)
+   =================================== */
+.sub-items-container {
+  @apply ml-11 mb-4 mt-2;
+  border-left: 2px solid var(--color-leather);
+  padding-left: 12px;
+  background: linear-gradient(90deg, rgba(93,64,55,0.05), transparent);
+  border-radius: 0 4px 4px 0;
+}
+
+.sub-items-header {
+  @apply flex items-center gap-2 py-1 px-2 cursor-pointer select-none rounded;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-leather);
+  background: rgba(93,64,55,0.1);
+  transition: all 0.2s ease;
+}
+
+.sub-items-header:hover {
+  background: rgba(93,64,55,0.2);
+  color: var(--color-blood);
+}
+
+.sub-toggle-icon {
+  font-size: 0.7rem;
+  color: var(--color-faded);
+}
+
+.sub-progress {
+  font-size: 0.75rem;
+  color: var(--color-faded);
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.sub-progress-bar {
+  flex: 1;
+  max-width: 120px;
+  height: 6px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-left: 12px;
+}
+
+.sub-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-leather));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.sub-progress-fill.complete {
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+/* All complete state */
+.sub-items-container.all-complete {
+  border-left-color: #22c55e;
+  background: linear-gradient(90deg, rgba(34,197,94,0.1), transparent);
+}
+
+.sub-items-container.all-complete .sub-items-header {
+  background: rgba(34,197,94,0.15);
+}
+
+body.dark-mode .sub-progress-bar {
+  background: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .sub-items-container.all-complete {
+  border-left-color: #4ade80;
+  background: linear-gradient(90deg, rgba(74,222,128,0.1), transparent);
+}
+
+.sub-items-list {
+  @apply mt-2;
+  transition: all 0.3s ease;
+}
+
+.sub-items-list.hidden {
+  @apply hidden;
+}
+
+/* Sub-item styling */
+.checklist-item.sub-item {
+  @apply py-0.5;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.checklist-item.sub-item input[type="checkbox"] {
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.checklist-item.sub-item input[type="checkbox"]:checked::after {
+  font-size: 10px;
+}
+
+.tip.sub-tip {
+  @apply ml-8 mb-2;
+  font-size: 0.9rem;
+}
+
+/* Parent item with subitems indicator */
+.checklist-item.has-subitems .item-text::after {
+  content: "📋";
+  @apply ml-2;
+  font-size: 0.9rem;
+}
+
+/* Dark mode sub-items */
+body.dark-mode .sub-items-container {
+  border-left-color: #555;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+}
+
+body.dark-mode .sub-items-header {
+  background: rgba(255,255,255,0.05);
+  color: #b0a090;
+}
+
+body.dark-mode .sub-items-header:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--dm-blood);
+}
+
+body.dark-mode .checklist-item.sub-item {
+  color: #c0b8ac;
+}
+
+body.dark-mode .tip.sub-tip {
+  color: #888;
 }
 
 /* ===================================
@@ -606,8 +757,8 @@ body {
 
 .nav-title {
   font-family: var(--font-western);
-  color: var(--color-paper);
-  font-size: 1.3rem;
+  color: var(--color-blood);
+  font-size: 1.3rem;  
 }
 
 .nav-close {
@@ -740,6 +891,27 @@ body {
   color: rgba(244,228,188,0.6);
   padding: 1px 6px;
   border-radius: 8px;
+  font-family: var(--font-mono);
+}
+
+.nav-section-count.has-progress {
+  background: rgba(218,165,32,0.3);
+  color: var(--color-gold);
+}
+
+/* Completed section styling */
+.nav-section-link.section-complete {
+  background: rgba(34,197,94,0.15);
+}
+
+.nav-section-link.section-complete .nav-section-count {
+  background: rgba(34,197,94,0.4);
+  color: #4ade80;
+}
+
+.nav-section-link.section-complete .nav-section-title {
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
 /* Nav Stats Footer */

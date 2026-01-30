@@ -12,7 +12,7 @@ import { initJournal } from './components/journal.js';
 import { renderActions } from './components/actions.js';
 import { initTheme, renderThemeToggle, watchSystemTheme } from './components/theme.js';
 import { renderMapButton } from './components/map.js';
-import { CHECKLIST_SECTIONS } from './data/checklist-data.js';
+import { CHECKLIST_SECTIONS } from './data/index.js';
 
 /**
  * Initialize the application
