@@ -11,6 +11,7 @@ import { renderChecklist } from './components/checklist.js';
 import { initJournal } from './components/journal.js';
 import { renderActions } from './components/actions.js';
 import { initTheme, renderThemeToggle, watchSystemTheme } from './components/theme.js';
+import { renderMapButton } from './components/map.js';
 import { CHECKLIST_SECTIONS } from './data/checklist-data.js';
 
 /**
@@ -43,6 +44,9 @@ function init() {
   
   // Render action buttons
   renderActions();
+  
+  // Render map button (bottom-right)
+  renderMapButton();
   
   console.log('🤠 The Drifter\'s Ledger initialized');
 }

@@ -5,7 +5,7 @@
 
 import { $, $$, toggleVisibility } from '../utils/dom.js';
 import { Storage } from '../utils/storage.js';
-import { playGunSound } from '../utils/audio.js';
+import { playCheckSound } from '../utils/audio.js';
 import { updateOverallProgress } from './header.js';
 import { refreshNavStats } from './navigation.js';
 import { getTotalItemCount } from '../data/checklist-data.js';
@@ -172,9 +172,12 @@ function handleCheckboxChange(checkbox) {
   const id = checkbox.id;
   const isChecked = checkbox.checked;
   
-  // Play gun sound when CHECKING (completing) an item
+  // Play appropriate sound when CHECKING (completing) an item
   if (isChecked) {
-    playGunSound();
+    // Get section ID from parent checklist-group
+    const group = checkbox.closest('.checklist-group');
+    const sectionId = group?.id || '';
+    playCheckSound(sectionId);
   }
   
   // Save state

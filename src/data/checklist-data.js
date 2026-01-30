@@ -395,6 +395,12 @@ export const CHECKLIST_SECTIONS = [
         tip: 'Cotorra Springs geyser area. Best approached at dawn. Very aggressive.'
       },
       {
+        id: 'legendary-white-bison',
+        text: 'Legendary White Bison',
+        tip: 'Lake Isabella, northwest corner of the map near Mount Hagen. Snowy terrain - dress warm!',
+        priority: true
+      },
+      {
         id: 'legendary-boar',
         text: 'Legendary Boar',
         tip: 'Bluewater Marsh, northwest of Saint Denis. Watch for gators too.'
@@ -719,15 +725,15 @@ export const CHECKLIST_SECTIONS = [
     defaultOpen: false,
     items: [
       { id: 'bandit-1', text: 'Rank 1: Hold up 5 Townsfolk', tip: 'Aim weapon at civilians in town, demand money.' },
-      { id: 'bandit-2', text: 'Rank 2: Rob 2 Coaches or Return to Camp', tip: 'Stolen coaches go to Emerald Ranch fence.' },
+      { id: 'bandit-2', text: 'Rank 2: Rob 2 Coaches or Coach Missions', tip: 'Road coaches or coach robbery missions from Alden/Hector.' },
       { id: 'bandit-3', text: 'Rank 3: Rob 4 Registers in 1 Day', tip: 'Valentine, Strawberry, Rhodes, Saint Denis. Ride fast between them.' },
-      { id: 'bandit-4', text: 'Rank 4: Rob 3 Coaches in 1 Day', tip: 'Camp near Emerald Ranch, farm wagon spawns on main road.' },
+      { id: 'bandit-4', text: 'Rank 4: Rob 3 Coaches in 1 Day', tip: 'Camp near roads with coach spawns. Fast horse helps.' },
       { id: 'bandit-5', text: 'Rank 5: Amass $250 Bounty (Any State)', tip: 'Kill lawmen in one state. Pay it off after.' },
-      { id: 'bandit-6', text: 'Rank 6: Steal 5 Horses Sold to Fence', tip: 'Clemens Point horse fence (Chapter 3+). Steal good horses.' },
+      { id: 'bandit-6', text: 'Rank 6: Steal 5 Horses, Sell to Fence', tip: 'Clemens Cove horse fence (Ch3+). Steal good horses.' },
       { id: 'bandit-7', text: 'Rank 7: Rob $50 From Townsfolk', tip: 'Hold up wealthy NPCs in Saint Denis. They carry more.' },
-      { id: 'bandit-8', text: 'Rank 8: 3 Train Robberies Without Death', tip: 'Stop train in tunnels for easier escape. Reload if you die.' },
+      { id: 'bandit-8', text: 'Rank 8: Steal 7 Wagons, Sell to Fence', tip: 'Sell to Emerald Ranch wagon fence. Any covered wagon works.' },
       { id: 'bandit-9', text: 'Rank 9: Hogtie 3 People to Train Tracks', tip: 'Hogtie, place on tracks, wait for train. Very dishonorable.' },
-      { id: 'bandit-10', text: 'Rank 10: Complete 5 Gang Hideouts', tip: 'Fort Mercer, Shady Belle, Thieves Landing, etc.' }
+      { id: 'bandit-10', text: 'Rank 10: Complete 5 Train Robberies', tip: 'Without dying or being caught. Stop trains in tunnels.' }
     ]
   },
 
@@ -789,11 +795,11 @@ export const CHECKLIST_SECTIONS = [
       { id: 'herbalist-3', text: 'Rank 3: Craft 7 Sage-Based Items', tip: 'Potent Bitters or Seasoned Meat. Sage is common.' },
       { id: 'herbalist-4', text: 'Rank 4: Feed Horse 5 Mushrooms', tip: 'Any mushroom type. Open satchel, select mushroom, feed option.' },
       { id: 'herbalist-5', text: 'Rank 5: Craft 9 Indian Tobacco Items', tip: 'Snake Oil ingredients. Indian Tobacco near rivers.' },
-      { id: 'herbalist-6', text: 'Rank 6: Collect 15 Species', tip: 'Explore different biomes. Desert plants in New Austin later.' },
+      { id: 'herbalist-6', text: 'Rank 6: Collect 15 Plant Species', tip: 'Explore different biomes. Desert plants in New Austin later.' },
       { id: 'herbalist-7', text: 'Rank 7: Craft 5 Special Miracle Tonics', tip: 'High-tier recipes. Buy pamphlets from Fence.' },
-      { id: 'herbalist-8', text: 'Rank 8: Craft Poison Weapons (4 Types)', tip: 'Poison arrows, throwing knives, tomahawks.' },
-      { id: 'herbalist-9', text: 'Rank 9: Pick All 43 Plant Species', tip: 'REQUIRES NEW AUSTIN! Epilogue normally. Desert plants.', chapter: 'epilogue' },
-      { id: 'herbalist-10', text: 'Rank 10: Season/Cook 30 Unique Items', tip: 'Combine all meat types with seasoning combos.' }
+      { id: 'herbalist-8', text: 'Rank 8: Craft 6 Poison Weapons (Oleander)', tip: 'Poison arrows/throwing knives. Oleander grows in Bayou.' },
+      { id: 'herbalist-9', text: 'Rank 9: Pick All 43 Plant Species', tip: 'REQUIRES NEW AUSTIN! Epilogue normally. Desert cactus etc.', chapter: 'epilogue' },
+      { id: 'herbalist-10', text: 'Rank 10: Season and Cook 11 Meat Types', tip: 'All meat types with oregano/thyme/mint. SEASONED versions count.' }
     ]
   },
 
@@ -810,12 +816,12 @@ export const CHECKLIST_SECTIONS = [
       { id: 'sharp-2', text: 'Rank 2: Kill 2 Species in 1 Dead Eye', tip: 'Deer + coyote or bird + rabbit. Tag both, execute.' },
       { id: 'sharp-3', text: 'Rank 3: Kill 5 Birds from Moving Train', tip: 'Ride on roof. Shotgun or repeater. Plenty of birds fly by.' },
       { id: 'sharp-4', text: 'Rank 4: Kill Enemy from 80ft (Tomahawk)', tip: 'Homing Tomahawk on stationary target. Gang hideout.' },
-      { id: 'sharp-5', text: 'Rank 5: Kill 6 Animals (No Weapon Switch)', tip: 'Varmint rifle, field of rabbits. Or bow in deer area.' },
+      { id: 'sharp-5', text: 'Rank 5: Kill 6 Animals (No Reload/Switch)', tip: 'Varmint rifle, field of rabbits. Or bow in deer area.' },
       { id: 'sharp-6', text: 'Rank 6: Kill Enemy from 660ft+', tip: 'Carcano Rifle + long scope. Find long sightline, any camp.' },
-      { id: 'sharp-7', text: 'Rank 7: 3 Headshots in 10 Seconds', tip: 'Dead Eye + gang hideout. Easy with practice.' },
-      { id: 'sharp-8', text: 'Rank 8: Disarm 3 Enemies Without Reload', tip: 'Aim for gun hand in Dead Eye. Need precise aim.' },
-      { id: 'sharp-9', text: 'Rank 9: Shoot 3 Hats Off', tip: 'Aim high, don\'t kill. Town duels work well.' },
-      { id: 'sharp-10', text: 'Rank 10: 3 Birds with 3 Consecutive Shots', tip: 'Shotgun at flock. Wait for them to bunch up.' }
+      { id: 'sharp-7', text: 'Rank 7: Get 7 Headshots in a Row', tip: 'Dead Eye + gang hideout. Easy with practice.' },
+      { id: 'sharp-8', text: 'Rank 8: Disarm 3 Enemies (No Reload)', tip: 'Aim for gun hand in Dead Eye. Need precise aim.' },
+      { id: 'sharp-9', text: 'Rank 9: Shoot 3 Hats Off (Same Dead Eye)', tip: 'Tag 3 heads high, don\'t kill. Town works well.' },
+      { id: 'sharp-10', text: 'Rank 10: 3 Birds with 3 Consecutive Rifle Shots', tip: 'Long scoped rifle. Wait for birds to bunch up in air.' }
     ]
   },
 
@@ -829,15 +835,15 @@ export const CHECKLIST_SECTIONS = [
     defaultOpen: false,
     items: [
       { id: 'horseman-1', text: 'Rank 1: Kill 5 Rabbits from Horseback', tip: 'Trample them or shoot. Fields near Valentine.' },
-      { id: 'horseman-2', text: 'Rank 2: 3 Obstacles in 15 Seconds', tip: 'Find fence line, jump three times quickly.' },
+      { id: 'horseman-2', text: 'Rank 2: Jump 3 Obstacles in 15 Seconds', tip: 'Find fence line, jump three times quickly.' },
       { id: 'horseman-3', text: 'Rank 3: Valentine to Rhodes Under 5 Min', tip: 'Horse Stimulants. Take direct road. Fast horse.' },
       { id: 'horseman-4', text: 'Rank 4: Drag Victim 3300 Feet', tip: 'Lasso someone, drag them while riding in big circles.' },
       { id: 'horseman-5', text: 'Rank 5: Trample 5 Animals', tip: 'Gallop through rabbit/squirrel fields.' },
-      { id: 'horseman-6', text: 'Rank 6: Break All Wild Horse Breeds', tip: 'Mustang, Nokota, American Paint, Hungarian, Morgan.' },
-      { id: 'horseman-7', text: 'Rank 7: Kill 7 from Horseback (No Repeaters)', tip: 'Pistols, shotguns, or bows only. Gang hideout.' },
-      { id: 'horseman-8', text: 'Rank 8: Van Horn to Blackwater (No Water Touch)', tip: 'Long detour around all rivers. Use bridges only. VERY long.' },
-      { id: 'horseman-9', text: 'Rank 9: Lead 2 Horses Half a Mile', tip: 'Catch 2 wild horses with lasso, ride with both following.' },
-      { id: 'horseman-10', text: 'Rank 10: Blackwater to Saint Denis Under 17 Min', tip: 'REQUIRES EPILOGUE. Fast horse + stimulants.', chapter: 'epilogue' }
+      { id: 'horseman-6', text: 'Rank 6: Strawberry to Saint Denis (No Water)', tip: 'Under 9 minutes. Long detour around rivers. Use bridges.' },
+      { id: 'horseman-7', text: 'Rank 7: Kill 7 Enemies from Horseback', tip: 'Don\'t dismount. Gang hideout. Any weapon works.' },
+      { id: 'horseman-8', text: 'Rank 8: Kill 9 Predators from Horseback', tip: 'Wolves, cougars, bears. Use rifle from saddle.' },
+      { id: 'horseman-9', text: 'Rank 9: Van Horn to Blackwater (No Water)', tip: 'Under 17 min. REQUIRES EPILOGUE. Long detour.', chapter: 'epilogue' },
+      { id: 'horseman-10', text: 'Rank 10: Break Every Wild Horse Breed', tip: 'Mustang, Nokota, American Paint, Hungarian, Morgan.' }
     ]
   },
 
@@ -851,15 +857,15 @@ export const CHECKLIST_SECTIONS = [
     defaultOpen: false,
     items: [
       { id: 'survivalist-1', text: 'Rank 1: Catch 3 Bluegill', tip: 'Common fish. Any lake with bread/cheese bait.' },
-      { id: 'survivalist-2', text: 'Rank 2: Catch Fish with Bread/Cheese (3x)', tip: 'Buy from general store. Use on small fish.' },
-      { id: 'survivalist-3', text: 'Rank 3: Kill 5 with Small Game Arrows', tip: 'Rabbits, squirrels, frogs. Flight feathers needed to craft.' },
+      { id: 'survivalist-2', text: 'Rank 2: Donate 5 Animals to Camp/Trapper', tip: 'Hand in carcasses or pelts at camp or Trapper.' },
+      { id: 'survivalist-3', text: 'Rank 3: Kill 5 Animals with Varmint Rifle', tip: 'Rabbits, squirrels, birds. Easy headshots.' },
       { id: 'survivalist-4', text: 'Rank 4: Craft All Arrow Types', tip: 'Dynamite, Fire, Poison, Improved, Small Game. Buy pamphlets.' },
-      { id: 'survivalist-5', text: 'Rank 5: Fish in 5 Different Locations', tip: 'River, lake, pond, swamp, ocean. Different biomes.' },
-      { id: 'survivalist-6', text: 'Rank 6: Kill Predator Attacking You', tip: 'Let wolf/cougar pounce, mash button, counter kill.' },
-      { id: 'survivalist-7', text: 'Rank 7: 8 Consecutive Bow Kills', tip: 'Deer herd. Don\'t miss. Each miss resets counter.' },
-      { id: 'survivalist-8', text: 'Rank 8: Craft 5 Thrown Weapon Types', tip: 'Homing Tomahawk, Improved Tomahawk, etc. Pamphlets needed.' },
+      { id: 'survivalist-5', text: 'Rank 5: Catch Fish from Boat + Railroad Tracks', tip: 'Bayou riverboat, then stand on railroad over water. Unique locations.' },
+      { id: 'survivalist-6', text: 'Rank 6: Kill Scavenging Animal 5 Times', tip: 'Kill coyote/vulture while it\'s eating a corpse.' },
+      { id: 'survivalist-7', text: 'Rank 7: 8 Small Game Kills (Small Game Arrows)', tip: 'Consecutive kills. Rabbits/squirrels. Don\'t miss!' },
+      { id: 'survivalist-8', text: 'Rank 8: Craft Special Throwables', tip: 'Homing Tomahawk, Improved Tomahawk, Volatile Dynamite, Volatile Fire Bottle.' },
       { id: 'survivalist-9', text: 'Rank 9: Catch Fish Over 19 Pounds', tip: 'Legendary fish or big Muskie/Pike. Special lures.' },
-      { id: 'survivalist-10', text: 'Rank 10: 5 Bow Kills from Horseback (Consecutive)', tip: 'Slow ride through deer country. Don\'t miss.' }
+      { id: 'survivalist-10', text: 'Rank 10: Catch All Fish Species', tip: 'All 13 fish types. Different lures for different fish.' }
     ]
   },
 
@@ -877,9 +883,9 @@ export const CHECKLIST_SECTIONS = [
       { id: 'gambler-3', text: 'Rank 3: Win 3 Dominoes Games', tip: 'Emerald Station is easiest. Block opponent\'s high numbers.' },
       { id: 'gambler-4', text: 'Rank 4: Bust Poker Player (Each Location)', tip: 'Keep playing until opponent leaves broke.' },
       { id: 'gambler-5', text: 'Rank 5: Win 3 Dominoes in a Row', tip: 'All Threes mode. Patience and defensive play.' },
-      { id: 'gambler-6', text: 'Rank 6: Blackjack with 3+ Cards Wins', tip: 'Hit on low cards (12-16). RNG heavy.' },
-      { id: 'gambler-7', text: 'Rank 7: Same as Rank 6 (3x)', tip: 'Just do it three times. Save/reload helps.' },
-      { id: 'gambler-8', text: 'Rank 8: Win 3 Blackjack Hands in a Row', tip: 'SAVE CONSTANTLY. Pure RNG. Most frustrating challenge.' },
+      { id: 'gambler-6', text: 'Rank 6: Blackjack with 3+ Hits (5x)', tip: 'Hit on low cards (12-16). RNG heavy but doable.' },
+      { id: 'gambler-7', text: 'Rank 7: Five Finger Fillet All Locations', tip: 'Beat the player at Strawberry, Valentine, and Van Horn.' },
+      { id: 'gambler-8', text: 'Rank 8: Win 3 Blackjack Hands (3+ Hits Each)', tip: 'Must hit 3+ times AND win. SAVE CONSTANTLY. Most frustrating challenge.' },
       { id: 'gambler-9', text: 'Rank 9: Win 3 Dominoes in a Row (Again)', tip: 'All Fives this time. Very grindy.' },
       { id: 'gambler-10', text: 'Rank 10: Win 3 Poker Hands in a Row', tip: 'Play at low stakes. Fold when weak.' }
     ]
@@ -1027,11 +1033,426 @@ export const CHECKLIST_SECTIONS = [
   },
 
   // ============================================
-  // SECTION XVIII: PERSONAL JOURNAL
+  // SECTION XVIII: WEAPONS EXPERT CHALLENGES
+  // ============================================
+  {
+    id: 'weapons-expert',
+    title: 'XVIII. Weapons Expert',
+    icon: '🎯',
+    defaultOpen: false,
+    items: [
+      { id: 'weapons-expert-1', text: 'Rank 1: Kill 3 Enemies with a Knife', tip: 'Use melee knife attacks. Any enemies work.' },
+      { id: 'weapons-expert-2', text: 'Rank 2: Kill 3 Enemies in 10 Seconds (Throwing Knives Only)', tip: 'Dead Eye helps. Camp raids work well.' },
+      { id: 'weapons-expert-3', text: 'Rank 3: Kill 3 Birds of Prey Using a Tomahawk', tip: 'Hawks/eagles. Use Homing Tomahawk. Very difficult!' },
+      { id: 'weapons-expert-4', text: 'Rank 4: Kill 10 Enemies with Shotgun (Crafted Ammo)', tip: 'Use Slug, Incendiary, or Explosive shells.' },
+      { id: 'weapons-expert-5', text: 'Rank 5: Kill 5 Mounted Enemies (1 Throwing Knife Each)', tip: 'One knife per kill. Target riders, not horses.' },
+      { id: 'weapons-expert-6', text: 'Rank 6: Kill 4 Enemies with Single Dynamite Stick', tip: 'Lure enemies together. Gang hideouts work best.' },
+      { id: 'weapons-expert-7', text: 'Rank 7: Kill 4 Consecutive Enemies (Same Tomahawk)', tip: 'Throw, retrieve, repeat 4 times. Don\'t miss!' },
+      { id: 'weapons-expert-8', text: 'Rank 8: Kill 15 Enemies (Long-Barreled Sidearm)', tip: 'Mauser, Semi-Auto, or Volcanic Pistol with long barrel.' },
+      { id: 'weapons-expert-9', text: 'Rank 9: Kill 9 Unaware Enemies from Behind (Bow)', tip: 'Stealth kills. Sneak up at camps.' },
+      { id: 'weapons-expert-10', text: 'Rank 10: Kill Grizzly Bear (Throwing Knives, No Damage)', tip: 'Very hard! Use cover, Dead Eye, and patience.' }
+    ]
+  },
+
+  // ============================================
+  // SECTION XIX: COMPANION ACTIVITIES
+  // ============================================
+  {
+    id: 'companion-activities',
+    title: 'XIX. Companion Activities',
+    icon: '🤝',
+    defaultOpen: false,
+    items: [
+      // Chapter 2
+      { id: 'comp-charles-hunt', text: 'Ch2: Hunt with Charles Smith', tip: 'White icon at camp. Go hunting together. Teaches bow hunting.', chapter: 2, missable: true },
+      { id: 'comp-javier-robbery', text: 'Ch2: Rob Homestead with Javier (Chez Porter)', tip: 'White icon at camp. O\'Driscoll hideout north of Valentine.', chapter: 2, missable: true },
+      { id: 'comp-lenny-filet', text: 'Ch2: Five Finger Fillet with Lenny', tip: 'Camp activity. Beat him to win money.', chapter: 2, missable: true },
+      
+      // Chapter 3
+      { id: 'comp-sean-robbery', text: 'Ch3: Rob Homestead with Sean (Lonnie\'s Shack)', tip: 'White icon at camp. Drunken robbery mission.', chapter: 3, missable: true },
+      { id: 'comp-javier-fish', text: 'Ch3: Go Fishing with Javier', tip: 'Available after fishing unlocks. Relaxing trip.', chapter: 3, missable: true },
+      { id: 'comp-kieran-fish', text: 'Ch3: Go Fishing with Kieran', tip: 'He\'s nervous but friendly. Short before his fate...', chapter: 3, missable: true },
+      { id: 'comp-bill-coach', text: 'Ch3: Rob Stagecoach with Bill', tip: 'Alden at Rhodes train station gives tip. Bill is chaotic.', chapter: 3, missable: true },
+      { id: 'comp-sean-coach', text: 'Ch3: Rob Stagecoach with Sean', tip: 'Fun drunken heist. Sean is hilarious.', chapter: 3, missable: true },
+      { id: 'comp-micah-filet', text: 'Ch3: Five Finger Fillet with Micah', tip: 'He\'s aggressive. Beat him anyway.', chapter: 3, missable: true },
+      { id: 'comp-tilly-dominoes', text: 'Ch3: Play Dominoes with Tilly', tip: 'Camp activity. She\'s good at it.', chapter: 3, missable: true },
+      
+      // Chapter 4
+      { id: 'comp-pearson-hunt', text: 'Ch4: Hunt with Pearson', tip: 'Rare activity. Pearson leaves camp to hunt.', chapter: 4, missable: true },
+      { id: 'comp-lenny-coach', text: 'Ch4: Rob Stagecoach with Lenny', tip: 'Professional heist. Lenny is reliable.', chapter: 4, missable: true },
+      { id: 'comp-micah-coach', text: 'Ch4: Rob Stagecoach with Micah', tip: 'He makes it violent. Expect chaos.', chapter: 4, missable: true },
+      { id: 'comp-uncle-rustle', text: 'Ch4: Go Rustling with Uncle', tip: 'Steal cattle. Uncle is lazy as always.', chapter: 4, missable: true }
+    ]
+  },
+
+  // ============================================
+  // SECTION XX: CAMP ITEM REQUESTS
+  // ============================================
+  {
+    id: 'camp-requests',
+    title: 'XX. Camp Item Requests',
+    icon: '🎁',
+    defaultOpen: false,
+    items: [
+      // Chapter 2 only
+      { id: 'request-jack-thimble', text: 'Ch2: Thimble for Jack', tip: 'Find in houses/cabins. He gives you a drawing. Heartwarming.', chapter: 2, missable: true },
+      { id: 'request-jack-comic', text: 'Ch2: Comic Book for Jack', tip: 'General stores sell them. He gives you a chocolate bar.', chapter: 2, missable: true },
+      { id: 'request-javier-oleander', text: 'Ch2: Oleander for Javier', tip: 'Pick oleander sage (Bayou area). He gives poison throwing knives.', chapter: 2, missable: true },
+      { id: 'request-marybeth-pen', text: 'Ch2: Fountain Pen for Mary-Beth', tip: 'Find in houses/shops. She gives you a gold ring.', chapter: 2, missable: true },
+      { id: 'request-pearson-compass', text: 'Ch2: Naval Compass for Pearson', tip: 'Shipwrecks or naval locations. He shares rum and stories.', chapter: 2, missable: true },
+      { id: 'request-sean-bourbon', text: 'Ch2: Kentucky Bourbon for Sean', tip: 'Buy at saloons. He gives you a fire bottle.', chapter: 2, missable: true },
+      { id: 'request-tilly-necklace', text: 'Ch2: Necklace for Tilly', tip: 'Jewelry boxes or rob NPCs. She gives medicine.', chapter: 2, missable: true },
+      
+      // Chapter 3 only
+      { id: 'request-hosea-ginseng', text: 'Ch3: American Ginseng (2) for Hosea', tip: 'Forest areas. He gives Potent Medicine.', chapter: 3, missable: true },
+      { id: 'request-kieran-burdock', text: 'Ch3: Burdock Roots (2) for Kieran', tip: 'Common plant. He gives Horse Medicine. Do this before his fate!', chapter: 3, missable: true },
+      { id: 'request-molly-mirror', text: 'Ch3: Pocket Mirror for Molly', tip: 'Houses or general stores. She gives a cigar.', chapter: 3, missable: true },
+      { id: 'request-sadie-harmonica', text: 'Ch3: Harmonica for Sadie', tip: 'Random NPC loot or houses. She gives Gun Oil.', chapter: 3, missable: true },
+      
+      // Chapters 2, 3, 4
+      { id: 'request-bill-pomade', text: 'Ch2-4: Hair Pomade for Bill', tip: 'General stores. He gives Repeater Ammo.', missable: true },
+      { id: 'request-charles-moonshine', text: 'Ch2-4: Moonshine for Charles', tip: 'Fence or general store. He gives Fire Arrows.', missable: true },
+      { id: 'request-charles-oleander', text: 'Ch2-4: Oleander for Charles', tip: 'Bayou plant. He gives Poison Arrows. Great reward!', missable: true },
+      { id: 'request-dutch-pipe', text: 'Ch2-4: Pipe for Dutch', tip: 'Random finds or Fence. He gives Spurs.', missable: true },
+      { id: 'request-hosea-book', text: 'Ch2-4: Book for Hosea', tip: 'General stores or houses. He gives Predator Bait.', missable: true },
+      { id: 'request-lenny-watch', text: 'Ch2-4: Pocket Watch for Lenny', tip: 'Rob wealthy NPCs. He gives Dynamite!', missable: true },
+      { id: 'request-pearson-rabbit', text: 'Ch2-4: Rabbit Carcass for Pearson', tip: 'Hunt any rabbit. He makes Nutritious Stew.', missable: true },
+      { id: 'request-susan-oregano', text: 'Ch2-4: Oregano (2) for Susan', tip: 'Common herb. She gives Miracle Tonic.', missable: true }
+    ]
+  },
+
+  // ============================================
+  // SECTION XXI: BOUNTY HUNTING
+  // ============================================
+  {
+    id: 'bounties',
+    title: 'XXI. Bounty Hunting',
+    icon: '🤠',
+    defaultOpen: false,
+    items: [
+      // Valentine
+      { id: 'bounty-benedict', text: 'Valentine: Benedict Allbright', tip: 'Poison seller. Found west of Valentine. Alive or dead.' },
+      { id: 'bounty-ellie', text: 'Valentine: Ellie Anne Swan', tip: 'Female outlaw. Camp northwest of Valentine. Bring alive for more $.' },
+      // Rhodes  
+      { id: 'bounty-mark', text: 'Rhodes: Mark Johnson', tip: 'Horse thief. Found in Bluewater Marsh area.' },
+      { id: 'bounty-robbie', text: 'Rhodes: Robbie Laidlaw', tip: 'Murderer. Hiding near Caliga Hall.' },
+      { id: 'bounty-camille', text: 'Rhodes: Camille de Millemont', tip: 'French con artist. Saint Denis area.' },
+      // Strawberry
+      { id: 'bounty-joshua', text: 'Strawberry: Joshua Brown', tip: 'Dangerous criminal. Found in Big Valley.' },
+      { id: 'bounty-bart', text: 'Strawberry: Bart Cavanaugh', tip: 'Outlaw gang leader. Has bodyguards. Approach carefully.' },
+      // Saint Denis
+      { id: 'bounty-lindsay', text: 'Saint Denis: Lindsay Wofford', tip: 'City criminal. Urban pursuit through Saint Denis.' },
+      { id: 'bounty-anthony', text: 'Saint Denis: Anthony Foreman', tip: 'Gang leader. Story-connected. Appears after Trelawny missions.' },
+      // Blackwater (Epilogue)
+      { id: 'bounty-elias', text: 'Blackwater: Elias Green', tip: 'EPILOGUE. War veteran gone bad.', chapter: 'epilogue' },
+      { id: 'bounty-otis', text: 'Blackwater: Otis Skinner', tip: 'EPILOGUE. Serial killer type. Dangerous.', chapter: 'epilogue' },
+      { id: 'bounty-herman', text: 'Blackwater: Herman Zizendorf', tip: 'EPILOGUE. Located near MacFarlane\'s Ranch.', chapter: 'epilogue' },
+      // Tumbleweed (Epilogue)
+      { id: 'bounty-esteban', text: 'Tumbleweed: Esteban Cortez', tip: 'EPILOGUE. Mexican outlaw in New Austin.', chapter: 'epilogue' },
+      { id: 'bounty-joaquin', text: 'Tumbleweed: Joaquin Arroyo', tip: 'EPILOGUE. Del Lobo gang connection.', chapter: 'epilogue' }
+    ]
+  },
+
+  // ============================================
+  // SECTION XXII: FENCE TALISMANS & TRINKETS
+  // ============================================
+  {
+    id: 'talismans',
+    title: 'XXII. Talismans & Trinkets',
+    icon: '🔮',
+    defaultOpen: false,
+    items: [
+      // Trinkets (from legendary animals)
+      { id: 'trinket-buck', text: 'Buck Antler Trinket ⭐', tip: 'Legendary Buck antler + Cobalt Petrified Wood + $22. BETTER PELTS!', priority: true },
+      { id: 'trinket-bear', text: 'Bear Claw Talisman', tip: 'Legendary Bear claw + Silver Earring + Quartz Chunk. -10% health drain in combat.' },
+      { id: 'trinket-boar', text: 'Boar Tusk Talisman', tip: 'Legendary Boar tusk + Gold Earring + Cobalt Petrified Wood. -10% horse core drain.' },
+      { id: 'trinket-alligator', text: 'Alligator Tooth Talisman', tip: 'Legendary Alligator tooth + Gold Jointed Bracelet + Vintage Civil War Handcuffs. -10% Dead Eye drain.' },
+      { id: 'trinket-wolf', text: 'Wolf Heart Trinket', tip: 'Legendary Wolf heart + Hawk Talon + Vintage Civil War Handcuffs. +10% alcohol fortifying.' },
+      { id: 'trinket-elk', text: 'Elk Antler Trinket', tip: 'Legendary Elk antler + Cobalt Petrified Wood + Gold Earring. +10% from looted money.' },
+      { id: 'trinket-ram', text: 'Ram Horn Trinket', tip: 'Legendary Ram horn + Abalone Shell Fragment + Silver Earring. -10% stamina drain on horseback.' },
+      { id: 'trinket-panther', text: 'Panther Eye Trinket', tip: 'Legendary Panther eye + Obsidian Arrowhead + Hawk Talon. 3s faster Dead Eye refill.' },
+      { id: 'trinket-moose', text: 'Moose Antler Trinket', tip: 'Legendary Moose antler + Vintage Civil War Handcuffs + Quartz Chunk. +10% health from meats.' },
+      { id: 'trinket-beaver', text: 'Beaver Tooth Trinket', tip: 'Legendary Beaver tooth + Cobalt Petrified Wood. -10% weapon degradation.' },
+      { id: 'trinket-boar-core', text: 'Boar Tusk Trinket', tip: 'Legendary Boar tusk + Cobalt Petrified Wood + Pocket Watch. +10% horse health.' },
+      { id: 'trinket-cougar', text: 'Cougar Fang Trinket', tip: 'Legendary Cougar fang + Cobalt Petrified Wood. EPILOGUE. +10% stamina exp.' },
+      { id: 'trinket-fox', text: 'Fox Claw Trinket', tip: 'Legendary Fox claw + Cobalt Petrified Wood. +5 Eagle Eye duration.' },
+      { id: 'trinket-coyote', text: 'Coyote Fang Trinket', tip: 'Legendary Coyote fang + Cobalt Petrified Wood. +10% Dead Eye exp.' },
+      { id: 'trinket-pronghorn', text: 'Pronghorn Horn Trinket', tip: 'Legendary Pronghorn horn + Cobalt Petrified Wood. EPILOGUE. Find money in lock boxes.' },
+      { id: 'trinket-bison', text: 'Bison Horn Talisman', tip: 'Legendary Tatanka Bison horn + Gold Earring + Abalone Shell Fragment. -10% melee damage.' }
+    ]
+  },
+
+  // ============================================
+  // SECTION XXIII: CIGARETTE CARDS (12 Sets)
+  // ============================================
+  {
+    id: 'cig-gunslingers',
+    title: '🚬 Cards: Famous Gunslingers',
+    icon: '�',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-guns-01', text: 'Jim "Boy" Calloway', tip: 'Buy Premium Cigarettes or find in world.' },
+      { id: 'cig-guns-02', text: 'Black Belle', tip: 'Random from cigarettes or world spawn.' },
+      { id: 'cig-guns-03', text: 'Billy Midnight', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-04', text: 'Emmet Granger', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-05', text: 'Flaco Hernandez', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-06', text: 'Landon Ricketts', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-07', text: 'Otis Miller', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-08', text: 'Red Harlow', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-09', text: 'Sam Freeman', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-10', text: 'Swifty Stevens', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-11', text: 'Bart Love', tip: 'Set 1 of 12' },
+      { id: 'cig-guns-12', text: 'Annie Stoakes', tip: 'Complete set = reward from Phineas!' }
+    ]
+  },
+  {
+    id: 'cig-stage',
+    title: '🚬 Cards: Stars of the Stage',
+    icon: '🎭',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-stage-01', text: 'Miss Marjorie', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-02', text: 'Leopold Strauss', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-03', text: 'Aldridge T. Abbington', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-04', text: 'Miss Margaret', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-05', text: 'Mademoiselle Juliette', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-06', text: 'Maurice', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-07', text: 'Miss Amelie', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-08', text: 'Fontana', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-09', text: 'Renaldo', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-10', text: 'Zambini', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-11', text: 'Magnifico', tip: 'Set 2 of 12' },
+      { id: 'cig-stage-12', text: 'The Masters', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-travel',
+    title: '🚬 Cards: Marvels of Travel',
+    icon: '🚂',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-travel-01', text: 'Travel Card 1', tip: 'Trains & Travel theme. Set 3 of 12' },
+      { id: 'cig-travel-02', text: 'Travel Card 2', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-03', text: 'Travel Card 3', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-04', text: 'Travel Card 4', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-05', text: 'Travel Card 5', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-06', text: 'Travel Card 6', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-07', text: 'Travel Card 7', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-08', text: 'Travel Card 8', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-09', text: 'Travel Card 9', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-10', text: 'Travel Card 10', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-11', text: 'Travel Card 11', tip: 'Set 3 of 12' },
+      { id: 'cig-travel-12', text: 'Travel Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-fauna',
+    title: '🚬 Cards: Fauna of America',
+    icon: '🦌',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-fauna-01', text: 'Fauna Card 1', tip: 'Wildlife theme. Set 4 of 12' },
+      { id: 'cig-fauna-02', text: 'Fauna Card 2', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-03', text: 'Fauna Card 3', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-04', text: 'Fauna Card 4', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-05', text: 'Fauna Card 5', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-06', text: 'Fauna Card 6', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-07', text: 'Fauna Card 7', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-08', text: 'Fauna Card 8', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-09', text: 'Fauna Card 9', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-10', text: 'Fauna Card 10', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-11', text: 'Fauna Card 11', tip: 'Set 4 of 12' },
+      { id: 'cig-fauna-12', text: 'Fauna Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-horses',
+    title: '🚬 Cards: Horse Breeds',
+    icon: '🐴',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-horses-01', text: 'Horse Card 1', tip: 'Horse breeds theme. Set 5 of 12' },
+      { id: 'cig-horses-02', text: 'Horse Card 2', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-03', text: 'Horse Card 3', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-04', text: 'Horse Card 4', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-05', text: 'Horse Card 5', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-06', text: 'Horse Card 6', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-07', text: 'Horse Card 7', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-08', text: 'Horse Card 8', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-09', text: 'Horse Card 9', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-10', text: 'Horse Card 10', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-11', text: 'Horse Card 11', tip: 'Set 5 of 12' },
+      { id: 'cig-horses-12', text: 'Horse Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-fight',
+    title: '🚬 Cards: Art of the Fight',
+    icon: '🥊',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-fight-01', text: 'Fight Card 1', tip: 'Boxing & fighting theme. Set 6 of 12' },
+      { id: 'cig-fight-02', text: 'Fight Card 2', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-03', text: 'Fight Card 3', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-04', text: 'Fight Card 4', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-05', text: 'Fight Card 5', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-06', text: 'Fight Card 6', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-07', text: 'Fight Card 7', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-08', text: 'Fight Card 8', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-09', text: 'Fight Card 9', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-10', text: 'Fight Card 10', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-11', text: 'Fight Card 11', tip: 'Set 6 of 12' },
+      { id: 'cig-fight-12', text: 'Fight Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-aquatic',
+    title: '🚬 Cards: Wet and Dry',
+    icon: '🐟',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-aquatic-01', text: 'Aquatic Card 1', tip: 'Sea life theme. Set 7 of 12' },
+      { id: 'cig-aquatic-02', text: 'Aquatic Card 2', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-03', text: 'Aquatic Card 3', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-04', text: 'Aquatic Card 4', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-05', text: 'Aquatic Card 5', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-06', text: 'Aquatic Card 6', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-07', text: 'Aquatic Card 7', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-08', text: 'Aquatic Card 8', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-09', text: 'Aquatic Card 9', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-10', text: 'Aquatic Card 10', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-11', text: 'Aquatic Card 11', tip: 'Set 7 of 12' },
+      { id: 'cig-aquatic-12', text: 'Aquatic Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-views',
+    title: '🚬 Cards: Views of America',
+    icon: '🏔️',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-views-01', text: 'Views Card 1', tip: 'Landscapes theme. Set 8 of 12' },
+      { id: 'cig-views-02', text: 'Views Card 2', tip: 'Set 8 of 12' },
+      { id: 'cig-views-03', text: 'Views Card 3', tip: 'Set 8 of 12' },
+      { id: 'cig-views-04', text: 'Views Card 4', tip: 'Set 8 of 12' },
+      { id: 'cig-views-05', text: 'Views Card 5', tip: 'Set 8 of 12' },
+      { id: 'cig-views-06', text: 'Views Card 6', tip: 'Set 8 of 12' },
+      { id: 'cig-views-07', text: 'Views Card 7', tip: 'Set 8 of 12' },
+      { id: 'cig-views-08', text: 'Views Card 8', tip: 'Set 8 of 12' },
+      { id: 'cig-views-09', text: 'Views Card 9', tip: 'Set 8 of 12' },
+      { id: 'cig-views-10', text: 'Views Card 10', tip: 'Set 8 of 12' },
+      { id: 'cig-views-11', text: 'Views Card 11', tip: 'Set 8 of 12' },
+      { id: 'cig-views-12', text: 'Views Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-engineering',
+    title: '🚬 Cards: Wonders of Engineering',
+    icon: '⚙️',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-eng-01', text: 'Engineering Card 1', tip: 'Inventions theme. Set 9 of 12' },
+      { id: 'cig-eng-02', text: 'Engineering Card 2', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-03', text: 'Engineering Card 3', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-04', text: 'Engineering Card 4', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-05', text: 'Engineering Card 5', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-06', text: 'Engineering Card 6', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-07', text: 'Engineering Card 7', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-08', text: 'Engineering Card 8', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-09', text: 'Engineering Card 9', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-10', text: 'Engineering Card 10', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-11', text: 'Engineering Card 11', tip: 'Set 9 of 12' },
+      { id: 'cig-eng-12', text: 'Engineering Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-prominent',
+    title: '🚬 Cards: Prominent Americans',
+    icon: '🎩',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-prom-01', text: 'Prominent Card 1', tip: 'Historical figures. Set 10 of 12' },
+      { id: 'cig-prom-02', text: 'Prominent Card 2', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-03', text: 'Prominent Card 3', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-04', text: 'Prominent Card 4', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-05', text: 'Prominent Card 5', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-06', text: 'Prominent Card 6', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-07', text: 'Prominent Card 7', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-08', text: 'Prominent Card 8', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-09', text: 'Prominent Card 9', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-10', text: 'Prominent Card 10', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-11', text: 'Prominent Card 11', tip: 'Set 10 of 12' },
+      { id: 'cig-prom-12', text: 'Prominent Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-baseball',
+    title: '🚬 Cards: Hall of Fame Baseball',
+    icon: '⚾',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-base-01', text: 'Baseball Card 1', tip: 'Baseball players. Set 11 of 12' },
+      { id: 'cig-base-02', text: 'Baseball Card 2', tip: 'Set 11 of 12' },
+      { id: 'cig-base-03', text: 'Baseball Card 3', tip: 'Set 11 of 12' },
+      { id: 'cig-base-04', text: 'Baseball Card 4', tip: 'Set 11 of 12' },
+      { id: 'cig-base-05', text: 'Baseball Card 5', tip: 'Set 11 of 12' },
+      { id: 'cig-base-06', text: 'Baseball Card 6', tip: 'Set 11 of 12' },
+      { id: 'cig-base-07', text: 'Baseball Card 7', tip: 'Set 11 of 12' },
+      { id: 'cig-base-08', text: 'Baseball Card 8', tip: 'Set 11 of 12' },
+      { id: 'cig-base-09', text: 'Baseball Card 9', tip: 'Set 11 of 12' },
+      { id: 'cig-base-10', text: 'Baseball Card 10', tip: 'Set 11 of 12' },
+      { id: 'cig-base-11', text: 'Baseball Card 11', tip: 'Set 11 of 12' },
+      { id: 'cig-base-12', text: 'Baseball Card 12', tip: 'Complete set = reward!' }
+    ]
+  },
+  {
+    id: 'cig-sports',
+    title: '🚬 Cards: Sports Champions',
+    icon: '🏆',
+    defaultOpen: false,
+    items: [
+      { id: 'cig-sport-01', text: 'Sports Card 1', tip: 'Athletes theme. Set 12 of 12' },
+      { id: 'cig-sport-02', text: 'Sports Card 2', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-03', text: 'Sports Card 3', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-04', text: 'Sports Card 4', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-05', text: 'Sports Card 5', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-06', text: 'Sports Card 6', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-07', text: 'Sports Card 7', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-08', text: 'Sports Card 8', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-09', text: 'Sports Card 9', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-10', text: 'Sports Card 10', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-11', text: 'Sports Card 11', tip: 'Set 12 of 12' },
+      { id: 'cig-sport-12', text: 'Sports Card 12', tip: 'Mail ALL 144 cards to Phineas T. Ramsbottom for reward!' }
+    ]
+  },
+
+  // ============================================
+  // SECTION XXIV: GANG MEMBER GRAVES
+  // ============================================
+  {
+    id: 'graves',
+    title: 'XXIV. Gang Member Graves',
+    icon: '🪦',
+    defaultOpen: false,
+    items: [
+      { id: 'grave-jenny', text: 'Jenny Kirk\'s Grave', tip: 'Died during Blackwater heist. Near Colter, snowy area.' },
+      { id: 'grave-davey', text: 'Davey Callender\'s Grave', tip: 'Died from Blackwater wounds. Near Colter, by Jenny.' },
+      { id: 'grave-sean', text: 'Sean MacGuire\'s Grave', tip: 'After his death in Rhodes. Scarlett Meadows area.' },
+      { id: 'grave-kieran', text: 'Kieran Duffy\'s Grave', tip: 'After O\'Driscoll camp. Near Shady Belle.' },
+      { id: 'grave-hosea', text: 'Hosea Matthews\' Grave', tip: 'After Saint Denis bank. Near Bluewater Marsh.' },
+      { id: 'grave-lenny', text: 'Lenny Summers\' Grave', tip: 'After Saint Denis bank. Near Hosea\'s.' },
+      { id: 'grave-eagle', text: 'Eagle Flies\' Grave', tip: 'After oil factory mission. Wapiti Indian Reservation.' },
+      { id: 'grave-susan', text: 'Susan Grimshaw\'s Grave', tip: 'After Beaver Hollow. Near camp ruins.' },
+      { id: 'grave-arthur', text: 'Arthur Morgan\'s Grave', tip: 'EPILOGUE. East of Bacchus Station. Visit as John for dialogue.' }
+    ]
+  },
+
+  // ============================================
+  // SECTION XXV: PERSONAL JOURNAL
   // ============================================
   {
     id: 'journal',
-    title: 'XVIII. Personal Journal',
+    title: 'XXV. Personal Journal',
     icon: '📓',
     defaultOpen: true,
     isJournal: true
@@ -1068,19 +1489,25 @@ export const NAV_CATEGORIES = [
     id: 'money-gear',
     title: 'Money & Gear',
     icon: '💰',
-    sections: ['treasures', 'weapons', 'satchel', 'camp']
+    sections: ['treasures', 'weapons', 'satchel', 'camp', 'talismans']
   },
   {
     id: 'world',
     title: 'World & Story',
     icon: '🗺️',
-    sections: ['strangers', 'legendary-animals', 'collectibles', 'missable']
+    sections: ['strangers', 'legendary-animals', 'bounties', 'companion-activities', 'camp-requests', 'missable', 'graves']
   },
   {
     id: 'challenges',
     title: 'Challenges',
     icon: '🏆',
-    sections: ['bandit', 'explorer', 'hunter', 'herbalist', 'sharpshooter', 'horseman', 'survivalist', 'gambler']
+    sections: ['bandit', 'explorer', 'hunter', 'herbalist', 'sharpshooter', 'horseman', 'survivalist', 'gambler', 'weapons-expert']
+  },
+  {
+    id: 'collectibles',
+    title: 'Collectibles',
+    icon: '🎴',
+    sections: ['collectibles', 'cig-gunslingers', 'cig-stage', 'cig-travel', 'cig-fauna', 'cig-horses', 'cig-fight', 'cig-aquatic', 'cig-views', 'cig-engineering', 'cig-prominent', 'cig-baseball', 'cig-sports']
   },
   {
     id: 'personal',
@@ -1089,3 +1516,4 @@ export const NAV_CATEGORIES = [
     sections: ['journal']
   }
 ];
+

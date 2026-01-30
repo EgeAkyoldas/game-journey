@@ -272,9 +272,22 @@ function filterSections(query) {
 
 function filterMainContent(query) {
   if (!query) {
-    // Reset - show all items
+    // Reset - show all items and restore normal view
     $$('.checklist-item').forEach(item => item.classList.remove('search-hidden'));
     $$('.tip').forEach(tip => tip.classList.remove('search-hidden'));
+    
+    // Restore checklist-group visibility based on their header's collapsed state
+    $$('.checklist-group').forEach(group => {
+      const sectionId = group.id;
+      const header = document.querySelector(`.section-header[data-section="${sectionId}"]`);
+      if (header) {
+        if (header.classList.contains('collapsed')) {
+          group.classList.add('hidden');
+        } else {
+          group.classList.remove('hidden');
+        }
+      }
+    });
     return;
   }
   
