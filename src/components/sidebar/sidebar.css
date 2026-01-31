@@ -1,0 +1,511 @@
+/**
+ * Sidebar V2 Styles
+ * - 4 UI Themes × 2 Modes = 8 Variations
+ * - Video background support
+ * - RDR2 authentic checkboxes
+ */
+
+/* ============================================
+   VIDEO BACKGROUND
+   ============================================ */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-mode="day"] .video-background {
+  opacity: 0.15;
+  filter: brightness(1.2) saturate(0.8);
+}
+
+[data-mode="night"] .video-background {
+  opacity: 0.25;
+  filter: brightness(0.6) saturate(0.6);
+}
+
+/* ============================================
+   BASE VARIABLES
+   ============================================ */
+:root {
+  --crimson-ring: #8b3a3a;
+  --gold-accent: #ffd700;
+  --dark-bg: #1a1a1a;
+  
+  /* Category colors */
+  --bounty-color: #dc2626;
+  --treasure-color: #fbbf24;
+  --cards-color: #fcd34d;
+  --challenge-color: #ea580c;
+  --stranger-color: #06b6d4;
+  --camp-color: #f97316;
+  --quickstart-color: #22c55e;
+}
+
+/* ============================================
+   DAY MODE - BASE
+   ============================================ */
+[data-mode="day"] {
+  --bg-primary: #f5f0e6;
+  --bg-secondary: #e8dcc8;
+  --text-primary: #2d1f10;
+  --text-secondary: #5d4037;
+  --sidebar-bg: #2a2420;
+  --sidebar-text: #e8dcc8;
+}
+
+/* ============================================
+   NIGHT MODE - BASE
+   ============================================ */
+[data-mode="night"] {
+  --bg-primary: #1a1814;
+  --bg-secondary: #252220;
+  --text-primary: #e8dcc8;
+  --text-secondary: #a09080;
+  --sidebar-bg: #12100d;
+  --sidebar-text: #d4c4a8;
+}
+
+/* ============================================
+   MODE TOGGLE BUTTON
+   ============================================ */
+.mode-toggle-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-accent);
+  background: rgba(0,0,0,0.5);
+  color: var(--gold-accent);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.mode-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+/* ============================================
+   THEME SELECTOR
+   ============================================ */
+.theme-selector {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.theme-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.theme-btn:hover { opacity: 1; transform: translateY(-2px); }
+.theme-btn.active { opacity: 1; border-color: var(--gold-accent); }
+
+.theme-btn-wood { background: linear-gradient(135deg, #8b6914, #5d4037); color: var(--gold-accent); }
+.theme-btn-ledger { background: linear-gradient(135deg, #d4c4a8, #a89070); color: #3e2723; }
+.theme-btn-wanted { background: linear-gradient(135deg, #e8d5a3, #c9a959); color: #4a0000; }
+.theme-btn-saloon { background: linear-gradient(135deg, #4a1a2c, #2d1f3d); color: var(--gold-accent); }
+
+/* ============================================
+   RDR2 CHECKBOX
+   ============================================ */
+.rdr-checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+  background: radial-gradient(circle, #1a1a1a 30%, #252525 60%, #2a2a2a 100%);
+  border: 2px solid var(--crimson-ring);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.rdr-checkbox::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.rdr-checkbox:checked::before {
+  content: "\f00d";
+  color: rgba(0,0,0,0.7);
+  opacity: 1;
+}
+
+.rdr-checkbox:hover {
+  border-color: #a05050;
+  transform: scale(1.1);
+}
+
+/* Category checkbox colors */
+.checkbox-bounty:checked { background: var(--bounty-color); }
+.checkbox-treasure:checked { background: var(--treasure-color); }
+.checkbox-cards:checked { background: var(--cards-color); }
+.checkbox-challenge:checked { background: var(--challenge-color); }
+.checkbox-stranger:checked { background: var(--stranger-color); }
+.checkbox-camp:checked { background: var(--camp-color); }
+.checkbox-quickstart:checked { background: var(--quickstart-color); }
+
+/* ============================================
+   SIDEBAR BASE
+   ============================================ */
+.nav-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 2px solid rgba(139,105,20,0.3);
+  z-index: 100;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.nav-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-title {
+  font-family: 'Rye', Georgia, serif;
+  font-size: 16px;
+  color: var(--gold-accent);
+}
+
+.nav-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: var(--sidebar-text);
+  cursor: pointer;
+}
+
+/* ============================================
+   SEARCH & FILTERS
+   ============================================ */
+.nav-search-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+}
+
+.nav-search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.3);
+  color: var(--sidebar-text);
+  font-size: 13px;
+}
+
+.nav-search-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.filter-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--sidebar-text);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-toggle-btn:hover,
+.filter-toggle-btn.active {
+  background: rgba(255,215,0,0.2);
+  color: var(--gold-accent);
+}
+
+/* ============================================
+   CATEGORY STYLING
+   ============================================ */
+.nav-category {
+  margin-bottom: 4px;
+}
+
+.nav-category-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--sidebar-text);
+}
+
+.nav-category-header:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-category-icon {
+  font-size: 14px;
+}
+
+.nav-category-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.nav-category-arrow {
+  font-size: 10px;
+  opacity: 0.5;
+  transition: transform 0.2s;
+}
+
+.nav-category.expanded .nav-category-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-category-items.collapsed {
+  display: none;
+}
+
+/* ============================================
+   SECTION LINKS
+   ============================================ */
+.nav-section-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 32px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.nav-section-link:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-section-link.active {
+  background: rgba(255,215,0,0.1);
+  border-left: 2px solid var(--gold-accent);
+}
+
+.nav-section-link.section-complete {
+  opacity: 0.6;
+}
+
+.nav-section-icon {
+  font-size: 12px;
+}
+
+.nav-section-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-section-count {
+  font-size: 11px;
+  opacity: 0.6;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-section-count.has-progress {
+  background: rgba(34,197,94,0.3);
+  color: #86efac;
+}
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+.nav-stats {
+  position: sticky;
+  bottom: 0;
+  padding: 12px 16px;
+  background: var(--sidebar-bg);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-stats-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.nav-stats-fill {
+  height: 100%;
+  background: var(--gold-accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-stats-text {
+  font-size: 11px;
+  opacity: 0.7;
+  text-align: center;
+  display: block;
+}
+
+/* ============================================
+   DAY + WOOD THEME
+   ============================================ */
+[data-mode="day"][data-ui-theme="wood"] .nav-sidebar {
+  background: linear-gradient(180deg, #3e3028 0%, #2a2420 100%);
+}
+
+[data-mode="day"][data-ui-theme="wood"] .nav-category-header {
+  background: linear-gradient(90deg, rgba(139,105,20,0.1), transparent);
+}
+
+/* ============================================
+   DAY + LEDGER THEME
+   ============================================ */
+[data-mode="day"][data-ui-theme="ledger"] .nav-sidebar {
+  background: linear-gradient(180deg, #5d4037 0%, #3e2723 100%);
+}
+
+[data-mode="day"][data-ui-theme="ledger"] .nav-section-link {
+  font-style: italic;
+}
+
+/* ============================================
+   DAY + WANTED THEME
+   ============================================ */
+[data-mode="day"][data-ui-theme="wanted"] .nav-sidebar {
+  background: linear-gradient(180deg, #4a3020 0%, #2d1810 100%);
+  border-right-color: #8b4513;
+}
+
+[data-mode="day"][data-ui-theme="wanted"] .nav-category-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+/* ============================================
+   DAY + SALOON THEME
+   ============================================ */
+[data-mode="day"][data-ui-theme="saloon"] .nav-sidebar {
+  background: linear-gradient(180deg, #3d1a29 0%, #2d1f3d 100%);
+  border-right-color: #8b6914;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .nav-section-count.has-progress {
+  background: linear-gradient(135deg, #8b6914, #ffd700);
+  color: #2d1f3d;
+}
+
+/* ============================================
+   NIGHT + WOOD THEME
+   ============================================ */
+[data-mode="night"][data-ui-theme="wood"] .nav-sidebar {
+  background: linear-gradient(180deg, #1a1614 0%, #0d0c0a 100%);
+}
+
+/* ============================================
+   NIGHT + LEDGER THEME
+   ============================================ */
+[data-mode="night"][data-ui-theme="ledger"] .nav-sidebar {
+  background: linear-gradient(180deg, #2a2018 0%, #1a1410 100%);
+}
+
+[data-mode="night"][data-ui-theme="ledger"] .nav-section-link {
+  font-style: italic;
+}
+
+/* ============================================
+   NIGHT + WANTED THEME
+   ============================================ */
+[data-mode="night"][data-ui-theme="wanted"] .nav-sidebar {
+  background: linear-gradient(180deg, #2a1810 0%, #1a0d08 100%);
+}
+
+[data-mode="night"][data-ui-theme="wanted"] .nav-category-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   NIGHT + SALOON THEME
+   ============================================ */
+[data-mode="night"][data-ui-theme="saloon"] .nav-sidebar {
+  background: linear-gradient(180deg, #1a0a15 0%, #0d0510 100%);
+}
+
+[data-mode="night"][data-ui-theme="saloon"] .nav-title {
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+/* ============================================
+   MOBILE FAB BUTTON
+   ============================================ */
+.nav-fab {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gold-accent);
+  color: #1a1a1a;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .nav-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .nav-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .nav-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

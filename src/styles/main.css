@@ -374,10 +374,110 @@ body {
 }
 
 .section-header .progress-badge {
-  @apply text-sm px-2 py-1 rounded mr-4;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 1rem;
   font-family: var(--font-mono);
   background: rgba(138,3,3,0.1);
   color: var(--color-blood);
+}
+
+/* Section title group for reward tag placement */
+.section-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.section-title-text {
+  white-space: nowrap;
+}
+
+/* Section-level reward tag */
+.section-reward-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-weight: normal;
+  background: linear-gradient(90deg, rgba(212,160,23,0.2), rgba(212,160,23,0.1));
+  color: var(--color-gold);
+  border: 1px solid rgba(212,160,23,0.3);
+}
+
+body.dark-mode .section-reward-tag {
+  color: var(--dm-gold);
+  background: linear-gradient(90deg, rgba(232,184,74,0.2), rgba(232,184,74,0.1));
+  border-color: rgba(232,184,74,0.3);
+}
+
+/* Section Info Bar - for section-level tip_detailed */
+.section-info-bar {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.section-info-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-leather);
+  background: linear-gradient(90deg, rgba(93,64,55,0.08), transparent);
+  border: 1px dashed var(--color-leather);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.section-info-btn:hover {
+  background: linear-gradient(90deg, rgba(93,64,55,0.15), rgba(93,64,55,0.05));
+  color: var(--color-blood);
+  border-color: var(--color-blood);
+}
+
+.section-info-btn.expanded {
+  background: linear-gradient(90deg, rgba(93,64,55,0.12), transparent);
+  border-style: solid;
+}
+
+body.dark-mode .section-info-btn {
+  color: #b0a090;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+  border-color: #555;
+}
+
+body.dark-mode .section-info-btn:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+  color: var(--dm-blood);
+  border-color: var(--dm-blood);
+}
+
+.section-tip-detailed {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: linear-gradient(135deg, rgba(244,228,188,0.5), rgba(220,191,163,0.3));
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 6px 6px 0;
+  box-shadow: inset 0 0 15px rgba(93,64,55,0.08);
+}
+
+.section-tip-detailed.hidden {
+  display: none;
+}
+
+body.dark-mode .section-tip-detailed {
+  background: linear-gradient(135deg, rgba(30,32,36,0.8), rgba(20,22,26,0.6));
+  border-left-color: var(--dm-gold);
+  color: var(--dm-ink);
 }
 
 /* ===================================
@@ -393,15 +493,107 @@ body {
 }
 
 /* ===================================
+   CHECKLIST ITEMS - NEW LAYOUT
+   =================================== */
+
+/* Wrapper for each item (contains row + tip + detailed + subitems) */
+.item-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+/* Wrapper for sub-items (same as item-wrapper but with smaller margin) */
+.sub-item-wrapper {
+  margin-bottom: 0.25rem;
+}
+
+/* Main row: checkbox + text + tags + more info button */
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  min-height: 36px;
+  padding: 4px 0;
+}
+
+/* Tags container - flexible, wraps on smaller screens */
+.item-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* Inline More Info button (emoji style) */
+.more-info-btn-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  width: 32px;
+  min-height: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  background: linear-gradient(135deg, rgba(93,64,55,0.1), transparent);
+  border: 1px solid var(--color-leather-light);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.more-info-btn-inline:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(93,64,55,0.2), rgba(93,64,55,0.05));
+  border-color: var(--color-blood);
+  transform: scale(1.1);
+}
+
+.more-info-btn-inline.expanded {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(212,160,23,0.2), rgba(212,160,23,0.1));
+  border-color: var(--color-gold);
+}
+
+body.dark-mode .more-info-btn-inline {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+  border-color: #555;
+}
+
+body.dark-mode .more-info-btn-inline:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+  border-color: var(--dm-blood);
+}
+
+body.dark-mode .more-info-btn-inline.expanded {
+  background: linear-gradient(135deg, rgba(232,184,74,0.15), rgba(232,184,74,0.05));
+  border-color: var(--dm-gold);
+}
+
+/* ===================================
    CHECKLIST ITEMS
    =================================== */
 .checklist-item {
-  @apply flex items-start py-1 cursor-pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+  cursor: pointer;
   font-size: 1.2rem;
   line-height: 1.4;
   font-weight: bold;
   color: var(--color-highlight);
   transition: color 0.2s ease;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .checklist-item:hover {
@@ -476,15 +668,161 @@ body {
 }
 
 /* ===================================
+   MORE INFO BUTTON & TIP DETAILED
+   Cowboy Storyteller Narrative Display
+   =================================== */
+.more-info-btn {
+  @apply ml-11 mb-2 px-3 py-1.5 cursor-pointer flex items-center gap-2;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-leather);
+  background: linear-gradient(90deg, rgba(93,64,55,0.1), transparent);
+  border: 1px dashed var(--color-leather);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.more-info-btn:hover {
+  background: linear-gradient(90deg, rgba(93,64,55,0.2), rgba(93,64,55,0.05));
+  color: var(--color-blood);
+  border-color: var(--color-blood);
+}
+
+.more-info-btn.expanded {
+  background: linear-gradient(90deg, rgba(93,64,55,0.15), transparent);
+  border-style: solid;
+}
+
+.more-info-icon {
+  font-size: 0.7rem;
+  color: var(--color-faded);
+  transition: transform 0.2s ease;
+}
+
+.more-info-btn.expanded .more-info-icon {
+  color: var(--color-blood);
+}
+
+/* Tip Detailed - The Campfire Narrative Box */
+.tip-detailed {
+  @apply ml-11 mb-4 p-4 rounded;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+  background: linear-gradient(135deg, rgba(244,228,188,0.6), rgba(220,191,163,0.4));
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 8px 8px 0;
+  box-shadow: inset 0 0 20px rgba(93,64,55,0.1),
+              0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.tip-detailed::before {
+  content: "🔥";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.tip-detailed-content {
+  white-space: pre-line;
+}
+
+/* Inline formatting within tip-detailed */
+.tip-detailed-content strong {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.tip-detailed-content em {
+  color: var(--color-faded);
+  font-style: italic;
+}
+
+body.dark-mode .tip-detailed-content strong {
+  color: var(--dm-gold);
+}
+
+body.dark-mode .tip-detailed-content em {
+  color: #b0a090;
+}
+
+.tip-detailed.hidden {
+  @apply hidden;
+}
+
+/* Sub-item variations */
+.sub-more-info {
+  @apply ml-8;
+  font-size: 0.8rem;
+}
+
+.sub-tip-detailed {
+  @apply ml-8 p-3;
+  font-size: 0.9rem;
+}
+
+/* Dark mode - More Info */
+body.dark-mode .more-info-btn {
+  color: #b0a090;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+  border-color: #555;
+}
+
+body.dark-mode .more-info-btn:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+  color: var(--dm-blood);
+  border-color: var(--dm-blood);
+}
+
+body.dark-mode .tip-detailed {
+  background: linear-gradient(135deg, rgba(30,32,36,0.9), rgba(20,22,26,0.8));
+  border-left-color: var(--dm-gold);
+  color: var(--dm-ink);
+  box-shadow: inset 0 0 30px rgba(232,184,74,0.05),
+              0 2px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .tip-detailed::before {
+  filter: brightness(1.2);
+}
+
+/* ===================================
    REWARD TAGS
+   Money: 💰 green, Items: 🏆 gold
    =================================== */
 .checklist-item .item-text .reward-tag {
   @apply ml-2 px-2 py-0.5 text-xs rounded;
-  background: linear-gradient(135deg, var(--color-gold), #b8860b);
-  color: white;
   font-family: var(--font-mono);
   font-weight: normal;
 }
+
+/* Item rewards - Trophy gold */
+.checklist-item .item-text .reward-item {
+  background: linear-gradient(135deg, var(--color-gold), #b8860b);
+  color: white;
+}
+
+/* Money rewards - Dollar green */
+.checklist-item .item-text .reward-money {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: #c8e6c9;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .reward-item {
+  background: linear-gradient(135deg, var(--dm-gold), #9a7b0a);
+}
+
+body.dark-mode .reward-money {
+  background: linear-gradient(135deg, #388e3c, #2e7d32);
+  color: #a5d6a7;
+}
+
 
 /* ===================================
    SUB-ITEMS (Nested Checklists)

@@ -1,0 +1,167 @@
+/**
+ * Sidebar V2 - Component Styles
+ * Checkboxes, tags, progress indicators
+ */
+
+/* ============================================
+   RDR2 CHECKBOX
+   ============================================ */
+.rdr-checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+  background: radial-gradient(circle, #1a1a1a 30%, #252525 60%, #2a2a2a 100%);
+  border: 2px solid #8b3a3a;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.rdr-checkbox::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.rdr-checkbox:checked {
+  background: #22c55e;
+  border-color: #16a34a;
+  box-shadow: 0 0 8px rgba(34,197,94,0.4);
+}
+
+.rdr-checkbox:checked::before {
+  content: "\f00c";
+  color: white;
+  opacity: 1;
+}
+
+.rdr-checkbox:hover {
+  border-color: #a05050;
+  transform: scale(1.1);
+}
+
+/* Category-specific colors */
+.rdr-checkbox[data-category="treasure"]:checked { background: var(--color-treasure); border-color: #d97706; }
+.rdr-checkbox[data-category="bounty"]:checked { background: var(--color-bounty); border-color: #991b1b; }
+.rdr-checkbox[data-category="stranger"]:checked { background: var(--color-stranger); border-color: #0891b2; }
+.rdr-checkbox[data-category="challenge"]:checked { background: var(--color-challenge); border-color: #c2410c; }
+.rdr-checkbox[data-category="collectible"]:checked { background: var(--color-collectible); border-color: #7e22ce; }
+
+/* ============================================
+   TAGS
+   ============================================ */
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tag-chapter {
+  background: rgba(59,130,246,0.2);
+  color: #60a5fa;
+}
+
+.tag-region {
+  background: rgba(34,197,94,0.2);
+  color: #4ade80;
+}
+
+.tag-missable {
+  background: rgba(220,38,38,0.2);
+  color: #f87171;
+}
+
+.tag-reward {
+  background: rgba(250,204,21,0.2);
+  color: #fcd34d;
+}
+
+.tag-priority {
+  background: rgba(234,88,12,0.2);
+  color: #fb923c;
+}
+
+/* ============================================
+   PROGRESS BARS (INLINE)
+   ============================================ */
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.gold { background: var(--gold-accent); }
+.progress-bar-fill.green { background: #22c55e; }
+.progress-bar-fill.crimson { background: #8b3a3a; }
+
+/* ============================================
+   ITEM STATES
+   ============================================ */
+.item-completed {
+  opacity: 0.5;
+}
+
+.item-completed .item-title {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,255,255,0.3);
+}
+
+.item-missable {
+  border-left: 3px solid var(--color-bounty);
+  padding-left: 8px;
+}
+
+.item-priority-high {
+  border-left: 3px solid var(--color-challenge);
+  padding-left: 8px;
+}
+
+/* ============================================
+   TOOLTIPS
+   ============================================ */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: #1a1a1a;
+  color: #e8dcc8;
+  font-size: 11px;
+  white-space: nowrap;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}

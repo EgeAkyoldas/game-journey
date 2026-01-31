@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar V2 Showcase - RDR2 Journey</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <!-- Sidebar V2 CSS -->
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/sidebar.css">
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/themes.css">
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/components.css">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: Georgia, serif;
+      background: var(--bg-primary, #1a1814);
+      color: var(--text-primary, #e8dcc8);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    /* Main content area */
+    .main-content {
+      margin-left: 260px;
+      padding: 40px;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Paper content wrapper */
+    .content-paper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    [data-mode="day"] .content-paper {
+      background: linear-gradient(135deg, #f5f0e6 0%, #e8dcc8 100%);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      border: 1px solid rgba(139,69,19,0.3);
+      color: #2d1f10;
+    }
+    
+    [data-mode="night"] .content-paper {
+      background: linear-gradient(135deg, #252220 0%, #1a1814 100%);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e8dcc8;
+    }
+    
+    .page-title {
+      font-family: 'Rye', Georgia, serif;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    [data-mode="day"] .page-title { color: #4a1a0a; }
+    [data-mode="night"] .page-title { color: #d4a574; }
+    
+    .page-subtitle {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+    
+    .divider {
+      height: 2px;
+      margin: 24px 0;
+    }
+    
+    [data-mode="day"] .divider { background: linear-gradient(90deg, transparent, #8b4513, transparent); }
+    [data-mode="night"] .divider { background: linear-gradient(90deg, transparent, #5d4037, transparent); }
+    
+    /* Demo section */
+    .demo-section {
+      margin-bottom: 32px;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      font-family: 'Rye', Georgia, serif;
+      font-size: 20px;
+    }
+    
+    [data-mode="day"] .section-header { color: #5d3a1a; }
+    [data-mode="night"] .section-header { color: #ffd700; }
+    
+    .section-count {
+      margin-left: auto;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    
+    /* Checklist items */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(128,128,128,0.2);
+    }
+    
+    .item-content { flex: 1; }
+    .item-title { font-weight: 600; margin-bottom: 4px; }
+    .item-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    
+    /* Wanted stamp */
+    .wanted-stamp {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      height: 60px;
+      border: 3px solid currentColor;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(12deg);
+      font-family: 'Rye', Georgia, serif;
+    }
+    
+    [data-mode="day"] .wanted-stamp { color: #8b0000; }
+    [data-mode="night"] .wanted-stamp { color: #dc2626; }
+    
+    .stamp-wanted { font-size: 14px; letter-spacing: 2px; }
+    .stamp-reward { font-size: 10px; opacity: 0.8; }
+    
+    @media (max-width: 768px) {
+      .main-content { margin-left: 0; padding: 20px; }
+      .content-paper { padding: 20px; }
+      .page-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body data-mode="day" data-ui-theme="wood">
+  <!-- VIDEO BACKGROUND -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="/background.mp4" type="video/mp4">
+  </video>
+  
+  <!-- SIDEBAR (rendered by JS) -->
+  <div id="sidebar-container"></div>
+  
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-paper">
+      <div class="wanted-stamp">
+        <span class="stamp-wanted">WANTED</span>
+        <span class="stamp-reward">DEAD OR ALIVE</span>
+      </div>
+      
+      <h1 class="page-title">THE DRIFTER'S<br>LEDGER</h1>
+      <p class="page-subtitle">Property of A. Morgan (and associates)</p>
+      
+      <div class="divider"></div>
+      
+      <!-- Demo Section -->
+      <section class="demo-section" data-section-id="quickstart">
+        <div class="section-header">
+          <i class="fa-solid fa-star"></i>
+          <span>I. Quick Start Guide</span>
+          <span class="section-count">0/8</span>
+        </div>
+        
+        <div class="checklist-item">
+          <input type="checkbox" class="rdr-checkbox">
+          <div class="item-content">
+            <div class="item-title">Hunt Legendary Buck FIRST</div>
+            <div class="item-tags">
+              <span class="tag tag-chapter"><i class="fa-solid fa-book"></i> CH 2</span>
+              <span class="tag tag-reward"><i class="fa-solid fa-gift"></i> Buck Antler Trinket</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="checklist-item">
+          <input type="checkbox" class="rdr-checkbox" data-category="treasure">
+          <div class="item-content">
+            <div class="item-title">Complete Jack Hall Gang Treasure</div>
+            <div class="item-tags">
+              <span class="tag tag-reward"><i class="fa-solid fa-coins"></i> 2 Gold Bars ($1000)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="checklist-item">
+          <input type="checkbox" class="rdr-checkbox">
+          <div class="item-content">
+            <div class="item-title">Do "Money Lending and Other Sins"</div>
+            <div class="item-tags">
+              <span class="tag tag-missable"><i class="fa-solid fa-triangle-exclamation"></i> MISSABLE</span>
+              <span class="tag tag-chapter"><i class="fa-solid fa-book"></i> CH 2-6</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="demo-section" data-section-id="treasures">
+        <div class="section-header">
+          <i class="fa-solid fa-gem"></i>
+          <span>II. Treasure Hunts</span>
+          <span class="section-count">0/26</span>
+        </div>
+        
+        <div class="checklist-item">
+          <input type="checkbox" class="rdr-checkbox" data-category="treasure">
+          <div class="item-content">
+            <div class="item-title">Jack Hall Gang Treasure Map 1</div>
+            <div class="item-tags">
+              <span class="tag tag-region"><i class="fa-solid fa-map-pin"></i> New Hanover</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module">
+    import { renderNavigation } from '/src/components/sidebar-v2/index.js';
+    
+    // Render the sidebar
+    renderNavigation();
+    
+    console.log('🤠 Sidebar V2 Showcase loaded');
+  </script>
+</body>
+</html>

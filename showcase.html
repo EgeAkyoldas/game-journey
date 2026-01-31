@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDR2 Showcase V2 - Feature Preview</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <!-- Sidebar V2 CSS (shared themes) -->
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/sidebar.css">
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/themes.css">
+  <link rel="stylesheet" href="/src/components/sidebar-v2/styles/components.css">
+  <!-- Showcase V2 CSS -->
+  <link rel="stylesheet" href="/src/components/showcase-v2/styles/showcase.css">
+  
+  <style>
+    /* Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: Georgia, serif;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    [data-mode="day"] { background: #e8dcc8; color: #2d1f10; }
+    [data-mode="night"] { background: #1a1814; color: #e8dcc8; }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Header */
+    .showcase-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+    }
+    
+    .showcase-title {
+      font-family: 'Rye', Georgia, serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    [data-mode="day"] .showcase-title { color: #4a1a0a; }
+    [data-mode="night"] .showcase-title { color: #ffd700; }
+    
+    .showcase-subtitle {
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    
+    .header-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    /* Footer */
+    .showcase-footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      opacity: 0.6;
+    }
+    
+    /* Mobile */
+    @media (max-width: 640px) {
+      .showcase-title { font-size: 1.75rem; }
+      .container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body data-mode="night" data-ui-theme="wood">
+  <!-- VIDEO BACKGROUND -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="/background.mp4" type="video/mp4">
+  </video>
+  
+  <!-- MODE TOGGLE -->
+  <button class="mode-toggle" id="mode-toggle" title="Toggle Day/Night">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+  
+  <div class="container">
+    <header class="showcase-header">
+      <h1 class="showcase-title">
+        <i class="fa-solid fa-hat-cowboy-side"></i> Showcase V2
+      </h1>
+      <p class="showcase-subtitle">Real data • Audio feedback • Color-coded done icons • Collapsible sub-items</p>
+      
+      <div class="header-controls">
+        <div class="theme-selector">
+          <button class="theme-btn theme-btn--wood active" data-theme-id="wood" title="Wood"><i class="fa-solid fa-tree"></i></button>
+          <button class="theme-btn theme-btn--ledger" data-theme-id="ledger" title="Ledger"><i class="fa-solid fa-book"></i></button>
+          <button class="theme-btn theme-btn--wanted" data-theme-id="wanted" title="Wanted"><i class="fa-solid fa-scroll"></i></button>
+          <button class="theme-btn theme-btn--saloon" data-theme-id="saloon" title="Saloon"><i class="fa-solid fa-whiskey-glass"></i></button>
+        </div>
+      </div>
+    </header>
+    
+    <main id="showcase-content">
+      <p style="text-align:center; opacity:0.5;">Loading...</p>
+    </main>
+    
+    <footer class="showcase-footer">
+      <p><i class="fa-brands fa-font-awesome"></i> Showcase V2 - Modular Component from src/components/showcase-v2/</p>
+    </footer>
+  </div>
+
+  <script type="module">
+    import { initShowcase } from '/src/components/showcase-v2/index.js';
+    import { initThemeSystem, attachThemeListeners, setUITheme } from '/src/components/sidebar-v2/theme-system.js';
+    
+    // Initialize theme system first
+    initThemeSystem();
+    attachThemeListeners();
+    
+    // Mode toggle
+    document.getElementById('mode-toggle').addEventListener('click', () => {
+      const body = document.body;
+      const currentMode = body.dataset.mode || 'night';
+      const newMode = currentMode === 'night' ? 'day' : 'night';
+      body.dataset.mode = newMode;
+      
+      // Update icon
+      const icon = document.querySelector('#mode-toggle i');
+      icon.className = newMode === 'night' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+      
+      // Save preference
+      localStorage.setItem('rdr_mode', newMode);
+    });
+    
+    // Theme buttons
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const themeId = btn.dataset.themeId;
+        setUITheme(themeId);
+        
+        // Update active state
+        document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+    
+    // Load saved mode
+    const savedMode = localStorage.getItem('rdr_mode') || 'night';
+    document.body.dataset.mode = savedMode;
+    document.querySelector('#mode-toggle i').className = 
+      savedMode === 'night' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    
+    // Initialize showcase
+    initShowcase('showcase-content');
+  </script>
+</body>
+</html>

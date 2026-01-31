@@ -1,0 +1,193 @@
+/**
+ * Sidebar V2 - Theme Variations
+ * 4 themes × 2 modes = 8 variations
+ */
+
+/* ============================================
+   DAY MODE - BASE
+   ============================================ */
+[data-mode="day"] {
+  --bg-primary: #f5f0e6;
+  --bg-secondary: #e8dcc8;
+  --text-primary: #2d1f10;
+  --text-secondary: #5d4037;
+}
+
+[data-mode="day"] .nav-sidebar {
+  background: linear-gradient(180deg, #3e3028 0%, #2a2420 100%);
+  color: #e8dcc8;
+  border-right: 2px solid rgba(139,105,20,0.4);
+}
+
+/* ============================================
+   NIGHT MODE - BASE
+   ============================================ */
+[data-mode="night"] {
+  --bg-primary: #1a1814;
+  --bg-secondary: #252220;
+  --text-primary: #e8dcc8;
+  --text-secondary: #a09080;
+}
+
+[data-mode="night"] .nav-sidebar {
+  background: linear-gradient(180deg, #1a1614 0%, #0d0c0a 100%);
+  color: #d4c4a8;
+  border-right: 2px solid rgba(255,255,255,0.1);
+}
+
+/* ============================================
+   DAY + WOOD
+   ============================================ */
+[data-mode="day"][data-ui-theme="wood"] .nav-sidebar {
+  background: 
+    linear-gradient(180deg, rgba(62,48,40,0.95) 0%, rgba(42,36,32,0.95) 100%);
+}
+
+[data-mode="day"][data-ui-theme="wood"] .nav-category-header {
+  background: linear-gradient(90deg, rgba(139,105,20,0.08), transparent);
+}
+
+[data-mode="day"][data-ui-theme="wood"] .nav-stats {
+  background: #2a2420;
+}
+
+/* ============================================
+   DAY + LEDGER
+   ============================================ */
+[data-mode="day"][data-ui-theme="ledger"] .nav-sidebar {
+  background: linear-gradient(180deg, #5d4037 0%, #3e2723 100%);
+}
+
+[data-mode="day"][data-ui-theme="ledger"] .nav-section-link {
+  font-style: italic;
+}
+
+[data-mode="day"][data-ui-theme="ledger"] .nav-title {
+  font-family: 'Special Elite', Georgia, serif;
+}
+
+[data-mode="day"][data-ui-theme="ledger"] .nav-stats {
+  background: #3e2723;
+}
+
+/* ============================================
+   DAY + WANTED
+   ============================================ */
+[data-mode="day"][data-ui-theme="wanted"] .nav-sidebar {
+  background: linear-gradient(180deg, #4a3020 0%, #2d1810 100%);
+  border-right-color: #8b4513;
+}
+
+[data-mode="day"][data-ui-theme="wanted"] .nav-category-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+[data-mode="day"][data-ui-theme="wanted"] .nav-title {
+  color: #fbbf24;
+  text-shadow: 2px 2px 0 #4a0000;
+}
+
+[data-mode="day"][data-ui-theme="wanted"] .nav-stats {
+  background: #2d1810;
+}
+
+/* ============================================
+   DAY + SALOON
+   ============================================ */
+[data-mode="day"][data-ui-theme="saloon"] .nav-sidebar {
+  background: linear-gradient(180deg, #3d1a29 0%, #2d1f3d 100%);
+  border-right-color: #8b6914;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .nav-section-count.has-progress {
+  background: linear-gradient(135deg, #8b6914, #ffd700);
+  color: #2d1f3d;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .nav-category-icon {
+  color: #fbbf24;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .nav-stats {
+  background: #2d1f3d;
+}
+
+/* ============================================
+   NIGHT + WOOD
+   ============================================ */
+[data-mode="night"][data-ui-theme="wood"] .nav-sidebar {
+  background: linear-gradient(180deg, #1a1614 0%, #0d0c0a 100%);
+}
+
+[data-mode="night"][data-ui-theme="wood"] .nav-category-header {
+  background: linear-gradient(90deg, rgba(139,105,20,0.05), transparent);
+}
+
+[data-mode="night"][data-ui-theme="wood"] .nav-stats {
+  background: #0d0c0a;
+}
+
+/* ============================================
+   NIGHT + LEDGER
+   ============================================ */
+[data-mode="night"][data-ui-theme="ledger"] .nav-sidebar {
+  background: linear-gradient(180deg, #2a2018 0%, #1a1410 100%);
+}
+
+[data-mode="night"][data-ui-theme="ledger"] .nav-section-link {
+  font-style: italic;
+}
+
+[data-mode="night"][data-ui-theme="ledger"] .nav-title {
+  font-family: 'Special Elite', Georgia, serif;
+}
+
+[data-mode="night"][data-ui-theme="ledger"] .nav-stats {
+  background: #1a1410;
+}
+
+/* ============================================
+   NIGHT + WANTED
+   ============================================ */
+[data-mode="night"][data-ui-theme="wanted"] .nav-sidebar {
+  background: linear-gradient(180deg, #2a1810 0%, #1a0d08 100%);
+  border-right-color: rgba(139,69,19,0.5);
+}
+
+[data-mode="night"][data-ui-theme="wanted"] .nav-category-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+[data-mode="night"][data-ui-theme="wanted"] .nav-title {
+  color: #dc2626;
+  text-shadow: 1px 1px 0 #000;
+}
+
+[data-mode="night"][data-ui-theme="wanted"] .nav-stats {
+  background: #1a0d08;
+}
+
+/* ============================================
+   NIGHT + SALOON
+   ============================================ */
+[data-mode="night"][data-ui-theme="saloon"] .nav-sidebar {
+  background: linear-gradient(180deg, #1a0a15 0%, #0d0510 100%);
+  border-right-color: rgba(139,105,20,0.3);
+}
+
+[data-mode="night"][data-ui-theme="saloon"] .nav-title {
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+[data-mode="night"][data-ui-theme="saloon"] .nav-section-count.has-progress {
+  background: linear-gradient(135deg, #8b6914, #ffd700);
+  color: #0d0510;
+}
+
+[data-mode="night"][data-ui-theme="saloon"] .nav-stats {
+  background: #0d0510;
+}

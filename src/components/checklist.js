@@ -14,6 +14,36 @@ import { getTotalItemCount } from '../data/index.js';
 let checklistData = [];
 
 /**
+ * Format reward tag with appropriate icon and styling
+ * Money rewards: 💰 green, Item rewards: 🏆 gold
+ */
+function formatRewardTag(reward) {
+  const isMoney = /^\$[\d,]+/.test(reward) || /\$[\d,]+/.test(reward) || reward.toLowerCase().includes('gold bar');
+  
+  if (isMoney) {
+    return `<span class="reward-tag reward-money">💰 ${reward}</span>`;
+  } else {
+    return `<span class="reward-tag reward-item">🏆 ${reward}</span>`;
+  }
+}
+
+/**
+ * Format detailed tip with markdown-style inline formatting
+ * Supports: **bold**, *italic*
+ */
+function formatDetailedTip(text) {
+  if (!text) return '';
+  
+  return text
+    // Bold: **text** -> <strong>text</strong>
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    // Italic: *text* -> <em>text</em>
+    .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
+}
+
+
+
+/**
  * Render all checklist sections
  */
 export function renderChecklist(sections) {
@@ -59,12 +89,39 @@ function renderSection(section, isCollapsed, progress) {
     });
   }
 
+  // Section-level reward badge (for cigarette cards, etc.)
+  let sectionReward = '';
+  if (section.reward) {
+    sectionReward = `<span class="section-reward-tag">🏆 ${section.reward}</span>`;
+  }
+
+  // Section-level tip_detailed (shows below header when expanded)
+  let sectionDetailedHtml = '';
+  if (section.tip_detailed) {
+    const isDetailExpanded = Storage.load(`section_detail_${section.id}`, false);
+    const formattedDetail = formatDetailedTip(section.tip_detailed.trim());
+    sectionDetailedHtml = `
+      <div class="section-info-bar ${hiddenClass}">
+        <button class="section-info-btn ${isDetailExpanded ? 'expanded' : ''}" data-section-detail="${section.id}">
+          <span class="more-info-icon">${isDetailExpanded ? '▼' : '▶'}</span> Set Info
+        </button>
+        <div class="section-tip-detailed ${isDetailExpanded ? '' : 'hidden'}" id="section-detail-${section.id}">
+          <div class="tip-detailed-content">${formattedDetail}</div>
+        </div>
+      </div>
+    `;
+  }
+
   return `
     <h2 class="section-header ${collapsedClass}" data-section="${section.id}">
-      <span>${section.icon || ''} ${section.title}</span>
+      <span class="section-title-group">
+        <span class="section-title-text">${section.icon || ''} ${section.title}</span>
+        ${sectionReward}
+      </span>
       <span class="progress-badge">${progress.completed}/${progress.total}</span>
     </h2>
     <div id="${section.id}" class="checklist-group ${hiddenClass}">
+      ${sectionDetailedHtml}
       ${itemsHtml}
     </div>
   `;
@@ -77,25 +134,31 @@ function renderItem(item, isChecked) {
   const checkedAttr = isChecked ? 'checked' : '';
   const completedClass = isChecked ? 'completed' : '';
   
-  let tags = '';
+  // Build tags HTML
+  let tagsHtml = '';
+  if (item.priority) {
+    tagsHtml += '<span class="missable-tag">PRIORITY</span>';
+  }
   if (item.missable) {
-    tags += '<span class="missable-tag">MISSABLE</span>';
+    tagsHtml += '<span class="missable-tag">MISSABLE</span>';
   }
   if (item.chapter && item.chapter !== 'epilogue') {
-    tags += `<span class="chapter-tag">CH ${item.chapter}</span>`;
+    tagsHtml += `<span class="chapter-tag">CH ${item.chapter}</span>`;
   }
   if (item.chapter === 'epilogue') {
-    tags += '<span class="chapter-tag">EPILOGUE</span>';
+    tagsHtml += '<span class="chapter-tag">EPILOGUE</span>';
   }
-  if (item.priority) {
-    tags = '<span class="missable-tag">PRIORITY</span>' + tags;
-  }
-  if (item.reward) {
-    tags += `<span class="reward-tag">🎁 ${item.reward}</span>`;
+  
+  // Support both single reward and rewards array
+  if (item.rewards && item.rewards.length > 0) {
+    tagsHtml += item.rewards.map(r => formatRewardTag(r)).join('');
+  } else if (item.reward) {
+    tagsHtml += formatRewardTag(item.reward);
   }
 
   const hasSubItems = item.subItems && item.subItems.length > 0;
   const isExpanded = hasSubItems ? Storage.load(`expanded_${item.id}`, false) : false;
+  const isDetailExpanded = item.tip_detailed ? Storage.load(`detail_${item.id}`, false) : false;
   
   let subItemsHtml = '';
   if (hasSubItems) {
@@ -118,14 +181,42 @@ function renderItem(item, isChecked) {
       </div>
     `;
   }
+  
+  // More Info button (inline at end of row for items with tip_detailed)
+  let moreInfoBtn = '';
+  if (item.tip_detailed) {
+    moreInfoBtn = `
+      <button class="more-info-btn-inline ${isDetailExpanded ? 'expanded' : ''}" data-detail="${item.id}" title="More Info">
+        ℹ️
+      </button>
+    `;
+  }
+  
+  // Detailed content (below the item row)
+  let detailedHtml = '';
+  if (item.tip_detailed) {
+    const formattedDetail = formatDetailedTip(item.tip_detailed.trim());
+    detailedHtml = `
+      <div class="tip-detailed ${isDetailExpanded ? '' : 'hidden'}" id="detail-${item.id}">
+        <div class="tip-detailed-content">${formattedDetail}</div>
+      </div>
+    `;
+  }
 
   return `
-    <label class="checklist-item ${hasSubItems ? 'has-subitems' : ''}">
-      <input type="checkbox" id="${item.id}" ${checkedAttr}>
-      <span class="item-text ${completedClass}">${item.text}${tags}</span>
-    </label>
-    ${item.tip ? `<span class="tip">${item.tip}</span>` : ''}
-    ${subItemsHtml}
+    <div class="item-wrapper">
+      <div class="item-row">
+        <label class="checklist-item ${hasSubItems ? 'has-subitems' : ''}">
+          <input type="checkbox" id="${item.id}" ${checkedAttr}>
+          <span class="item-text ${completedClass}">${item.text}</span>
+        </label>
+        <div class="item-tags">${tagsHtml}</div>
+        ${moreInfoBtn}
+      </div>
+      ${item.tip ? `<span class="tip">${item.tip}</span>` : ''}
+      ${detailedHtml}
+      ${subItemsHtml}
+    </div>
   `;
 }
 
@@ -136,21 +227,54 @@ function renderSubItem(subItem) {
   const isChecked = Storage.load(`check_${subItem.id}`, false);
   const checkedAttr = isChecked ? 'checked' : '';
   const completedClass = isChecked ? 'completed' : '';
+  const isDetailExpanded = subItem.tip_detailed ? Storage.load(`detail_${subItem.id}`, false) : false;
   
-  let tags = '';
+  // Build tags HTML
+  let tagsHtml = '';
   if (subItem.missable) {
-    tags += '<span class="missable-tag">MISSABLE</span>';
+    tagsHtml += '<span class="missable-tag">MISSABLE</span>';
   }
-  if (subItem.reward) {
-    tags += `<span class="reward-tag">🎁 ${subItem.reward}</span>`;
+  // Support both single reward and rewards array for sub-items too
+  if (subItem.rewards && subItem.rewards.length > 0) {
+    tagsHtml += subItem.rewards.map(r => formatRewardTag(r)).join('');
+  } else if (subItem.reward) {
+    tagsHtml += formatRewardTag(subItem.reward);
+  }
+  
+  // More Info button (inline at end of row for sub-items with tip_detailed)
+  let moreInfoBtn = '';
+  if (subItem.tip_detailed) {
+    moreInfoBtn = `
+      <button class="more-info-btn-inline ${isDetailExpanded ? 'expanded' : ''}" data-detail="${subItem.id}" title="More Info">
+        ℹ️
+      </button>
+    `;
+  }
+  
+  // Detailed content (below the sub-item row)
+  let detailedHtml = '';
+  if (subItem.tip_detailed) {
+    const formattedDetail = formatDetailedTip(subItem.tip_detailed.trim());
+    detailedHtml = `
+      <div class="tip-detailed sub-tip-detailed ${isDetailExpanded ? '' : 'hidden'}" id="detail-${subItem.id}">
+        <div class="tip-detailed-content">${formattedDetail}</div>
+      </div>
+    `;
   }
   
   return `
-    <label class="checklist-item sub-item">
-      <input type="checkbox" id="${subItem.id}" ${checkedAttr}>
-      <span class="item-text ${completedClass}">${subItem.text}${tags}</span>
-    </label>
-    ${subItem.tip ? `<span class="tip sub-tip">${subItem.tip}</span>` : ''}
+    <div class="sub-item-wrapper">
+      <div class="item-row">
+        <label class="checklist-item sub-item">
+          <input type="checkbox" id="${subItem.id}" ${checkedAttr}>
+          <span class="item-text ${completedClass}">${subItem.text}</span>
+        </label>
+        <div class="item-tags">${tagsHtml}</div>
+        ${moreInfoBtn}
+      </div>
+      ${subItem.tip ? `<span class="tip sub-tip">${subItem.tip}</span>` : ''}
+      ${detailedHtml}
+    </div>
   `;
 }
 
@@ -205,6 +329,25 @@ function attachEventListeners() {
       toggleSubItems(parentId, header);
     });
   });
+
+  // More Info toggle (tip_detailed - cowboy storyteller narrative)
+  $$('.more-info-btn, .more-info-btn-inline').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const itemId = btn.dataset.detail;
+      toggleMoreInfo(itemId, btn);
+    });
+  });
+
+  // Section Info toggle (section-level tip_detailed)
+  $$('.section-info-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const sectionId = btn.dataset.sectionDetail;
+      toggleSectionInfo(sectionId, btn);
+    });
+  });
 }
 
 /**
@@ -225,6 +368,45 @@ function toggleSubItems(parentId, header) {
   icon.textContent = isHidden ? '▼' : '▶';
   
   Storage.save(`expanded_${parentId}`, isHidden);
+}
+
+/**
+ * Toggle More Info (tip_detailed) visibility
+ * Shows the cowboy storyteller narrative for items
+ */
+function toggleMoreInfo(itemId, btn) {
+  const detailDiv = $(`#detail-${itemId}`);
+  const icon = btn.querySelector('.more-info-icon');
+  if (!detailDiv) return;
+
+  const isHidden = detailDiv.classList.contains('hidden');
+  
+  detailDiv.classList.toggle('hidden', !isHidden);
+  btn.classList.toggle('expanded', isHidden);
+  if (icon) {
+    icon.textContent = isHidden ? '▼' : '▶';
+  }
+  
+  Storage.save(`detail_${itemId}`, isHidden);
+}
+
+/**
+ * Toggle Section Info (section-level tip_detailed) visibility
+ */
+function toggleSectionInfo(sectionId, btn) {
+  const detailDiv = $(`#section-detail-${sectionId}`);
+  const icon = btn.querySelector('.more-info-icon');
+  if (!detailDiv) return;
+
+  const isHidden = detailDiv.classList.contains('hidden');
+  
+  detailDiv.classList.toggle('hidden', !isHidden);
+  btn.classList.toggle('expanded', isHidden);
+  if (icon) {
+    icon.textContent = isHidden ? '▼' : '▶';
+  }
+  
+  Storage.save(`section_detail_${sectionId}`, isHidden);
 }
 
 /**
