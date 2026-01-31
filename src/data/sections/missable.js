@@ -90,63 +90,8 @@ export const missableSection = {
       tip: 'Brother Dorkins. High honor required. Saint Denis church.',
       missable: true,
       chapter: 6
-    },
-    // ========================================
-    // MISSABLE HATS & OUTFITS
-    // ========================================
-    {
-      id: 'missable-guarma-hat',
-      text: 'Guarma Hat',
-      tip: '⚠️ ONLY in Guarma (Ch5). Kill soldiers wearing unique hat. Cannot return!',
-      missable: true,
-      chapter: 5
-    },
-    {
-      id: 'missable-police-uniform',
-      text: 'Saint Denis Police Uniform',
-      tip: '⚠️ "Angelo Bronte" mission (Ch4). After killing police, loot uniform. One chance!',
-      missable: true,
-      chapter: 4
-    },
-    {
-      id: 'missable-miners-hat',
-      text: "Miner's Hat",
-      tip: 'Annesburg coal mine mission. Loot from miner during "The Bridge to Nowhere".',
-      missable: true,
-      chapter: 6
-    },
-    {
-      id: 'missable-military-hat',
-      text: 'Military Mountie Hat',
-      tip: 'Fort Wallace missions. Loot from army officer during Chapter 6 missions.',
-      missable: true,
-      chapter: 6
-    },
-    {
-      id: 'missable-braithwaite-hat',
-      text: 'Braithwaite Manor Hat',
-      tip: 'During manor raid mission. Loot unique hats from estate guards.',
-      missable: true,
-      chapter: 3
-    },
-    {
-      id: 'missable-civil-war-hat',
-      text: 'Civil War Hardee Hat',
-      tip: 'Fort Brennand (same as knife). On skeleton in basement.',
-      missable: false
-    },
-    {
-      id: 'missable-viking-helmet',
-      text: 'Viking Helmet',
-      tip: 'Same tomb as Viking Hatchet. NW of Annesburg. On skeleton.',
-      missable: false
-    },
-    {
-      id: 'missable-pirate-hat',
-      text: 'Pirate Hat',
-      tip: 'Same shipwreck as Pirate Sword. Island south of Saint Denis.',
-      missable: false
     }
+    // Note: Missable HATS moved to unique-hats.js section
   ]
 };
 

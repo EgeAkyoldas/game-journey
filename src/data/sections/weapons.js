@@ -82,7 +82,14 @@ export const weaponsSection = {
         { 
           id: 'weapon-rare-shotgun', 
           text: 'Rare Shotgun ⭐', 
-          tip: 'Hermit at Manito Glade (N of Annesburg). He attacks on sight - only ONE chance!'
+          tip: 'Hermit at Manito Glade (N of Annesburg). He attacks on sight - only ONE chance!',
+          region: 'new-hanover'
+        },
+        { 
+          id: 'weapon-pump-shotgun-free', 
+          text: 'Pump Shotgun (Free)', 
+          tip: 'Chez Porter cabin near Window Rock (N of Valentine). Weapon case in master bedroom.',
+          region: 'ambarino'
         },
         { 
           id: 'weapon-rare-rolling-block', 
@@ -92,14 +99,39 @@ export const weaponsSection = {
           chapter: 3
         },
         { 
+          id: 'weapon-worn-rolling-block', 
+          text: 'Worn Rolling Block Rifle', 
+          tip: 'O\'Driscoll camp west of Heartland Oil Fields. On dead body near campfire.',
+          region: 'new-hanover'
+        },
+        { 
           id: 'weapon-pump-shotgun', 
-          text: 'Pump Shotgun', 
+          text: 'Pump Shotgun (Story)', 
           tip: 'Story mission "Paying a Social Call" (Ch2). Automatically obtained.'
         },
         { 
           id: 'weapon-bolt-action', 
           text: 'Bolt Action Rifle', 
           tip: '"The First Shall Be Last" mission. Kill LEFT bounty hunter quickly, loot rifle.',
+          chapter: 2
+        },
+        { 
+          id: 'weapon-varmint-rifle', 
+          text: 'Varmint Rifle (Free)', 
+          tip: 'Bayou near Lakay. Submerged corpse - use Eagle Eye to spot underwater. Near "U" in Bayou.',
+          region: 'lemoyne'
+        },
+        { 
+          id: 'weapon-m1899-pistol', 
+          text: 'M1899 Pistol', 
+          tip: 'Saint Denis gunsmith ONLY. Available after Chapter 4. Most modern pistol in game!',
+          chapter: 4,
+          region: 'lemoyne'
+        },
+        { 
+          id: 'weapon-double-barrel', 
+          text: 'Double-Barrel Shotgun', 
+          tip: 'Reward for Hosea\'s debt collection tutorial mission (Ch2). Auto-obtained.',
           chapter: 2
         }
       ]

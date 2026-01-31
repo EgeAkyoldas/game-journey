@@ -976,6 +976,252 @@ body.dark-mode .tip.sub-tip {
   @apply hidden;
 }
 
+/* Filter Hidden Items */
+.filter-hidden {
+  @apply hidden;
+}
+
+/* ============================================
+   Smart Filters UI - Toggle Panel
+   ============================================ */
+
+/* Search row with toggle button */
+.nav-search-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(244,228,188,0.15);
+}
+
+.nav-search-row .nav-search-input {
+  flex: 1;
+}
+
+.filter-toggle-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(244,228,188,0.2);
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-toggle-btn:hover {
+  background: rgba(0,0,0,0.35);
+  border-color: var(--color-gold);
+}
+
+.filter-toggle-btn.active {
+  background: linear-gradient(135deg, var(--color-blood) 0%, var(--color-blood-dark) 100%);
+  border-color: var(--color-blood);
+}
+
+/* Collapsible filters panel */
+.nav-filters-panel {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(244,228,188,0.15);
+  background: rgba(0,0,0,0.1);
+  animation: slideDown 0.2s ease;
+}
+
+.nav-filters-panel.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Filter sections */
+.filter-section {
+  margin-bottom: 0.75rem;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-section-label {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: rgba(244,228,188,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+/* Filter chips */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.filter-chip {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  background: rgba(0,0,0,0.2);
+  color: rgba(244,228,188,0.7);
+  border: 1px solid rgba(244,228,188,0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  background: rgba(0,0,0,0.35);
+  border-color: var(--color-gold);
+  color: var(--color-paper);
+}
+
+.filter-chip.active {
+  background: linear-gradient(135deg, var(--color-blood) 0%, var(--color-blood-dark) 100%);
+  border-color: var(--color-blood);
+  color: var(--color-paper);
+}
+
+.filter-empty {
+  font-size: 0.7rem;
+  color: rgba(244,228,188,0.4);
+  font-style: italic;
+}
+
+/* Radio button group for status */
+.filter-radio-group {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(244,228,188,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.filter-radio {
+  flex: 1;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  background: rgba(0,0,0,0.2);
+  color: rgba(244,228,188,0.6);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-right: 1px solid rgba(244,228,188,0.1);
+}
+
+.filter-radio:last-child {
+  border-right: none;
+}
+
+.filter-radio:hover {
+  background: rgba(0,0,0,0.35);
+  color: var(--color-paper);
+}
+
+.filter-radio.active {
+  background: linear-gradient(135deg, var(--color-blood) 0%, var(--color-blood-dark) 100%);
+  color: var(--color-paper);
+}
+
+/* Active filter badges row */
+.filter-active-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(244,228,188,0.1);
+}
+
+.filter-active-row:empty {
+  display: none;
+}
+
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  background: rgba(212,160,23,0.2);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-badge:hover {
+  background: var(--color-gold);
+  color: var(--color-leather);
+}
+
+.filter-clear-all {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  background: transparent;
+  color: rgba(244,228,188,0.6);
+  border: 1px solid rgba(244,228,188,0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-clear-all:hover {
+  border-color: var(--color-blood);
+  color: var(--color-blood);
+}
+
+/* Dark mode filter styles */
+body.dark-mode .nav-search-row {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .filter-toggle-btn {
+  background: rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .nav-filters-panel {
+  background: rgba(0,0,0,0.2);
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .filter-chip {
+  background: rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+body.dark-mode .filter-chip:hover {
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+}
+
+body.dark-mode .filter-radio {
+  background: rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+}
+
+body.dark-mode .filter-radio:hover {
+  color: #fff;
+}
+
+body.dark-mode .filter-badge {
+  background: rgba(212,160,23,0.15);
+  border-color: rgba(212,160,23,0.5);
+}
+
 /* Desktop: Show sidebar inline */
 @media (min-width: 1200px) {
   .nav-sidebar {

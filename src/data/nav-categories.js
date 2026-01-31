@@ -14,7 +14,7 @@ export const NAV_CATEGORIES = [
     id: 'money-gear',
     title: 'Money & Gear',
     icon: '💰',
-    sections: ['treasures', 'weapons', 'satchel', 'camp', 'pamphlets', 'talismans']
+    sections: ['treasures', 'weapons', 'satchel', 'camp', 'trapper', 'unique-hats', 'pamphlets', 'talismans']
   },
   {
     id: 'world',

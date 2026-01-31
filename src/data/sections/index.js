@@ -14,6 +14,8 @@ import { campSection } from './camp.js';
 import { pamphletsSection } from './pamphlets.js';
 import { mysteriesSection } from './mysteries.js';
 import { gangHideoutsSection } from './gang-hideouts.js';
+import { trapperSection } from './trapper.js';
+import { uniqueHatsSection } from './unique-hats.js';
 
 // Challenge sections
 import { allChallenges } from './challenges/index.js';
@@ -45,6 +47,8 @@ export const CHECKLIST_SECTIONS = [
   weaponsSection,
   satchelSection,
   campSection,
+  trapperSection,
+  uniqueHatsSection,
   pamphletsSection,
   talismansSection,
   
@@ -88,6 +92,8 @@ export { campRequestsSection } from './camp-requests.js';
 export { bountiesSection } from './bounties.js';
 export { talismansSection } from './talismans.js';
 export { gravesSection } from './graves.js';
+export { trapperSection } from './trapper.js';
+export { uniqueHatsSection } from './unique-hats.js';
 export { journalSection } from './journal.js';
 
 // Re-export challenge and cigarette card collections
