@@ -13,7 +13,7 @@ export const missableSection = {
     {
       id: 'missable-bolt-action',
       text: 'Bolt Action Rifle (Free)',
-      tip: '📍 "The First Shall Be Last" mission. Kill LEFT bounty hunter fast.',
+      tip: ' "The First Shall Be Last" mission. Kill LEFT bounty hunter fast.',
       tip_detailed: `During the mission **"The First Shall Be Last"** in Chapter 2, you're ambushed by bounty hunters. Kill the one on the **LEFT side fast**—before he rides off.
 
 Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta buy it later for $180.
@@ -48,12 +48,12 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
     {
       id: 'missable-edith-downes',
       text: 'Edith Downes Missions (2 Parts)',
-      tip: '📍 Saint Denis slums. After debt collection. Redemption.',
+      tip: ' Saint Denis slums. After debt collection. Redemption.',
       tip_detailed: `Remember **Thomas Downes**? The sick man you beat for a debt? His widow **Edith** and son are now living in the Saint Denis slums.
 
 📋 **2 Parts:** Arthur tries to make amends. It's a redemption arc that hits hard.
 
-📍 Find her in **Saint Denis**, near the slums district.
+ Find her in **Saint Denis**, near the slums district.
 
 ⚠️ **Must complete as Arthur, before Chapter 6 ends.**
 
@@ -67,7 +67,7 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
     {
       id: 'missable-veteran',
       text: 'The Veteran (Hamish Sinclair)',
-      tip: "📍 O'Creagh's Run. 4 Parts. Final part gives Buell the horse.",
+      tip: " O'Creagh's Run. 4 Parts. Final part gives Buell the horse.",
       tip_detailed: `**Hamish Sinclair** is a one-legged Civil War veteran living alone by **O'Creagh's Run**. Over 4 missions, you hunt together, fish together, and become genuine friends.
 
 📋 **4 Parts:** Each encounter deepens the friendship.
@@ -86,12 +86,12 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
     {
       id: 'missable-widow',
       text: 'The Widow (Charlotte Balfour)',
-      tip: '📍 North of Annesburg. 3 Parts. Teaching survival.',
+      tip: ' North of Annesburg. 3 Parts. Teaching survival.',
       tip_detailed: `**Charlotte Balfour**'s husband died, leaving her alone in the wilderness north of Annesburg. She don't know how to survive.
 
 📋 **3 Parts:** Arthur teaches her to hunt, to shoot, to live.
 
-📍 Find her cabin **north of Annesburg**, near Willard's Rest.
+ Find her cabin **north of Annesburg**, near Willard's Rest.
 
 ⚠️ **Must complete as Arthur.** There's a gut-punch moment if you come back as John later...
 
@@ -142,7 +142,7 @@ Do this mission. It's your only chance to really know him.
       tip: "🖼️ Painting in Shady Belle. Inspect BEFORE leaving in Chapter 4.",
       tip_detailed: `There's a **painting inside Shady Belle** that reveals **Chick's Treasure Map** when you inspect it.
 
-📍 Find it on a wall inside the main building, **before you leave Shady Belle at the end of Chapter 4**.
+ Find it on a wall inside the main building, **before you leave Shady Belle at the end of Chapter 4**.
 
 ⚠️ Once the camp moves to Beaver Hollow, the painting despawns and this treasure is locked forever.
 
@@ -176,7 +176,7 @@ Do this mission. It's your only chance to really know him.
       tip: '🔍 Gang members ask for items (pipe, book, etc.). Check scouting icon.',
       tip_detailed: `Throughout Chapters 2-4, gang members will ask you to find specific items for them—a **harmonica**, a **pipe**, a **romance novel**, etc.
 
-📍 Look for the **white "scouting" icon** at camp to hear their requests.
+ Look for the **white "scouting" icon** at camp to hear their requests.
 
 ⚠️ **All requests become unavailable after Chapter 4.** And completing them builds bonds, unlocks unique camp interactions.
 

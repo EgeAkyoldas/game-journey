@@ -27,10 +27,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-tricorn', 
           text: 'Tricorn Hat', 
-          tip: '📍 Wrecked ship island west of Rhodes (Flat Iron Lake). Need boat.',
+          tip: ' Wrecked ship island west of Rhodes (Flat Iron Lake). Need boat.',
           tip_detailed: `**Tricorn Hat** - a three-cornered relic from the pirate age.
 
-📍 **Location:** Wrecked ship on an island west of Rhodes in Flat Iron Lake
+ **Location:** Wrecked ship on an island west of Rhodes in Flat Iron Lake
 
 🚣 **Access:** Need a boat or canoe to reach the island
 
@@ -41,10 +41,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-civil-war', 
           text: 'Civil War Hardee Hat', 
-          tip: "📍 Fort Brennand, SE of O'Creagh's Run. Basement skeleton.",
+          tip: " Fort Brennand, SE of O'Creagh's Run. Basement skeleton.",
           tip_detailed: `**Civil War Hardee Hat** - Union Army headwear from the war.
 
-📍 **Location:** Fort Brennand, southeast of O'Creagh's Run. In the basement corner, on a skeleton.
+ **Location:** Fort Brennand, southeast of O'Creagh's Run. In the basement corner, on a skeleton.
 
 *Old bones, old wars. The hat survived longer than the man.*`,
           region: 'new-hanover',
@@ -53,10 +53,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-nevada', 
           text: 'Nevada Hat', 
-          tip: '📍 Behind waterfall at Granite Pass. Climb down from top.',
+          tip: ' Behind waterfall at Granite Pass. Climb down from top.',
           tip_detailed: `**Nevada Hat** - wide-brimmed and stylish.
 
-📍 **Location:** Behind the waterfall at Granite Pass. Climb down from the top to a rocky walkway behind the falls.
+ **Location:** Behind the waterfall at Granite Pass. Climb down from the top to a rocky walkway behind the falls.
 
 💧 *Another waterfall, another secret. Pattern holds true.*`,
           region: 'ambarino',
@@ -65,10 +65,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-miner', 
           text: "Miner's Hat", 
-          tip: "📍 Beryl's Dream mine. Use plunger to blast rocks, crawl through.",
+          tip: " Beryl's Dream mine. Use plunger to blast rocks, crawl through.",
           tip_detailed: `**Miner's Hat** - a lantern-equipped hardhat.
 
-📍 **Location:** Beryl's Dream mine. Use the plunger to blast the blocked entrance, crawl through the hole. On a corpse deep inside.
+ **Location:** Beryl's Dream mine. Use the plunger to blast the blocked entrance, crawl through the hole. On a corpse deep inside.
 
 ⛏️ *The miner didn't make it out. His hat did.*`,
           region: 'new-hanover',
@@ -77,10 +77,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-morion', 
           text: 'Morion Helmet', 
-          tip: '📍 Top of Mount Hagen. Frozen settler corpse at peak.',
+          tip: ' Top of Mount Hagen. Frozen settler corpse at peak.',
           tip_detailed: `**Morion Helmet** - a Spanish conquistador helmet, centuries old.
 
-📍 **Location:** Very top of Mount Hagen. On a frozen settler corpse at the peak.
+ **Location:** Very top of Mount Hagen. On a frozen settler corpse at the peak.
 
 ❄️ *How'd a Spanish helmet get up here? Some mysteries stay frozen.*`,
           region: 'ambarino',
@@ -89,10 +89,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-pirate', 
           text: 'Pirate Hat', 
-          tip: '📍 Shipwreck island south of Saint Denis. Same spot as Pirate Sword.',
+          tip: ' Shipwreck island south of Saint Denis. Same spot as Pirate Sword.',
           tip_detailed: `**Pirate Hat** - complete with skull and crossbones.
 
-📍 **Location:** Shipwreck island south of Saint Denis. Same location where you find the Pirate Sword.
+ **Location:** Shipwreck island south of Saint Denis. Same location where you find the Pirate Sword.
 
 🏴‍☠️ *Full pirate outfit potential if you're feelin' theatrical.*`,
           region: 'lemoyne',
@@ -118,10 +118,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-scarecrow-straw', 
           text: 'Scarecrow Hat', 
-          tip: '📍 Scarecrow SW of Heartland Overflow. Shoot hat off.',
+          tip: ' Scarecrow SW of Heartland Overflow. Shoot hat off.',
           tip_detailed: `**Scarecrow Hat** - classic straw style.
 
-📍 **Location:** Scarecrow southwest of Heartland Overflow
+ **Location:** Scarecrow southwest of Heartland Overflow
 
 🔫 Shoot the hat off to collect it.`,
           region: 'new-hanover',
@@ -130,10 +130,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-scarecrow-derby', 
           text: 'Scarecrow Derby Hat', 
-          tip: '📍 Braithwaite Manor cornfield.',
+          tip: ' Braithwaite Manor cornfield.',
           tip_detailed: `**Scarecrow Derby Hat** - fancy for a field guardian.
 
-📍 **Location:** Braithwaite Manor cornfield. Shoot it off the scarecrow.
+ **Location:** Braithwaite Manor cornfield. Shoot it off the scarecrow.
 
 *The Braithwaites dressed their scarecrows well.*`,
           region: 'lemoyne',
@@ -142,10 +142,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-scarecrow-top', 
           text: 'Scarecrow Top Hat', 
-          tip: "📍 Behind MacFarlane's Ranch. ⚠️ EPILOGUE ONLY!",
+          tip: " Behind MacFarlane's Ranch. ⚠️ EPILOGUE ONLY!",
           tip_detailed: `**Scarecrow Top Hat** - surprisingly dapper.
 
-📍 **Location:** Behind MacFarlane's Ranch
+ **Location:** Behind MacFarlane's Ranch
 
 ⚠️ **Epilogue only** - New Austin access required.`,
           region: 'new-austin',
@@ -170,10 +170,10 @@ export const uniqueHatsSection = {
         { 
           id: 'mask-cat-skull', 
           text: 'Cat Skull Mask', 
-          tip: '📍 Lakay settlement (swamp). Sunken building, crouch through hole.',
+          tip: ' Lakay settlement (swamp). Sunken building, crouch through hole.',
           tip_detailed: `**Cat Skull Mask** - a big cat's skull worn as a mask.
 
-📍 **Location:** Lakay settlement in the Lemoyne swamps. Find the sunken building, crouch through the hole. Mounted on the wall inside.
+ **Location:** Lakay settlement in the Lemoyne swamps. Find the sunken building, crouch through the hole. Mounted on the wall inside.
 
 💀 *Wear the face of a predator.*`,
           region: 'lemoyne',
@@ -182,10 +182,10 @@ export const uniqueHatsSection = {
         { 
           id: 'mask-pig', 
           text: 'Pig Mask', 
-          tip: "📍 Butcher's Creek slaughtering area. Center of settlement.",
+          tip: " Butcher's Creek slaughtering area. Center of settlement.",
           tip_detailed: `**Pig Mask** - disturbing swine headwear.
 
-📍 **Location:** Butcher's Creek slaughtering area. Hanging in the center of the creepy settlement.
+ **Location:** Butcher's Creek slaughtering area. Hanging in the center of the creepy settlement.
 
 🐷 *Don't ask what they do there. Just take the mask.*`,
           region: 'new-hanover',
@@ -194,10 +194,10 @@ export const uniqueHatsSection = {
         { 
           id: 'helmet-viking', 
           text: 'Viking Helmet', 
-          tip: '📍 Old Tomb, west of Roanoke Valley river, N of Beaver Hollow.',
+          tip: ' Old Tomb, west of Roanoke Valley river, N of Beaver Hollow.',
           tip_detailed: `**Viking Helmet** - horned helm from the Norse.
 
-📍 **Location:** Old Tomb, west of Roanoke Valley river, north of Beaver Hollow. Also find the Viking Hatchet and Comb here.
+ **Location:** Old Tomb, west of Roanoke Valley river, north of Beaver Hollow. Also find the Viking Hatchet and Comb here.
 
 ⚔️ *Vikings in America? The evidence sits on your head.*`,
           region: 'new-hanover',
@@ -206,10 +206,10 @@ export const uniqueHatsSection = {
         { 
           id: 'mask-pagan', 
           text: 'Pagan Skull Mask', 
-          tip: '📍 Pagan ritual site, NW of Lake Owanjila.',
+          tip: ' Pagan ritual site, NW of Lake Owanjila.',
           tip_detailed: `**Pagan Skull Mask** - from a disturbing ritual site.
 
-📍 **Location:** Pagan ritual site, northwest of Lake Owanjila. On a corpse in a very disturbing scene.
+ **Location:** Pagan ritual site, northwest of Lake Owanjila. On a corpse in a very disturbing scene.
 
 ⚠️ *This place is wrong. Take the mask and leave.*`,
           region: 'west-elizabeth',
@@ -218,10 +218,10 @@ export const uniqueHatsSection = {
         { 
           id: 'mask-ram', 
           text: 'Ram Skull Mask', 
-          tip: '📍 Rathskeller Fork, east corner. ⚠️ EPILOGUE ONLY!',
+          tip: ' Rathskeller Fork, east corner. ⚠️ EPILOGUE ONLY!',
           tip_detailed: `**Ram Skull Mask** - horned skull headwear.
 
-📍 **Location:** Rathskeller Fork, eastern corner. Hanging from a wooden pole.
+ **Location:** Rathskeller Fork, eastern corner. Hanging from a wooden pole.
 
 ⚠️ **Epilogue only** - New Austin access required.`,
           region: 'new-austin',
@@ -246,10 +246,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-raccoon', 
           text: 'Classic Raccoon Hat', 
-          tip: '📍 Valentine saloon "crazy man" in back. Fistfight → grab hat.',
+          tip: ' Valentine saloon "crazy man" in back. Fistfight → grab hat.',
           tip_detailed: `**Classic Raccoon Hat** - Davy Crockett style.
 
-📍 **Location:** Valentine saloon. There's a "crazy man" in the back. Encounter him multiple times, eventually you'll fistfight. Beat him and grab his hat.
+ **Location:** Valentine saloon. There's a "crazy man" in the back. Encounter him multiple times, eventually you'll fistfight. Beat him and grab his hat.
 
 🦝 *He won't need it after the beating you give him.*`,
           region: 'new-hanover',
@@ -259,10 +259,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-lemoyne-riders', 
           text: 'Lemoyne Raiders Hat', 
-          tip: '📍 Kill Lemoyne Raiders (Scarlett Meadows). Gray army cap.',
+          tip: ' Kill Lemoyne Raiders (Scarlett Meadows). Gray army cap.',
           tip_detailed: `**Lemoyne Raiders Hat** - distinctive gray Confederate-style cap.
 
-📍 **Source:** Kill Lemoyne Raiders in Scarlett Meadows or their hideouts.
+ **Source:** Kill Lemoyne Raiders in Scarlett Meadows or their hideouts.
 
 🎖️ *The South lost the war. These boys didn't get the message.*`,
           region: 'lemoyne',
@@ -271,10 +271,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-murfree', 
           text: 'Murfree Brood Hat', 
-          tip: '📍 Kill Murfree Brood (Roanoke Ridge). Unique dirty cap.',
+          tip: ' Kill Murfree Brood (Roanoke Ridge). Unique dirty cap.',
           tip_detailed: `**Murfree Brood Hat** - filthy headwear from filthy people.
 
-📍 **Source:** Kill Murfree Brood members in Roanoke Ridge.
+ **Source:** Kill Murfree Brood members in Roanoke Ridge.
 
 ⚠️ *Wash it before wearing. These people are... unsanitary.*`,
           region: 'new-hanover',
@@ -283,10 +283,10 @@ export const uniqueHatsSection = {
         { 
           id: 'hat-del-lobo', 
           text: 'Del Lobo Sombrero', 
-          tip: '📍 Kill Del Lobos (New Austin). ⚠️ EPILOGUE ONLY!',
+          tip: ' Kill Del Lobos (New Austin). ⚠️ EPILOGUE ONLY!',
           tip_detailed: `**Del Lobo Sombrero** - wide-brimmed Mexican outlaw style.
 
-📍 **Source:** Kill Del Lobo gang members in New Austin.
+ **Source:** Kill Del Lobo gang members in New Austin.
 
 ⚠️ **Epilogue only** - New Austin access required.`,
           region: 'new-austin',

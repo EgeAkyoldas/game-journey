@@ -13,7 +13,7 @@ export const bountiesSection = {
     {
       id: 'bounty-valentine',
       text: 'Valentine Sheriff (2 Bounties)',
-      tip: '📍 Available after "Good, Honest, Snake Oil". Alive = more $.',
+      tip: ' Available after "Good, Honest, Snake Oil". Alive = more $.',
       tip_detailed: `The **Valentine Sheriff** posts bounties on his board once you've done a little work for him. Complete the mission **"Good, Honest, Snake Oil"** in Chapter 2 and two names'll show up on that wanted board.
 
 💰 **Pro tip**: Bringing 'em in alive always pays better. Dead's quicker, but live bounties fatten your wallet.
@@ -27,7 +27,7 @@ export const bountiesSection = {
         { 
           id: 'bounty-benedict', 
           text: 'Benedict Allbright ($40)', 
-          tip: '📍 Rocks west of Valentine near Dakota River. Must bring ALIVE.',
+          tip: ' Rocks west of Valentine near Dakota River. Must bring ALIVE.',
           tip_detailed: `**Benedict Allbright** - poison seller who's been killin' folk with tainted medicine. You'll find him perched on some **rocks west of Valentine**, near the Dakota River, contemplating his sins.
 
 ⚠️ **MUST be brought in ALIVE**. The law wants to make an example of him. If he dies, the bounty's void.
@@ -39,7 +39,7 @@ export const bountiesSection = {
         { 
           id: 'bounty-ellie', 
           text: 'Ellie Anne Swan ($50)', 
-          tip: '📍 Camp NW of Valentine near Wallace Station. Alive = $50, Dead = $25.',
+          tip: ' Camp NW of Valentine near Wallace Station. Alive = $50, Dead = $25.',
           tip_detailed: `**Ellie Anne Swan** - they say she killed her husband. Found hidin' in a **camp northwest of Valentine**, near Wallace Station.
 
 💰 **Alive = $50 | Dead = $25**
@@ -55,7 +55,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
     {
       id: 'bounty-rhodes',
       text: 'Rhodes Sheriff (3 Bounties)',
-      tip: '📍 Southern bounties in Lemoyne. Chapter 3+.',
+      tip: ' Southern bounties in Lemoyne. Chapter 3+.',
       tip_detailed: `The **Rhodes Sheriff** has three names on his board, and they're scattered across Lemoyne's swamps and fields. Most of these folks are nastier than the gators.
 
 🏛️ *This is Gray and Braithwaite territory. Watch your step—the law here is... complicated.*`,
@@ -67,7 +67,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-mark', 
           text: 'Mark Johnson ($25)', 
-          tip: '📍 Bluewater Marsh. Horse thief with gang backup.',
+          tip: ' Bluewater Marsh. Horse thief with gang backup.',
           tip_detailed: `**Mark Johnson** - a horse thief with a small crew backin' him up. You'll find him in **Bluewater Marsh**, and he won't come quietly.
 
 ⚠️ **Has gang backup** - expect 3-4 armed men. Clear 'em out before you grab Mark.
@@ -79,7 +79,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-robbie', 
           text: 'Robbie Laidlaw ($45)', 
-          tip: '📍 Near Caliga Hall farmhouse. Murderer. Dangerous.',
+          tip: ' Near Caliga Hall farmhouse. Murderer. Dangerous.',
           tip_detailed: `**Robbie Laidlaw** - killed a man in cold blood and fled. Dangerous fella, holed up **near Caliga Hall farmhouse**.
 
 ⚠️ **Dangerous** - he's armed and ain't lookin' to surrender. Approach with Dead Eye ready.
@@ -91,7 +91,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-camille', 
           text: 'Camille de Millemont ($55)', 
-          tip: '📍 Saint Denis saloon. French con artist. Persuasive.',
+          tip: ' Saint Denis saloon. French con artist. Persuasive.',
           tip_detailed: `**Camille de Millemont** - a French con artist who's charmed her way through high society and left a trail of empty wallets. You'll find her in a **Saint Denis saloon**, workin' her next mark.
 
 ⚠️ **Persuasive** - she'll try to talk you into lettin' her go. Stay focused on the bounty.
@@ -105,7 +105,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
     {
       id: 'bounty-strawberry',
       text: 'Strawberry Sheriff (2 Bounties)',
-      tip: '📍 Western bounties in Big Valley area.',
+      tip: ' Western bounties in Big Valley area.',
       tip_detailed: `The **Strawberry Sheriff** posts bounties on desperate men who fled into the Big Valley wilderness. These hunts take you into rough country—bring supplies.
 
 🏔️ *Mountain terrain means your horse better be sure-footed.*`,
@@ -117,7 +117,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-joshua', 
           text: 'Joshua Brown ($40)', 
-          tip: '📍 Abandoned mine NW of Strawberry. Bring dynamite.',
+          tip: ' Abandoned mine NW of Strawberry. Bring dynamite.',
           tip_detailed: `**Joshua Brown** - dangerous criminal holed up in an **abandoned mine northwest of Strawberry**. The tunnels are dark, cramped, and he knows every inch.
 
 💣 **Bring dynamite** or lots of patience. You can smoke him out or go in after him.
@@ -143,7 +143,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
     {
       id: 'bounty-saintdenis',
       text: 'Saint Denis Police (3 Bounties)',
-      tip: '📍 Urban bounties. Chapter 4+. Some story-connected.',
+      tip: ' Urban bounties. Chapter 4+. Some story-connected.',
       tip_detailed: `The **Saint Denis Police** handle city criminals—con men, arsonists, and gang leaders. Urban bounty hunting means chasing through crowded streets and watching for law interference.
 
 🏙️ *In the city, you gotta be surgical. Too much noise brings badges running.*`,
@@ -155,7 +155,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-lindsay', 
           text: 'Lindsay Wofford ($45)', 
-          tip: '📍 Urban pursuit through Saint Denis streets. Watch for police.',
+          tip: ' Urban pursuit through Saint Denis streets. Watch for police.',
           tip_detailed: `**Lindsay Wofford** - a city criminal who knows Saint Denis like the back of her hand. This bounty becomes an **urban pursuit through crowded streets**.
 
 👮 **Watch for police** - causing too much chaos will bring the law down on YOU. Keep it clean.
@@ -206,7 +206,7 @@ She's got a sob story ready. Up to you whether you listen or just hogtie her and
         { 
           id: 'bounty-elias', 
           text: 'Elias Green ($65)', 
-          tip: "📍 West of Beecher's Hope. War veteran. Alive = $65, Dead = $35.",
+          tip: " West of Beecher's Hope. War veteran. Alive = $65, Dead = $35.",
           tip_detailed: `**Elias Green** - a war veteran who came back wrong. Turned to violence and crime. Found **west of Beecher's Hope**, close to John's new life.
 
 💰 **Alive = $65 | Dead = $35**
@@ -230,7 +230,7 @@ War broke him. The bounty don't care about reasons.`,
         { 
           id: 'bounty-herman', 
           text: 'Herman Zizendorf ($50)', 
-          tip: "📍 Near MacFarlane's Ranch. Has accomplices.",
+          tip: " Near MacFarlane's Ranch. Has accomplices.",
           tip_detailed: `**Herman Zizendorf** - hidin' out **near MacFarlane's Ranch** with a crew of accomplices. Clear the help first, then grab Herman.
 
 ⚠️ **Has accomplices** - don't charge in alone.
@@ -256,7 +256,7 @@ War broke him. The bounty don't care about reasons.`,
         { 
           id: 'bounty-joaquin', 
           text: 'Joaquin Arroyo ($60)', 
-          tip: '📍 Del Lobo gang connection. Alive = $60, Dead = $30.',
+          tip: ' Del Lobo gang connection. Alive = $60, Dead = $30.',
           tip_detailed: `**Joaquin Arroyo** - connected to the Del Lobo gang, which means you'll fight through bandits to get to him.
 
 💰 **Alive = $60 | Dead = $30**
@@ -268,7 +268,7 @@ The desert sun makes corpses stink quick. Alive is better money anyway.`,
         { 
           id: 'bounty-esteban', 
           text: 'Esteban Cortez ($65)', 
-          tip: '📍 Mexican outlaw. Multiple gang members. Dead or alive = $65.',
+          tip: ' Mexican outlaw. Multiple gang members. Dead or alive = $65.',
           tip_detailed: `**Esteban Cortez** - a Mexican outlaw with **multiple gang members** guarding him. The fight to get him is the real challenge.
 
 💰 **$65** - same payout dead or alive, so do what you gotta do.

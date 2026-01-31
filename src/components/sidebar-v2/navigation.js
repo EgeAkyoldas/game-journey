@@ -85,11 +85,6 @@ function renderSidebarContent() {
       </button>
     </div>
     
-    <!-- Theme Selector -->
-    <div class="theme-selector-container">
-      ${renderThemeSelector()}
-    </div>
-    
     <!-- Search Row -->
     <div class="nav-search-row">
       <input 
@@ -177,9 +172,16 @@ function renderNavSection(section) {
 }
 
 /**
- * Render mobile FAB button
+ * Render mobile FAB button and overlay
  */
 function renderMobileFab() {
+  // Create overlay backdrop
+  const overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  overlay.id = 'sidebar-overlay';
+  document.body.appendChild(overlay);
+  
+  // Create FAB button
   const fab = document.createElement('button');
   fab.className = 'nav-fab';
   fab.id = 'nav-fab';
@@ -190,7 +192,7 @@ function renderMobileFab() {
 /**
  * Attach all navigation event listeners
  */
-function attachNavListeners() {
+export function attachNavListeners() {
   // Event delegation
   document.addEventListener('click', (e) => {
     // Category toggle
@@ -208,7 +210,14 @@ function attachNavListeners() {
     // Section link
     const sectionLink = e.target.closest('.nav-section-link');
     if (sectionLink) {
-      setActiveSection(sectionLink.dataset.section);
+      const sectionId = sectionLink.dataset.section;
+      setActiveSection(sectionId);
+      
+      // Dispatch event for checklist to scroll to section
+      document.dispatchEvent(new CustomEvent('nav:sectionClick', { 
+        detail: { sectionId } 
+      }));
+      
       closeMobileSidebar();
       return;
     }
@@ -290,9 +299,16 @@ function attachNavListeners() {
       return;
     }
     
-    // Mobile FAB
+    // Mobile FAB - open sidebar and show overlay
     if (e.target.closest('#nav-fab')) {
       $('#nav-sidebar').classList.add('open');
+      $('#sidebar-overlay')?.classList.add('active');
+      return;
+    }
+    
+    // Sidebar overlay - close sidebar when clicking overlay
+    if (e.target.closest('#sidebar-overlay')) {
+      closeMobileSidebar();
       return;
     }
     
@@ -422,11 +438,10 @@ function updateActiveFilterBadges() {
 }
 
 /**
- * Update section completion counts
+ * Update section completion counts with progress colors
+ * 0% = gray, 30%+ = yellow, 60%+ = orange, 100% = green
  */
 function updateSectionCounts() {
-  const state = store.getState();
-  
   CHECKLIST_SECTIONS.forEach(section => {
     if (section.isJournal || !section.items) return;
     
@@ -434,12 +449,28 @@ function updateSectionCounts() {
     if (!countEl) return;
     
     const completed = section.items.filter(item => 
-      state.completed[item.id]
+      store.get(item.id)
     ).length;
     const total = section.items.length;
+    const percent = total > 0 ? (completed / total) * 100 : 0;
     
     countEl.textContent = `${completed}/${total}`;
-    countEl.classList.toggle('has-progress', completed > 0);
+    
+    // Remove all progress classes first
+    countEl.classList.remove('progress-none', 'progress-low', 'progress-mid', 'progress-full');
+    
+    // Add appropriate progress color class
+    if (percent === 0) {
+      countEl.classList.add('progress-none');
+    } else if (percent < 30) {
+      countEl.classList.add('progress-low');
+    } else if (percent < 60) {
+      countEl.classList.add('progress-mid');
+    } else if (percent < 100) {
+      countEl.classList.add('progress-high');
+    } else {
+      countEl.classList.add('progress-full');
+    }
     
     const link = countEl.closest('.nav-section-link');
     if (link) {
@@ -452,15 +483,13 @@ function updateSectionCounts() {
  * Update total progress bar
  */
 function updateTotalProgress() {
-  const state = store.getState();
-  
   let totalItems = 0;
   let completedItems = 0;
   
   CHECKLIST_SECTIONS.forEach(section => {
     if (section.isJournal || !section.items) return;
     totalItems += section.items.length;
-    completedItems += section.items.filter(item => state.completed[item.id]).length;
+    completedItems += section.items.filter(item => store.get(item.id)).length;
   });
   
   const percent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;

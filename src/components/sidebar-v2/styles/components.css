@@ -116,6 +116,34 @@
 .progress-bar-fill.crimson { background: #8b3a3a; }
 
 /* ============================================
+   SECTION COUNT PROGRESS COLORS
+   ============================================ */
+.nav-section-count {
+  transition: color 0.2s ease;
+}
+
+.nav-section-count.progress-none {
+  color: rgba(255,255,255,0.4);
+}
+
+.nav-section-count.progress-low {
+  color: #94a3b8; /* Gray - just started */
+}
+
+.nav-section-count.progress-mid {
+  color: #fbbf24; /* Yellow - 30%+ */
+}
+
+.nav-section-count.progress-high {
+  color: #f97316; /* Orange - 60%+ */
+}
+
+.nav-section-count.progress-full {
+  color: #22c55e; /* Green - 100% */
+  font-weight: 600;
+}
+
+/* ============================================
    ITEM STATES
    ============================================ */
 .item-completed {

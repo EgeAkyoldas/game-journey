@@ -21,7 +21,7 @@ export const trapperSection = {
 
 🐻 One of the first legendary sets you can craft. Provides excellent cold weather protection.
 
-📍 Hunt the **Legendary Bharati Grizzly Bear** near O'Creagh's Run.`,
+ Hunt the **Legendary Bharati Grizzly Bear** near O'Creagh's Run.`,
       region: 'ambarino',
       verified: true,
       subItems: [
@@ -272,7 +272,7 @@ export const trapperSection = {
         { 
           id: 'trap-tip-locations', 
           text: 'Trapper Locations (5)', 
-          tip: '📍 Saint Denis | Riggs Station | NE Strawberry | Near Annesburg | Tumbleweed (Epilogue)',
+          tip: ' Saint Denis | Riggs Station | NE Strawberry | Near Annesburg | Tumbleweed (Epilogue)',
           tip_detailed: `**5 Trapper Locations:**
 1. **Saint Denis** - Market entrance
 2. **Riggs Station** - Near the station

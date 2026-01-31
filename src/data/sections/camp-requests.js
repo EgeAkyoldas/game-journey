@@ -26,7 +26,7 @@ export const campRequestsSection = {
         { 
           id: 'req-jack-thimble', 
           text: 'Thimble for Jack', 
-          tip: '📍 Find in houses/cabins. He gives you a drawing.',
+          tip: ' Find in houses/cabins. He gives you a drawing.',
           tip_detailed: `Find a **Thimble** in houses or cabins. Jack will thank you with one of his drawings.
 
 🎨 *His drawings are surprisingly good for his age.*`,
@@ -37,7 +37,7 @@ export const campRequestsSection = {
         { 
           id: 'req-jack-comic', 
           text: 'Comic Book for Jack', 
-          tip: '📍 General stores sell them. He gives you chocolate.',
+          tip: ' General stores sell them. He gives you chocolate.',
           tip_detailed: `Buy a **Comic Book** from any general store. Jack rewards you with a chocolate bar.
 
 🍫 *Fair trade.*`,
@@ -59,7 +59,7 @@ export const campRequestsSection = {
         { 
           id: 'req-charles-moonshine', 
           text: 'Moonshine for Charles', 
-          tip: '📍 Fence or general store. He makes Fire Arrows!',
+          tip: ' Fence or general store. He makes Fire Arrows!',
           tip_detailed: `Buy **Moonshine** from the Fence or general store. Charles creates Fire Arrows for you.
 
 🔥 *Set your enemies ablaze.*`,
@@ -70,7 +70,7 @@ export const campRequestsSection = {
         { 
           id: 'req-charles-oleander', 
           text: 'Oleander Sage for Charles', 
-          tip: '📍 Bayou area plant. He makes Poison Arrows!',
+          tip: ' Bayou area plant. He makes Poison Arrows!',
           tip_detailed: `Find **Oleander Sage** in the Bayou area (Lemoyne swamps). Charles creates Poison Arrows.
 
 ☠️ *Silent. Deadly. Efficient.*`,
@@ -82,7 +82,7 @@ export const campRequestsSection = {
         { 
           id: 'req-charles-eagle', 
           text: 'Eagle Feather for Charles (Epilogue)', 
-          tip: '📍 Shoot eagles or find feathers. EPILOGUE only.',
+          tip: ' Shoot eagles or find feathers. EPILOGUE only.',
           tip_detailed: `Shoot an **Eagle** or find loose feathers. Charles makes Improved Arrows.
 
 🦅 **Epilogue only** - Visit Charles at Beecher's Hope.`,
@@ -106,7 +106,7 @@ export const campRequestsSection = {
         { 
           id: 'req-hosea-book', 
           text: 'The Case of the Shrew in the Fog', 
-          tip: '📍 General stores. Read "Tale of Deceitful German" first!',
+          tip: ' General stores. Read "Tale of Deceitful German" first!',
           tip_detailed: `Find the book **"The Case of the Shrew in the Fog"** at general stores.
 
 📖 **Trigger:** Read "Tale of Deceitful German" first to unlock this request.
@@ -119,7 +119,7 @@ export const campRequestsSection = {
         { 
           id: 'req-hosea-ginseng', 
           text: 'American Ginseng (×2)', 
-          tip: '📍 Forest areas. He gives Potent Medicine.',
+          tip: ' Forest areas. He gives Potent Medicine.',
           tip_detailed: `Collect **2× American Ginseng** from forest areas. Hosea makes Potent Medicine.`,
           missable: true, 
           reward: 'Potent Medicine',
@@ -137,7 +137,7 @@ export const campRequestsSection = {
         { 
           id: 'req-pearson-compass', 
           text: 'Naval Compass', 
-          tip: '📍 Shipwrecks or naval locations. He shares rum and stories.',
+          tip: ' Shipwrecks or naval locations. He shares rum and stories.',
           tip_detailed: `Find a **Naval Compass** at shipwrecks or naval locations. Pearson shares rum and navy stories with you.
 
 ⚓ *He misses the sea more than he lets on.*`,
@@ -148,7 +148,7 @@ export const campRequestsSection = {
         { 
           id: 'req-pearson-rabbit', 
           text: 'Rabbit Carcass', 
-          tip: '📍 Hunt any rabbit (perfect not needed). Camp stew upgrade!',
+          tip: ' Hunt any rabbit (perfect not needed). Camp stew upgrade!',
           tip_detailed: `Bring Pearson any **Rabbit Carcass** (doesn't need to be perfect). He upgrades the camp stew.
 
 🍲 *Better meals for everyone.*`,
@@ -180,7 +180,7 @@ export const campRequestsSection = {
         { 
           id: 'req-bill-pomade', 
           text: 'Hair Pomade for Bill', 
-          tip: '📍 General stores. He gives Repeater Ammo.',
+          tip: ' General stores. He gives Repeater Ammo.',
           missable: true, 
           reward: 'Repeater Ammo',
           verified: true
@@ -188,7 +188,7 @@ export const campRequestsSection = {
         { 
           id: 'req-dutch-pipe', 
           text: 'Pipe for Dutch', 
-          tip: '📍 Random finds or Fence. He gives ornate Spurs.',
+          tip: ' Random finds or Fence. He gives ornate Spurs.',
           missable: true, 
           reward: 'Spurs',
           verified: true
@@ -196,7 +196,7 @@ export const campRequestsSection = {
         { 
           id: 'req-javier-oleander', 
           text: 'Oleander Sage for Javier', 
-          tip: '📍 Bayou plant. He gives Poison Throwing Knives.',
+          tip: ' Bayou plant. He gives Poison Throwing Knives.',
           missable: true, 
           reward: 'Poison Knives',
           region: 'lemoyne',
@@ -217,7 +217,7 @@ export const campRequestsSection = {
         { 
           id: 'req-lenny-watch', 
           text: 'Pocket Watch for Lenny', 
-          tip: '📍 Rob wealthy NPCs or houses. He gives Dynamite!',
+          tip: ' Rob wealthy NPCs or houses. He gives Dynamite!',
           missable: true, 
           reward: 'Dynamite',
           verified: true
@@ -225,7 +225,7 @@ export const campRequestsSection = {
         { 
           id: 'req-marybeth-pen', 
           text: 'Fountain Pen for Mary-Beth', 
-          tip: '📍 Houses or general stores. She gives Gold Ring.',
+          tip: ' Houses or general stores. She gives Gold Ring.',
           missable: true, 
           reward: 'Gold Ring',
           verified: true
@@ -233,7 +233,7 @@ export const campRequestsSection = {
         { 
           id: 'req-molly-mirror', 
           text: 'Pocket Mirror for Molly', 
-          tip: '📍 Houses or stores. She gives a Cigar.',
+          tip: ' Houses or stores. She gives a Cigar.',
           chapter: 3, 
           missable: true, 
           reward: 'Cigar',
@@ -242,7 +242,7 @@ export const campRequestsSection = {
         { 
           id: 'req-sadie-harmonica', 
           text: 'Harmonica for Sadie', 
-          tip: '📍 Random NPC loot or houses. She gives Gun Oil.',
+          tip: ' Random NPC loot or houses. She gives Gun Oil.',
           chapter: 3, 
           missable: true, 
           reward: 'Gun Oil',
@@ -263,7 +263,7 @@ export const campRequestsSection = {
         { 
           id: 'req-susan-herbs', 
           text: 'Seasoning Herbs (×2) for Susan', 
-          tip: '📍 Wild Mint, Oregano, or Thyme. She gives Miracle Tonic.',
+          tip: ' Wild Mint, Oregano, or Thyme. She gives Miracle Tonic.',
           missable: true, 
           reward: 'Miracle Tonic',
           verified: true
@@ -271,7 +271,7 @@ export const campRequestsSection = {
         { 
           id: 'req-tilly-necklace', 
           text: 'Necklace for Tilly', 
-          tip: '📍 Jewelry boxes or rob wealthy NPCs. She gives Medicine.',
+          tip: ' Jewelry boxes or rob wealthy NPCs. She gives Medicine.',
           missable: true, 
           reward: 'Medicine',
           verified: true

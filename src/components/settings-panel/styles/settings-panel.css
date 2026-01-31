@@ -1,0 +1,333 @@
+/**
+ * Settings Panel - Styles
+ * Floating panel with western theme
+ */
+
+/* ============================================
+   FLOATING ACTION BUTTON
+   ============================================ */
+#settings-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.settings-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b4513, #5d2d0a);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.3);
+}
+
+.settings-fab i {
+  transition: transform 0.5s ease;
+}
+
+.settings-panel.open + .settings-fab i {
+  transform: rotate(180deg);
+}
+
+/* ============================================
+   PANEL
+   ============================================ */
+.settings-panel {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 300px;
+  background: linear-gradient(135deg, #3e2723, #2a1a18);
+  border: 2px solid rgba(255,215,0,0.4);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.settings-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Day mode adjustments */
+[data-mode="day"] .settings-panel {
+  background: linear-gradient(135deg, #f5f0dc, #e8ddc0);
+  border-color: rgba(139,69,19,0.5);
+}
+
+[data-mode="day"] .settings-panel .settings-header,
+[data-mode="day"] .settings-panel .settings-label,
+[data-mode="day"] .settings-panel .settings-footer {
+  color: #3e2723;
+}
+
+[data-mode="day"] .settings-fab {
+  background: linear-gradient(135deg, #a08050, #8b6914);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.settings-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,215,0,0.2);
+  font-family: 'Rye', Georgia, serif;
+  font-size: 1.1rem;
+  color: #ffd700;
+}
+
+.settings-header i:first-child {
+  font-size: 1.25rem;
+}
+
+.settings-close {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #e8dcc8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.settings-close:hover {
+  background: rgba(220,38,38,0.3);
+  color: #fca5a5;
+}
+
+/* ============================================
+   BODY
+   ============================================ */
+.settings-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.settings-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #e8dcc8;
+}
+
+.settings-label i {
+  width: 18px;
+  text-align: center;
+  color: #ffd700;
+  opacity: 0.8;
+}
+
+/* ============================================
+   TOGGLE GROUP (Day/Night)
+   ============================================ */
+.settings-toggle-group {
+  display: flex;
+  gap: 4px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.mode-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  color: #e8dcc8;
+}
+
+.mode-btn.active {
+  background: rgba(255,215,0,0.3);
+  color: #ffd700;
+}
+
+.mode-btn i {
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   THEME GRID
+   ============================================ */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.theme-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+  color: #9ca3af;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-option:hover {
+  background: rgba(255,215,0,0.1);
+  color: #e8dcc8;
+}
+
+.theme-option.active {
+  border-color: #ffd700;
+  background: rgba(255,215,0,0.2);
+  color: #ffd700;
+}
+
+.theme-option i {
+  font-size: 1.25rem;
+}
+
+.theme-option span {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Theme-specific colors for buttons */
+.theme-option[data-theme="wood"] i { color: #a08050; }
+.theme-option[data-theme="ledger"] i { color: #8b7355; }
+.theme-option[data-theme="wanted"] i { color: #8b0000; }
+.theme-option[data-theme="saloon"] i { color: #8b6914; }
+
+.theme-option.active[data-theme="wood"] i { color: #c4a574; }
+.theme-option.active[data-theme="ledger"] i { color: #d4c4a8; }
+.theme-option.active[data-theme="wanted"] i { color: #dc2626; }
+.theme-option.active[data-theme="saloon"] i { color: #ffd700; }
+
+/* ============================================
+   SWITCH TOGGLE
+   ============================================ */
+.settings-switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.settings-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+
+.switch-slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2px;
+  background: #6b7280;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.settings-switch input:checked + .switch-slider {
+  background: rgba(34,197,94,0.3);
+  border-color: rgba(34,197,94,0.5);
+}
+
+.settings-switch input:checked + .switch-slider::before {
+  transform: translateX(22px);
+  background: #22c55e;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.settings-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(255,215,0,0.1);
+  text-align: center;
+}
+
+.settings-version {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  #settings-panel {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .settings-fab {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  
+  .settings-panel {
+    width: 280px;
+    bottom: 60px;
+  }
+}

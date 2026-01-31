@@ -1,6 +1,6 @@
 /**
- * Header Component
- * Renders title, stamp, and links
+ * Header Component - V2 Redesign
+ * Western ledger style with WANTED stamp
  */
 
 import { $, createElement } from '../utils/dom.js';
@@ -10,42 +10,44 @@ export function renderHeader() {
   if (!container) return;
 
   container.innerHTML = `
-    <div class="stamp">WANTED<br>DEAD OR ALIVE</div>
-    
-    <h1 class="title-main">The Drifter's Ledger</h1>
-    <p class="subtitle">Property of A. Morgan (and associates)</p>
-    
-    <div class="playlist-links">
-      <a href="https://open.spotify.com/search/dust%20to%20dust%20red%20dead" target="_blank" rel="noopener">
-        ♫ Dust to Dust Playlist
-      </a>
-      |
-      <a href="https://www.youtube.com/results?search_query=red+dead+redemption+2+ambience" target="_blank" rel="noopener">
-        🔥 Campfire Sounds
-      </a>
-      |
-      <a href="https://www.youtube.com/watch?v=AUXGW6sWYDY" target="_blank" rel="noopener">
-        🎶 Unshaken
-      </a>
+    <div class="header-wrapper">
+      <!-- WANTED Stamp -->
+      <div class="wanted-stamp">
+        <span class="wanted-text">WANTED</span>
+        <span class="wanted-subtext">DEAD OR ALIVE</span>
+      </div>
+      
+      <!-- Main Title -->
+      <h1 class="ledger-title">Journal</h1>
+      
+      <!-- Divider -->
+      <div class="header-divider"></div>
+      
+      <!-- Subtitle -->
+      <p class="ledger-subtitle">Property of A. Morgan <em>(and associates)</em></p>
+      
+      <!-- Music Links -->
+      <nav class="music-links">
+        <a href="https://open.spotify.com/search/dust%20to%20dust%20red%20dead" target="_blank" rel="noopener">
+          <i class="fa-solid fa-music"></i> Dust to Dust
+        </a>
+        <span class="link-divider">|</span>
+        <a href="https://www.youtube.com/results?search_query=red+dead+redemption+2+ambience" target="_blank" rel="noopener">
+          <i class="fa-solid fa-fire"></i> Campfire
+        </a>
+        <span class="link-divider">|</span>
+        <a href="https://www.youtube.com/watch?v=AUXGW6sWYDY" target="_blank" rel="noopener">
+          <i class="fa-solid fa-guitar"></i> Unshaken
+        </a>
+      </nav>
     </div>
-    
-    <div id="overall-progress"></div>
   `;
 }
 
 /**
- * Update overall progress display
+ * Update overall progress display (kept for compatibility)
  */
 export function updateOverallProgress(completed, total) {
-  const container = $('#overall-progress');
-  if (!container) return;
-
-  const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
-  
-  container.innerHTML = `
-    <p class="progress-text">${completed} / ${total} completed (${percentage}%)</p>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: ${percentage}%"></div>
-    </div>
-  `;
+  // Removed from header - progress now shows in sidebar
 }
+

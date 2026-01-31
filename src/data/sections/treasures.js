@@ -28,7 +28,7 @@ export const treasuresSection = {
         { 
           id: 'jack-hall-1', 
           text: 'Map 1: Buy from Maximo', 
-          tip: '📍 NW of Flatneck Station. Treasure hunter on ridge. $10 (or $5 if haggle).',
+          tip: ' NW of Flatneck Station. Treasure hunter on ridge. $10 (or $5 if haggle).',
           tip_detailed: `**Maximo** is a treasure hunter camped on a ridge **northwest of Flatneck Station**, overlooking the river.
 
 💰 He'll sell you the first map for **$10** (haggle to **$5**). Or... rob him. Your call.
@@ -40,10 +40,10 @@ export const treasuresSection = {
         { 
           id: 'jack-hall-2', 
           text: "Map 2: Caliban's Seat", 
-          tip: '📍 Rock formation south of Valentine. Climb from SE side.',
+          tip: ' Rock formation south of Valentine. Climb from SE side.',
           tip_detailed: `**Caliban's Seat** is a rock formation **south of Valentine**. Tricky to climb.
 
-📍 Approach from the **SE side**, follow the path along the cliff edge. Look for the map in a **hollow rock**—a hole in white granite.
+ Approach from the **SE side**, follow the path along the cliff edge. Look for the map in a **hollow rock**—a hole in white granite.
 
 *Height ain't for everyone. Watch your step.*`,
           region: 'new-hanover',
@@ -52,10 +52,10 @@ export const treasuresSection = {
         { 
           id: 'jack-hall-3', 
           text: 'Map 3: Cotorra Springs', 
-          tip: '📍 West end of springs. Circle of rock formations. Pearl Necklace bonus.',
+          tip: ' West end of springs. Circle of rock formations. Pearl Necklace bonus.',
           tip_detailed: `**Cotorra Springs** - the geysers in Ambarino. Head to the **west end** where the rock formations stand in a circle.
 
-📍 Search the **central rock pile**. Map's tucked in there, plus a **Pearl Necklace** bonus.
+ Search the **central rock pile**. Map's tucked in there, plus a **Pearl Necklace** bonus.
 
 *Hot water, cold treasure. Nature's irony.*`,
           region: 'ambarino',
@@ -68,7 +68,7 @@ export const treasuresSection = {
           tip: "🏆 Small island in lake. Rock on SE side. 2 GOLD BARS!",
           tip_detailed: `The treasure lies on a **small island in O'Creagh's Run** lake (where Hamish lives).
 
-📍 Swim or boat out there. Search the **rock on the SE side** of the island.
+ Swim or boat out there. Search the **rock on the SE side** of the island.
 
 💰 **2 GOLD BARS** - $1000 in your pocket!
 
@@ -99,7 +99,7 @@ export const treasuresSection = {
         { 
           id: 'high-stakes-1', 
           text: 'Map 1: Save/Rob Stranger', 
-          tip: '📍 Random encounter after Chapter 3. Man hanging from cliff near Cumberland Falls.',
+          tip: ' Random encounter after Chapter 3. Man hanging from cliff near Cumberland Falls.',
           tip_detailed: `After completing **"The New South"** in Chapter 3, you may encounter a treasure hunter **hanging from a cliff** near Cumberland Falls.
 
 📋 **Options:**
@@ -114,10 +114,10 @@ export const treasuresSection = {
         { 
           id: 'high-stakes-2', 
           text: 'Map 2: Cumberland Falls', 
-          tip: '📍 Behind the waterfall! Climb LEFT side rocks, enter cave.',
+          tip: ' Behind the waterfall! Climb LEFT side rocks, enter cave.',
           tip_detailed: `**Cumberland Falls** hides a secret—a cave **behind the waterfall**.
 
-📍 Climb the rocks on the **LEFT side**, make your way around to the **cave entrance**. Chest against the wall inside.
+ Climb the rocks on the **LEFT side**, make your way around to the **cave entrance**. Chest against the wall inside.
 
 💧 *Classic treasure spot. Behind every waterfall, there's somethin' hidden.*`,
           region: 'new-hanover',
@@ -126,10 +126,10 @@ export const treasuresSection = {
         { 
           id: 'high-stakes-3', 
           text: 'Map 3: Barrow Lagoon', 
-          tip: '📍 Frozen pond NE of Mount Hagen. Under fallen tree on east shore.',
+          tip: ' Frozen pond NE of Mount Hagen. Under fallen tree on east shore.',
           tip_detailed: `**Barrow Lagoon** is a frozen pond in the Ambarino mountains, **northeast of Mount Hagen**.
 
-📍 Find the **fallen tree on the east shore**. Map's tucked underneath.
+ Find the **fallen tree on the east shore**. Map's tucked underneath.
 
 ❄️ *Dress warm. Frostbite don't care about treasure.*`,
           region: 'ambarino',
@@ -143,7 +143,7 @@ export const treasuresSection = {
 
 ⚠️ **DO NOT enter the fort!** Soldiers will shoot on sight and you'll get a massive bounty.
 
-📍 Approach from above, **east side cliff**. Jump down carefully to the ledge.
+ Approach from above, **east side cliff**. Jump down carefully to the ledge.
 
 💰 **3 GOLD BARS** - $1500!
 
@@ -174,10 +174,10 @@ export const treasuresSection = {
         { 
           id: 'poison-1', 
           text: 'Map 1: Cairn Lake Cabin', 
-          tip: '📍 Frozen lake cabin in Ambarino. Map pinned to wall inside.',
+          tip: ' Frozen lake cabin in Ambarino. Map pinned to wall inside.',
           tip_detailed: `**Cairn Lake** - a small frozen lake with a **cabin on the shore**.
 
-📍 Go inside, find the map **pinned to the wall**.
+ Go inside, find the map **pinned to the wall**.
 
 ❄️ *The cold preserved it well. Almost like it was waitin' for you.*`,
           region: 'ambarino',
@@ -186,10 +186,10 @@ export const treasuresSection = {
         { 
           id: 'poison-2', 
           text: 'Map 2: Face Rock (Facu Rock)', 
-          tip: '📍 West of Ringneck Creek. Giant face carved in rock. Map in "mouth".',
+          tip: ' West of Ringneck Creek. Giant face carved in rock. Map in "mouth".',
           tip_detailed: `**Face Rock** - a massive natural stone formation that looks like a face, **west of Ringneck Creek**.
 
-📍 The map is hidden in the **"mouth" hole** at the base of the formation.
+ The map is hidden in the **"mouth" hole** at the base of the formation.
 
 🗿 *Nature's got a sense of humor. So did whoever hid this map.*`,
           region: 'new-hanover',
@@ -198,10 +198,10 @@ export const treasuresSection = {
         { 
           id: 'poison-3', 
           text: 'Map 3: Elysian Pool Cave', 
-          tip: '📍 Cave BEHIND Elysian Pool waterfall! BRING LANTERN. Dangerous bats.',
+          tip: ' Cave BEHIND Elysian Pool waterfall! BRING LANTERN. Dangerous bats.',
           tip_detailed: `**Elysian Pool** has a waterfall, and behind it is a **massive cave system**.
 
-📍 Enter behind the waterfall. You'll need a **lantern**—it's pitch black. Watch out for **aggressive bats**.
+ Enter behind the waterfall. You'll need a **lantern**—it's pitch black. Watch out for **aggressive bats**.
 
 ⚠️ *This cave is creepy. Go deep enough and you'll find... things.*`,
           region: 'new-hanover',
@@ -213,7 +213,7 @@ export const treasuresSection = {
           tip: '🏆 North of lighthouse, south of Van Horn. Stone pile near coast. 4 GOLD BARS!',
           tip_detailed: `The treasure is **north of the Van Horn lighthouse**, along the coast.
 
-📍 Look for a **stone pile** near the shore. Dig around and claim your prize.
+ Look for a **stone pile** near the shore. Dig around and claim your prize.
 
 💰 **4 GOLD BARS** - $2000! The biggest treasure haul in the game!
 
@@ -243,10 +243,10 @@ export const treasuresSection = {
         { 
           id: 'le-tresor-1', 
           text: 'Map 1: Burned Settlement (Limpany)', 
-          tip: '📍 Limpany ruins SW of Horseshoe Overlook. Jailhouse corpse has map.',
+          tip: ' Limpany ruins SW of Horseshoe Overlook. Jailhouse corpse has map.',
           tip_detailed: `**Limpany** - the burned-out town southwest of Horseshoe Overlook.
 
-📍 Find the **jailhouse** (still standing). Inside is a **corpse with the map**.
+ Find the **jailhouse** (still standing). Inside is a **corpse with the map**.
 
 🔥 *The dead keep their secrets. 'Til you come along.*`,
           region: 'new-hanover',
@@ -255,10 +255,10 @@ export const treasuresSection = {
         { 
           id: 'le-tresor-2', 
           text: 'Map 2: Saint Denis Docks', 
-          tip: '📍 Cornwall Freight Station underground passage. Check wall near crate.',
+          tip: ' Cornwall Freight Station underground passage. Check wall near crate.',
           tip_detailed: `In **Saint Denis**, find the **Cornwall Freight Station**. There's an underground passage connecting the yard to the harbor.
 
-📍 Check the **wall near a wooden crate** in the passage.
+ Check the **wall near a wooden crate** in the passage.
 
 🏭 *Industrial secrets in an industrial city.*`,
           region: 'lemoyne',
@@ -270,7 +270,7 @@ export const treasuresSection = {
           tip: '🏆 Mausoleum with stained glass, west of central dome. Left wall. 6 GOLD BARS!',
           tip_detailed: `The treasure rests in the **Saint Denis Cemetery**.
 
-📍 Find the **mausoleum with a stained glass window**, west of the central dome. Inspect the **left wall inside**.
+ Find the **mausoleum with a stained glass window**, west of the central dome. Inspect the **left wall inside**.
 
 💰 **6 GOLD BARS** - $3000! The richest treasure in the game!
 
@@ -300,7 +300,7 @@ export const treasuresSection = {
         { 
           id: 'elemental-1', 
           text: 'Tree 1: Window Rock Area', 
-          tip: '📍 Near Window Rock. Tree with Earth symbol carving.',
+          tip: ' Near Window Rock. Tree with Earth symbol carving.',
           tip_detailed: `First tree is **near Window Rock**. Look for the **Earth symbol** carved into the bark.
 
 🌿 *The first element. The foundation.*`,
@@ -310,7 +310,7 @@ export const treasuresSection = {
         { 
           id: 'elemental-2', 
           text: 'Tree 2: Elysian Pool Area', 
-          tip: '📍 Near Elysian Pool. Tree with Water symbol.',
+          tip: ' Near Elysian Pool. Tree with Water symbol.',
           tip_detailed: `Second tree is **near Elysian Pool**. The **Water symbol** carved here.
 
 💧 *Where water flows, clues follow.*`,
@@ -320,7 +320,7 @@ export const treasuresSection = {
         { 
           id: 'elemental-3', 
           text: 'Tree 3: Fort Brennand Area', 
-          tip: '📍 Near Fort Brennand. Tree with Fire symbol.',
+          tip: ' Near Fort Brennand. Tree with Fire symbol.',
           tip_detailed: `Third tree is **near Fort Brennand**. The **Fire symbol** completes the set.
 
 🔥 *Earth, Water, Fire. Now combine them.*`,
@@ -333,7 +333,7 @@ export const treasuresSection = {
           tip: '🏆 Summit of Mount Shann. Behind the sundial stone. 2 GOLD BARS!',
           tip_detailed: `The treasure waits at the **summit of Mount Shann**, behind the ancient **sundial stone structure**.
 
-📍 It's a climb, but the view alone is worth it.
+ It's a climb, but the view alone is worth it.
 
 💰 **2 GOLD BARS** - $1000!
 
@@ -363,7 +363,7 @@ export const treasuresSection = {
         { 
           id: 'mended-1', 
           text: 'Map Half 1: Hermit Cabin (Manito Glade)', 
-          tip: '📍 North of Annesburg. Aggressive hermit with shotgun!',
+          tip: ' North of Annesburg. Aggressive hermit with shotgun!',
           tip_detailed: `First hermit lives in **Manito Glade**, north of Annesburg.
 
 ⚠️ **HOSTILE** - He's got a shotgun and ain't shy about usin' it. Check the **drawer inside** after dealing with him.
@@ -375,7 +375,7 @@ export const treasuresSection = {
         { 
           id: 'mended-2', 
           text: 'Map Half 2: Hermit Woman Cabin', 
-          tip: '📍 NW West Elizabeth. Follow Little Creek River. Another hostile hermit.',
+          tip: ' NW West Elizabeth. Follow Little Creek River. Another hostile hermit.',
           tip_detailed: `Second hermit is a woman, equally unfriendly. Her cabin is **northwest of West Elizabeth**, follow Little Creek River.
 
 ⚠️ **HOSTILE** - Same deal. Take what you need.
@@ -425,10 +425,10 @@ export const treasuresSection = {
     {
       id: 'treasure-train-wreck',
       text: 'Train Wreck Gold Bar',
-      tip: '📍 North of Cotorra Springs. Wrecked train in gorge. Lockbox in baggage car.',
+      tip: ' North of Cotorra Springs. Wrecked train in gorge. Lockbox in baggage car.',
       tip_detailed: `There's a **wrecked train** in a gorge **north of Cotorra Springs**. Crashed long ago, left to rot.
 
-📍 Climb into the **baggage car** and find the lockbox.
+ Climb into the **baggage car** and find the lockbox.
 
 💰 **1 Gold Bar** - $500!
 
@@ -440,10 +440,10 @@ export const treasuresSection = {
     {
       id: 'treasure-limpany',
       text: 'Limpany Sheriff Office Gold Bar',
-      tip: "📍 Burned town Limpany. Sheriff desk lockbox. May respawn!",
+      tip: " Burned town Limpany. Sheriff desk lockbox. May respawn!",
       tip_detailed: `**Limpany** - the burned ghost town southwest of Horseshoe Overlook.
 
-📍 Find the **Sheriff's office** (still standing). Check the **desk lockbox**.
+ Find the **Sheriff's office** (still standing). Check the **desk lockbox**.
 
 💰 **1 Gold Bar** - and rumor has it, **this one can respawn** after enough time passes!
 
@@ -455,10 +455,10 @@ export const treasuresSection = {
     {
       id: 'treasure-braithwaite',
       text: 'Braithwaite Manor Gold Bar',
-      tip: '📍 After manor burns in Chapter 4. Search ruins carefully.',
+      tip: ' After manor burns in Chapter 4. Search ruins carefully.',
       tip_detailed: `After the **Braithwaite Manor burns** in Chapter 4, return to the ruins.
 
-📍 Search carefully through the rubble. There's a **lockbox hidden** in the debris.
+ Search carefully through the rubble. There's a **lockbox hidden** in the debris.
 
 💰 **1 Gold Bar** - spoils of war.
 

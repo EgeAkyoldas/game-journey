@@ -179,7 +179,7 @@ Without these tools, he can't make anything. WITH them, he can stitch up satchel
 
 📦 **Materials:**
 • 1x Perfect Boar Pelt (Bluewater Marsh)
-• 1x Perfect Iguana Skin (📍 Flat Iron Lake islands)
+• 1x Perfect Iguana Skin ( Flat Iron Lake islands)
 
 🦎 Iguanas require a swim or boat trip.`,
           verified: true

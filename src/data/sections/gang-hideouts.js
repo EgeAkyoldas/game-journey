@@ -27,7 +27,7 @@ export const gangHideoutsSection = {
         { 
           id: 'hideout-six-point', 
           text: "Six Point Cabin (O'Driscolls)", 
-          tip: '📍 NE of Valentine, Cumberland Forest. Chapter 2 story.',
+          tip: ' NE of Valentine, Cumberland Forest. Chapter 2 story.',
           tip_detailed: `**Six Point Cabin** - an O'Driscoll camp in the **Cumberland Forest**, northeast of Valentine.
 
 You'll hit this place during Chapter 2's story, but it can be cleared again later when the O'Driscolls reoccupy.
@@ -41,10 +41,10 @@ You'll hit this place during Chapter 2's story, but it can be cleared again late
         { 
           id: 'hideout-shady-belle', 
           text: 'Shady Belle (Lemoyne Raiders)', 
-          tip: '📍 Bayou Nwa, south of Caliga Hall. Becomes camp in Ch4.',
+          tip: ' Bayou Nwa, south of Caliga Hall. Becomes camp in Ch4.',
           tip_detailed: `**Shady Belle** - a haunted-lookin' plantation in **Bayou Nwa**, south of Caliga Hall. The Lemoyne Raiders use it as their hideout.
 
-📍 You'll clear this during the story, and it becomes your gang's camp for Chapter 4.
+ You'll clear this during the story, and it becomes your gang's camp for Chapter 4.
 
 🏚️ *Nice place. Once you get the ghosts and Raiders out.*`,
           chapter: 3,
@@ -55,7 +55,7 @@ You'll hit this place during Chapter 2's story, but it can be cleared again late
         { 
           id: 'hideout-hanging-dog', 
           text: "Hanging Dog Ranch (O'Driscolls → Laramie)", 
-          tip: '📍 W of Valentine, near Little Creek River. Ch6 story.',
+          tip: ' W of Valentine, near Little Creek River. Ch6 story.',
           tip_detailed: `**Hanging Dog Ranch** - O'Driscoll territory during the main story, west of Valentine near Little Creek River.
 
 You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang** moves in and you can clear it again.
@@ -69,10 +69,10 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-beaver-hollow', 
           text: 'Beaver Hollow (Murfree Brood)', 
-          tip: '📍 W of Annesburg, Roanoke Ridge. Becomes camp in Ch6.',
+          tip: ' W of Annesburg, Roanoke Ridge. Becomes camp in Ch6.',
           tip_detailed: `**Beaver Hollow** - the Murfree Brood's lair, west of Annesburg in Roanoke Ridge. These inbred cannibals are the worst folks you'll meet.
 
-📍 Clear 'em out and the gang moves in for Chapter 6. Dark times, dark place.
+ Clear 'em out and the gang moves in for Chapter 6. Dark times, dark place.
 
 ⚠️ *The Murfrees eat people. Don't let 'em take you alive.*`,
           chapter: 6,
@@ -83,7 +83,7 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-fort-mercer', 
           text: 'Fort Mercer (Del Lobos)', 
-          tip: '📍 New Austin, S of Armadillo. ⚠️ EPILOGUE ONLY!',
+          tip: ' New Austin, S of Armadillo. ⚠️ EPILOGUE ONLY!',
           tip_detailed: `**Fort Mercer** - an abandoned military fort south of Armadillo, now occupied by the **Del Lobo gang**. Lot of history in these walls.
 
 ⚠️ **EPILOGUE ONLY** - Arthur can't safely enter New Austin.
@@ -97,7 +97,7 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-thieves-landing', 
           text: "Thieves' Landing (Del Lobos)", 
-          tip: '📍 New Austin, S of Blackwater. ⚠️ EPILOGUE ONLY!',
+          tip: ' New Austin, S of Blackwater. ⚠️ EPILOGUE ONLY!',
           tip_detailed: `**Thieves' Landing** - an outlaw town south of Blackwater where the Del Lobos run things. Every building's got enemies.
 
 ⚠️ **EPILOGUE ONLY** - John can roam freely here.
@@ -127,10 +127,10 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-gaptooth', 
           text: 'Gaptooth Breach (Del Lobos)', 
-          tip: '📍 Gaptooth Ridge, W of Tumbleweed. Epilogue only.',
+          tip: ' Gaptooth Ridge, W of Tumbleweed. Epilogue only.',
           tip_detailed: `**Gaptooth Breach** - an abandoned mining colony in Gaptooth Ridge, west of Tumbleweed. Del Lobos have set up shop.
 
-📍 **Epilogue only.** Good loot scattered across the old mining equipment.
+ **Epilogue only.** Good loot scattered across the old mining equipment.
 
 ⛏️ *Miners left. Outlaws moved in. You're the eviction notice.*`,
           chapter: 'epilogue',
@@ -140,12 +140,12 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-twin-rocks', 
           text: 'Twin Rocks (Del Lobos) ⭐', 
-          tip: '📍 Cholla Springs, N of Armadillo. Special/Ultimate Edition.',
+          tip: ' Cholla Springs, N of Armadillo. Special/Ultimate Edition.',
           tip_detailed: `**Twin Rocks** - a rock formation hideout in Cholla Springs, north of Armadillo.
 
 ⭐ **Special/Ultimate Edition bonus content.** If you've got the fancy edition, this is exclusive to you.
 
-📍 *Epilogue only.* Worth clearing if you've got access.`,
+ *Epilogue only.* Worth clearing if you've got access.`,
           chapter: 'epilogue',
           region: 'new-austin',
           verified: true
@@ -153,10 +153,10 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-solomons', 
           text: "Solomon's Folly (Del Lobos)", 
-          tip: '📍 S of Benedict Point, New Austin. Guarded basement.',
+          tip: ' S of Benedict Point, New Austin. Guarded basement.',
           tip_detailed: `**Solomon's Folly** - a small barn south of Benedict Point. Don't be fooled by its size—the basement's where the action is.
 
-📍 **Epilogue only.** Clear the guards, loot the underground stash.
+ **Epilogue only.** Clear the guards, loot the underground stash.
 
 🏚️ *Small place, decent pay. Quick work.*`,
           chapter: 'epilogue',

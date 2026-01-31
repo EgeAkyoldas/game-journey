@@ -27,6 +27,45 @@
   --header-title: #4a1a0a;
 }
 
+/* WOOD DAY - Section Colors */
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #d4b078, #b89858) !important;
+  border-color: #8b6914;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="treasures"] .card-title { color: #6b4f10; }
+
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #a8c494, #8fb078) !important;
+  border-color: #2d5a27;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="quickstart"] .card-title { color: #1e4018; }
+
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #c49494, #a87878) !important;
+  border-color: #8b2020;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="missable"] .card-title { color: #6b1515; }
+
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #c4a088, #a88468) !important;
+  border-color: #7c2d12;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="bounties"] .card-title { color: #5c2010; }
+
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="bandit"],
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #c4a874, #a89054) !important;
+  border-color: #92400e;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section*="challenge"] .card-title { color: #6b3010; }
+
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #a0a8b4, #8890a0) !important;
+  border-color: #3e5068;
+}
+[data-mode="day"][data-ui-theme="wood"] .showcase-card[data-section="strangers"] .card-title { color: #2a3848; }
+
 [data-mode="day"][data-ui-theme="ledger"] {
   --card-bg: linear-gradient(135deg, #f5f0dc, #e8ddc0);
   --card-border: #8b7355;
@@ -37,6 +76,45 @@
   --card-font: 'Special Elite', Georgia, serif;
 }
 
+/* LEDGER DAY - Section Colors (Left border accent) */
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="treasures"] {
+  border-left: 4px solid #8b6914;
+  background: linear-gradient(135deg, #f8f4e0, #f0e8c8) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="treasures"] .card-title { color: #8b6914; }
+
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="quickstart"] {
+  border-left: 4px solid #166534;
+  background: linear-gradient(135deg, #f0f5e8, #e8f0dc) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="quickstart"] .card-title { color: #166534; }
+
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="missable"] {
+  border-left: 4px solid #991b1b;
+  background: linear-gradient(135deg, #f8f0e8, #f0e8dc) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="missable"] .card-title { color: #991b1b; }
+
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="bounties"] {
+  border-left: 4px solid #7c2d12;
+  background: linear-gradient(135deg, #f5f0dc, #ece4c8) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="bounties"] .card-title { color: #7c2d12; }
+
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="bandit"],
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section*="challenge"] {
+  border-left: 4px solid #92400e;
+  background: linear-gradient(135deg, #f8f4dc, #f0e8c4) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section*="challenge"] .card-title { color: #92400e; }
+
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="strangers"] {
+  border-left: 4px solid #1e3a5f;
+  background: linear-gradient(135deg, #f0f4f8, #e8ecf0) !important;
+}
+[data-mode="day"][data-ui-theme="ledger"] .showcase-card[data-section="strangers"] .card-title { color: #1e3a5f; }
+
 [data-mode="day"][data-ui-theme="wanted"] {
   --card-bg: linear-gradient(135deg, #e8d4b8, #d4b896);
   --card-border: #8b4513;
@@ -46,6 +124,45 @@
   --header-title: #8b0000;
 }
 
+/* WANTED DAY - Section Colors (Aged poster variants) */
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #e8d8a8, #d4c490) !important;
+  border: 3px solid #8b6914;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="treasures"] .card-title { color: #6b4f10; text-transform: uppercase; }
+
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #d4e0c8, #c0d0b0) !important;
+  border: 3px solid #2d5a27;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="quickstart"] .card-title { color: #1e4018; text-transform: uppercase; }
+
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #e8c8c8, #d4a8a8) !important;
+  border: 3px solid #8b0000;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="missable"] .card-title { color: #6b0000; text-transform: uppercase; }
+
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #e8d0b0, #d4b890) !important;
+  border: 3px solid #8b4513;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="bounties"] .card-title { color: #6b3010; text-transform: uppercase; }
+
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="bandit"],
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #e8d4b0, #d4c090) !important;
+  border: 3px solid #92400e;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section*="challenge"] .card-title { color: #6b3010; text-transform: uppercase; }
+
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #d0d8e0, #b8c4d0) !important;
+  border: 3px solid #3e5068;
+}
+[data-mode="day"][data-ui-theme="wanted"] .showcase-card[data-section="strangers"] .card-title { color: #2a3848; text-transform: uppercase; }
+
 [data-mode="day"][data-ui-theme="saloon"] {
   --card-bg: linear-gradient(135deg, #5d4037, #4a3028);
   --card-border: #8b6914;
@@ -54,6 +171,45 @@
   --card-shadow: 0 3px 15px rgba(139,105,20,0.4);
   --header-title: #4a1a0a;
 }
+
+/* SALOON DAY - Section Colors (Rich dark variants with gold accents) */
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #6d5030, #5a4025) !important;
+  border: 2px solid #d4a520;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="treasures"] .card-title { color: #ffd700; }
+
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #3d5037, #2d4027) !important;
+  border: 2px solid #4ade80;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="quickstart"] .card-title { color: #86efac; }
+
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #5d3037, #4a2027) !important;
+  border: 2px solid #dc2626;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="missable"] .card-title { color: #fca5a5; }
+
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #5d3825, #4a2818) !important;
+  border: 2px solid #ea580c;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="bounties"] .card-title { color: #fdba74; }
+
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="bandit"],
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #5d4528, #4a3520) !important;
+  border: 2px solid #f59e0b;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section*="challenge"] .card-title { color: #fcd34d; }
+
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #3d4550, #2d3540) !important;
+  border: 2px solid #3b82f6;
+}
+[data-mode="day"][data-ui-theme="saloon"] .showcase-card[data-section="strangers"] .card-title { color: #93c5fd; }
 
 /* --- NIGHT MODE THEMES --- */
 [data-mode="night"][data-ui-theme="wood"] {
@@ -65,6 +221,45 @@
   --header-title: #ffd700;
 }
 
+/* WOOD NIGHT - Section Colors */
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #4a3820, #3a2a18) !important;
+  border-color: #d4a520;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="treasures"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #2a4020, #1a3015) !important;
+  border-color: #22c55e;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="quickstart"] .card-title { color: #86efac; }
+
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #4a2020, #3a1515) !important;
+  border-color: #dc2626;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="missable"] .card-title { color: #fca5a5; }
+
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #4a2820, #3a1c15) !important;
+  border-color: #ea580c;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="bounties"] .card-title { color: #fdba74; }
+
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="bandit"],
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #4a3520, #3a2815) !important;
+  border-color: #f59e0b;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section*="challenge"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #2a3040, #1a2030) !important;
+  border-color: #3b82f6;
+}
+[data-mode="night"][data-ui-theme="wood"] .showcase-card[data-section="strangers"] .card-title { color: #93c5fd; }
+
 [data-mode="night"][data-ui-theme="ledger"] {
   --card-bg: linear-gradient(135deg, #2a2018, #1a1410);
   --card-border: rgba(139,105,20,0.4);
@@ -75,6 +270,45 @@
   --card-font: 'Special Elite', Georgia, serif;
 }
 
+/* LEDGER NIGHT - Section Colors (Left border accent) */
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="treasures"] {
+  border-left: 4px solid #eab308;
+  background: linear-gradient(135deg, #2d2418, #1f1a10) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="treasures"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="quickstart"] {
+  border-left: 4px solid #22c55e;
+  background: linear-gradient(135deg, #1a2418, #141c12) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="quickstart"] .card-title { color: #86efac; }
+
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="missable"] {
+  border-left: 4px solid #dc2626;
+  background: linear-gradient(135deg, #2a1a18, #1f1210) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="missable"] .card-title { color: #fca5a5; }
+
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="bounties"] {
+  border-left: 4px solid #ea580c;
+  background: linear-gradient(135deg, #2a1c15, #1f1410) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="bounties"] .card-title { color: #fdba74; }
+
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="bandit"],
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section*="challenge"] {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(135deg, #2a2015, #1f180f) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section*="challenge"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="strangers"] {
+  border-left: 4px solid #3b82f6;
+  background: linear-gradient(135deg, #1a1e28, #12161f) !important;
+}
+[data-mode="night"][data-ui-theme="ledger"] .showcase-card[data-section="strangers"] .card-title { color: #93c5fd; }
+
 [data-mode="night"][data-ui-theme="wanted"] {
   --card-bg: linear-gradient(135deg, #3a1c1a, #2a0d0a);
   --card-border: rgba(139,0,0,0.6);
@@ -84,6 +318,45 @@
   --header-title: #dc2626;
 }
 
+/* WANTED NIGHT - Section Colors (Dark aged poster variants) */
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #3a2818, #2a1c10) !important;
+  border: 3px solid #d4a520;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="treasures"] .card-title { color: #fcd34d; text-transform: uppercase; }
+
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #1a3018, #102510) !important;
+  border: 3px solid #22c55e;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="quickstart"] .card-title { color: #86efac; text-transform: uppercase; }
+
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #3a1818, #2a0a0a) !important;
+  border: 3px solid #dc2626;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="missable"] .card-title { color: #fca5a5; text-transform: uppercase; }
+
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #3a2015, #2a1510) !important;
+  border: 3px solid #ea580c;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="bounties"] .card-title { color: #fdba74; text-transform: uppercase; }
+
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="bandit"],
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #3a2518, #2a1a10) !important;
+  border: 3px solid #f59e0b;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section*="challenge"] .card-title { color: #fcd34d; text-transform: uppercase; }
+
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #1a2028, #10181f) !important;
+  border: 3px solid #3b82f6;
+}
+[data-mode="night"][data-ui-theme="wanted"] .showcase-card[data-section="strangers"] .card-title { color: #93c5fd; text-transform: uppercase; }
+
 [data-mode="night"][data-ui-theme="saloon"] {
   --card-bg: linear-gradient(135deg, #2d1a29, #1a0a15);
   --card-border: rgba(139,105,20,0.4);
@@ -92,6 +365,51 @@
   --card-shadow: 0 3px 15px rgba(139,105,20,0.25), inset 0 0 30px rgba(0,0,0,0.3);
   --header-title: #ffd700;
 }
+
+/* SALOON NIGHT - Section Colors (Deep dark with neon accents) */
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #2d1a20, #1a0a10) !important;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 15px rgba(255,215,0,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="treasures"] .card-title { color: #ffd700; }
+
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="quickstart"] {
+  background: linear-gradient(135deg, #1a2d20, #0a1a10) !important;
+  border: 2px solid #4ade80;
+  box-shadow: 0 0 15px rgba(74,222,128,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="quickstart"] .card-title { color: #86efac; }
+
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="missable"] {
+  background: linear-gradient(135deg, #2d1a1a, #1a0a0a) !important;
+  border: 2px solid #dc2626;
+  box-shadow: 0 0 15px rgba(220,38,38,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="missable"] .card-title { color: #fca5a5; }
+
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #2d1a15, #1a0a08) !important;
+  border: 2px solid #ea580c;
+  box-shadow: 0 0 15px rgba(234,88,12,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="bounties"] .card-title { color: #fdba74; }
+
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="bandit"],
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section*="challenge"] {
+  background: linear-gradient(135deg, #2d2018, #1a1008) !important;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 15px rgba(245,158,11,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="bandit"] .card-title,
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section*="challenge"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="strangers"] {
+  background: linear-gradient(135deg, #1a1a2d, #0a0a1a) !important;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59,130,246,0.2);
+}
+[data-mode="night"][data-ui-theme="saloon"] .showcase-card[data-section="strangers"] .card-title { color: #93c5fd; }
 
 /* ============================================
    FEATURE SECTIONS

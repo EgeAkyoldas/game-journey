@@ -62,7 +62,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 📦 **Materials:**
 • **Legendary White Bison Horn** - Hunt near Lake Isabella, Ambarino
-• **Abalone Shell Fragment** - 📍 Abandoned house north of Rhodes
+• **Abalone Shell Fragment** -  Abandoned house north of Rhodes
 • **Silver Earring** - Found or looted
 
 🏃 *Run longer, swim farther, climb higher.*`,
@@ -78,7 +78,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 📦 **Materials:**
 • **Legendary Boar Tusk** - Hunt near Bluewater Marsh
 • **Gold Earring** - Found or looted
-• **Cobalt Petrified Wood** - 📍 Cave near Lake Isabella
+• **Cobalt Petrified Wood** -  Cave near Lake Isabella
 
 🐴 *Your horse stays stronger longer. Worth every ingredient.*`,
           reward: '-10% Horse Core drain',
@@ -120,7 +120,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦌 Legendary Buck Antler. HIGHER QUALITY PELTS! HUNT FIRST!',
           tip_detailed: `**Buck Antler Trinket** - gives you a **chance to get one-star-higher quality pelts** when skinning animals.
 
-📍 **Legendary Buck location:** West of Strawberry, Big Valley
+ **Legendary Buck location:** West of Strawberry, Big Valley
 
 ⭐ **HUNT THIS FIRST.** Every pelt you skin for the rest of the game has a better chance of being perfect. This makes satchel crafting, camp upgrades, and trapper gear infinitely easier.
 
@@ -136,7 +136,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦊 Legendary Fox Claw. +5 seconds Eagle Eye duration.',
           tip_detailed: `**Fox Claw Trinket** - extends your Eagle Eye vision by 5 seconds.
 
-📍 **Legendary Fox location:** Mattock Pond area, west of Rhodes
+ **Legendary Fox location:** Mattock Pond area, west of Rhodes
 
 👁️ Great for tracking and hunting. More time to spot those hidden trails.
 
@@ -162,7 +162,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🫎 Legendary Moose Antler. +10% Health XP gain.',
           tip_detailed: `**Moose Antler Trinket** - 10% more Health XP from all sources.
 
-📍 **Legendary Moose location:** Roanoke Ridge, northeast of the map. ⚠️ Moose are RARE and skittish.
+ **Legendary Moose location:** Roanoke Ridge, northeast of the map. ⚠️ Moose are RARE and skittish.
 
 💪 *Health is the most important stat. Level it faster.*`,
           reward: '+10% Health XP',
@@ -175,7 +175,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦁 Legendary Cougar Fang. ⚠️ EPILOGUE ONLY. +10% Stamina XP.',
           tip_detailed: `**Cougar Fang Trinket** - 10% more Stamina XP from all sources.
 
-📍 **Legendary Cougar location:** New Austin, near Tumbleweed
+ **Legendary Cougar location:** New Austin, near Tumbleweed
 
 ⚠️ **EPILOGUE ONLY** - Arthur cannot safely access New Austin.
 
@@ -191,7 +191,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🐺 Legendary Coyote Fang. +10% Dead Eye XP gain.',
           tip_detailed: `**Coyote Fang Trinket** - 10% more Dead Eye XP from all sources.
 
-📍 **Legendary Coyote location:** Scarlett Meadows, northwest of Rhodes
+ **Legendary Coyote location:** Scarlett Meadows, northwest of Rhodes
 
 🎯 *Dead Eye wins gunfights. Level it faster.*`,
           reward: '+10% Dead Eye XP',
@@ -215,7 +215,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦫 Legendary Beaver Tooth. -10% Weapon degradation.',
           tip_detailed: `**Beaver Tooth Trinket** - weapons degrade 10% slower.
 
-📍 **Legendary Beaver location:** Elysian Pool area, west of Van Horn
+ **Legendary Beaver location:** Elysian Pool area, west of Van Horn
 
 🔧 *Clean guns are accurate guns. Spend less time at the gunsmith.*`,
           reward: '-10% Weapon wear',
@@ -228,7 +228,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦌 Legendary Elk Antler. +10% looted cash value!',
           tip_detailed: `**Elk Antler Trinket** - every corpse you loot gives 10% more cash.
 
-📍 **Legendary Elk location:** East of Bacchus Station, Ambarino
+ **Legendary Elk location:** East of Bacchus Station, Ambarino
 
 💰 *Over a full playthrough, this adds up to serious money.*`,
           reward: '+10% looted cash',
@@ -241,7 +241,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🐏 Legendary Bighorn Ram Horn. 2x herb yield!',
           tip_detailed: `**Ram Horn Trinket** - double yield from thyme, oregano, and wild mint.
 
-📍 **Legendary Ram location:** Cattail Pond area, Grizzlies West
+ **Legendary Ram location:** Cattail Pond area, Grizzlies West
 
 🌿 *These herbs are used in special recipes. Double is always better.*`,
           reward: '2x herb yield',
@@ -254,7 +254,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🐺 Legendary Wolf Heart. 2x alcohol resistance.',
           tip_detailed: `**Wolf Heart Trinket** - double your alcohol tolerance.
 
-📍 **Legendary Wolf location:** Cotorra Springs, Ambarino
+ **Legendary Wolf location:** Cotorra Springs, Ambarino
 
 🍺 *Drink twice as much before getting sloppy. Perfect for saloon nights.*`,
           reward: '2x alcohol tolerance',
@@ -267,7 +267,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: "🦁 Lion's Paw from Margaret stranger mission. +10% Stamina XP.",
           tip_detailed: `**Lion's Paw Trinket** - 10% more Stamina XP.
 
-📍 **Source:** Complete the stranger mission **"He's British, Of Course"** with the circus animals
+ **Source:** Complete the stranger mission **"He's British, Of Course"** with the circus animals
 
 🎪 *Help Margaret catch his "exotic animals" and claim this as a reward.*`,
           reward: '+10% Stamina XP',
@@ -293,7 +293,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 ⚠️ **Requires Master Hunter Challenge Rank 9** to spawn the Legendary Panther
 
-📍 **Location:** Shady Belle area, once challenge is complete
+ **Location:** Shady Belle area, once challenge is complete
 
 ⭐ *Chain kills become devastating. Worth the challenge grind.*`,
           reward: 'Dead Eye extension',
@@ -307,7 +307,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦬 Legendary Tatanka Bison Horn. ⚠️ EPILOGUE ONLY. +10% Melee resist.',
           tip_detailed: `**Tatanka Bison Horn Trinket** - 10% more resistance to melee damage.
 
-📍 **Legendary Tatanka Bison location:** Hennigan's Stead, New Austin
+ **Legendary Tatanka Bison location:** Hennigan's Stead, New Austin
 
 ⚠️ **EPILOGUE ONLY** - New Austin access required
 
@@ -334,7 +334,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦌 Legendary Pronghorn Horn. Carcasses NEVER rot!',
           tip_detailed: `**Pronghorn Horn Trinket** - carcasses stored on your horse **never rot**.
 
-📍 **Legendary Pronghorn location:** Rio Del Lobo, New Austin (Epilogue)
+ **Legendary Pronghorn location:** Rio Del Lobo, New Austin (Epilogue)
 
 🏆 *Hunt at your leisure. No more rushing to the trapper with a rotting carcass.*`,
           reward: 'No carcass rot',
@@ -350,10 +350,10 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
     {
       id: 'unique-items',
       text: 'Unique Crafting Items (Locations)',
-      tip: '📍 Rare items needed for talisman crafting.',
+      tip: ' Rare items needed for talisman crafting.',
       tip_detailed: `Some talismans require **unique collectible items** that aren't just looted from enemies. You gotta find these specific pieces.
 
-📍 *Most are quest rewards or hidden in specific locations. Plan ahead.*`,
+ *Most are quest rewards or hidden in specific locations. Plan ahead.*`,
       verified: true,
       subItems: [
         { 
@@ -362,7 +362,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🦴 Mail ANY dinosaur bone to Deborah MacGuinness.',
           tip_detailed: `**Quartz Chunk** - reward for mailing your first dinosaur bone location.
 
-📍 Find any **dinosaur bone** (they're scattered across the map) and mail its location to **Deborah MacGuinness** as part of the "A Test of Faith" mission.
+ Find any **dinosaur bone** (they're scattered across the map) and mail its location to **Deborah MacGuinness** as part of the "A Test of Faith" mission.
 
 *One bone is enough. You'll get the Quartz Chunk by mail.*`,
           verified: true
@@ -373,7 +373,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🏚️ Abandoned house north of Rhodes. On a shelf inside.',
           tip_detailed: `**Abalone Shell Fragment** - found in an abandoned house.
 
-📍 **Location:** North of Rhodes, in an old farmhouse. Look on the **shelf inside**.
+ **Location:** North of Rhodes, in an old farmhouse. Look on the **shelf inside**.
 
 *Free pickup. Just know where to look.*`,
           region: 'lemoyne',
@@ -385,7 +385,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
           tip: '🗻 Cave near Lake Isabella. Chest inside.',
           tip_detailed: `**Cobalt Petrified Wood** - found in a cave.
 
-📍 **Location:** Near Lake Isabella, Ambarino. Find the cave entrance and look for a **chest inside**.
+ **Location:** Near Lake Isabella, Ambarino. Find the cave entrance and look for a **chest inside**.
 
 ❄️ *Bring warm clothes. It's freezing up there.*`,
           region: 'ambarino',

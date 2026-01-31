@@ -32,8 +32,8 @@ export const mysteriesSection = {
         { 
           id: 'serial-clue-1', 
           text: 'Clue 1: Wallace Station', 
-          tip: "📍 SW of Valentine, S of Wallace Station. Map piece in severed head.",
-          tip_detailed: `📍 **Location:** Rock southwest of Valentine, south of Wallace Station
+          tip: " SW of Valentine, S of Wallace Station. Map piece in severed head.",
+          tip_detailed: ` **Location:** Rock southwest of Valentine, south of Wallace Station
 
 🔍 Dismembered body on the rock. The map piece is in the severed head's mouth.
 
@@ -44,8 +44,8 @@ export const mysteriesSection = {
         { 
           id: 'serial-clue-2', 
           text: 'Clue 2: Valentine South', 
-          tip: "📍 Between Citadel Rock & Caster's Ridge. Body under railroad.",
-          tip_detailed: `📍 **Location:** Between Citadel Rock and Caster's Ridge
+          tip: " Between Citadel Rock & Caster's Ridge. Body under railroad.",
+          tip_detailed: ` **Location:** Between Citadel Rock and Caster's Ridge
 
 🔍 Follow the blood trail to find the body hanging under the railroad tracks.`,
           region: 'new-hanover',
@@ -54,8 +54,8 @@ export const mysteriesSection = {
         { 
           id: 'serial-clue-3', 
           text: 'Clue 3: Braithwaite Manor', 
-          tip: '📍 East of Braithwaite Manor. "BEHOLD" written. Final piece.',
-          tip_detailed: `📍 **Location:** East of Braithwaite Manor
+          tip: ' East of Braithwaite Manor. "BEHOLD" written. Final piece.',
+          tip_detailed: ` **Location:** East of Braithwaite Manor
 
 🔍 Body in a tree with "BEHOLD" written nearby. The final map piece.`,
           region: 'lemoyne',
@@ -64,8 +64,8 @@ export const mysteriesSection = {
         { 
           id: 'serial-cabin', 
           text: 'Confront the Killer ⭐', 
-          tip: '📍 Lucky\'s Cabin (S of Valentine). "Stranger" icon appears.',
-          tip_detailed: `📍 **Location:** Lucky's Cabin, south of Valentine
+          tip: ' Lucky\'s Cabin (S of Valentine). "Stranger" icon appears.',
+          tip_detailed: ` **Location:** Lucky's Cabin, south of Valentine
 
 With all 3 map pieces, a "Stranger" icon appears. Go to the basement.
 
@@ -97,35 +97,35 @@ With all 3 map pieces, a "Stranger" icon appears. Go to the basement.
         { 
           id: 'vampire-graffiti-1', 
           text: 'Graffiti 1: Near Outdoor Market', 
-          tip: '📍 Close to Trapper/Fence in SE Saint Denis.',
+          tip: ' Close to Trapper/Fence in SE Saint Denis.',
           region: 'lemoyne',
           verified: true
         },
         { 
           id: 'vampire-graffiti-2', 
           text: 'Graffiti 2: Soup Kitchen', 
-          tip: "📍 Across from Doyle's Tavern. Northern wall of red apartment.",
+          tip: " Across from Doyle's Tavern. Northern wall of red apartment.",
           region: 'lemoyne',
           verified: true
         },
         { 
           id: 'vampire-graffiti-3', 
           text: 'Graffiti 3: Alleyway', 
-          tip: "📍 Between Gaillard's Shoes and antiques shop.",
+          tip: " Between Gaillard's Shoes and antiques shop.",
           region: 'lemoyne',
           verified: true
         },
         { 
           id: 'vampire-graffiti-4', 
           text: 'Graffiti 4: Church Area', 
-          tip: '📍 Near St. Denis Cathedral southern wall.',
+          tip: ' Near St. Denis Cathedral southern wall.',
           region: 'lemoyne',
           verified: true
         },
         { 
           id: 'vampire-graffiti-5', 
           text: 'Graffiti 5: Back Streets', 
-          tip: '📍 Behind the general store area.',
+          tip: ' Behind the general store area.',
           region: 'lemoyne',
           verified: true
         },
@@ -135,7 +135,7 @@ With all 3 map pieces, a "Stranger" icon appears. Go to the basement.
           tip: "⏰ 12:00-1:00 AM ONLY! Alley south of general store. Skull icon on map.",
           tip_detailed: `⏰ **Appears ONLY between 12:00-1:00 AM**
 
-📍 **Location:** Alley south of general store, near Doyle's Tavern
+ **Location:** Alley south of general store, near Doyle's Tavern
 
 After finding all 5 graffiti, a skull icon appears on the map. Go there at midnight.
 
@@ -163,8 +163,8 @@ After finding all 5 graffiti, a skull icon appears on the map. Go there at midni
         { 
           id: 'ufo-cult-shack', 
           text: "UFO 1: Hani's Bethel (Cult Shack)", 
-          tip: '📍 Between N and O of "New Hanover" on map. Dead cultists inside.',
-          tip_detailed: `📍 **Location:** Hani's Bethel, between N and O of "New Hanover" on the map (north of Emerald Ranch)
+          tip: ' Between N and O of "New Hanover" on map. Dead cultists inside.',
+          tip_detailed: ` **Location:** Hani's Bethel, between N and O of "New Hanover" on the map (north of Emerald Ranch)
 
 🔍 Find the shack full of dead cultists. Read the note about "KUHKOWABA."`,
           reward: 'Mysterious Note',
@@ -183,8 +183,8 @@ The shack glows green. Look up—a UFO hovers above!`,
         { 
           id: 'ufo-shann', 
           text: 'UFO 2: Mount Shann Peak', 
-          tip: '📍 Peak of Mount Shann (NW of Strawberry). Go at night.',
-          tip_detailed: `📍 **Location:** Very peak of Mount Shann, northwest of Strawberry
+          tip: ' Peak of Mount Shann (NW of Strawberry). Go at night.',
+          tip_detailed: ` **Location:** Very peak of Mount Shann, northwest of Strawberry
 
 The cult note hints at this location. Go at night.`,
           region: 'west-elizabeth',
@@ -216,10 +216,10 @@ A second, different UFO appears!
         { 
           id: 'ghost-agnes', 
           text: 'Ghost of Agnes Dowd ⭐', 
-          tip: '📍 NW Bluewater Marsh, 9PM-3AM, foggy. Appears 16 TIMES!',
+          tip: ' NW Bluewater Marsh, 9PM-3AM, foggy. Appears 16 TIMES!',
           tip_detailed: `**Agnes Dowd** was murdered and dumped in the swamp. Her ghost appears **16 times**, each telling more of her tragic story.
 
-📍 **Location:** Northwest Bluewater Marsh
+ **Location:** Northwest Bluewater Marsh
 ⏰ **Time:** 9PM-3AM, foggy weather helps
 📖 **Grave:** Find her grave at Shady Belle
 
@@ -231,10 +231,10 @@ A second, different UFO appears!
         { 
           id: 'ghost-train', 
           text: 'Ghost Train 🚂', 
-          tip: '📍 Scarlett Meadows, S of Old Greenbank Mill. 3:00 AM. ONCE per playthrough!',
+          tip: ' Scarlett Meadows, S of Old Greenbank Mill. 3:00 AM. ONCE per playthrough!',
           tip_detailed: `A phantom train roars down the tracks—but there's no train there.
 
-📍 **Location:** Scarlett Meadows, south of Old Greenbank Mill
+ **Location:** Scarlett Meadows, south of Old Greenbank Mill
 ⏰ **Time:** 3:00 AM exactly
 🐴 Your horse will become anxious
 
@@ -257,8 +257,8 @@ A second, different UFO appears!
         { 
           id: 'bigfoot-skeleton', 
           text: 'Giant Skeleton', 
-          tip: '📍 Cave at top of Mount Shann. Massive humanoid skeleton!',
-          tip_detailed: `📍 **Location:** Cave at the top of Mount Shann, north of Strawberry
+          tip: ' Cave at top of Mount Shann. Massive humanoid skeleton!',
+          tip_detailed: ` **Location:** Cave at the top of Mount Shann, north of Strawberry
 
 🦴 Inside the cave is a **massive humanoid skeleton**—far too large to be human.
 
@@ -269,8 +269,8 @@ A second, different UFO appears!
         { 
           id: 'bigfoot-voice', 
           text: 'Talking Giant (Bigfoot)', 
-          tip: '📍 Grizzlies East, E of Wapiti. REQUIRES: Study 30+ animal species first!',
-          tip_detailed: `📍 **Location:** Grizzlies East, east of Wapiti Reservation
+          tip: ' Grizzlies East, E of Wapiti. REQUIRES: Study 30+ animal species first!',
+          tip_detailed: ` **Location:** Grizzlies East, east of Wapiti Reservation
 
 ⚠️ **REQUIREMENT:** You must **study 30+ animal species** first!
 
@@ -301,15 +301,15 @@ Return every 3 in-game days for more dialogue.
         { 
           id: 'robot-meet', 
           text: 'Part 1: Meet Marko', 
-          tip: '📍 SW Saint Denis park. Chapter 4+. Help with RC boat demo.',
+          tip: ' SW Saint Denis park. Chapter 4+. Help with RC boat demo.',
           region: 'lemoyne',
           verified: true
         },
         { 
           id: 'robot-lab', 
           text: 'Part 2: Doverhill Lab', 
-          tip: '📍 Doverhill (far NE map). Lightning experiment. Robot comes alive!',
-          tip_detailed: `📍 **Location:** Doverhill, far northeast of the map
+          tip: ' Doverhill (far NE map). Lightning experiment. Robot comes alive!',
+          tip_detailed: ` **Location:** Doverhill, far northeast of the map
 
 Wait 24+ in-game hours after Part 1. Help Marko capture lightning with rods.
 
@@ -323,12 +323,12 @@ Wait 24+ in-game hours after Part 1. Help Marko capture lightning with rods.
         { 
           id: 'robot-final', 
           text: 'Part 3: Find the Robot', 
-          tip: '📍 Return to lab later → Marko dead. Robot on mountain near Colter.',
+          tip: ' Return to lab later → Marko dead. Robot on mountain near Colter.',
           tip_detailed: `Wait a few more in-game days, then return to Doverhill.
 
 💀 Marko is dead. The robot has fled.
 
-📍 Find the robot on a mountain ledge overlooking **Colter**. It says one word:
+ Find the robot on a mountain ledge overlooking **Colter**. It says one word:
 
 🤖 *"Papa..."*`,
           verified: true
@@ -356,8 +356,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'sinclair-meet', 
           text: 'Meet Francis Sinclair', 
-          tip: '📍 Small cabin NW of Strawberry. Note his modern speech + birthmark!',
-          tip_detailed: `📍 **Location:** Small cabin northwest of Strawberry (Chapter 2+)
+          tip: ' Small cabin NW of Strawberry. Note his modern speech + birthmark!',
+          tip_detailed: ` **Location:** Small cabin northwest of Strawberry (Chapter 2+)
 
 🔍 Pay attention to:
 • His **modern speech patterns**
@@ -368,7 +368,7 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'sinclair-carvings', 
           text: 'Find All 10 Rock Carvings', 
-          tip: '📍 See Rock Carvings in Collectibles. Carvings show impossible things...',
+          tip: ' See Rock Carvings in Collectibles. Carvings show impossible things...',
           verified: true
         },
         { 
@@ -398,8 +398,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-strange-man', 
           text: 'The Strange Man', 
-          tip: '📍 Cabin near Bayall Edge. Mirror reflects RDR1 character. Painting completes over time.',
-          tip_detailed: `📍 **Location:** Abandoned cabin near Bayall Edge (Bayou)
+          tip: ' Cabin near Bayall Edge. Mirror reflects RDR1 character. Painting completes over time.',
+          tip_detailed: ` **Location:** Abandoned cabin near Bayall Edge (Bayou)
 
 🪞 Look in the **mirror**—a mysterious figure reflects back. He's from RDR1.
 
@@ -412,8 +412,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-witch', 
           text: "Witch's Cauldron 🧙", 
-          tip: '📍 N of Annesburg in swamp. Bubbling cauldron. Drink for strange effect!',
-          tip_detailed: `📍 **Location:** North of Annesburg, in the swamp
+          tip: ' N of Annesburg in swamp. Bubbling cauldron. Drink for strange effect!',
+          tip_detailed: ` **Location:** North of Annesburg, in the swamp
 
 🧙 Find the abandoned camp with a **bubbling cauldron**. You can drink from it...
 
@@ -424,8 +424,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-devil', 
           text: "Devil's Cave 😈", 
-          tip: '📍 Big Valley cave. Man claims to be the Devil. Creepy dialogue.',
-          tip_detailed: `📍 **Location:** Cave in Big Valley
+          tip: ' Big Valley cave. Man claims to be the Devil. Creepy dialogue.',
+          tip_detailed: ` **Location:** Cave in Big Valley
 
 👹 A man inside claims to be **the Devil himself**. His dialogue is unsettling.
 
@@ -436,8 +436,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-feral', 
           text: 'Feral Man 🐺', 
-          tip: '📍 Roanoke Ridge. Wild man living with wolf pack.',
-          tip_detailed: `📍 **Location:** Roanoke Ridge
+          tip: ' Roanoke Ridge. Wild man living with wolf pack.',
+          tip_detailed: ` **Location:** Roanoke Ridge
 
 🐺 A man raised by wolves. He communicates with them, runs with them.
 
@@ -448,8 +448,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-pagan', 
           text: 'Pagan Ritual Site ⛧', 
-          tip: '📍 Big Valley, West Elizabeth. Disturbing sacrifice scene.',
-          tip_detailed: `📍 **Location:** Big Valley, West Elizabeth
+          tip: ' Big Valley, West Elizabeth. Disturbing sacrifice scene.',
+          tip_detailed: ` **Location:** Big Valley, West Elizabeth
 
 ⛧ A disturbing pagan ritual site with a sacrificial victim.
 
@@ -462,8 +462,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-tiny-church', 
           text: 'Tiny Church ⛪', 
-          tip: '📍 Bayou Nwa. Miniature uninhabited white church. Unexplained...',
-          tip_detailed: `📍 **Location:** Bayou Nwa, Lemoyne
+          tip: ' Bayou Nwa. Miniature uninhabited white church. Unexplained...',
+          tip_detailed: ` **Location:** Bayou Nwa, Lemoyne
 
 ⛪ A perfectly miniature white church. Too small for people. No explanation.
 
@@ -474,8 +474,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-viking', 
           text: 'Viking Tomb ⚔️', 
-          tip: '📍 NW of Annesburg. Ancient Viking burial. Get Viking Hatchet + Helmet!',
-          tip_detailed: `📍 **Location:** Northwest of Annesburg
+          tip: ' NW of Annesburg. Ancient Viking burial. Get Viking Hatchet + Helmet!',
+          tip_detailed: ` **Location:** Northwest of Annesburg
 
 ⚔️ An ancient **Viking burial site** with artifacts:
 • Viking Hatchet
@@ -490,8 +490,8 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         { 
           id: 'mystery-meteor', 
           text: 'Meteor Crash Site ☄️', 
-          tip: '📍 Roanoke Ridge. Burned cabin destroyed by meteor. Fragment inside!',
-          tip_detailed: `📍 **Location:** Roanoke Ridge
+          tip: ' Roanoke Ridge. Burned cabin destroyed by meteor. Fragment inside!',
+          tip_detailed: ` **Location:** Roanoke Ridge
 
 ☄️ A cabin destroyed by a **meteor impact**. Still smoking.
 

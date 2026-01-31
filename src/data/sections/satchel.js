@@ -47,7 +47,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 **Required Pelts:**
 • **1x Perfect Deer Pelt** - Common, Big Valley or Heartlands
 • **1x Perfect Buck Pelt** - Bucks are deer with antlers, same areas
-• **1x Perfect Elk Pelt** - 📍 Ambarino mountains, near Cattail Pond
+• **1x Perfect Elk Pelt** -  Ambarino mountains, near Cattail Pond
 
 🔫 *Use the Rolling Block Rifle for clean headshots on these big boys.*`,
       region: 'new-hanover',
@@ -83,7 +83,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 • **1x Perfect Elk Pelt** - Ambarino mountains
 • **1x Perfect Panther Pelt** - ⚠️ **The hard one**
 
-📍 Panthers spawn **at night** near **Braithwaite Manor** and south of Old Harry Fen. They're fast, deadly, and will attack first. **Save before hunting.**
+ Panthers spawn **at night** near **Braithwaite Manor** and south of Old Harry Fen. They're fast, deadly, and will attack first. **Save before hunting.**
 
 🔫 *Dead Eye. Headshot. Don't miss—you might not get a second chance.*`,
       region: 'lemoyne',
@@ -99,7 +99,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 
 **Required Pelts:**
 • **1x Perfect Deer Pelt** - You know the drill
-• **1x Perfect Bison Pelt** - 🦬 📍 **Great Plains**, west of Blackwater (Chapter 4+)
+• **1x Perfect Bison Pelt** - 🦬  **Great Plains**, west of Blackwater (Chapter 4+)
 • **1x Perfect Raccoon Pelt** - 🦝 Nocturnal, near rivers and streams
 
 ⚠️ *Bison are in New Austin territory early on, so you may need to wait until Chapter 4+ or risk a bounty.*`,
@@ -117,7 +117,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 **Required Pelts:**
 • **1x Perfect Deer Pelt** - Easy
 • **1x Perfect Boar Pelt** - 🐗 Scarlett Meadows, Bluewater Marsh
-• **1x Perfect Iguana Skin** - 🦎 📍 **Flat Iron Lake islands** (or Guarma, but you can't return there)
+• **1x Perfect Iguana Skin** - 🦎  **Flat Iron Lake islands** (or Guarma, but you can't return there)
 
 ⚠️ *Iguanas are on the small islands in Flat Iron Lake. Swim out there or take a boat. Use Varmint Rifle.*`,
       region: 'new-hanover',
@@ -150,7 +150,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 
 **Requirements:**
 • ✅ **Craft all 7 satchels above first**
-• **1x Perfect Cougar Pelt** - 🦁 📍 West of Strawberry, Tumbleweed area. **Dangerous.** Dead Eye headshot.
+• **1x Perfect Cougar Pelt** - 🦁  West of Strawberry, Tumbleweed area. **Dangerous.** Dead Eye headshot.
 • **1x Perfect Wolf Pelt** - 🐺 Ambarino mountains, often in packs
 
 ⚠️ *Cougars are the most dangerous animals in the game. They will stalk you, pounce, and kill you before you can react. Save often.*

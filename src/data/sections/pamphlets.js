@@ -27,10 +27,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-explosive-slug', 
           text: 'Explosive Slug Pamphlet', 
-          tip: '📍 Burned house near Gaptooth Ridge. OR Fence ($90) after "A Short Walk in a Pretty Town".',
+          tip: ' Burned house near Gaptooth Ridge. OR Fence ($90) after "A Short Walk in a Pretty Town".',
           tip_detailed: `**Explosive Slug** - turns your shotgun into a cannon.
 
-📍 **Free location:** Burned house near train tracks between Gaptooth Ridge & Cholla Springs (Epilogue area)
+ **Free location:** Burned house near train tracks between Gaptooth Ridge & Cholla Springs (Epilogue area)
 
 💰 **OR** Fence sells for $90 after mission "A Short Walk in a Pretty Town"
 
@@ -42,10 +42,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-express-explosive', 
           text: 'Express Explosive Pamphlet', 
-          tip: '📍 Available from start of Chapter 2.',
+          tip: ' Available from start of Chapter 2.',
           tip_detailed: `**Express Explosive** - explosive rifle rounds. Devastating against enemies and large animals.
 
-📍 **Availability:** Fence from Chapter 2 start
+ **Availability:** Fence from Chapter 2 start
 
 📦 **Recipe:** 1 Express Cartridge + 1 Animal Fat`,
           reward: '1 Express Cartridge + 1 Animal Fat',
@@ -54,10 +54,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-incendiary-buckshot', 
           text: 'Incendiary Buckshot Pamphlet', 
-          tip: '📍 Copperhead Landing cabin floorboard. OR Fence ($80) after "Pouring Forth Oil I".',
+          tip: ' Copperhead Landing cabin floorboard. OR Fence ($80) after "Pouring Forth Oil I".',
           tip_detailed: `**Incendiary Buckshot** - sets everything on fire. Terrifying up close.
 
-📍 **Free location:** Under floorboard at Copperhead Landing cabin
+ **Free location:** Under floorboard at Copperhead Landing cabin
 
 💰 **OR** Fence sells for $80 after "Pouring Forth Oil I"
 
@@ -69,10 +69,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-fire-arrow', 
           text: 'Fire Arrow Pamphlet', 
-          tip: '📍 Fence ($75). Requires Animal Fat.',
+          tip: ' Fence ($75). Requires Animal Fat.',
           tip_detailed: `**Fire Arrow** - silent and deadly with a burning payload.
 
-📍 **Available:** Fence for $75
+ **Available:** Fence for $75
 
 📦 **Recipe:** 1 Arrow + 1 Animal Fat + 1 Flight Feather`,
           reward: '1 Arrow + 1 Animal Fat + 1 Flight Feather',
@@ -95,12 +95,12 @@ export const pamphletsSection = {
         { 
           id: 'pamph-poison-arrow', 
           text: 'Poison Arrow Pamphlet', 
-          tip: '📍 Lockbox NE of Bacchus Station. OR Charles bison hunt. OR Fence.',
+          tip: ' Lockbox NE of Bacchus Station. OR Charles bison hunt. OR Fence.',
           tip_detailed: `**Poison Arrow** - slow death for your target. Good for large game.
 
-📍 **Free location:** Lockbox outside Mysterious Hill Home (NE of Bacchus Station)
-📍 **OR** Complete Charles bison hunting mission
-📍 **OR** Buy at Fence
+ **Free location:** Lockbox outside Mysterious Hill Home (NE of Bacchus Station)
+ **OR** Complete Charles bison hunting mission
+ **OR** Buy at Fence
 
 📦 **Recipe:** 1 Arrow + 1 Oleander Sage + 1 Flight Feather
 
@@ -112,10 +112,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-dynamite-arrow', 
           text: 'Dynamite Arrow Pamphlet', 
-          tip: '📍 Lockbox S of Wapiti Reservation. OR Fence after quest.',
+          tip: ' Lockbox S of Wapiti Reservation. OR Fence after quest.',
           tip_detailed: `**Dynamite Arrow** - explosive death from a distance. Overkill for hunting, perfect for chaos.
 
-📍 **Free location:** Lockbox under small wooden bridge south of Wapiti Indian Reservation
+ **Free location:** Lockbox under small wooden bridge south of Wapiti Indian Reservation
 
 📦 **Recipe:** 1 Arrow + 1 Dynamite + 1 Flight Feather
 
@@ -127,10 +127,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-improved-arrow', 
           text: 'Improved Arrow Pamphlet', 
-          tip: '📍 Fence ($350). Better penetration for large game.',
+          tip: ' Fence ($350). Better penetration for large game.',
           tip_detailed: `**Improved Arrow** - deeper penetration, more damage. Essential for large game hunting.
 
-📍 **Available:** Fence for $350
+ **Available:** Fence for $350
 
 📦 **Recipe:** 1 Arrow + 1 Flight Feather`,
           reward: '1 Arrow + 1 Flight Feather',
@@ -139,10 +139,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-small-game-arrow', 
           text: 'Small Game Arrow Pamphlet', 
-          tip: '📍 Fence. Essential for perfect small pelts!',
+          tip: ' Fence. Essential for perfect small pelts!',
           tip_detailed: `**Small Game Arrow** - kills small animals without destroying the pelt.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Arrow + 1 Shotgun Shell + 1 Flight Feather
 
@@ -154,10 +154,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-tracking-arrow', 
           text: 'Tracking Arrow Pamphlet', 
-          tip: '📍 Complete "Hunting for Sport" with Charles.',
+          tip: ' Complete "Hunting for Sport" with Charles.',
           tip_detailed: `**Tracking Arrow** - hit an animal and track it easily. Useful for wounded prey that runs.
 
-📍 **Obtained:** Complete "Hunting for Sport" mission with Charles
+ **Obtained:** Complete "Hunting for Sport" mission with Charles
 
 📦 **Recipe:** 1 Arrow + 1 Indian Tobacco + 1 Flight Feather`,
           reward: '1 Arrow + 1 Indian Tobacco + 1 Flight Feather',
@@ -178,12 +178,12 @@ export const pamphletsSection = {
         { 
           id: 'pamph-poison-knife', 
           text: 'Poison Throwing Knife Pamphlet', 
-          tip: '📍 Shack N of Saint Denis. OR Charles quest. OR Fence.',
+          tip: ' Shack N of Saint Denis. OR Charles quest. OR Fence.',
           tip_detailed: `**Poison Throwing Knife** - guaranteed kill even if you miss vitals.
 
-📍 **Free location:** Under floorboard in shack north of Saint Denis (near train tracks)
-📍 **OR** Complete Charles quest
-📍 **OR** Buy at Fence
+ **Free location:** Under floorboard in shack north of Saint Denis (near train tracks)
+ **OR** Complete Charles quest
+ **OR** Buy at Fence
 
 📦 **Recipe:** 1 Throwing Knife + 1 Oleander Sage`,
           reward: '1 Throwing Knife + 1 Oleander Sage',
@@ -193,10 +193,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-improved-knife', 
           text: 'Improved Throwing Knife Pamphlet', 
-          tip: '📍 Fence ($45). Better range and damage.',
+          tip: ' Fence ($45). Better range and damage.',
           tip_detailed: `**Improved Throwing Knife** - flies farther, hits harder.
 
-📍 **Available:** Fence for $45
+ **Available:** Fence for $45
 
 📦 **Recipe:** 1 Throwing Knife + 1 Owl Feather`,
           reward: '1 Throwing Knife + 1 Owl Feather',
@@ -205,10 +205,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-homing-tomahawk', 
           text: 'Homing Tomahawk Pamphlet', 
-          tip: '📍 Fence. Slight homing capability.',
+          tip: ' Fence. Slight homing capability.',
           tip_detailed: `**Homing Tomahawk** - slight tracking when thrown. Makes hitting moving targets easier.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Tomahawk + 1 Owl Feather`,
           reward: '1 Tomahawk + 1 Owl Feather',
@@ -229,10 +229,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-volatile-dynamite', 
           text: 'Volatile Dynamite Pamphlet', 
-          tip: "📍 Lockbox at Hani's Bethel. OR Fence after 'American Distillation'.",
+          tip: " Lockbox at Hani's Bethel. OR Fence after 'American Distillation'.",
           tip_detailed: `**Volatile Dynamite** - bigger boom, more shrapnel.
 
-📍 **Free location:** Lockbox under broken wagon at Hani's Bethel
+ **Free location:** Lockbox under broken wagon at Hani's Bethel
 
 💰 **OR** Fence sells after "American Distillation"
 
@@ -244,10 +244,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-volatile-fire-bottle', 
           text: 'Volatile Fire Bottle Pamphlet', 
-          tip: '📍 Fence ($95). Bigger explosion.',
+          tip: ' Fence ($95). Bigger explosion.',
           tip_detailed: `**Volatile Fire Bottle** - more fire, more chaos.
 
-📍 **Available:** Fence for $95
+ **Available:** Fence for $95
 
 📦 **Recipe:** 1 Fire Bottle + 1 Animal Fat`,
           reward: '1 Fire Bottle + 1 Animal Fat',
@@ -268,10 +268,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-potent-health', 
           text: 'Potent Health Cure Pamphlet', 
-          tip: '📍 Near Annesburg mining area. OR Fence.',
+          tip: ' Near Annesburg mining area. OR Fence.',
           tip_detailed: `**Potent Health Cure** - full health core restoration.
 
-📍 **Free location:** Near Annesburg mining area
+ **Free location:** Near Annesburg mining area
 
 📦 **Recipe:** 1 Ginseng + 1 Yarrow`,
           reward: '1 Ginseng + 1 Yarrow',
@@ -281,10 +281,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-potent-bitters', 
           text: 'Potent Snake Oil Pamphlet', 
-          tip: '📍 Fence. Dead Eye restoration.',
+          tip: ' Fence. Dead Eye restoration.',
           tip_detailed: `**Potent Snake Oil** - restore your Dead Eye when it matters most.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Indian Tobacco + 1 Sage`,
           reward: '1 Indian Tobacco + 1 Sage',
@@ -293,10 +293,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-horse-reviver', 
           text: 'Horse Reviver Pamphlet', 
-          tip: '📍 Fence. Bring back downed horse!',
+          tip: ' Fence. Bring back downed horse!',
           tip_detailed: `**Horse Reviver** - save your horse from the brink of death.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Sage + 1 Health Cure
 
@@ -308,10 +308,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-horse-stimulant', 
           text: 'Horse Stimulant Pamphlet', 
-          tip: '📍 Fence. Restore horse stamina.',
+          tip: ' Fence. Restore horse stamina.',
           tip_detailed: `**Horse Stimulant** - refills horse stamina for long rides.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Burdock Root + 1 Oleander Sage`,
           reward: '1 Burdock Root + 1 Oleander Sage',
@@ -320,10 +320,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-special-miracles', 
           text: 'Special Miracle Tonic Pamphlet', 
-          tip: '📍 Fence after Chapter 3. Full core restore!',
+          tip: ' Fence after Chapter 3. Full core restore!',
           tip_detailed: `**Special Miracle Tonic** - restores ALL cores to full. The best tonic in the game.
 
-📍 **Available:** Fence after Chapter 3
+ **Available:** Fence after Chapter 3
 
 📦 **Recipe:** 1 Valerian Root + 1 Yarrow + 1 Ginseng`,
           reward: '1 Valerian Root + 1 Yarrow + 1 Ginseng',
@@ -345,10 +345,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-cover-scent', 
           text: 'Cover Scent Lotion Pamphlet', 
-          tip: '📍 Early game Fence. Mask your scent from animals.',
+          tip: ' Early game Fence. Mask your scent from animals.',
           tip_detailed: `**Cover Scent Lotion** - animals can't smell you coming.
 
-📍 **Available:** Fence (early game)
+ **Available:** Fence (early game)
 
 📦 **Recipe:** 1 Sage + 1 Oregano
 
@@ -360,10 +360,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-potent-predator-bait', 
           text: 'Potent Predator Bait Pamphlet', 
-          tip: '📍 Fence. Attracts predators faster.',
+          tip: ' Fence. Attracts predators faster.',
           tip_detailed: `**Potent Predator Bait** - draw in cougars, wolves, and bears.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 2 Meat + 1 Blackberry`,
           reward: '2 Meat + 1 Blackberry',
@@ -372,10 +372,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-potent-herbivore-bait', 
           text: 'Potent Herbivore Bait Pamphlet', 
-          tip: '📍 Fence. Attracts herbivores faster.',
+          tip: ' Fence. Attracts herbivores faster.',
           tip_detailed: `**Potent Herbivore Bait** - draw in deer, elk, and bison.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 2 Berries + 1 Vanilla Flower`,
           reward: '2 Berries + 1 Vanilla Flower',
@@ -384,10 +384,10 @@ export const pamphletsSection = {
         { 
           id: 'pamph-special-horse-food', 
           text: 'Special Horse Food Pamphlet', 
-          tip: '📍 Fence. Best horse core restoration.',
+          tip: ' Fence. Best horse core restoration.',
           tip_detailed: `**Special Horse Food** - the best food for your horse. Full core restoration.
 
-📍 **Available:** Fence
+ **Available:** Fence
 
 📦 **Recipe:** 1 Big Game Meat + 1 Apple + 1 Hay`,
           reward: '1 Big Game Meat + 1 Apple + 1 Hay',

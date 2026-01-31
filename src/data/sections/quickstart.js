@@ -14,8 +14,8 @@ export const quickstartSection = {
     {
       id: 'qs-legendary-buck',
       text: 'Hunt Legendary Buck FIRST',
-      tip: '📍 West of Strawberry. The Buck Antler Trinket increases perfect pelt chances.',
-      tip_detailed: `Now listen here, partner—before you go chasin' deer across three counties, do yourself a favor and bag that **Legendary Buck**. He roams the woods **📍 west of Strawberry**, a ghost of white fur between the pines.
+      tip: ' West of Strawberry. The Buck Antler Trinket increases perfect pelt chances.',
+      tip_detailed: `Now listen here, partner—before you go chasin' deer across three counties, do yourself a favor and bag that **Legendary Buck**. He roams the woods ** west of Strawberry**, a ghost of white fur between the pines.
 
 Put him down, haul his antler to the **Fence**, and get yourself that **Buck Antler Trinket**. From that moment on, every pelt you skin's got a better chance of comin' out **one star cleaner** than the Good Lord intended.
 
@@ -30,8 +30,8 @@ Put him down, haul his antler to the **Fence**, and get yourself that **Buck Ant
     {
       id: 'qs-limpany-gold',
       text: 'Grab Limpany Gold Bar ($500)',
-      tip: "📍 Burned town south of Valentine. Sheriff's desk has a lockbox.",
-      tip_detailed: `There's a ghost town called **Limpany**, 📍 **south of Valentine**—burned to ash years back. Nobody alive to tell the tale, but the fire left somethin' behind.
+      tip: " Burned town south of Valentine. Sheriff's desk has a lockbox.",
+      tip_detailed: `There's a ghost town called **Limpany**,  **south of Valentine**—burned to ash years back. Nobody alive to tell the tale, but the fire left somethin' behind.
 
 Head into what's left of the **Sheriff's office**. Under all that soot and ruin, there's a **lockbox in his desk**. Crack it open and you'll find yourself **$500 richer**.
 
@@ -105,7 +105,7 @@ No more ridin' all the way to Valentine just to switch mounts. Your whole stable
     {
       id: 'qs-schofield',
       text: 'Steal Schofield Revolver (Free)',
-      tip: '📍 Valentine Doctor side business. Best early revolver.',
+      tip: ' Valentine Doctor side business. Best early revolver.',
       tip_detailed: `The Valentine Doctor's got a side business—and I ain't talkin' about medicine. 👁️ Peek through the **back window** of his shop and you'll see somethin' suspicious. Rob the place.
 
 In the back, there's a chest with a **Schofield Revolver**. Best sidearm you'll find this early in the game, and it don't cost you a dime—just a little moral flexibility.
@@ -120,8 +120,8 @@ In the back, there's a chest with a **Schofield Revolver**. Best sidearm you'll 
     {
       id: 'qs-lancaster',
       text: 'Steal Lancaster Repeater (Free)',
-      tip: '📍 Rhodes Gunsmith basement. Free the prisoner.',
-      tip_detailed: `Down in **📍 Rhodes**, there's a Gunsmith with a secret in his basement. Walk around back, look through the window, and you'll spot a fella **locked in a cage**. Poor bastard.
+      tip: ' Rhodes Gunsmith basement. Free the prisoner.',
+      tip_detailed: `Down in ** Rhodes**, there's a Gunsmith with a secret in his basement. Walk around back, look through the window, and you'll spot a fella **locked in a cage**. Poor bastard.
 
 Rob the store—or just knock—and make your way down to **free him**. For your trouble, you get the **Lancaster Repeater**. Finest repeater this side of the Mississippi, and it didn't cost you a cent.
 

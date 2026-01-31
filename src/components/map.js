@@ -90,7 +90,7 @@ function renderMapModal() {
           <button class="map-filter-btn" data-filter="treasures">💎 Treasures</button>
           <button class="map-filter-btn" data-filter="strangers">❓ Strangers</button>
           <button class="map-filter-btn" data-filter="legendary-animals">🦌 Animals</button>
-          <button class="map-filter-btn" data-filter="uncompleted">📍 Remaining</button>
+          <button class="map-filter-btn" data-filter="uncompleted"> Remaining</button>
         </div>
         <button class="map-close" id="map-close">✕</button>
       </div>

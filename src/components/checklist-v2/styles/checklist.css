@@ -1,0 +1,834 @@
+/**
+ * Checklist V2 - Styles
+ * Section-based layout with theme-aware cards
+ * Inherits card styles from showcase.css
+ */
+
+/* ============================================
+   THEME VARIABLES (inherited from sidebar themes)
+   ============================================ */
+:root {
+  --card-bg: linear-gradient(135deg, #3e2723, #2a1a18);
+  --card-border: rgba(139,69,19,0.5);
+  --card-text: #e8dcc8;
+  --card-title: #d4c4a8;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  --header-title: #ffd700;
+  --section-bg: rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   CHECKLIST CONTAINER
+   ============================================ */
+#checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+.checklist-section {
+  background: var(--section-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.checklist-section.highlight {
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(139,69,19,0.3), rgba(100,50,10,0.2));
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255,215,0,0.1);
+}
+
+.section-header:hover {
+  background: linear-gradient(135deg, rgba(139,69,19,0.4), rgba(100,50,10,0.3));
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  font-size: 1.25rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.section-emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.section-title {
+  font-family: 'Rye', Georgia, serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--header-title);
+}
+
+.section-count {
+  font-size: 0.85rem;
+  padding: 2px 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  color: var(--card-text);
+  opacity: 0.8;
+}
+
+.section-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-progress-bar {
+  width: 100px;
+  height: 6px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.section-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* Progress bar colors based on completion percentage */
+.section-progress-fill.progress-gray {
+  background: #6b7280;
+}
+
+.section-progress-fill.progress-yellow {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.section-progress-fill.progress-orange {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+}
+
+.section-progress-fill.progress-green {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.section-chevron {
+  color: var(--card-text);
+  opacity: 0.6;
+  transition: transform 0.3s;
+}
+
+.section-header.collapsed .section-chevron {
+  transform: rotate(-90deg);
+}
+
+/* Section Items Container */
+.section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.section-items.hidden {
+  display: none;
+}
+
+/* Section Info Panel */
+.section-info-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--card-text);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.section-info-toggle:hover,
+.section-info-toggle.active {
+  opacity: 1;
+  color: #ffd700;
+}
+
+.section-info-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 0 1.25rem;
+}
+
+.section-info-panel.open {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0.75rem 1.25rem 1rem;
+}
+
+.section-info-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-left: 3px solid rgba(255,215,0,0.3);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+/* ============================================
+   CHECKLIST CARDS (extends showcase cards)
+   ============================================ */
+.checklist-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  color: var(--card-text);
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.checklist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow), 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Card Layout */
+.card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-family: 'Rye', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--card-title);
+  transition: opacity 0.2s;
+}
+
+.card-title.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.card-tip {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.card-tip i {
+  margin-right: 4px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   DONE ICON
+   ============================================ */
+.done-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid #444;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.done-icon:hover {
+  border-color: #666;
+  transform: scale(1.05);
+}
+
+.done-icon.checked {
+  border-color: var(--ring-color, #dc2626);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--ring-color, #dc2626) 40%, transparent);
+}
+
+.done-icon .icon-inner {
+  font-size: 1rem;
+  color: #888;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.done-icon.checked .icon-inner {
+  color: #ccc;
+}
+
+.done-icon.small {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.done-icon.small .icon-inner {
+  font-size: 0.65rem;
+}
+
+/* ============================================
+   ACCORDION PANELS
+   ============================================ */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  margin-left: 48px;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255,215,0,0.2);
+}
+
+.accordion-panel.open {
+  max-height: 800px;
+  opacity: 1;
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.detail-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.detail-content strong {
+  color: #ffd700;
+}
+
+/* ============================================
+   SUB-ITEMS - Full Width Row Design
+   ============================================ */
+.sub-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(0,0,0,0.2);
+  border-radius: 6px;
+  padding: 4px 0;
+  margin-top: 8px;
+}
+
+.sub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s ease;
+}
+
+.sub-item:last-child {
+  border-bottom: none;
+}
+
+.sub-item:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.sub-item.completed {
+  opacity: 0.5;
+}
+
+/* Header Row: Checkbox + Text + Info Button */
+.sub-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.sub-item-header .sub-text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.95);
+}
+
+.sub-item-header .sub-text.completed,
+.sub-items-list .sub-item .sub-text.completed {
+  text-decoration: line-through !important;
+  opacity: 0.6;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Meta Row: Tip (left) + Tags (right) on same line */
+.sub-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  padding-left: 30px; /* Align with text after checkbox */
+  margin-top: 4px;
+}
+
+.sub-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+  flex: 1;
+  min-width: 0;
+}
+
+.sub-tip i {
+  color: var(--gold-accent, #ffd700);
+  opacity: 0.7;
+  font-size: 0.65rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.sub-tip span {
+  flex: 1;
+}
+
+.sub-tip-spacer {
+  flex: 1;
+}
+
+/* Tags - Right aligned */
+.sub-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.sub-tags .tag {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sub-tags .tag i {
+  font-size: 0.5rem;
+}
+
+.sub-tags-row .tag i {
+  font-size: 0.55rem;
+}
+
+/* Sub-item info toggle button - smaller */
+.sub-info-toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 215, 0, 0.5);
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  font-size: 0.75rem;
+}
+
+.sub-info-toggle:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--gold-accent, #ffd700);
+}
+
+.sub-info-toggle.active {
+  background: rgba(255, 215, 0, 0.15);
+  color: var(--gold-accent, #ffd700);
+}
+
+/* Sub-item info panel (accordion) - compact */
+.sub-info-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.25s ease;
+  margin-left: 28px;
+  margin-top: 0;
+  padding-left: 8px;
+  border-left: 2px solid rgba(255,215,0,0.12);
+}
+
+.sub-info-panel.open {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  margin-top: 4px;
+}
+
+.sub-detail-content {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  color: rgba(255,255,255,0.85);
+}
+
+.sub-detail-content strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+.progress-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.progress-track {
+  width: 140px;
+  height: 8px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255,215,0,0.3);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.progress-red { background: linear-gradient(90deg, #991b1b, #dc2626); }
+.progress-green { background: linear-gradient(90deg, #166534, #22c55e); }
+.progress-gold { background: linear-gradient(90deg, #a16207, #eab308); }
+.progress-orange { background: linear-gradient(90deg, #c2410c, #f97316); }
+.progress-amber { background: linear-gradient(90deg, #b45309, #f59e0b); }
+.progress-blue { background: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+.progress-gray { background: linear-gradient(90deg, #4b5563, #9ca3af); }
+
+.progress-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* ============================================
+   TAGS
+   ============================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag i {
+  font-size: 0.65rem;
+}
+
+.tag-priority {
+  background: rgba(220,38,38,0.3);
+  color: #fca5a5;
+  border: 1px solid rgba(220,38,38,0.5);
+}
+
+.tag-missable {
+  background: rgba(234,179,8,0.3);
+  color: #fde047;
+  border: 1px solid rgba(234,179,8,0.5);
+}
+
+.tag-chapter {
+  background: rgba(59,130,246,0.3);
+  color: #93c5fd;
+  border: 1px solid rgba(59,130,246,0.5);
+}
+
+.tag-region {
+  background: rgba(107,114,128,0.3);
+  color: #d1d5db;
+  border: 1px solid rgba(107,114,128,0.5);
+}
+
+.tag-money {
+  background: rgba(34,197,94,0.3);
+  color: #86efac;
+  border: 1px solid rgba(34,197,94,0.5);
+}
+
+.tag-item {
+  background: rgba(234,179,8,0.25);
+  color: #fcd34d;
+  border: 1px solid rgba(234,179,8,0.5);
+}
+
+.tag.small {
+  padding: 2px 6px;
+  font-size: 0.6rem;
+}
+
+/* Sub-item tags override - must come after .tag to win cascade */
+.sub-items-list .sub-tags .tag {
+  font-size: 0.6rem !important;
+  padding: 2px 5px !important;
+  border-radius: 2px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.sub-items-list .sub-tags .tag i {
+  font-size: 0.5rem;
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(139,69,19,0.3);
+  border: 1px solid rgba(255,215,0,0.3);
+  color: rgba(255,215,0,0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.action-btn:hover {
+  background: rgba(255,215,0,0.2);
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.action-btn.active {
+  background: rgba(255,215,0,0.4);
+  color: #ffd700;
+  border-color: #ffd700;
+}
+
+.sub-toggle i { color: #22c55e; }
+.info-toggle i { color: #60a5fa; }
+
+.sub-toggle.active i { color: #86efac; }
+.info-toggle.active i { color: #93c5fd; }
+
+/* ============================================
+   THEME OVERRIDES - WOOD NIGHT (default)
+   ============================================ */
+[data-mode="night"][data-ui-theme="wood"] .checklist-card { 
+  background: linear-gradient(135deg, #3e2723, #2a1a18); 
+}
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="treasures"] {
+  background: linear-gradient(135deg, #4a3820, #3a2a18);
+  border-color: #d4a520;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="treasures"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="quickstart"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="satchel"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="camp"] {
+  background: linear-gradient(135deg, #2a4020, #1a3015);
+  border-color: #22c55e;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="quickstart"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="satchel"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="camp"] .card-title { color: #86efac; }
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="missable"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="legendary-animals"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="hunter"] {
+  background: linear-gradient(135deg, #4a2020, #3a1515);
+  border-color: #dc2626;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="missable"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="legendary-animals"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="hunter"] .card-title { color: #fca5a5; }
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="bounties"] {
+  background: linear-gradient(135deg, #4a2820, #3a1c15);
+  border-color: #ea580c;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="bounties"] .card-title { color: #fdba74; }
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="bandit"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="gambler"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="herbalist"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="horseman"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="sharpshooter"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="survivalist"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="weapons-expert"] {
+  background: linear-gradient(135deg, #4a3520, #3a2815);
+  border-color: #f59e0b;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="bandit"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="gambler"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="herbalist"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="horseman"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="sharpshooter"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="survivalist"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="weapons-expert"] .card-title { color: #fcd34d; }
+
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="strangers"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="companion-activities"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="camp-requests"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="graves"],
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="mysteries"] {
+  background: linear-gradient(135deg, #2a3040, #1a2030);
+  border-color: #3b82f6;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="strangers"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="companion-activities"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="camp-requests"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="graves"] .card-title,
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section="mysteries"] .card-title { color: #93c5fd; }
+
+/* Cigarette cards - green tint */
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section^="cig-"] {
+  background: linear-gradient(135deg, #2a4020, #1a3015);
+  border-color: #22c55e;
+}
+[data-mode="night"][data-ui-theme="wood"] .checklist-card[data-section^="cig-"] .card-title { color: #86efac; }
+
+/* ============================================
+   THEME OVERRIDES - DAY MODES
+   ============================================ */
+[data-mode="day"] .checklist-section {
+  background: rgba(255,255,255,0.1);
+}
+
+[data-mode="day"] .section-header {
+  background: linear-gradient(135deg, rgba(139,69,19,0.2), rgba(100,50,10,0.1));
+}
+
+[data-mode="day"][data-ui-theme="wood"] .checklist-card {
+  background: linear-gradient(135deg, #c4a574, #a08050);
+  border-color: rgba(139,69,19,0.6);
+  color: #3e2723;
+}
+
+[data-mode="day"][data-ui-theme="wood"] .card-title { color: #2d1810; }
+
+[data-mode="day"][data-ui-theme="ledger"] .checklist-card {
+  background: linear-gradient(135deg, #f5f0dc, #e8ddc0);
+  border-color: #8b7355;
+  color: #3e2723;
+  font-family: 'Special Elite', Georgia, serif;
+}
+
+[data-mode="day"][data-ui-theme="ledger"] .card-title { color: #4a3020; }
+
+[data-mode="day"][data-ui-theme="wanted"] .checklist-card {
+  background: linear-gradient(135deg, #e8d4b8, #d4b896);
+  border: 3px solid #8b4513;
+  color: #2d1f10;
+}
+
+[data-mode="day"][data-ui-theme="wanted"] .card-title { 
+  color: #8b0000; 
+  text-transform: uppercase;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .checklist-card {
+  background: linear-gradient(135deg, #5d4037, #4a3028);
+  border-color: #8b6914;
+  color: #f5f0dc;
+}
+
+[data-mode="day"][data-ui-theme="saloon"] .card-title { color: #ffd700; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  #checklist {
+    padding: 0.5rem;
+  }
+  
+  .section-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+  }
+  
+  .section-progress-bar {
+    width: 60px;
+  }
+  
+  .checklist-card {
+    padding: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  .accordion-panel {
+    margin-left: 36px;
+  }
+  
+  .progress-track {
+    width: 100px;
+  }
+}

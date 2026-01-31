@@ -13,7 +13,7 @@ export const companionActivitiesSection = {
     {
       id: 'comp-ch2',
       text: 'Chapter 2 Activities',
-      tip: '📍 Horseshoe Overlook camp. White icons on map.',
+      tip: ' Horseshoe Overlook camp. White icons on map.',
       tip_detailed: `**Horseshoe Overlook** - our first real camp after that frozen hell in Colter. Good times here, partner. The gang's still hopeful, still together.
 
 Look for **white activity icons** on your map when near camp. These are your chances to bond with your brothers and sisters in crime.
@@ -40,7 +40,7 @@ This mission teaches **bow hunting basics** and starts one of the best friendshi
         { 
           id: 'comp-javier-chez', 
           text: 'Rob Chez Porter with Javier', 
-          tip: "📍 O'Driscoll hideout north of Valentine. Stealth or loud.",
+          tip: " O'Driscoll hideout north of Valentine. Stealth or loud.",
           tip_detailed: `**Javier Escuella** invites you to hit an **O'Driscoll hideout** north of Valentine called Chez Porter. 
 
 You can go **stealth**—pickin' 'em off one by one—or go **loud** and blast your way through. Javier's good either way.
@@ -81,7 +81,7 @@ He's as helpful as you'd expect (barely), but the banter is gold. You do the wor
     {
       id: 'comp-ch3',
       text: 'Chapter 3 Activities',
-      tip: '📍 Clemens Point camp near Rhodes. MANY missable activities!',
+      tip: ' Clemens Point camp near Rhodes. MANY missable activities!',
       tip_detailed: `**Clemens Point** - our camp by the lake in Lemoyne. This is where things get complicated with the Grays and Braithwaites, but also where you can build some real bonds.
 
 ⚠️ **Chapter 3 has the MOST companion activities**, and they're all missable. Don't rush the story—spend time at camp.
@@ -188,7 +188,7 @@ Good for gambling challenge progress and good company.
     {
       id: 'comp-ch4',
       text: 'Chapter 4 Activities',
-      tip: '📍 Shady Belle camp in swamp. Fewer but still missable.',
+      tip: ' Shady Belle camp in swamp. Fewer but still missable.',
       tip_detailed: `**Shady Belle** - a haunted plantation in the Lemoyne swamps. The mood's darker here. Fewer activities, but still important.
 
 ⚠️ **Missable.** Chapter 4 moves fast once it starts.

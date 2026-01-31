@@ -31,10 +31,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-bear', 
           text: 'Legendary Bharati Grizzly Bear', 
-          tip: "📍 North of O'Creagh's Run. AGGRESSIVE! Springfield or Rolling Block to head.",
+          tip: " North of O'Creagh's Run. AGGRESSIVE! Springfield or Rolling Block to head.",
           tip_detailed: `**Legendary Bharati Grizzly** - massive, aggressive, and will charge you on sight.
 
-📍 **Location:** North of O'Creagh's Run, in the mountain area.
+ **Location:** North of O'Creagh's Run, in the mountain area.
 
 🔫 **Weapon:** Springfield Rifle or Rolling Block Rifle. **Aim for the head.** You might need multiple shots.
 
@@ -46,10 +46,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-bison-white', 
           text: 'Legendary White Bison', 
-          tip: '📍 Lake Isabella, NW near Mount Hagen. High-powered rifle headshot.',
+          tip: ' Lake Isabella, NW near Mount Hagen. High-powered rifle headshot.',
           tip_detailed: `**Legendary White Bison** - a ghost in the snow. Pure white, hulking, and rare.
 
-📍 **Location:** Northwest corner of Lake Isabella, near Mount Hagen.
+ **Location:** Northwest corner of Lake Isabella, near Mount Hagen.
 
 🔫 **Weapon:** Rolling Block or Springfield Rifle. One clean headshot if you're steady.
 
@@ -61,10 +61,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-wolf', 
           text: 'Legendary Wolf', 
-          tip: '📍 Cotorra Springs geyser area. Best at dawn. Sniper first, then Dead Eye.',
+          tip: ' Cotorra Springs geyser area. Best at dawn. Sniper first, then Dead Eye.',
           tip_detailed: `**Legendary Wolf** - he roams the geyser fields of Cotorra Springs. Cunning and fast.
 
-📍 **Location:** Cotorra Springs area, among the geysers.
+ **Location:** Cotorra Springs area, among the geysers.
 
 🎯 **Strategy:** Best hunted at **dawn**. Snipe him from distance first, then use Dead Eye to finish when he runs.
 
@@ -76,10 +76,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-ram', 
           text: 'Legendary Bighorn Ram', 
-          tip: '📍 East of Cattail Pond, near Valentine. Bow or rifle headshot. Cover scent helps.',
+          tip: ' East of Cattail Pond, near Valentine. Bow or rifle headshot. Cover scent helps.',
           tip_detailed: `**Legendary Bighorn Ram** - massive curled horns, skittish temperament.
 
-📍 **Location:** East of Cattail Pond, in the hills near Valentine.
+ **Location:** East of Cattail Pond, in the hills near Valentine.
 
 🏹 **Weapon:** Bow or rifle, headshot. Use **Cover Scent Lotion** to get close.
 
@@ -91,10 +91,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-elk', 
           text: 'Legendary Elk', 
-          tip: '📍 East of Bacchus Station, Cumberland Forest. Springfield or bow to vitals.',
+          tip: ' East of Bacchus Station, Cumberland Forest. Springfield or bow to vitals.',
           tip_detailed: `**Legendary Elk** - majestic antlers, cautious nature.
 
-📍 **Location:** East of Bacchus Station, Cumberland Forest.
+ **Location:** East of Bacchus Station, Cumberland Forest.
 
 🔫 **Weapon:** Springfield Rifle or bow. Aim for heart/lungs.
 
@@ -108,10 +108,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
     {
       id: 'legendary-new-hanover',
       text: 'New Hanover Region',
-      tip: '📍 Central map area. Accessible early in story.',
+      tip: ' Central map area. Accessible early in story.',
       tip_detailed: `**New Hanover** is your backyard early in the game—familiar territory, reasonable danger levels.
 
-📍 Hunt these legendaries as soon as Chapter 2 opens up free roam.
+ Hunt these legendaries as soon as Chapter 2 opens up free roam.
 
 *Start here. Build your confidence before tackling the mountains.*`,
       region: 'new-hanover',
@@ -120,10 +120,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-buck', 
           text: 'Legendary Buck ⭐', 
-          tip: '📍 NW of Strawberry, Black Bone Forest. HUNT FIRST for +pelt quality!',
+          tip: ' NW of Strawberry, Black Bone Forest. HUNT FIRST for +pelt quality!',
           tip_detailed: `**Legendary Buck** - the single most important legendary animal in the game.
 
-📍 **Location:** Northwest of Strawberry, Black Bone Forest.
+ **Location:** Northwest of Strawberry, Black Bone Forest.
 
 ⭐ **HUNT THIS FIRST!** The **Buck Antler Trinket** gives you a chance for **higher quality pelts** on every animal you skin.
 
@@ -138,10 +138,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-coyote', 
           text: 'Legendary Coyote', 
-          tip: '📍 Scarlett Meadows near Dewberry Creek, NW of Rhodes. Fast - one-shot with Springfield.',
+          tip: ' Scarlett Meadows near Dewberry Creek, NW of Rhodes. Fast - one-shot with Springfield.',
           tip_detailed: `**Legendary Coyote** - small, fast, elusive.
 
-📍 **Location:** Scarlett Meadows, near Dewberry Creek, northwest of Rhodes.
+ **Location:** Scarlett Meadows, near Dewberry Creek, northwest of Rhodes.
 
 🔫 **Weapon:** Springfield Rifle for one-shot capability. Coyotes are fast—don't miss.
 
@@ -153,10 +153,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-fox', 
           text: 'Legendary Fox', 
-          tip: '📍 North of Rhodes near Mattock Pond. Small target - Varmint Rifle or bow.',
+          tip: ' North of Rhodes near Mattock Pond. Small target - Varmint Rifle or bow.',
           tip_detailed: `**Legendary Fox** - tiny target, clever escape artist.
 
-📍 **Location:** North of Rhodes, near Mattock Pond.
+ **Location:** North of Rhodes, near Mattock Pond.
 
 🏹 **Weapon:** Varmint Rifle or bow. It's small—precision matters.
 
@@ -182,10 +182,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-boar', 
           text: 'Legendary Boar', 
-          tip: '📍 Bluewater Marsh, north of Lagras. Springfield or poison arrows.',
+          tip: ' Bluewater Marsh, north of Lagras. Springfield or poison arrows.',
           tip_detailed: `**Legendary Boar** - big, mean, and tusked.
 
-📍 **Location:** Bluewater Marsh, north of Lagras.
+ **Location:** Bluewater Marsh, north of Lagras.
 
 🔫 **Weapon:** Springfield Rifle or poison arrows work well.
 
@@ -197,10 +197,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-beaver', 
           text: 'Legendary Beaver', 
-          tip: '📍 Butcher Creek area, west of Van Horn. Albino beaver - Varmint Rifle one-shot.',
+          tip: ' Butcher Creek area, west of Van Horn. Albino beaver - Varmint Rifle one-shot.',
           tip_detailed: `**Legendary Beaver** - an albino specimen, white as snow.
 
-📍 **Location:** Butcher Creek area, west of Van Horn.
+ **Location:** Butcher Creek area, west of Van Horn.
 
 🔫 **Weapon:** Varmint Rifle for clean one-shot.
 
@@ -212,10 +212,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-alligator', 
           text: 'Legendary Bullgator', 
-          tip: '📍 Lakay, Bayou Nwa. ⚠️ Chapter 4+ only. Rolling Block + shotgun backup!',
+          tip: ' Lakay, Bayou Nwa. ⚠️ Chapter 4+ only. Rolling Block + shotgun backup!',
           tip_detailed: `**Legendary Bull Gator** - the monster of the swamp. Massive, ancient, and terrifying.
 
-📍 **Location:** Lakay, Bayou Nwa.
+ **Location:** Lakay, Bayou Nwa.
 
 ⚠️ **Available only after Chapter 4.** The swamp won't spawn him earlier.
 
@@ -230,10 +230,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-panther', 
           text: 'Legendary Giaguaro Panther ⭐', 
-          tip: '📍 Bolger Glade, south of Braithwaite Manor. ⚠️ Requires Master Hunter 9!',
+          tip: ' Bolger Glade, south of Braithwaite Manor. ⚠️ Requires Master Hunter 9!',
           tip_detailed: `**Legendary Giaguaro Panther** - the deadliest cat in the game. Pure black, lightning fast, and locked behind a challenge.
 
-📍 **Location:** Bolger Glade, south of Braithwaite Manor.
+ **Location:** Bolger Glade, south of Braithwaite Manor.
 
 ⚠️ **REQUIRES Master Hunter Challenge Rank 9** to spawn. Complete the challenges first.
 
@@ -262,10 +262,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-moose', 
           text: 'Legendary Moose', 
-          tip: '📍 Near Brandywine Drop, NE corner. RARE SPAWN - camp nearby, sleep repeatedly.',
+          tip: ' Near Brandywine Drop, NE corner. RARE SPAWN - camp nearby, sleep repeatedly.',
           tip_detailed: `**Legendary Moose** - the rarest legendary spawn in the game. Some players search for hours.
 
-📍 **Location:** Near Brandywine Drop, northeastern corner of the map.
+ **Location:** Near Brandywine Drop, northeastern corner of the map.
 
 ⚠️ **RARE SPAWN** - Set up camp nearby and **sleep repeatedly** to force respawns. May take multiple attempts.
 
@@ -292,10 +292,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-cougar', 
           text: 'Legendary Cougar', 
-          tip: '📍 Gaptooth Ridge, west of Tumbleweed. DEADLY - Dead Eye + shotgun!',
+          tip: ' Gaptooth Ridge, west of Tumbleweed. DEADLY - Dead Eye + shotgun!',
           tip_detailed: `**Legendary Cougar** - fast, silent, lethal. The most dangerous predator in New Austin.
 
-📍 **Location:** Gaptooth Ridge, west of Tumbleweed.
+ **Location:** Gaptooth Ridge, west of Tumbleweed.
 
 🔫 **Weapon:** Shotgun with Dead Eye. The cougar WILL pounce—be ready.
 
@@ -308,10 +308,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-pronghorn', 
           text: 'Legendary Pronghorn', 
-          tip: '📍 Del Lobo Rock, SE of Fort Mercer. Fast runner - sniper essential.',
+          tip: ' Del Lobo Rock, SE of Fort Mercer. Fast runner - sniper essential.',
           tip_detailed: `**Legendary Pronghorn** - fastest legendary in the game. You won't catch it on horseback.
 
-📍 **Location:** Del Lobo Rock, southeast of Fort Mercer.
+ **Location:** Del Lobo Rock, southeast of Fort Mercer.
 
 🔫 **Weapon:** Sniper rifle is essential. One shot from distance.
 
@@ -324,10 +324,10 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'leg-bison-tatanka', 
           text: 'Legendary Tatanka Bison', 
-          tip: "📍 Hennigan's Stead, SE of MacFarlane's Ranch. Docile but tough.",
+          tip: " Hennigan's Stead, SE of MacFarlane's Ranch. Docile but tough.",
           tip_detailed: `**Legendary Tatanka Bison** - massive, sturdy, and peaceful until you start shooting.
 
-📍 **Location:** Hennigan's Stead, southeast of MacFarlane's Ranch.
+ **Location:** Hennigan's Stead, southeast of MacFarlane's Ranch.
 
 🔫 **Weapon:** High-powered rifle. Multiple headshots may be needed.
 
@@ -362,7 +362,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-bluegill', 
           text: 'Bluegill (Flat Iron Lake)', 
-          tip: '📍 Near Rhodes. Special Lake Lure.',
+          tip: ' Near Rhodes. Special Lake Lure.',
           tip_detailed: `**Legendary Bluegill** - found in **Flat Iron Lake** near Rhodes.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -372,7 +372,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-bass-large', 
           text: 'Largemouth Bass (San Luis River)', 
-          tip: '📍 New Austin area. ⚠️ Epilogue. Special Lake Lure.',
+          tip: ' New Austin area. ⚠️ Epilogue. Special Lake Lure.',
           tip_detailed: `**Legendary Largemouth Bass** - found in the **San Luis River**, New Austin.
 
 ⚠️ **Epilogue only.**
@@ -384,7 +384,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-bass-small', 
           text: 'Smallmouth Bass (Owanjila Lake)', 
-          tip: '📍 Near Strawberry. Special Lake Lure.',
+          tip: ' Near Strawberry. Special Lake Lure.',
           tip_detailed: `**Legendary Smallmouth Bass** - found in **Owanjila Lake** near Strawberry.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -394,7 +394,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-bass-rock', 
           text: 'Rock Bass (Aurora Basin)', 
-          tip: '📍 Tall Trees area. Special Lake Lure.',
+          tip: ' Tall Trees area. Special Lake Lure.',
           tip_detailed: `**Legendary Rock Bass** - found in **Aurora Basin**, Tall Trees area.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -404,7 +404,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-bass-striped', 
           text: 'Striped Bass (San Luis River)', 
-          tip: '📍 Rio Bravo, New Austin. ⚠️ Epilogue. Special River Lure.',
+          tip: ' Rio Bravo, New Austin. ⚠️ Epilogue. Special River Lure.',
           tip_detailed: `**Legendary Striped Bass** - found in the **San Luis River** at Rio Bravo, New Austin.
 
 ⚠️ **Epilogue only.**
@@ -416,7 +416,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-perch', 
           text: 'Perch (Elysian Pool)', 
-          tip: '📍 Roanoke Ridge. Special Lake Lure.',
+          tip: ' Roanoke Ridge. Special Lake Lure.',
           tip_detailed: `**Legendary Perch** - found at **Elysian Pool**, Roanoke Ridge.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -426,7 +426,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-pickerel', 
           text: 'Chain Pickerel (Dakota River)', 
-          tip: '📍 Near Valentine. Special River Lure.',
+          tip: ' Near Valentine. Special River Lure.',
           tip_detailed: `**Legendary Chain Pickerel** - found in the **Dakota River** near Valentine.
 
 🎣 **Lure:** Special River Lure`,
@@ -436,7 +436,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-muskie', 
           text: "Muskie (O'Creagh's Run)", 
-          tip: "📍 Same lake as Hamish. Special Lake Lure.",
+          tip: " Same lake as Hamish. Special Lake Lure.",
           tip_detailed: `**Legendary Muskie** - found at **O'Creagh's Run**, same lake where Hamish lives.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -446,7 +446,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-gar', 
           text: 'Longnose Gar (Lagras)', 
-          tip: '📍 Bayou Nwa swamp. Special Swamp Lure.',
+          tip: ' Bayou Nwa swamp. Special Swamp Lure.',
           tip_detailed: `**Legendary Longnose Gar** - found in the swamps near **Lagras**, Bayou Nwa.
 
 🎣 **Lure:** Special Swamp Lure`,
@@ -456,7 +456,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-salmon', 
           text: 'Sockeye Salmon (Lake Isabella)', 
-          tip: '📍 Far north, snowy. Special Lake Lure.',
+          tip: ' Far north, snowy. Special Lake Lure.',
           tip_detailed: `**Legendary Sockeye Salmon** - found at **Lake Isabella**, in the frozen north.
 
 ❄️ Dress warm!
@@ -467,7 +467,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-steelhead', 
           text: "Steelhead Trout (Willard's Rest)", 
-          tip: "📍 Near Charlotte's cabin. Special River Lure.",
+          tip: " Near Charlotte's cabin. Special River Lure.",
           tip_detailed: `**Legendary Steelhead Trout** - found at **Willard's Rest**, near Charlotte's cabin.
 
 🎣 **Lure:** Special River Lure`,
@@ -477,7 +477,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-sturgeon', 
           text: 'Lake Sturgeon (Flat Iron Lake)', 
-          tip: '📍 South of Rhodes. Special Lake Lure.',
+          tip: ' South of Rhodes. Special Lake Lure.',
           tip_detailed: `**Legendary Lake Sturgeon** - found in **Flat Iron Lake**, south of Rhodes.
 
 🎣 **Lure:** Special Lake Lure`,
@@ -487,7 +487,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
         { 
           id: 'fish-catfish', 
           text: 'Channel Catfish (Sisika Island)', 
-          tip: '📍 Prison island area. ⚠️ Epilogue easier. Special River Lure.',
+          tip: ' Prison island area. ⚠️ Epilogue easier. Special River Lure.',
           tip_detailed: `**Legendary Channel Catfish** - found near **Sisika Island** (the prison).
 
 ⚠️ **Easier in Epilogue** when John can roam freely.
