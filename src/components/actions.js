@@ -12,16 +12,21 @@ export function renderActions() {
   if (!container) return;
 
   container.innerHTML = `
-    <button class="btn-burn" id="btn-burn">
-      🔥 Burn the Ledger (Reset All)
-    </button>
-    <button class="btn-export" id="btn-export">
-      📤 Export Progress
-    </button>
-    <input type="file" id="import-file" accept=".json" style="display: none;">
-    <button class="btn-export" id="btn-import">
-      📥 Import Progress
-    </button>
+    <div class="actions-bar">
+      <button class="action-btn action-btn--danger" id="btn-burn" title="Reset all progress">
+        <i class="fa-solid fa-fire"></i>
+        <span>Burn the Ledger</span>
+      </button>
+      <button class="action-btn action-btn--gold" id="btn-export" title="Export progress to file">
+        <i class="fa-solid fa-file-export"></i>
+        <span>Export</span>
+      </button>
+      <input type="file" id="import-file" accept=".json" style="display: none;">
+      <button class="action-btn action-btn--gold" id="btn-import" title="Import progress from file">
+        <i class="fa-solid fa-file-import"></i>
+        <span>Import</span>
+      </button>
+    </div>
   `;
 
   // Attach event listeners

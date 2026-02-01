@@ -10,6 +10,7 @@ import './components/sidebar-v2/styles/components.css';
 import './components/showcase-v2/styles/showcase.css';  // Theme variables for content area
 import './components/checklist-v2/styles/checklist.css';
 import './components/settings-panel/styles/settings-panel.css';
+import './components/journal-modal.css';
 
 // Components
 import { initThemeSystem, attachThemeListeners } from './components/sidebar-v2/theme-system.js';
@@ -17,7 +18,7 @@ import { renderNavigation, attachNavListeners, refreshNavigation } from './compo
 import { initChecklist, scrollToSection, refreshChecklist } from './components/checklist-v2/index.js';
 import { initSettingsPanel } from './components/settings-panel/index.js';
 import { initParticles } from './components/particles.js';
-import { initJournal } from './components/journal.js';
+import { initJournalModal } from './components/journal-modal.js';
 import { renderActions } from './components/actions.js';
 import { renderHeader, updateOverallProgress } from './components/header.js';
 import { store } from './data/state.js';
@@ -55,11 +56,8 @@ async function initApp() {
   // 6. Render checklist (main content)
   initChecklist('checklist');
   
-  // 7. Initialize journal
-  const journalContainer = document.getElementById('journal');
-  if (journalContainer) {
-    initJournal();
-  }
+  // 7. Initialize journal modal (floating FAB + popup)
+  initJournalModal();
   
   // 8. Render action buttons (export/import)
   const actionsContainer = document.getElementById('actions');

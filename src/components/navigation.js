@@ -58,7 +58,7 @@ const REGIONS = [
   { id: 'new-hanover', name: 'New Hanover', patterns: ['new hanover', 'heartlands', 'valentine', 'emerald', 'cumberland', 'elysian', 'dewberry', 'annesburg', 'van horn', 'roanoke'] },
   { id: 'lemoyne', name: 'Lemoyne', patterns: ['lemoyne', 'saint denis', 'rhodes', 'scarlett', 'bayou', 'bluewater', 'braithwaite', 'caliga', 'shady belle', 'lakay', 'lagras'] },
   { id: 'west-elizabeth', name: 'West Elizabeth', patterns: ['west elizabeth', 'blackwater', 'strawberry', 'big valley', 'tall trees', 'owanjila', 'aurora', 'great plains', 'manzanita'] },
-  { id: 'new-austin', name: 'New Austin', patterns: ['new austin', 'armadillo', 'tumbleweed', 'macfarlane', 'gaptooth', 'rio bravo', 'fort mercer', 'cholla'] }
+  { id: 'new-austin', name: 'New Austin', patterns: ['new austin', 'armadillo', 'tumbleweed', 'macfarlane', 'gaptooth', 'rio bravo', 'fort mercer', 'cholla'] },
 ];
 
 const CHAPTERS = [

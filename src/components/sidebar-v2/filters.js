@@ -24,6 +24,7 @@ export const activeFilters = {
 
 /**
  * Region data for filter chips
+ * Main regions with sub-region mappings
  */
 export const REGIONS = [
   { id: 'new-hanover', name: 'New Hanover' },
@@ -32,6 +33,49 @@ export const REGIONS = [
   { id: 'new-austin', name: 'New Austin' },
   { id: 'ambarino', name: 'Ambarino' }
 ];
+
+/**
+ * Map sub-regions to their parent main region
+ */
+const SUB_REGION_MAP = {
+  // New Hanover sub-regions
+  'heartlands': 'new-hanover',
+  'cumberland': 'new-hanover',
+  'roanoke': 'new-hanover',
+  'roanoke-ridge': 'new-hanover',
+  // Ambarino sub-regions  
+  'grizzlies': 'ambarino',
+  'grizzlies-east': 'ambarino',
+  'grizzlies-west': 'ambarino',
+  // West Elizabeth sub-regions
+  'big-valley': 'west-elizabeth',
+  'tall-trees': 'west-elizabeth',
+  'great-plains': 'west-elizabeth',
+  // Lemoyne sub-regions
+  'bayou': 'lemoyne',
+  'saint-denis': 'lemoyne',
+  'scarlett-meadows': 'lemoyne',
+  'bluewater': 'lemoyne',
+  // New Austin sub-regions
+  'gaptooth': 'new-austin',
+  'rio-bravo': 'new-austin',
+  'cholla': 'new-austin',
+  'hennigans-stead': 'new-austin'
+};
+
+/**
+ * Normalize a region ID to its main parent region
+ * @param {string} region - Raw region from data
+ * @returns {string} Normalized main region ID
+ */
+export function normalizeRegion(region) {
+  if (!region) return null;
+  const lower = region.toLowerCase();
+  // Check if it's already a main region
+  if (REGIONS.some(r => r.id === lower)) return lower;
+  // Check sub-region map
+  return SUB_REGION_MAP[lower] || lower;
+}
 
 /**
  * Check if an item matches current filters
@@ -54,9 +98,10 @@ export function itemMatchesFilters(item) {
     if (itemChapter !== activeFilters.chapter) return false;
   }
   
-  // Region filter
+  // Region filter - normalize before comparison
   if (activeFilters.region) {
-    if (item.region !== activeFilters.region) return false;
+    const normalizedItemRegion = normalizeRegion(item.region);
+    if (normalizedItemRegion !== activeFilters.region) return false;
   }
   
   // Missable only
@@ -105,11 +150,17 @@ export function scanAvailableFilters() {
   CHECKLIST_SECTIONS.forEach(section => {
     section.items?.forEach(item => {
       if (item.chapter) chapters.add(String(item.chapter).toLowerCase());
-      if (item.region) regions.add(item.region);
+      if (item.region) {
+        const normalized = normalizeRegion(item.region);
+        if (normalized) regions.add(normalized);
+      }
       
       item.subItems?.forEach(sub => {
         if (sub.chapter) chapters.add(String(sub.chapter).toLowerCase());
-        if (sub.region) regions.add(sub.region);
+        if (sub.region) {
+          const normalized = normalizeRegion(sub.region);
+          if (normalized) regions.add(normalized);
+        }
       });
     });
   });

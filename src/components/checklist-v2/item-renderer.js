@@ -97,6 +97,7 @@ export function renderItemCard(item, sectionId) {
           </div>
           <div class="card-title ${isCompleted ? 'completed' : ''}">${item.text}</div>
           ${item.tip ? `<p class="card-tip"><i class="fa-solid fa-location-dot"></i> ${item.tip}</p>` : ''}
+          ${item.narrative ? `<p class="card-narrative"><i class="fa-solid fa-quote-left"></i> ${item.narrative}</p>` : ''}
           ${hasSubItems ? renderProgressBar(subProgress, colorName) : ''}
         </div>
         

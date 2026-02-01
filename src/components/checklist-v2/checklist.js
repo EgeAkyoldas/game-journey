@@ -59,7 +59,11 @@ export function initChecklist(containerId = 'checklist') {
   
   // Listen for filter changes
   window.addEventListener('filters-changed', () => {
-    applyFiltersToChecklist(container);
+    // Get fresh container reference (in case DOM was replaced by HMR)
+    const freshContainer = document.getElementById(containerId);
+    if (freshContainer) {
+      applyFiltersToChecklist(freshContainer);
+    }
   });
   
   console.log('📋 Checklist V2 initialized');
@@ -137,7 +141,7 @@ function renderSection(section) {
     'pamphlets': 'fa-scroll',
     'talismans': 'fa-hand-sparkles',
     'strangers': 'fa-person-circle-question',
-    'legendary-animals': 'fa-deer',
+    'legendary-animals': 'fa-hippo',
     'bounties': 'fa-handcuffs',
     'gang-hideouts': 'fa-skull-crossbones',
     'companion-activities': 'fa-users',
@@ -146,29 +150,29 @@ function renderSection(section) {
     'missable': 'fa-triangle-exclamation',
     'graves': 'fa-cross',
     'collectibles': 'fa-image',
-    // Challenges
-    'challenge-bandit': 'fa-mask',
-    'challenge-explorer': 'fa-compass',
-    'challenge-gambler': 'fa-dice',
-    'challenge-herbalist': 'fa-leaf',
-    'challenge-horseman': 'fa-horse',
-    'challenge-master-hunter': 'fa-crosshairs',
-    'challenge-sharpshooter': 'fa-bullseye',
-    'challenge-survivalist': 'fa-fire',
-    'challenge-weapons-expert': 'fa-gun',
+    // Challenges (using actual section IDs)
+    'bandit': 'fa-mask',
+    'explorer': 'fa-compass',
+    'gambler': 'fa-dice',
+    'herbalist': 'fa-leaf',
+    'horseman': 'fa-horse',
+    'hunter': 'fa-bullseye',
+    'sharpshooter': 'fa-crosshairs',
+    'survivalist': 'fa-fire',
+    'weapons-expert': 'fa-gun',
     // Cigarette cards
-    'gunslingers': 'fa-gun',
-    'stage': 'fa-star',
-    'travel': 'fa-train',
-    'fauna': 'fa-paw',
-    'horses': 'fa-horse-head',
-    'americans': 'fa-user-tie',
-    'flora': 'fa-seedling',
-    'beauty': 'fa-mask',
-    'champions': 'fa-trophy',
-    'vistas': 'fa-mountain-sun',
-    'artists': 'fa-pen-nib',
-    'inventions': 'fa-gears',
+    'cig-gunslingers': 'fa-person-rifle',
+    'cig-stage': 'fa-masks-theater',
+    'cig-travel': 'fa-train',
+    'cig-fauna': 'fa-paw',
+    'cig-horses': 'fa-horse-head',
+    'cig-prominent': 'fa-user-tie',
+    'cig-flora': 'fa-seedling',
+    'cig-beauty': 'fa-crown',
+    'cig-champions': 'fa-medal',
+    'cig-vistas': 'fa-mountain-sun',
+    'cig-artists': 'fa-palette',
+    'cig-inventions': 'fa-gears',
     // Journal
     'journal': 'fa-book'
   };
@@ -453,8 +457,6 @@ export function refreshChecklist(containerId = 'checklist') {
  * Apply filters to checklist items (V1-style behavior)
  */
 function applyFiltersToChecklist(container) {
-  const completedItems = store.getCompletedItems();
-  
   // Check if any filter is active
   const hasActiveFilters = activeFilters.searchTerm || 
     activeFilters.chapter || 
@@ -542,7 +544,7 @@ function applyFiltersToChecklist(container) {
       const matchesStructuredFilters = itemMatchesFilters(filterItem);
       
       // Status filter
-      const isCompleted = completedItems[item.id] === true;
+      const isCompleted = store.get(item.id);
       const matchesStatus = statusMatches(isCompleted);
       
       // Show/hide item

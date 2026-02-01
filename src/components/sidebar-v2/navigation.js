@@ -43,6 +43,7 @@ let activeSection = null;
  * Main render function - creates sidebar
  */
 export function renderNavigation() {
+  console.log('🧭 renderNavigation() called');
   // Initialize theme system
   initThemeSystem();
   
@@ -84,6 +85,9 @@ function renderSidebarContent() {
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
+    
+    <!-- Theme Selector -->
+    ${renderThemeSelector()}
     
     <!-- Search Row -->
     <div class="nav-search-row">
@@ -405,6 +409,7 @@ function closeMobileSidebar() {
  * Apply filters and refresh UI
  */
 function applyFilters() {
+  console.log('🔍 applyFilters called, activeFilters:', activeFilters);
   updateFilterCountBadge();
   updateActiveFilterBadges();
   

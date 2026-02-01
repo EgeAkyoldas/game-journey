@@ -1,9 +1,10 @@
 /**
  * Header Component - V2 Redesign
- * Western ledger style with WANTED stamp
+ * Western ledger style with WANTED stamp and progress bar
  */
 
-import { $, createElement } from '../utils/dom.js';
+import { $ } from '../utils/dom.js';
+import { renderHeaderProgress, updateHeaderProgress } from './header-progress.js';
 
 export function renderHeader() {
   const container = $('#header');
@@ -40,14 +41,15 @@ export function renderHeader() {
           <i class="fa-solid fa-guitar"></i> Unshaken
         </a>
       </nav>
+      
+      <!-- Overall Progress Bar -->
+      ${renderHeaderProgress()}
     </div>
   `;
 }
 
 /**
- * Update overall progress display (kept for compatibility)
+ * Update overall progress display
+ * Re-exports the modular function for compatibility
  */
-export function updateOverallProgress(completed, total) {
-  // Removed from header - progress now shows in sidebar
-}
-
+export { updateHeaderProgress as updateOverallProgress };

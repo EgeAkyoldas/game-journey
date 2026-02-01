@@ -76,7 +76,7 @@ export const SECTION_ICONS = {
   
   // World & Story
   'strangers': 'fa-user-secret',
-  'legendary-animals': 'fa-deer',
+  'legendary-animals': 'fa-hippo',
   'bounties': 'fa-crosshairs',
   'gang-hideouts': 'fa-skull-crossbones',
   'companion-activities': 'fa-users',

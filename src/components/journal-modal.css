@@ -1,0 +1,244 @@
+/**
+ * Journal Modal Styles
+ * Floating action button + modal popup
+ */
+
+/* ============================================
+   FAB BUTTON (above settings)
+   ============================================ */
+.journal-fab {
+  position: fixed;
+  bottom: 90px; /* Above settings FAB */
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,215,0,0.4);
+  background: rgba(26, 24, 20, 0.95);
+  color: #d4a53c;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journal-fab:hover {
+  background: rgba(255,215,0,0.15);
+  border-color: #ffd700;
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+[data-mode="day"] .journal-fab {
+  background: rgba(245, 240, 220, 0.95);
+  border-color: rgba(139,69,19,0.4);
+  color: #8b4513;
+}
+
+[data-mode="day"] .journal-fab:hover {
+  background: rgba(139,69,19,0.1);
+  border-color: #8b4513;
+}
+
+/* ============================================
+   MODAL OVERLAY
+   ============================================ */
+.journal-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.journal-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.journal-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* ============================================
+   MODAL CONTENT
+   ============================================ */
+.journal-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  background: linear-gradient(135deg, #2a2420, #1a1814);
+  border: 2px solid rgba(139,69,19,0.6);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.journal-modal.open .journal-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+[data-mode="day"] .journal-modal-content {
+  background: linear-gradient(135deg, #f5f0dc, #e8ddc0);
+  border-color: rgba(139,69,19,0.4);
+}
+
+/* Header */
+.journal-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(139,69,19,0.3);
+}
+
+.journal-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: 'Rye', serif;
+  font-size: 1.25rem;
+  color: #d4a53c;
+}
+
+.journal-modal-title i {
+  opacity: 0.8;
+}
+
+[data-mode="day"] .journal-modal-title {
+  color: #8b4513;
+}
+
+.journal-modal-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.journal-modal-close:hover {
+  color: #ffd700;
+}
+
+[data-mode="day"] .journal-modal-close {
+  color: rgba(0,0,0,0.4);
+}
+
+[data-mode="day"] .journal-modal-close:hover {
+  color: #8b4513;
+}
+
+/* Body */
+.journal-modal-body {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+}
+
+.journal-textarea {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  border: 1px solid rgba(139,69,19,0.3);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.3);
+  color: #e8dcc8;
+  font-family: 'Special Elite', Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: none;
+}
+
+.journal-textarea::placeholder {
+  color: rgba(232,220,200,0.4);
+  font-style: italic;
+}
+
+.journal-textarea:focus {
+  outline: none;
+  border-color: rgba(255,215,0,0.5);
+  box-shadow: 0 0 0 3px rgba(255,215,0,0.1);
+}
+
+[data-mode="day"] .journal-textarea {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(139,69,19,0.3);
+  color: #3e2723;
+}
+
+[data-mode="day"] .journal-textarea::placeholder {
+  color: rgba(62,39,35,0.4);
+}
+
+[data-mode="day"] .journal-textarea:focus {
+  border-color: rgba(139,69,19,0.6);
+  box-shadow: 0 0 0 3px rgba(139,69,19,0.1);
+}
+
+/* Footer */
+.journal-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(139,69,19,0.3);
+  font-family: 'Special Elite', Georgia, serif;
+  font-size: 0.8rem;
+}
+
+.journal-char-count {
+  color: rgba(255,255,255,0.5);
+}
+
+[data-mode="day"] .journal-char-count {
+  color: rgba(0,0,0,0.5);
+}
+
+.journal-save-status {
+  color: #4ade80;
+}
+
+.journal-save-status.saving {
+  color: #fbbf24;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  .journal-fab {
+    bottom: 80px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .journal-modal-content {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .journal-textarea {
+    height: 250px;
+  }
+}

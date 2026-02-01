@@ -257,6 +257,27 @@
   opacity: 0.6;
 }
 
+/* Card Narrative - Western-themed flavor text for cigarette cards */
+.card-narrative {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.65;
+  margin: 6px 0 0 0;
+  padding: 8px 12px;
+  border-left: 2px solid rgba(255, 193, 7, 0.4);
+  background: linear-gradient(90deg, rgba(139, 69, 19, 0.15), transparent);
+  border-radius: 0 4px 4px 0;
+  color: #d4b896;
+  line-height: 1.4;
+}
+
+.card-narrative i {
+  margin-right: 6px;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  color: #ffc107;
+}
+
 /* ============================================
    DONE ICON
    ============================================ */
@@ -320,7 +341,7 @@
 }
 
 .accordion-panel.open {
-  max-height: 800px;
+  max-height: 3000px;
   opacity: 1;
   padding-top: 12px;
   padding-bottom: 8px;
@@ -831,4 +852,106 @@
   .progress-track {
     width: 100px;
   }
+}
+
+/* ============================================
+   ACTION BAR (Bottom Buttons)
+   ============================================ */
+.actions-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,215,0,0.4);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.5);
+  color: #d4a53c;
+  font-family: 'Special Elite', Georgia, serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255,215,0,0.15);
+  border-color: #ffd700;
+  color: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,215,0,0.2);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.action-btn i {
+  font-size: 1rem;
+}
+
+/* Danger variant (Burn) */
+.action-btn--danger {
+  border-color: rgba(154,48,48,0.6);
+  color: #c75050;
+}
+
+.action-btn--danger:hover {
+  background: rgba(154,48,48,0.2);
+  border-color: #9a3030;
+  color: #ff6b6b;
+  box-shadow: 0 4px 12px rgba(154,48,48,0.3);
+}
+
+/* Gold variant */
+.action-btn--gold {
+  border-color: rgba(255,215,0,0.4);
+  color: #d4a53c;
+}
+
+/* Day mode */
+[data-mode="day"] .action-btn {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(139,69,19,0.4);
+  color: #8b4513;
+}
+
+[data-mode="day"] .action-btn:hover {
+  background: rgba(139,69,19,0.1);
+  border-color: #8b4513;
+  color: #5c2d0e;
+}
+
+[data-mode="day"] .action-btn--danger {
+  border-color: rgba(154,48,48,0.4);
+  color: #9a3030;
+}
+
+[data-mode="day"] .action-btn--danger:hover {
+  background: rgba(154,48,48,0.1);
+  color: #7a2020;
+}
+
+/* Override for page-level action buttons (Burn/Export/Import) */
+.actions-bar .action-btn {
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  padding: 10px 18px;
+}
+
+.actions-bar .action-btn i {
+  font-size: 1rem;
+}
+
+.actions-bar .action-btn span {
+  display: inline;
 }

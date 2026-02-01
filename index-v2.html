@@ -303,13 +303,43 @@
     
     /* Progress */
     .header-progress {
-      font-family: 'Special Elite', Georgia, serif;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 0.5rem;
     }
     
-    .progress-text {
-      margin: 0;
+    .header-progress-bar {
+      width: 200px;
+      height: 8px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+    
+    .header-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8b4513 0%, #d4a53c 50%, #ffd700 100%);
+      border-radius: 4px;
+      transition: width 0.5s ease-out;
+    }
+    
+    .header-progress-text {
+      font-family: 'Special Elite', Georgia, serif;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      color: #d4a53c;
+    }
+    
+    [data-mode="day"] .header-progress-bar {
+      background: rgba(139,69,19,0.2);
+      border-color: rgba(139,69,19,0.4);
+    }
+    
+    [data-mode="day"] .header-progress-text {
+      color: #8b4513;
     }
     
     /* Loading state */
