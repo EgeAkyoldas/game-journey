@@ -6,7 +6,7 @@
 
 export const treasuresSection = {
   id: 'treasures',
-  title: 'II. Treasure Hunts',
+  title: 'Treasure Hunts',
   icon: '💎',
   defaultOpen: true,
   items: [

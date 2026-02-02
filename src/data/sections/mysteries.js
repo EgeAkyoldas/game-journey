@@ -1,12 +1,12 @@
 /**
  * Mysteries & Easter Eggs Section
  * Supernatural encounters, secret locations, and hidden stories
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via ign.com, powerpyx.com, fandom.com, gamerant.com
  */
 
 export const mysteriesSection = {
   id: 'mysteries',
-  title: 'IX. Mysteries & Secrets',
+  title: 'Mysteries & Secrets',
   icon: '👻',
   defaultOpen: false,
   items: [
@@ -489,17 +489,84 @@ The carvings show impossible things: pyramids, Vikings, skyscrapers...
         },
         { 
           id: 'mystery-meteor', 
-          text: 'Meteor Crash Site ☄️', 
-          tip: ' Roanoke Ridge. Burned cabin destroyed by meteor. Fragment inside!',
-          tip_detailed: ` **Location:** Roanoke Ridge
+          text: 'Meteor Crash Sites ☄️', 
+          tip: '☄️ Roanoke Ridge. TWO fragments: collapsed shed + crater nearby!',
+          tip_detailed: ` **Location:** Roanoke Ridge, north of Roanoke Valley
 
-☄️ A cabin destroyed by a **meteor impact**. Still smoking.
+☄️ **TWO meteor sites:**
+• Fragment 1: In a collapsed shed
+• Fragment 2: In a nearby crater
 
-💎 Find the **meteor fragment** inside the ruins.
+💎 Find both meteor fragments!
 
 *Space rocks don't care about property values.*`,
           region: 'new-hanover',
-          verified: true
+          verified: true,
+          source: 'screenrant.com'
+        },
+        { 
+          id: 'mystery-aberdeen', 
+          text: 'Aberdeen Pig Farm 🐷', 
+          tip: '⚠️ Scarlett Meadows. Cannibal siblings trap travelers. Money exploit!',
+          tip_detailed: ` **Location:** Scarlett Meadows, Lemoyne (NW of Bluewater Marsh)
+
+🐷 **Bray and Tammy Aberdeen** lure travelers, drug them, and steal their money. Inspired by the real "Bloody Benders" killers.
+
+💰 **EXPLOIT:** As Arthur, let them take your money before "Our Best Selves". Return as John in Epilogue to retrieve it!
+
+*The stew smells off. Don't eat it.*`,
+          region: 'lemoyne',
+          verified: true,
+          source: 'gamerant.com, fandom.com'
+        },
+        { 
+          id: 'mystery-mutant', 
+          text: 'Man-Made Mutant 🧪', 
+          tip: '🏠 Abandoned house W of Van Horn. Climb to 2nd floor window!',
+          tip_detailed: ` **Location:** Abandoned house west of Van Horn Trading Post, near the water
+
+🧪 **Access:** Climb to the **second-story window** above the porch.
+
+👽 Inside: A horrifying creation—human, bear, and pig parts with wings. Arthur's journal says "man-made mutant."
+
+*Someone was playing god here...*`,
+          region: 'new-hanover',
+          verified: true,
+          source: 'screenrant.com, youtube'
+        },
+        { 
+          id: 'mystery-ikz', 
+          text: 'Princess IKZ Mystery 👑', 
+          tip: '🔍 Missing princess poster in Van Horn. Chest with her initials at Fence. UNSOLVED!',
+          tip_detailed: ` **Princess Isabeau Katharina Zinsmeister** - disappeared in 1884 at age 5.
+
+🔍 **Clues:**
+• Missing poster in Van Horn Trading Post
+• Chest with "I.K.Z." initials at Van Horn Fence
+• Adult character model exists in game files
+
+⚠️ **CUT CONTENT:** This was likely a bounty mission that was never finished. No resolution exists.
+
+*The greatest unsolved mystery in RDR2...*`,
+          region: 'new-hanover',
+          verified: true,
+          source: 'fandom.com, reddit'
+        },
+        { 
+          id: 'mystery-statues', 
+          text: 'Strange Statues Puzzle 🗿', 
+          tip: '💰 NE of Fort Wallace. Circle of statues = gold bar puzzle!',
+          tip_detailed: ` **Location:** Northeast of Fort Wallace
+
+🗿 A circle of strange statues with a puzzle. Solve it to reveal a hidden **gold bar stash**!
+
+📝 **Hint:** Count the fingers on each statue...
+
+*Someone went to a lot of trouble to hide their wealth.*`,
+          reward: 'Gold Bars',
+          region: 'new-hanover',
+          verified: true,
+          source: 'youtube, powerpyx.com'
         }
       ]
     }

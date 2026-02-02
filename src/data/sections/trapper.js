@@ -34,7 +34,7 @@ export const trapperSection = {
     {
       id: 'trapper-set-trophy-buck',
       text: 'The Trophy Buck Set',
-      tip: '🦌 Legendary Buck + Fox. Great early game set.',
+      tip: '🦌 Legendary Buck + FoGreat early game set.',
       tip_detailed: `**The Trophy Buck Set** - crafted from the Legendary Buck and Fox.
 
 🦌 Both legendaries are available early in Chapter 2. Great starting set!`,

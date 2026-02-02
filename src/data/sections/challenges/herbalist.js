@@ -5,7 +5,7 @@
 
 export const herbalistChallenge = {
   id: 'herbalist',
-  title: 'XI. Herbalist Challenges',
+  title: 'Herbalist Challenges',
   icon: '🌿',
   defaultOpen: false,
   tip_detailed: `Master the **flora of the frontier**. Collect plants, craft tonics, and cook seasoned meals.

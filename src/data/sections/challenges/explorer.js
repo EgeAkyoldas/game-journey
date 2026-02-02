@@ -5,7 +5,7 @@
 
 export const explorerChallenge = {
   id: 'explorer',
-  title: 'IX. Explorer Challenges',
+  title: 'Explorer Challenges',
   icon: '🗺️',
   defaultOpen: false,
   tip_detailed: `Discover the **hidden treasures** and **points of interest** across the frontier.

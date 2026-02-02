@@ -1,12 +1,12 @@
 /**
  * Camp Item Requests Section
  * Grouped by gang member with items and rewards
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via gamepressure.com, gamerant.com, rdr2.org
  */
 
 export const campRequestsSection = {
   id: 'camp-requests',
-  title: 'XX. Camp Item Requests',
+  title: 'Camp Item Requests',
   icon: '🎁',
   defaultOpen: false,
   items: [
@@ -82,13 +82,14 @@ export const campRequestsSection = {
         { 
           id: 'req-charles-eagle', 
           text: 'Eagle Feather for Charles (Epilogue)', 
-          tip: ' Shoot eagles or find feathers. EPILOGUE only.',
-          tip_detailed: `Shoot an **Eagle** or find loose feathers. Charles makes Improved Arrows.
+          tip: '🦅 Shoot eagles or find feathers. EPILOGUE only.',
+          tip_detailed: `Shoot an **Eagle** or find loose feathers. Charles makes Horse Reviver for you.
 
 🦅 **Epilogue only** - Visit Charles at Beecher's Hope.`,
           chapter: 'epilogue', 
-          reward: 'Improved Arrows',
-          verified: true
+          reward: 'Horse Reviver',
+          verified: true,
+          source: 'gamerant.com'
         }
       ]
     },
@@ -119,11 +120,12 @@ export const campRequestsSection = {
         { 
           id: 'req-hosea-ginseng', 
           text: 'American Ginseng (×2)', 
-          tip: ' Forest areas. He gives Potent Medicine.',
-          tip_detailed: `Collect **2× American Ginseng** from forest areas. Hosea makes Potent Medicine.`,
+          tip: '🌿 Forest areas. He gives Health Cure.',
+          tip_detailed: `Collect **2× American Ginseng** from forest areas. Hosea makes Health Cure for you.`,
           missable: true, 
-          reward: 'Potent Medicine',
-          verified: true
+          reward: 'Health Cure',
+          verified: true,
+          source: 'gamerant.com'
         }
       ]
     },
@@ -137,24 +139,26 @@ export const campRequestsSection = {
         { 
           id: 'req-pearson-compass', 
           text: 'Naval Compass', 
-          tip: ' Shipwrecks or naval locations. He shares rum and stories.',
-          tip_detailed: `Find a **Naval Compass** at shipwrecks or naval locations. Pearson shares rum and navy stories with you.
+          tip: '⚓ Shipwrecks or naval locations. He gives Guarma Rum!',
+          tip_detailed: `Find a **Naval Compass** at shipwrecks or naval locations. Pearson shares **Guarma Rum** and navy stories with you.
 
 ⚓ *He misses the sea more than he lets on.*`,
           missable: true, 
-          reward: 'Navy Stories',
-          verified: true
+          reward: 'Guarma Rum',
+          verified: true,
+          source: 'gamerant.com'
         },
         { 
           id: 'req-pearson-rabbit', 
           text: 'Rabbit Carcass', 
-          tip: ' Hunt any rabbit (perfect not needed). Camp stew upgrade!',
-          tip_detailed: `Bring Pearson any **Rabbit Carcass** (doesn't need to be perfect). He upgrades the camp stew.
+          tip: '🐇 Hunt any rabbit (perfect not needed). He gives Scouting Jacket!',
+          tip_detailed: `Bring Pearson any **Rabbit Carcass** (doesn't need to be perfect). He gives you the **Scouting Jacket** clothing item.
 
-🍲 *Better meals for everyone.*`,
+🧥 *A nice reward for a simple task.*`,
           missable: true, 
-          reward: 'Camp Stew Upgrade',
-          verified: true
+          reward: 'Scouting Jacket',
+          verified: true,
+          source: 'gamerant.com'
         }
       ]
     },
@@ -271,10 +275,11 @@ export const campRequestsSection = {
         { 
           id: 'req-tilly-necklace', 
           text: 'Necklace for Tilly', 
-          tip: ' Jewelry boxes or rob wealthy NPCs. She gives Medicine.',
+          tip: '💎 Jewelry boxes or rob wealthy NPCs. She gives Two Health Cures!',
           missable: true, 
-          reward: 'Medicine',
-          verified: true
+          reward: 'Two Health Cures',
+          verified: true,
+          source: 'gamerant.com'
         }
       ]
     },
@@ -291,17 +296,18 @@ export const campRequestsSection = {
         { 
           id: 'req-uncle-cure', 
           text: "Uncle's Home Remedy", 
-          tip: '📦 Milkweed, Bourbon, Peppermint, Pomade, Skunk Carcass!',
+          tip: '📦 Milkweed, Bourbon, Peppermint, Pomade, Stringy Meat!',
           tip_detailed: `Gather these ingredients for Uncle's cure:
-• Milkweed
+• Milkweed (riverbanks)
 • Kentucky Bourbon
 • Peppermint
-• Hair Pomade
-• Skunk Carcass
+• Hair Pomade (Rhodes store)
+• Stringy Meat (from hunting)
 
-🦨 *The skunk is the key ingredient. Don't ask.*`,
-          reward: 'Uncle survives another day',
-          verified: true
+🧥 **Reward:** Clothing items`,
+          reward: 'Clothing Items',
+          verified: true,
+          source: 'primewikis.com, gamepressure.com'
         }
       ]
     }

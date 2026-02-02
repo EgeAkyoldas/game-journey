@@ -7,7 +7,7 @@
 
 export const quickstartSection = {
   id: 'quickstart',
-  title: 'I. Quick Start Guide',
+  title: 'Quick Start Guide',
   icon: '⭐',
   defaultOpen: true,
   items: [

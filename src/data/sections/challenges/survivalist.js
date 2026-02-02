@@ -5,7 +5,7 @@
 
 export const survivalistChallenge = {
   id: 'survivalist',
-  title: 'XIV. Survivalist Challenges',
+  title: 'Survivalist Challenges',
   icon: '⛺',
   defaultOpen: false,
   tip_detailed: `Live off the land. **Fishing, crafting, and hunting** like a true frontier survivor.

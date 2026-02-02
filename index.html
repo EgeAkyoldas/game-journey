@@ -1,33 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Drifter's Ledger - Red Dead Redemption Guide</title>
-    <meta name="description" content="A comprehensive Red Dead Redemption checklist and guide. Track your progress through the Old West.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Drifter's Ledger V2 - RDR2 100% Checklist</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Complete Red Dead Redemption 2 100% checklist with themes, audio feedback, and progress tracking. Track treasures, collectibles, challenges, and more.">
+  <meta name="keywords" content="RDR2, Red Dead Redemption 2, checklist, 100%, completion, guide">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <style>
+    /* Critical CSS - base layout */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      font-family: Georgia, serif;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    /* Mode backgrounds */
+    [data-mode="day"] { 
+      background: #e8dcc8; 
+      color: #2d1f10; 
+    }
+    [data-mode="night"] { 
+      background: #1a1814; 
+      color: #e8dcc8; 
+    }
+    
+    /* Theme-specific backgrounds */
+    [data-ui-theme="ledger"][data-mode="night"] {
+      background: linear-gradient(135deg, #1a1814 0%, #2a2420 50%, #1a1814 100%);
+    }
+    
+    [data-ui-theme="ledger"][data-mode="day"] {
+      background: linear-gradient(135deg, #f5f0dc 0%, #e8ddc0 50%, #f0e8d0 100%);
+    }
+    
+    [data-ui-theme="wanted"] {
+      background-image: url('/paper-texture.jpg');
+      background-size: cover;
+    }
+    
+    [data-ui-theme="saloon"][data-mode="night"] {
+      background: linear-gradient(135deg, #2a1a10 0%, #3a2820 50%, #2a1a10 100%);
+    }
+    
+    /* Video background */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    
+    [data-mode="day"] .video-background {
+      opacity: 0.1;
+    }
+    
+    /* Particles */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* Layout */
+    body {
+      display: flex;
+    }
+    
+    #sidebar {
+      width: 320px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      overflow-y: auto;
+    }
+    
+    #content {
+      margin-left: 320px;
+      flex: 1;
+      min-height: 100vh;
+      padding: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Ledger Container - unified header + content */
+    .ledger-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(26, 24, 20, 0.85);
+      border-left: 4px solid #9a3030;
+      padding: 2rem;
+      min-height: calc(100vh - 2rem);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    [data-mode="day"] .ledger-container {
+      background: rgba(245, 240, 220, 0.9);
+      border-left: 4px solid #8b4513;
+      box-shadow: 0 4px 20px rgba(139,69,19,0.3);
+    }
+    
+    /* Theme-specific container styles */
+    [data-ui-theme="wood"] .ledger-container {
+      border-left-color: #8b4513;
+      background: rgba(30, 25, 20, 0.88);
+    }
+    [data-ui-theme="wood"][data-mode="day"] .ledger-container {
+      background: rgba(235, 220, 190, 0.92);
+    }
+    
+    [data-ui-theme="ledger"] .ledger-container {
+      border-left-color: #8b4513;
+      background: rgba(26, 24, 20, 0.9);
+    }
+    [data-ui-theme="ledger"][data-mode="day"] .ledger-container {
+      background: rgba(245, 240, 220, 0.95);
+    }
+    
+    [data-ui-theme="wanted"] .ledger-container {
+      border-left-color: #8b0000;
+      background: rgba(40, 30, 25, 0.88);
+    }
+    [data-ui-theme="wanted"][data-mode="day"] .ledger-container {
+      background: rgba(255, 248, 235, 0.9);
+    }
+    
+    [data-ui-theme="saloon"] .ledger-container {
+      border-left-color: #b8860b;
+      background: rgba(42, 26, 16, 0.9);
+    }
+    [data-ui-theme="saloon"][data-mode="day"] .ledger-container {
+      background: rgba(252, 243, 230, 0.92);
+    }
+    
+    /* Mobile layout */
+    @media (max-width: 768px) {
+      #sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      
+      #sidebar.open {
+        transform: translateX(0);
+      }
+      
+      #content {
+        margin-left: 0;
+      }
+    }
+    
+    /* ============================================
+       HEADER STYLES - Western Ledger Theme
+       ============================================ */
+    .header-wrapper {
+      text-align: center;
+      padding: 2rem 0 1.5rem;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* WANTED Stamp */
+    .wanted-stamp {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotate(12deg);
+      border: 3px solid #8b0000;
+      padding: 8px 16px;
+      font-family: 'Special Elite', Georgia, serif;
+      color: #8b0000;
+      opacity: 0.7;
+      text-align: center;
+      line-height: 1.2;
+      background: rgba(139, 0, 0, 0.05);
+    }
+    
+    .wanted-text {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    
+    .wanted-subtext {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
+    
+    [data-mode="night"] .wanted-stamp {
+      border-color: #dc3545;
+      color: #dc3545;
+      background: rgba(220, 53, 69, 0.1);
+    }
+    
+    /* Main Title */
+    .ledger-title {
+      font-family: 'Rye', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: 3px;
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+    }
+    
+    .title-line {
+      display: block;
+    }
+    
+    [data-mode="day"] .ledger-title { color: #3e2723; }
+    [data-mode="night"] .ledger-title { color: #f5f0dc; }
+    
+    /* Divider */
+    .header-divider {
+      width: 80%;
+      max-width: 500px;
+      height: 2px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(90deg, transparent, currentColor 20%, currentColor 80%, transparent);
+      opacity: 0.3;
+    }
+    
+    /* Subtitle */
+    .ledger-subtitle {
+      font-family: 'Special Elite', Georgia, serif;
+      font-size: 1rem;
+      margin: 0 0 1.25rem;
+      opacity: 0.6;
+      letter-spacing: 1px;
+    }
+    
+    .ledger-subtitle em {
+      font-style: italic;
+    }
+    
+    /* Music Links */
+    .music-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    
+    .music-links a {
+      font-family: 'Special Elite', Georgia, serif;
+      font-size: 0.85rem;
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 215, 0, 0.4);
+      text-underline-offset: 3px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .music-links a:hover {
+      color: #ffd700;
+      text-decoration-color: #ffd700;
+    }
+    
+    .music-links a i {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+    
+    .link-divider {
+      opacity: 0.3;
+      margin: 0 0.25rem;
+    }
+    
+    /* Progress */
+    .header-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    
+    .header-progress-bar {
+      width: 200px;
+      height: 8px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+    
+    .header-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8b4513 0%, #d4a53c 50%, #ffd700 100%);
+      border-radius: 4px;
+      transition: width 0.5s ease-out;
+    }
+    
+    .header-progress-text {
+      font-family: 'Special Elite', Georgia, serif;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      color: #d4a53c;
+    }
+    
+    [data-mode="day"] .header-progress-bar {
+      background: rgba(139,69,19,0.2);
+      border-color: rgba(139,69,19,0.4);
+    }
+    
+    [data-mode="day"] .header-progress-text {
+      color: #8b4513;
+    }
+    
+    /* Loading state */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: #ffd700;
+      font-size: 1.25rem;
+    }
+    
+    .loading i {
+      margin-right: 10px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
-<body>
-    <!-- Dust Particles -->
-    <div id="particles"></div>
-
-    <!-- Main Container -->
-    <div id="app" class="container">
-        <!-- Header -->
-        <div id="header"></div>
-
-        <!-- Checklist Sections -->
-        <div id="checklist"></div>
-
-        <!-- Journal -->
-        <div id="journal-container"></div>
-
-        <!-- Actions -->
-        <div id="actions"></div>
+<body data-mode="night" data-ui-theme="wood">
+  <!-- VIDEO BACKGROUND -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="/background.mp4" type="video/mp4">
+  </video>
+  
+  <!-- PARTICLES -->
+  <div id="particles"></div>
+  
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <div class="loading">
+      <i class="fa-solid fa-spinner"></i>
+      Loading...
     </div>
-
-    <script type="module" src="/src/main.js"></script>
+  </div>
+  
+  <!-- MAIN CONTENT -->
+  <main id="content">
+    <!-- UNIFIED LEDGER CONTAINER -->
+    <div class="ledger-container">
+      <!-- HEADER -->
+      <div id="header"></div>
+      
+      <!-- CHECKLIST -->
+      <div id="checklist">
+        <div class="loading">
+          <i class="fa-solid fa-spinner"></i>
+          Loading checklist...
+        </div>
+      </div>
+      
+      <!-- JOURNAL -->
+      <div id="journal"></div>
+      
+      <!-- ACTIONS -->
+      <div id="actions"></div>
+    </div>
+  </main>
+  
+  <!-- SETTINGS PANEL (floating) -->
+  <div id="settings-panel"></div>
+  
+  <!-- V2 Entry Point -->
+  <script type="module" src="/src/main-v2.js"></script>
 </body>
 </html>

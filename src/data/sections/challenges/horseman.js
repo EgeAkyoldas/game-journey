@@ -5,7 +5,7 @@
 
 export const horsemanChallenge = {
   id: 'horseman',
-  title: 'XIII. Horseman Challenges',
+  title: 'Horseman Challenges',
   icon: '🐎',
   defaultOpen: false,
   tip_detailed: `Prove your mastery of **horseback riding**. Speed runs, mounted combat, and breaking wild horses.

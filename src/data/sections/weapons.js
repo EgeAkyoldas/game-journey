@@ -1,12 +1,12 @@
 /**
  * Free Weapons Section
  * All unique/rare weapons with exact locations
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via redbull.com, powerpyx.com, fandom.com, ign.com
  */
 
 export const weaponsSection = {
   id: 'weapons',
-  title: 'V. Weapons & Equipment',
+  title: 'Weapons & Equipment',
   icon: '🔫',
   defaultOpen: false,
   items: [

@@ -1,12 +1,12 @@
 /**
  * Collectibles Section
  * All major collectible categories with detailed subItems
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via powerpyx.com, gamerant.com, fandom.com
  */
 
 export const collectiblesSection = {
   id: 'collectibles',
-  title: 'XVII. Collectibles',
+  title: 'Collectibles',
   icon: '🏆',
   defaultOpen: false,
   items: [

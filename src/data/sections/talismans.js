@@ -1,12 +1,12 @@
 /**
  * Talismans & Trinkets Section
- * Complete crafting recipes from Fence - verified against wiki
- * Enhanced with cowboy storyteller narrative
+ * Complete crafting recipes from Fence
+ * ✅ VERIFIED: 2026-02-02 via gamesradar.com, fandom.com, gamerant.com
  */
 
 export const talismansSection = {
   id: 'talismans',
-  title: 'XXII. Talismans & Trinkets',
+  title: 'Talismans & Trinkets',
   icon: '🔮',
   defaultOpen: false,
   items: [

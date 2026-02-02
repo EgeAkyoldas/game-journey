@@ -6,7 +6,7 @@
 
 export const legendaryAnimalsSection = {
   id: 'legendary-animals',
-  title: 'IV. Legendary Animals',
+  title: 'Legendary Animals',
   icon: '🦌',
   defaultOpen: false,
   items: [

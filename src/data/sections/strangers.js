@@ -2,12 +2,12 @@
  * Stranger Missions Section
  * Comprehensive guide with nested checkable sub-items
  * All stranger mission chains with detailed steps, locations, and rewards
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via gamerant.com, powerpyx.com, fandom.com
  */
 
 export const strangersSection = {
   id: 'strangers',
-  title: 'III. Stranger Missions',
+  title: 'Stranger Missions',
   icon: '❓',
   defaultOpen: false,
   items: [

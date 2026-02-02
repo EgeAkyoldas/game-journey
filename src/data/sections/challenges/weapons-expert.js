@@ -5,7 +5,7 @@
 
 export const weaponsExpertChallenge = {
   id: 'weapons-expert',
-  title: 'XVIII. Weapons Expert',
+  title: 'Weapons Expert',
   icon: '🔪',
   defaultOpen: false,
   tip_detailed: `Master **every weapon type**. Knives, tomahawks, explosives, and precise gunplay.

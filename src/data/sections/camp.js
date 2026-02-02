@@ -6,7 +6,7 @@
 
 export const campSection = {
   id: 'camp',
-  title: 'VII. Camp Upgrades',
+  title: 'Camp Upgrades',
   icon: '⛺',
   defaultOpen: false,
   items: [

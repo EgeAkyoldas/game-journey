@@ -6,7 +6,7 @@
 
 export const satchelSection = {
   id: 'satchel',
-  title: 'VI. Satchel Upgrades',
+  title: 'Satchel Upgrades',
   icon: '🎒',
   defaultOpen: false,
   items: [

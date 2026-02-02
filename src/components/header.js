@@ -29,16 +29,12 @@ export function renderHeader() {
       
       <!-- Music Links -->
       <nav class="music-links">
-        <a href="https://open.spotify.com/search/dust%20to%20dust%20red%20dead" target="_blank" rel="noopener">
-          <i class="fa-solid fa-music"></i> Dust to Dust
+        <a href="https://open.spotify.com/playlist/6o0eJl3jfFDxdJgSTIF9nL?si=67eae1f0dea84362" target="_blank" rel="noopener">
+          <i class="fa-brands fa-spotify"></i> Dust to Dust
         </a>
         <span class="link-divider">|</span>
         <a href="https://www.youtube.com/results?search_query=red+dead+redemption+2+ambience" target="_blank" rel="noopener">
           <i class="fa-solid fa-fire"></i> Campfire
-        </a>
-        <span class="link-divider">|</span>
-        <a href="https://www.youtube.com/watch?v=AUXGW6sWYDY" target="_blank" rel="noopener">
-          <i class="fa-solid fa-guitar"></i> Unshaken
         </a>
       </nav>
       

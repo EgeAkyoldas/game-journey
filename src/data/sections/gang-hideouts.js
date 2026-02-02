@@ -1,12 +1,12 @@
 /**
  * Gang Hideouts Section
- * Required for 100% completion - Clear 6 gang hideouts
- * Enhanced with cowboy storyteller narrative
+ * Required for 100% completion - Clear all gang hideouts
+ * ✅ VERIFIED: 2026-02-02 via fandom.com, powerpyx.com, gamerant.com, rdr2.org
  */
 
 export const gangHideoutsSection = {
   id: 'gang-hideouts',
-  title: 'X. Gang Hideouts',
+  title: 'Gang Hideouts',
   icon: '🏚️',
   defaultOpen: false,
   items: [
@@ -15,8 +15,8 @@ export const gangHideoutsSection = {
     // ========================================
     {
       id: 'hideout-main',
-      text: '100% Completion Hideouts (6 Required)',
-      tip: '🎯 Clear all enemies to complete. Some respawn, some story-locked.',
+      text: '100% Completion Hideouts',
+      tip: '🎯 Clear all enemies. Some are story missions, some optional.',
       tip_detailed: `For that **100% completion**, you gotta clear **six specific gang hideouts**. Kill every last outlaw, loot the place clean, and move on to the next nest of rats.
 
 ⚠️ **Story timing matters.** Some hideouts only become available after certain missions. Others become your own camp for a while.
@@ -69,16 +69,17 @@ You'll assault this place in **Chapter 6**. After the story, the **Laramie Gang*
         { 
           id: 'hideout-beaver-hollow', 
           text: 'Beaver Hollow (Murfree Brood)', 
-          tip: ' W of Annesburg, Roanoke Ridge. Becomes camp in Ch6.',
+          tip: 'W of Annesburg, Roanoke Ridge. Cleared in Ch5 story mission.',
           tip_detailed: `**Beaver Hollow** - the Murfree Brood's lair, west of Annesburg in Roanoke Ridge. These inbred cannibals are the worst folks you'll meet.
 
- Clear 'em out and the gang moves in for Chapter 6. Dark times, dark place.
+📍 Cleared during a **Chapter 5 story mission**. Then becomes the gang's final camp location.
 
 ⚠️ *The Murfrees eat people. Don't let 'em take you alive.*`,
-          chapter: 6,
+          chapter: 5,
           region: 'new-hanover',
           reward: 'Final Camp Location',
-          verified: true
+          verified: true,
+          source: 'powerpyx.com, gamerant.com'
         },
         { 
           id: 'hideout-fort-mercer', 

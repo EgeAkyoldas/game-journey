@@ -5,7 +5,7 @@
 
 export const banditChallenge = {
   id: 'bandit',
-  title: 'VIII. Bandit Challenges',
+  title: 'Bandit Challenges',
   icon: '🏴‍☠️',
   defaultOpen: false,
   tip_detailed: `Embrace your **outlaw nature**. These challenges require robbery, theft, and general lawlessness.

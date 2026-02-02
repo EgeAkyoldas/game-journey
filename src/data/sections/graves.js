@@ -6,7 +6,7 @@
 
 export const gravesSection = {
   id: 'graves',
-  title: 'XXIV. Gang Member Graves',
+  title: 'Gang Member Graves',
   icon: '🪦',
   defaultOpen: false,
   items: [

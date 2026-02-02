@@ -5,7 +5,7 @@
 
 export const gamblerChallenge = {
   id: 'gambler',
-  title: 'XV. Gambler Challenges',
+  title: 'Gambler Challenges',
   icon: '🎰',
   defaultOpen: false,
   tip_detailed: `Test your luck at **poker, blackjack, dominoes**, and five finger fillet.

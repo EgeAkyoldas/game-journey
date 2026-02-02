@@ -1,7 +1,7 @@
 /**
  * Unique Hats & Masks Section
  * Special headwear found around the world
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via fandom.com, vg247.com, rockpapershotgun.com
  */
 
 export const uniqueHatsSection = {

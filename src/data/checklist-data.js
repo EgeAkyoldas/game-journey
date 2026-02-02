@@ -19,7 +19,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'quickstart',
-    title: 'I. Quick Start Guide',
+    title: 'Quick Start Guide',
     icon: '⭐',
     defaultOpen: true,
     items: [
@@ -72,7 +72,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'treasures',
-    title: 'II. Treasure Hunts',
+    title: 'Treasure Hunts',
     icon: '💎',
     defaultOpen: true,
     items: [
@@ -200,7 +200,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'strangers',
-    title: 'III. Stranger Missions',
+    title: 'Stranger Missions',
     icon: '❓',
     defaultOpen: false,
     items: [
@@ -374,7 +374,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'legendary-animals',
-    title: 'IV. Legendary Animals',
+    title: 'Legendary Animals',
     icon: '🦌',
     defaultOpen: false,
     items: [
@@ -605,7 +605,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'satchel',
-    title: 'VI. Satchel Upgrades',
+    title: 'Satchel Upgrades',
     icon: '🎒',
     defaultOpen: false,
     items: [
@@ -663,7 +663,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'camp',
-    title: 'VII. Camp Upgrades',
+    title: 'Camp Upgrades',
     icon: '⛺',
     defaultOpen: false,
     items: [
@@ -720,7 +720,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'bandit',
-    title: 'VIII. Bandit Challenges',
+    title: 'Bandit Challenges',
     icon: '🏴‍☠️',
     defaultOpen: false,
     items: [
@@ -742,7 +742,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'explorer',
-    title: 'IX. Explorer Challenges',
+    title: 'Explorer Challenges',
     icon: '🗺️',
     defaultOpen: false,
     items: [
@@ -764,7 +764,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'hunter',
-    title: 'X. Master Hunter Challenges',
+    title: 'Master Hunter Challenges',
     icon: '🏹',
     defaultOpen: false,
     items: [
@@ -786,7 +786,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'herbalist',
-    title: 'XI. Herbalist Challenges',
+    title: 'Herbalist Challenges',
     icon: '🌿',
     defaultOpen: false,
     items: [
@@ -808,7 +808,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'sharpshooter',
-    title: 'XII. Sharpshooter Challenges',
+    title: 'Sharpshooter Challenges',
     icon: '🎯',
     defaultOpen: false,
     items: [
@@ -830,7 +830,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'horseman',
-    title: 'XIII. Horseman Challenges',
+    title: 'Horseman Challenges',
     icon: '🐎',
     defaultOpen: false,
     items: [
@@ -852,7 +852,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'survivalist',
-    title: 'XIV. Survivalist Challenges',
+    title: 'Survivalist Challenges',
     icon: '⛺',
     defaultOpen: false,
     items: [
@@ -874,7 +874,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'gambler',
-    title: 'XV. Gambler Challenges',
+    title: 'Gambler Challenges',
     icon: '🎰',
     defaultOpen: false,
     items: [
@@ -892,11 +892,11 @@ export const CHECKLIST_SECTIONS = [
   },
 
   // ============================================
-  // SECTION XVI: MISSABLE CONTENT
+  // SECTION MISSABLE CONTENT
   // ============================================
   {
     id: 'missable',
-    title: 'XVI. Missable Content',
+    title: 'Missable Content',
     icon: '⚠️',
     defaultOpen: true,
     items: [
@@ -990,7 +990,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'collectibles',
-    title: 'XVII. Collectibles',
+    title: 'Collectibles',
     icon: '🏆',
     defaultOpen: false,
     items: [
@@ -1037,7 +1037,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'weapons-expert',
-    title: 'XVIII. Weapons Expert',
+    title: 'Weapons Expert',
     icon: '🎯',
     defaultOpen: false,
     items: [
@@ -1059,7 +1059,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'companion-activities',
-    title: 'XIX. Companion Activities',
+    title: 'Companion Activities',
     icon: '🤝',
     defaultOpen: false,
     items: [
@@ -1090,7 +1090,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'camp-requests',
-    title: 'XX. Camp Item Requests',
+    title: 'Camp Item Requests',
     icon: '🎁',
     defaultOpen: false,
     items: [
@@ -1126,7 +1126,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'bounties',
-    title: 'XXI. Bounty Hunting',
+    title: 'Bounty Hunting',
     icon: '🤠',
     defaultOpen: false,
     items: [
@@ -1158,7 +1158,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'talismans',
-    title: 'XXII. Talismans & Trinkets',
+    title: 'Talismans & Trinkets',
     icon: '🔮',
     defaultOpen: false,
     items: [
@@ -1431,7 +1431,7 @@ export const CHECKLIST_SECTIONS = [
   // ============================================
   {
     id: 'graves',
-    title: 'XXIV. Gang Member Graves',
+    title: 'Gang Member Graves',
     icon: '🪦',
     defaultOpen: false,
     items: [

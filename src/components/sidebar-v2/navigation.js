@@ -58,10 +58,10 @@ export function renderNavigation() {
   // Create mobile FAB
   renderMobileFab();
   
-  // Create mode toggle (top-right)
-  const modeToggle = document.createElement('div');
-  modeToggle.innerHTML = renderModeToggle();
-  document.body.appendChild(modeToggle.firstElementChild);
+  // Mode toggle disabled - now only available in Settings panel
+  // const modeToggle = document.createElement('div');
+  // modeToggle.innerHTML = renderModeToggle();
+  // document.body.appendChild(modeToggle.firstElementChild);
   
   // Attach all listeners
   attachNavListeners();

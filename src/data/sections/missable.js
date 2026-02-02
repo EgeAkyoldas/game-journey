@@ -1,12 +1,12 @@
 /**
  * Missable Content Section
  * Content that can be permanently missed
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via thegamer.com, fandom.com, gamerant.com
  */
 
 export const missableSection = {
   id: 'missable',
-  title: 'XVI. Missable Content',
+  title: 'Missable Content',
   icon: '⚠️',
   defaultOpen: true,
   items: [
@@ -23,7 +23,76 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
       chapter: 2,
       region: 'new-hanover',
       reward: 'Bolt Action Rifle',
-      verified: true
+      verified: true,
+      source: 'fandom.com'
+    },
+    {
+      id: 'missable-rare-shotgun',
+      text: 'Rare Shotgun',
+      tip: '🔫 Cabin NW of Annesburg. Hermit attacks you. ONE CHANCE to loot!',
+      tip_detailed: `An **antisocial hermit** lives in a cabin **northwest of Annesburg**. He attacks on sight.
+
+🔫 Kill him and **loot his unique Rare Shotgun** immediately.
+
+⚠️ **One-time opportunity.** If you don't pick it up, it's gone forever.`,
+      missable: true,
+      chapter: 2,
+      region: 'new-hanover',
+      reward: 'Rare Shotgun (Unique)',
+      verified: true,
+      source: 'thegamer.com, fandom.com'
+    },
+    {
+      id: 'missable-rolling-block',
+      text: 'Rare Rolling Block Rifle',
+      tip: '🎯 "Magicians for Sport" Ch3. Inside Braithwaite barn. Loot bounty hunter!',
+      tip_detailed: `During the Chapter 3 mission **"Magicians for Sport"**, you fight bounty hunters at the Braithwaite barn.
+
+🎯 One hunter carries a **Rare Rolling Block Rifle**. **Loot it before leaving!**
+
+⚠️ **Despawns after mission.** If you leave without it, it's gone.`,
+      missable: true,
+      chapter: 3,
+      region: 'lemoyne',
+      reward: 'Rare Rolling Block Rifle',
+      verified: true,
+      source: 'thegamer.com, fandom.com'
+    },
+    {
+      id: 'missable-gunslinger-guns',
+      text: 'Gunslinger Revolvers (4 Unique Weapons)',
+      tip: '🔫 "Noblest of Men" quest. LOOT BODIES IMMEDIATELY after each duel!',
+      tip_detailed: `The **"Noblest of Men and a Woman"** stranger mission has you duel 4 legendary gunslingers.
+
+🔫 **Must loot immediately:**
+• Flaco's Revolver (Flaco Hernandez)
+• Granger's Revolver (Emmet Granger)
+• Midnight's Pistol (Billy Midnight)
+• Calloway's Revolver (Jim Boy Calloway)
+
+⚠️ **Bodies despawn quickly!** Loot right after killing them or lose the weapon forever.`,
+      missable: true,
+      chapter: 2,
+      region: 'all',
+      reward: '4 Unique Weapons',
+      verified: true,
+      source: 'thegamer.com, gamerant.com'
+    },
+    {
+      id: 'missable-jimmy-pen',
+      text: "Jimmy Brooks' Pen",
+      tip: '✍️ Ch2 debt collection. SPARE him on cliff edge. He gives you his pen.',
+      tip_detailed: `During a **Chapter 2 debt collection** mission, a witness named **Jimmy Brooks** hangs from a cliff.
+
+✍️ **Spare his life** and he gives you his pen as thanks. It's a symbol of Arthur's honor.
+
+⚠️ **One choice.** Drop him and the pen is gone forever.`,
+      missable: true,
+      chapter: 2,
+      region: 'new-hanover',
+      reward: "Jimmy Brooks' Pen",
+      verified: true,
+      source: 'thegamer.com'
     },
     {
       id: 'missable-mary-missions',
@@ -156,19 +225,60 @@ Do this mission. It's your only chance to really know him.
     {
       id: 'missable-lenny',
       text: 'A Quiet Time (Lenny Night)',
-      tip: '🍺 Valentine bar. Automatic story mission. YNNEL!',
+      tip: '🍺 Valentine bar. AUTOMATIC story mission. Not actually missable!',
       tip_detailed: `**"A Quiet Time"** - the legendary drunk night with **Lenny Summers** in Valentine.
 
-🍺 This is an automatic story mission in Chapter 2, so you can't miss it per se, but it's so good it deserves mention.
+🍺 This is an **automatic story mission** in Chapter 2—you CAN'T miss it!
 
 **YNNEL! LENNYYY!**
 
-*One of the greatest missions in gaming history. Enjoy every second.*`,
-      missable: true,
+*Listed here because it's so good it deserves mention. Enjoy every second.*`,
+      missable: false,
       chapter: 2,
       region: 'new-hanover',
       reward: 'Legendary Memory',
-      verified: true
+      verified: true,
+      source: 'fandom.com'
+    },
+    {
+      id: 'missable-owl-trinket',
+      text: 'Owl Feather Trinket',
+      tip: '🦉 "Archeology for Beginners" Ch6. Help Rains Fall WITHOUT killing anyone.',
+      tip_detailed: `In the Chapter 6 mission **"Archeology for Beginners"**, you help **Rains Fall** recover relics.
+
+🦉 **To get the Owl Feather Trinket:**
+• Agree to help Rains Fall
+• Complete the mission **without killing anyone** at the camp
+
+⚠️ If you refuse or kill soldiers, the trinket is lost forever.`,
+      missable: true,
+      chapter: 6,
+      region: 'ambarino',
+      reward: 'Owl Feather Trinket',
+      verified: true,
+      source: 'thegamer.com, gtaforums.com'
+    },
+    {
+      id: 'missable-guarma',
+      text: 'Guarma Animals (Chapter 5)',
+      tip: '🦜 STUDY these in Guarma or NEVER get 100% compendium!',
+      tip_detailed: `**Guarma** (Chapter 5) has **exclusive animals** that CANNOT be found anywhere else:
+
+🦜 **Must study before leaving:**
+• Scarlet Macaw
+• Blue and Yellow Macaw
+• Great Green Macaw
+• Red-footed Booby
+• Various Boa Snakes
+• Green Turtle
+
+⚠️ **Chapter 5 is SHORT!** Study them all before you leave or your compendium is incomplete forever.`,
+      missable: true,
+      chapter: 5,
+      region: 'guarma',
+      reward: 'Compendium Entries',
+      verified: true,
+      source: 'fandom.com, thegamer.com'
     },
     {
       id: 'missable-camp-requests',

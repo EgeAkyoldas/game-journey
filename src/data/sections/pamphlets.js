@@ -1,12 +1,12 @@
 /**
  * Pamphlets & Recipes Section
  * Crafting pamphlet locations and recipes
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via fandom.com, fextralife.com, rankedboost.com
  */
 
 export const pamphletsSection = {
   id: 'pamphlets',
-  title: 'VIII. Pamphlets & Recipes',
+  title: 'Pamphlets & Recipes',
   icon: '📜',
   defaultOpen: false,
   items: [

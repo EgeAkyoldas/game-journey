@@ -5,7 +5,7 @@
 
 export const hunterChallenge = {
   id: 'hunter',
-  title: 'X. Master Hunter Challenges',
+  title: 'Master Hunter Challenges',
   icon: '🏹',
   defaultOpen: false,
   tip_detailed: `Become a **master of the hunt**. Perfect pelts, tracking, and dangerous game.

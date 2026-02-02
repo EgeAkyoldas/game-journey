@@ -1,12 +1,12 @@
 /**
  * Companion Activities Section
  * Grouped by chapter with missable warnings
- * Enhanced with cowboy storyteller narrative
+ * ✅ VERIFIED: 2026-02-02 via fandom.com, reddit.com, gamerant.com
  */
 
 export const companionActivitiesSection = {
   id: 'companion-activities',
-  title: 'XIX. Companion Activities',
+  title: 'Companion Activities',
   icon: '🤝',
   defaultOpen: false,
   items: [
@@ -237,6 +237,21 @@ Good for gambling challenge progress and good company.
           missable: true,
           reward: 'Coach Loot + Bounty',
           region: 'lemoyne'
+        },
+        { 
+          id: 'comp-charles-bank', 
+          text: '⭐ Bank Robbery with Charles', 
+          tip: '💰 SPECIAL/ULTIMATE EDITION ONLY. Rob Rhodes Bank.',
+          tip_detailed: `**Charles** invites you to rob the **Rhodes Bank** together. This is a **Special/Ultimate Edition exclusive** activity.
+
+💰 Big payout if you own the right edition.
+
+⭐ *One of the few exclusive content pieces that's actually meaningful.*`,
+          missable: true,
+          reward: 'Bank Loot',
+          region: 'lemoyne',
+          verified: true,
+          source: 'fandom.com, gamerant.com'
         }
       ]
     },

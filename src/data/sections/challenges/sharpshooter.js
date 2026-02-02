@@ -5,7 +5,7 @@
 
 export const sharpshooterChallenge = {
   id: 'sharpshooter',
-  title: 'XII. Sharpshooter Challenges',
+  title: 'Sharpshooter Challenges',
   icon: '🎯',
   defaultOpen: false,
   tip_detailed: `Prove your **marksmanship**. Precision shooting, Dead Eye mastery, and impossible shots.
