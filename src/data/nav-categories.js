@@ -48,12 +48,6 @@ export const NAV_CATEGORIES = [
       'cig-artists',
       'cig-inventions'
     ]
-  },
-  {
-    id: 'personal',
-    title: 'Personal',
-    icon: 'fa-book',
-    sections: ['journal']
   }
 ];
 
