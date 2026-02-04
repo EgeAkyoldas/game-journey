@@ -1,0 +1,35 @@
+Hey Outlaws, 
+
+I was going for 100% and couldn't find a checklist that suits my western drifter vibe :) , saves progress automatically, and didn't require an account. So I built one.
+
+**Link:** https://rdr2-journey.netlify.app/
+
+---
+
+**What's included:**
+
+- All 90 Challenges (Bandit, Explorer, Gambler, Herbalist, etc.)
+- All Stranger Missions with step-by-step guides
+- All 16 Legendary Animals + 13 Legendary Fish
+- All Collectibles (144 Cigarette Cards, 30 Dinosaur Bones, 20 Dreamcatchers, etc.)
+- Treasure Hunt solutions
+- Missable content warnings by chapter
+- Camp upgrades and satchel crafting guides
+
+---
+
+**Features:**
+
+- Works completely offline after first load
+- Saves progress in your browser (no account)
+- Export/Import to backup or transfer between devices
+- Region and chapter filtering
+- Mobile responsive
+
+---
+
+**Quick tip for newcomers:** Hunt the Legendary Buck first (west of Strawberry). The Buck Antler Trinket you craft from it increases pelt quality for your entire playthrough.
+
+---
+
+Feedback welcome. If you find any errors or have suggestions, let me know here or email atticawe@gmail.com

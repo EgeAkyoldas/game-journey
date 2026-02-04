@@ -827,6 +827,12 @@
   
   .section-header {
     padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .section-header-left {
+    gap: 8px;
   }
   
   .section-title {
@@ -837,6 +843,10 @@
     width: 60px;
   }
   
+  .section-header-right {
+    gap: 10px;
+  }
+  
   .checklist-card {
     padding: 0.75rem;
   }
@@ -845,12 +855,109 @@
     font-size: 0.95rem;
   }
   
+  .card-tip {
+    font-size: 0.8rem;
+  }
+  
   .accordion-panel {
     margin-left: 36px;
   }
   
   .progress-track {
     width: 100px;
+  }
+  
+  /* Touch-friendly action buttons */
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .done-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  #checklist {
+    padding: 0.25rem;
+    gap: 1rem;
+  }
+  
+  .section-header {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .section-icon,
+  .section-emoji {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 0.9rem;
+  }
+  
+  .section-count {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
+  
+  .section-progress-bar {
+    width: 50px;
+    height: 4px;
+  }
+  
+  .checklist-card {
+    padding: 0.625rem;
+  }
+  
+  .card-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .done-icon {
+    width: 28px;
+    height: 28px;
+    border-width: 2px;
+  }
+  
+  .action-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .card-actions {
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .accordion-panel {
+    margin-left: 0;
+    padding-left: 0.5rem;
+    border-left-width: 3px;
+  }
+  
+  .sub-items-list {
+    padding: 2px 0;
+  }
+  
+  .sub-item {
+    padding: 8px 10px;
+  }
+  
+  .sub-item-header {
+    gap: 8px;
+  }
+  
+  .sub-meta-row {
+    padding-left: 26px;
+    flex-wrap: wrap;
+  }
+  
+  .sub-tags {
+    margin-left: 0;
   }
 }
 

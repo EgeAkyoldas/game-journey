@@ -802,3 +802,137 @@
   gap: 4px;
   margin-left: auto;
 }
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  /* Feature sections */
+  .feature-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .feature-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .feature-badge {
+    margin-left: 0;
+    font-size: 0.7rem;
+  }
+  
+  /* Card layout adjustments */
+  .showcase-card {
+    padding: 0.875rem;
+  }
+  
+  .card-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-tip {
+    font-size: 0.8rem;
+  }
+  
+  /* Touch-friendly action buttons */
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .done-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .accordion-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  /* Progress bar */
+  .progress-track {
+    width: 100px;
+  }
+  
+  /* Accordion panel */
+  .accordion-panel,
+  .sub-items-panel {
+    margin-left: 40px;
+    padding-left: 0.75rem;
+  }
+  
+  /* Tags */
+  .card-tags {
+    gap: 4px;
+  }
+  
+  .tag {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Compact card layout */
+  .card-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .card-content {
+    order: 2;
+  }
+  
+  .done-icon {
+    order: 1;
+    align-self: flex-start;
+  }
+  
+  .card-actions {
+    order: 3;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  
+  .action-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .showcase-card {
+    padding: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  /* Accordion */
+  .accordion-panel,
+  .sub-items-panel {
+    margin-left: 0;
+    padding-left: 0.5rem;
+    border-left-width: 3px;
+  }
+  
+  .accordion-panel.open,
+  .sub-items-panel.open {
+    max-height: 800px;
+  }
+  
+  /* Sub items */
+  .sub-item {
+    padding: 6px 0;
+  }
+  
+  .sub-text {
+    font-size: 0.85rem;
+  }
+}

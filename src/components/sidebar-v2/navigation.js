@@ -307,6 +307,7 @@ export function attachNavListeners() {
     if (e.target.closest('#nav-fab')) {
       $('#nav-sidebar').classList.add('open');
       $('#sidebar-overlay')?.classList.add('active');
+      $('#nav-fab')?.classList.add('hidden');
       return;
     }
     
@@ -403,6 +404,8 @@ function setActiveSection(sectionId) {
  */
 function closeMobileSidebar() {
   $('#nav-sidebar')?.classList.remove('open');
+  $('#sidebar-overlay')?.classList.remove('active');
+  $('#nav-fab')?.classList.remove('hidden');
 }
 
 /**

@@ -26,20 +26,20 @@
       transition: background 0.3s, color 0.3s;
     }
     
-    /* Main content area */
+    /* Main content area - MOBILE FIRST */
     .main-content {
-      margin-left: 260px;
-      padding: 40px;
+      margin-left: 0;
+      padding: 16px;
       min-height: 100vh;
       position: relative;
       z-index: 1;
     }
     
-    /* Paper content wrapper */
+    /* Paper content wrapper - MOBILE FIRST */
     .content-paper {
-      max-width: 800px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 40px;
+      padding: 20px;
       border-radius: 4px;
       position: relative;
       transition: all 0.3s ease;
@@ -61,7 +61,7 @@
     
     .page-title {
       font-family: 'Rye', Georgia, serif;
-      font-size: 48px;
+      font-size: 32px;
       text-align: center;
       margin-bottom: 8px;
     }
@@ -71,14 +71,14 @@
     
     .page-subtitle {
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
       opacity: 0.7;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     
     .divider {
       height: 2px;
-      margin: 24px 0;
+      margin: 16px 0;
     }
     
     [data-mode="day"] .divider { background: linear-gradient(90deg, transparent, #8b4513, transparent); }
@@ -86,7 +86,7 @@
     
     /* Demo section */
     .demo-section {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
     
     .section-header {
@@ -95,7 +95,7 @@
       gap: 12px;
       padding: 12px 0;
       font-family: 'Rye', Georgia, serif;
-      font-size: 20px;
+      font-size: 18px;
     }
     
     [data-mode="day"] .section-header { color: #5d3a1a; }
@@ -103,7 +103,7 @@
     
     .section-count {
       margin-left: auto;
-      font-size: 14px;
+      font-size: 12px;
       opacity: 0.6;
     }
     
@@ -116,37 +116,78 @@
       border-bottom: 1px solid rgba(128,128,128,0.2);
     }
     
-    .item-content { flex: 1; }
-    .item-title { font-weight: 600; margin-bottom: 4px; }
+    .item-content { flex: 1; min-width: 0; }
+    .item-title { font-weight: 600; margin-bottom: 4px; font-size: 0.95rem; }
     .item-tags { display: flex; gap: 6px; flex-wrap: wrap; }
     
-    /* Wanted stamp */
+    /* Wanted stamp - hide on mobile */
     .wanted-stamp {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 100px;
-      height: 60px;
-      border: 3px solid currentColor;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(12deg);
-      font-family: 'Rye', Georgia, serif;
+      display: none;
     }
     
-    [data-mode="day"] .wanted-stamp { color: #8b0000; }
-    [data-mode="night"] .wanted-stamp { color: #dc2626; }
-    
-    .stamp-wanted { font-size: 14px; letter-spacing: 2px; }
-    .stamp-reward { font-size: 10px; opacity: 0.8; }
-    
-    @media (max-width: 768px) {
-      .main-content { margin-left: 0; padding: 20px; }
-      .content-paper { padding: 20px; }
-      .page-title { font-size: 32px; }
+    /* Desktop breakpoint */
+    @media (min-width: 768px) {
+      .main-content {
+        margin-left: 260px;
+        padding: 40px;
+      }
+      
+      .content-paper {
+        max-width: 800px;
+        padding: 40px;
+      }
+      
+      .page-title {
+        font-size: 48px;
+      }
+      
+      .page-subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      
+      .divider {
+        margin: 24px 0;
+      }
+      
+      .demo-section {
+        margin-bottom: 32px;
+      }
+      
+      .section-header {
+        font-size: 20px;
+      }
+      
+      .section-count {
+        font-size: 14px;
+      }
+      
+      .item-title {
+        font-size: 1rem;
+      }
+      
+      /* Show wanted stamp on desktop */
+      .wanted-stamp {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: 60px;
+        border: 3px solid currentColor;
+        border-radius: 4px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(12deg);
+        font-family: 'Rye', Georgia, serif;
+      }
+      
+      [data-mode="day"] .wanted-stamp { color: #8b0000; }
+      [data-mode="night"] .wanted-stamp { color: #dc2626; }
+      
+      .stamp-wanted { font-size: 14px; letter-spacing: 2px; }
+      .stamp-reward { font-size: 10px; opacity: 0.8; }
     }
   </style>
 </head>
