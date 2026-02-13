@@ -13,7 +13,9 @@ export const gunslingersCards = {
 
 🏆 **Reward:** Special Snake Oil + $50
 
-⚠️ *Some cards are in New Austin (Epilogue only). Consider buying Premium Cigarettes for random cards.*`,
+💡 **FAST METHOD:** Buy **Premium Cigarettes** ($2.50) at any General Store, discard the cigarettes, repeat. You'll collect all 144 cards in **~5 minutes**! Mail complete sets to **Phineas Ramsbottom** — you'll earn back **more than you spent** ($800+ in rewards).
+
+⚠️ *Some cards are in New Austin (Epilogue only) if collecting manually.*`,
   reward: 'Special Snake Oil + $50',
   verified: true,
   items: [

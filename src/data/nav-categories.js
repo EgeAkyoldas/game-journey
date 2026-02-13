@@ -33,20 +33,18 @@ export const NAV_CATEGORIES = [
     id: 'collectibles',
     title: 'Collectibles',
     icon: 'fa-image',
-    sections: [
-      'collectibles',
-      'cig-gunslingers',
-      'cig-stage',
-      'cig-travel',
-      'cig-fauna',
-      'cig-horses',
-      'cig-prominent',
-      'cig-flora',
-      'cig-beauty',
-      'cig-champions',
-      'cig-vistas',
-      'cig-artists',
-      'cig-inventions'
+    sections: ['collectibles'],
+    subcategories: [
+      {
+        id: 'cigarette-cards',
+        title: 'Cigarette Cards',
+        icon: 'fa-smoking',
+        sections: [
+          'cig-gunslingers', 'cig-stage', 'cig-travel', 'cig-fauna',
+          'cig-horses', 'cig-prominent', 'cig-flora', 'cig-beauty',
+          'cig-champions', 'cig-vistas', 'cig-artists', 'cig-inventions'
+        ]
+      }
     ]
   }
 ];

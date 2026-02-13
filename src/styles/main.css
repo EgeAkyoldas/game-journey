@@ -1190,6 +1190,75 @@ body.dark-mode .tip.sub-tip {
   opacity: 0;
 }
 
+/* Subcategory Groups */
+.nav-subcategory {
+  margin: 2px 0 0 0;
+}
+
+.nav-subcategory-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: rgba(244,228,188,0.65);
+  font-family: var(--font-typewriter);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.nav-subcategory-header:hover {
+  background: rgba(244,228,188,0.08);
+  color: rgba(244,228,188,0.9);
+}
+
+.nav-subcategory-icon {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav-subcategory-title {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.nav-subcategory-count {
+  font-size: 0.6rem;
+  opacity: 0.4;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.nav-subcategory-arrow {
+  font-size: 0.55rem;
+  opacity: 0.35;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-subcategory-items {
+  display: none;
+  padding-left: 4px;
+}
+
+.nav-subcategory.expanded .nav-subcategory-header {
+  color: rgba(244,228,188,0.85);
+}
+
+.nav-subcategory.expanded .nav-subcategory-icon {
+  opacity: 0.7;
+}
+
+.nav-subcategory.expanded .nav-subcategory-arrow {
+  opacity: 0.6;
+}
+
 /* Section Links */
 .nav-section-link {
   @apply flex items-center py-1.5 px-3 rounded no-underline mb-0.5;

@@ -131,7 +131,30 @@ function renderCategories() {
       .map(sectionId => CHECKLIST_SECTIONS.find(s => s.id === sectionId))
       .filter(Boolean);
     
-    if (sections.length === 0) return '';
+    // Render subcategories if they exist
+    const subcatHtml = (cat.subcategories || []).map(subcat => {
+      const subSections = subcat.sections
+        .map(sectionId => CHECKLIST_SECTIONS.find(s => s.id === sectionId))
+        .filter(Boolean);
+      
+      if (subSections.length === 0) return '';
+      
+      return `
+        <div class="nav-subcategory" data-subcategory="${subcat.id}" style="margin-top:4px;">
+          <div class="nav-subcategory-header" data-subcategory-toggle="${subcat.id}" style="display:flex;align-items:center;padding:6px 12px;cursor:pointer;color:rgba(244,228,188,0.7);font-family:var(--font-typewriter);font-size:0.8rem;font-weight:600;gap:8px;border-radius:4px;transition:background 0.2s;">
+            <i class="fa-solid ${subcat.icon}" style="font-size:0.7rem;opacity:0.6;width:14px;text-align:center;"></i>
+            <span style="flex:1;">${subcat.title}</span>
+            <span style="font-size:0.6rem;opacity:0.4;">${subSections.length} sets</span>
+            <i class="nav-subcategory-arrow fa-solid fa-chevron-right" style="font-size:0.5rem;opacity:0.4;transition:transform 0.2s;"></i>
+          </div>
+          <div class="nav-subcategory-items" style="display:none;padding-left:6px;">
+            ${subSections.map(section => renderNavSection(section)).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    if (sections.length === 0 && !subcatHtml) return '';
     
     return `
       <div class="nav-category expanded" data-category="${cat.id}">
@@ -142,6 +165,7 @@ function renderCategories() {
         </div>
         <div class="nav-category-items">
           ${sections.map(section => renderNavSection(section)).join('')}
+          ${subcatHtml}
         </div>
       </div>
     `;
@@ -208,6 +232,19 @@ export function attachNavListeners() {
       items.classList.toggle('collapsed');
       const arrow = catToggle.querySelector('.nav-category-arrow');
       arrow.style.transform = category.classList.contains('expanded') ? 'rotate(0deg)' : 'rotate(-90deg)';
+      return;
+    }
+    
+    // Subcategory toggle
+    const subcatToggle = e.target.closest('[data-subcategory-toggle]');
+    if (subcatToggle) {
+      const subcategory = subcatToggle.closest('.nav-subcategory');
+      subcategory.classList.toggle('expanded');
+      const isExpanded = subcategory.classList.contains('expanded');
+      const items = subcategory.querySelector('.nav-subcategory-items');
+      items.style.display = isExpanded ? 'block' : 'none';
+      const arrow = subcatToggle.querySelector('.nav-subcategory-arrow');
+      arrow.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
       return;
     }
     

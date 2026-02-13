@@ -98,10 +98,63 @@ function saveCollapsedState() {
  * Render full checklist
  */
 export function renderChecklist(container) {
-  container.innerHTML = CHECKLIST_SECTIONS
-    .filter(section => !section.isJournal && section.items?.length > 0)
-    .map(section => renderSection(section))
-    .join('');
+  const sections = CHECKLIST_SECTIONS
+    .filter(section => !section.isJournal && section.items?.length > 0);
+  
+  let html = '';
+  let cigHeaderInserted = false;
+  
+  sections.forEach(section => {
+    // Insert Cigarette Cards group header before the first cig- section
+    if (section.id.startsWith('cig-') && !cigHeaderInserted) {
+      cigHeaderInserted = true;
+      html += renderCigaretteCardsGroupHeader();
+    }
+    html += renderSection(section);
+  });
+  
+  container.innerHTML = html;
+}
+
+/**
+ * Render Cigarette Cards group header with buy/discard strategy
+ */
+function renderCigaretteCardsGroupHeader() {
+  return `
+    <div class="checklist-group-header" style="
+      margin: 2rem 0 1rem 0;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(78,52,28,0.6), rgba(45,30,15,0.8));
+      border: 1px solid rgba(244,228,188,0.15);
+      border-radius: 8px;
+      font-family: var(--font-western);
+    ">
+      <h2 style="
+        margin: 0 0 0.5rem 0;
+        font-size: 1.4rem;
+        color: var(--color-paper);
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      ">
+        <i class="fa-solid fa-smoking" style="font-size:1rem;opacity:0.7;"></i>
+        Cigarette Cards
+        <span style="font-size:0.75rem;opacity:0.5;font-family:var(--font-typewriter);font-weight:400;">12 Sets · 144 Cards</span>
+      </h2>
+      <p style="
+        margin: 0;
+        font-size: 0.82rem;
+        color: rgba(244,228,188,0.7);
+        font-family: var(--font-typewriter);
+        line-height: 1.5;
+      ">
+        💡 <strong style="color:rgba(244,228,188,0.9);">Fast Method:</strong> Buy <strong>Premium Cigarettes</strong> ($2.50) at any General Store → open them → discard the cigarettes → repeat. 
+        Collect all 144 cards in ~5 minutes! Mail complete sets to <strong>Phineas Ramsbottom</strong> for rewards totaling <strong>$800+</strong> — 
+        you'll earn back more than you spent.
+      </p>
+    </div>
+  `;
 }
 
 /**

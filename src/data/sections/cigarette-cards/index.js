@@ -36,6 +36,20 @@ import { inventionsCards } from './inventions.js';
  * All cigarette card sets in display order
  * 12 sets × 12 cards = 144 total cards
  * 
+ * ============================================
+ * 💡 FAST COLLECTION STRATEGY (BUY & DISCARD)
+ * ============================================
+ * You can get ALL 144 cards in ~5 minutes:
+ * 1. Go to any General Store
+ * 2. Buy Premium Cigarettes ($2.50 each) — you get a random card each time
+ * 3. Discard the cigarettes from your satchel
+ * 4. Repeat until you have all cards (duplicates are skipped)
+ * 5. Mail complete sets to Phineas Ramsbottom
+ * 6. You'll get MOST of your money back from the set rewards!
+ * 
+ * Total cost: ~$360 in cigarettes
+ * Total reward: $800 + valuable items = NET PROFIT!
+ * 
  * Set Rewards (when complete set delivered to Phineas Ramsbottom):
  * - Famous Gunslingers: Special Snake Oil + $50
  * - Stars of the Stage: Small Jewelry Bag + $50
