@@ -346,6 +346,106 @@ export const treasuresSection = {
       ]
     },
     // ========================================
+    // LANDMARKS OF RICHES TREASURE
+    // ========================================
+    {
+      id: 'treasure-landmarks-riches',
+      text: 'Landmarks of Riches Treasure',
+      chapter: 2,
+      tip: '🏛️ Follow famous landmarks across the map. 6 Gold Bars ($3000)! Available from CH 2.',
+      tip_detailed: `The **Landmarks of Riches** treasure hunt takes you on a tour of the frontier's most mysterious landmarks—an obelisk, a tiny church, a hobbit house, a Civil War battlefield, and finally the summit of Mount Shann.
+
+💰 **6 Gold Bars** ($3000) — tied for the **richest treasure in the game** alongside Le Tresor Des Morts!
+
+📌 Available from **Chapter 2** and relatively easy to complete. Originally a PC exclusive, now available on all platforms.
+
+*The land itself holds the clues. Read the stones, follow the trail, claim the gold.*`,
+      reward: '6 Gold Bars ($3000)',
+      priority: true,
+      verified: true,
+      subItems: [
+        { 
+          id: 'landmarks-1', 
+          text: 'Map 1: The Obelisk', 
+          tip: '🏛️ NW of Strawberry, past Owanjila Lake. Check plaque on back of obelisk.',
+          tip_detailed: `The first map is found at the **Obelisk** point of interest in West Elizabeth.
+
+📍 Located **northwest of Strawberry**, past **Owanjila Lake**. It's a tall stone pillar standing alone on a ridge.
+
+ Walk around to the **back of the obelisk** and inspect the **plaque**. The first map is etched right there.
+
+*An ancient marker in the wilderness. Someone went to great lengths to leave this behind.*`,
+          chapter: 2,
+          region: 'west-elizabeth',
+          verified: true
+        },
+        { 
+          id: 'landmarks-2', 
+          text: 'Map 2: Tiny Church (Lakay)', 
+          tip: '⛪ Miniature church in Lakay, north of Saint Denis. Climb roof, check bell tower.',
+          tip_detailed: `The first map's clue leads you to the **Tiny Church** in **Lakay**, just north of Saint Denis in the swamps of Lemoyne.
+
+ It's a remarkably small building. **Climb onto the roof** and search the **miniature bell tower** at the top.
+
+⚠️ **Watch out for American Alligators** in the surrounding area—they're everywhere in this swamp.
+
+*A church fit for mice, hidin' a map fit for kings.*`,
+          chapter: 2,
+          region: 'lemoyne',
+          verified: true
+        },
+        { 
+          id: 'landmarks-3', 
+          text: 'Map 3: Mysterious Hill Home', 
+          tip: '🏠 "Hobbit house" NE of Fort Wallace/Bacchus Station. Check broken window on right side.',
+          tip_detailed: `The second map depicts a **turtle with a broken shell**, pointing to the **Mysterious Hill Home**—a bizarre hobbit-like dwelling built into a hillside.
+
+📍 Located on a mountain **northeast of Fort Wallace** and **Bacchus Station**.
+
+ Look for a **broken window on the right-hand side** of the building (above a turtle symbol carved into the wall). Search inside to find the third map.
+
+*Whoever built this place had secrets. And terrible taste in architecture.*`,
+          chapter: 2,
+          region: 'new-hanover',
+          verified: true
+        },
+        { 
+          id: 'landmarks-4', 
+          text: 'Map 4: Bolger Glade Battlefield', 
+          tip: '⚔️ Civil War site south of Rhodes, east of Braithwaite Manor. Tree stump on rock near trenches.',
+          tip_detailed: `The third map leads to **Bolger Glade**, an old Civil War battlefield in the **Scarlett Meadows** region of Lemoyne.
+
+📍 Located **south of Rhodes** and **east of Braithwaite Manor**.
+
+ Search for an **old tree stump sitting on top of a rock**, surrounded by trenches and near a **broken cannon**. The final map is hidden within the stump.
+
+*Blood was spilled here long ago. But the treasure endured.*`,
+          chapter: 2,
+          region: 'lemoyne',
+          verified: true
+        },
+        { 
+          id: 'landmarks-final', 
+          text: 'TREASURE: Mount Shann Sundial', 
+          tip: '🏆 Summit of Mount Shann, north of Strawberry. Under rock at base of sundial. 6 GOLD BARS!',
+          tip_detailed: `The final clue leads to the **sundial atop Mount Shann**, just north of Strawberry and northeast of Owanjila Lake.
+
+ Make your way to the **highest peak**. The ancient sundial stands there, overlooking the entire frontier.
+
+ Search **under a rock at the base of the sundial**. Your reward awaits.
+
+💰 **6 GOLD BARS** — $3000! Tied for the richest treasure in the entire game!
+
+*From obelisk to sundial, landmark to landmark. The land guided you true. Now you're $3000 richer.*`,
+          priority: true,
+          reward: '6 Gold Bars ($3000)',
+          chapter: 2,
+          region: 'west-elizabeth',
+          verified: true
+        }
+      ]
+    },
+    // ========================================
     // MENDED TREASURE MAP
     // ========================================
     {

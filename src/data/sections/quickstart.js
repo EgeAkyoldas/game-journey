@@ -131,6 +131,46 @@ Rob the store—or just knock—and make your way down to **free him**. For your
       reward: 'Lancaster Repeater',
       verified: true,
       source: 'Red Dead Wiki'
+    },
+    {
+      id: 'qs-micah-revolver',
+      text: "Steal Micah's Revolver (Free)",
+      tip: "🔫 Obtainable from Chapter 1! 'Old Friends' mission trick or Strawberry jail fire arrow. Unique revolver!",
+      tip_detailed: `That rat **Micah Bell** carries a **unique engraved revolver**—and you can take it from him as early as **Chapter 1**. Two early methods, plus the normal Epilogue pickup:
+
+---
+
+🏆 **Method 1 — Chapter 1: "Old Friends" Mission (EARLIEST)**
+1. During the O'Driscoll ambush, when Dutch says to take the lead
+2. Kill all enemies **except one** O'Driscoll
+3. **Disarm him** by punching out his weapons until he's bare-fisted
+4. Lead the unarmed O'Driscoll toward **Micah** — they'll start a fistfight
+5. Micah drops his revolver during the scuffle — **grab it fast!**
+
+⚠️ May disappear from inventory at Chapter 2 start, but stays in Compendium.
+
+---
+
+🏹 **Method 2 — Chapter 2: Strawberry Jail (Fire Arrow Trick)**
+1. Go to **Strawberry** BEFORE starting **"Blessed are the Meek?"**
+2. Cause a disturbance to draw deputies out
+3. Sneak into the **Sheriff's office back door**, go downstairs
+4. Shoot a **Fire Arrow** through the cell bars near **Micah's left foot**
+5. He drops — **pick up the revolver** through the gap (unequip off-hand first)
+
+⚠️ May take a few tries. Leave and return if it doesn't work — Micah respawns.
+
+---
+
+📖 **Method 3 — Epilogue (Normal)**
+Obtained naturally during the Epilogue storyline.
+
+🔫 *Three chances to take from Micah. Don't waste 'em all.*`,
+      region: 'west-elizabeth',
+      chapter: 1,
+      reward: "Micah's Revolver",
+      verified: true,
+      source: 'Community Discovery'
     }
   ]
 };

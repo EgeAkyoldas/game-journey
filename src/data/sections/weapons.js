@@ -112,16 +112,37 @@ export const weaponsSection = {
         { 
           id: 'weapon-micah-revolver', 
           text: "Micah's Revolver", 
-          tip: '⚠️ EPILOGUE 2. Return to Mount Hagen after credits.',
-          tip_detailed: `**Micah's Revolver** - the rat's weapon.
+          tip: '🔫 Obtainable from CH 1! "Old Friends" O\'Driscoll trick, CH 2 fire arrow, or Epilogue.',
+          tip_detailed: `**Micah's Revolver** - the rat's unique engraved revolver. Obtainable **three ways**:
 
- **Location:** Return to Mount Hagen after the credits roll. Loot from the final location.
+---
 
-⚠️ **Epilogue 2** required - after completing "American Venom"
+🏆 **Method 1 — Chapter 1: "Old Friends" Mission (EARLIEST)**
+1. During the O'Driscoll ambush, when Dutch says to take the lead
+2. Kill all enemies **except one** O'Driscoll
+3. **Disarm him** by punching out his weapons until he's bare-fisted
+4. Lead the unarmed O'Driscoll toward **Micah** — they'll fistfight
+5. Micah drops his revolver — **grab it fast!**
 
-🐀 *He doesn't deserve to be remembered. But his gun's yours now.*`,
+⚠️ May disappear from inventory at Chapter 2 start, but stays in Compendium.
+
+---
+
+🏹 **Method 2 — Chapter 2: Strawberry Jail (Fire Arrow Trick)**
+1. Go to **Strawberry** BEFORE starting **"Blessed are the Meek?"**
+2. Cause a disturbance to draw deputies out
+3. Sneak into **Sheriff's office back door**, go downstairs
+4. Shoot a **Fire Arrow** through the cell bars near **Micah's left foot**
+5. He drops — **pick up the revolver** through the gap
+
+---
+
+📖 **Method 3 — Epilogue 2 (Normal)**
+Return to **Mount Hagen** after completing **"American Venom"**. Loot from the final location.
+
+🐀 *Three chances to take from Micah. Don't waste 'em.*`,
           reward: 'Unique Revolver',
-          chapter: 'epilogue',
+          chapter: 1,
           verified: true
         }
       ]
