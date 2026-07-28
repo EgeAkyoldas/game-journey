@@ -6,6 +6,7 @@
 
 import { CHECKLIST_SECTIONS } from '../../data/index.js';
 import { REGIONS, normalizeRegion } from '../../data/regions.js';
+import { hasValue } from '../../data/provenance.js';
 
 // DOM helpers
 const $ = (sel) => document.querySelector(sel);
@@ -20,7 +21,8 @@ export const activeFilters = {
   region: null,
   status: 'all', // 'all' | 'incomplete' | 'complete'
   missableOnly: false,
-  hasReward: false
+  hasReward: false,
+  showUnknown: false
 };
 
 /**
@@ -31,42 +33,52 @@ export const activeFilters = {
 export { REGIONS, normalizeRegion };
 
 /**
- * Check if an item matches current filters
- * @param {Object} item
+ * Numeric ordering for chapters. Epilogue comes after chapter 6.
+ * @param {number|'epilogue'} chapter
+ * @returns {number}
+ */
+export function chapterRank(chapter) {
+  return String(chapter).toLowerCase() === 'epilogue' ? 7 : Number(chapter);
+}
+
+/**
+ * Which active filter excluded this item purely for missing data.
+ * @param {object} item
+ * @returns {'chapter'|'region'|null}
+ */
+export function isHiddenForMissingField(item) {
+  if (activeFilters.chapter && !hasValue(item, 'chapter')) return 'chapter';
+  if (activeFilters.region && !hasValue(item, 'region')) return 'region';
+  return null;
+}
+
+/**
+ * Does this item pass the active structured filters?
+ * Takes a real checklist item — no shim object.
+ * @param {object} item
  * @returns {boolean}
  */
 export function itemMatchesFilters(item) {
-  // Search term
-  if (activeFilters.searchTerm) {
-    const term = activeFilters.searchTerm.toLowerCase();
-    const inTitle = item.title?.toLowerCase().includes(term);
-    const inDesc = item.description?.toLowerCase().includes(term);
-    const inTags = item.tags?.some(t => t.toLowerCase().includes(term));
-    if (!inTitle && !inDesc && !inTags) return false;
-  }
-  
-  // Chapter filter
+  // Items missing the filtered field are excluded unless the user opted in.
+  const missingField = isHiddenForMissingField(item);
+  if (missingField) return activeFilters.showUnknown;
+
+  // Chapter is cumulative: "what can I do by chapter N".
   if (activeFilters.chapter) {
-    const itemChapter = String(item.chapter || '').toLowerCase();
-    if (itemChapter !== activeFilters.chapter) return false;
+    if (chapterRank(item.chapter) > chapterRank(activeFilters.chapter)) return false;
   }
-  
-  // Region filter - normalize before comparison
+
   if (activeFilters.region) {
-    const normalizedItemRegion = normalizeRegion(item.region);
-    if (normalizedItemRegion !== activeFilters.region) return false;
+    if (normalizeRegion(item.region) !== activeFilters.region) return false;
   }
-  
-  // Missable only
-  if (activeFilters.missableOnly) {
-    if (!item.missable) return false;
-  }
-  
-  // Has reward
+
+  if (activeFilters.missableOnly && !item.missable) return false;
+
   if (activeFilters.hasReward) {
-    if (!item.reward) return false;
+    const hasAnyReward = Boolean(item.reward) || (Array.isArray(item.rewards) && item.rewards.length > 0);
+    if (!hasAnyReward) return false;
   }
-  
+
   return true;
 }
 
@@ -199,6 +211,7 @@ export function resetAllFilters() {
   activeFilters.status = 'all';
   activeFilters.missableOnly = false;
   activeFilters.hasReward = false;
+  activeFilters.showUnknown = false;
 }
 
 /**
@@ -241,7 +254,7 @@ export function renderFilterPanel() {
         <div class="filter-chips" id="filter-chips-chapter">
           ${chapters.length === 0 ? '<span class="filter-empty">No chapter data</span>' : 
             chapters.map(ch => {
-              const label = ch === 'epilogue' ? 'Epilogue' : `CH ${ch}`;
+              const label = ch === 'epilogue' ? 'Epilogue' : `By Ch ${ch}`;
               return `<button class="filter-chip chapter-chip ${activeFilters.chapter === ch ? 'active' : ''}" data-chapter="${ch}">${label}</button>`;
             }).join('')}
         </div>
