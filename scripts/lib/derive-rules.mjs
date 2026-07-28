@@ -17,15 +17,22 @@ const OPEN_WORLD_SECTIONS = new Set([
 const NEW_AUSTIN_REGIONS = new Set(['new-austin', 'gaptooth', 'rio-bravo', 'cholla', 'hennigans-stead']);
 
 /**
- * Find an explicit chapter reference in free text.
+ * Find the earliest explicit chapter reference in free text.
+ * Matches "Chapter N" / "Chapters N" and the "CH N" abbreviation (with or
+ * without a trailing period), and returns the smallest N found. Falls back
+ * to 'epilogue' only when no numeric chapter is mentioned anywhere in the
+ * text.
  * @param {string} [text]
  * @returns {number|'epilogue'|null}
  */
 export function parseChapterFromText(text) {
   if (!text) return null;
+  const matches = [...text.matchAll(/\bch(?:apter)?s?\s*\.?\s*([1-6])\b/gi)];
+  if (matches.length > 0) {
+    return Math.min(...matches.map(m => Number(m[1])));
+  }
   if (/\bepilogue\b/i.test(text)) return 'epilogue';
-  const match = text.match(/\bchapter\s*([1-6])\b/i);
-  return match ? Number(match[1]) : null;
+  return null;
 }
 
 export const CHAPTER_RULES = [

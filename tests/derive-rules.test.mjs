@@ -49,3 +49,32 @@ test('rules are applied in precedence order, not data order', () => {
   const item = { _section: 'collectibles', region: 'new-austin', tip: 'From Chapter 2' };
   assert.deepEqual(deriveChapter(item), { value: 2, rule: 'explicit-mention' });
 });
+
+test('earliest numeric chapter wins over a later epilogue mention', () => {
+  assert.equal(parseChapterFromText('One in Chapter 2, one in Epilogue.'), 2);
+  assert.equal(parseChapterFromText('Obtainable from CH 1! Or CH 2 fire arrow, or Epilogue.'), 1);
+});
+
+test('epilogue-only text with no numeric chapter still returns epilogue', () => {
+  assert.equal(parseChapterFromText('Epilogue only'), 'epilogue');
+});
+
+test('recognizes plural "Chapters N-M" range phrasing and returns the earliest number', () => {
+  assert.equal(parseChapterFromText('Chapters 2-3 only'), 2);
+  assert.equal(parseChapterFromText('Throughout Chapters 2-4, talk to Pearson'), 2);
+});
+
+test('preserves existing single-chapter and no-mention behaviour', () => {
+  assert.equal(parseChapterFromText('Available after Chapter 3'), 3);
+  assert.equal(parseChapterFromText('West of Strawberry'), null);
+});
+
+test('returns the minimum chapter when multiple mentions appear out of order', () => {
+  assert.equal(parseChapterFromText('Chapter 4 or Chapter 2'), 2);
+});
+
+test('recognizes the "CH" abbreviation, with or without a period, spaced or not', () => {
+  assert.equal(parseChapterFromText('CH 2'), 2);
+  assert.equal(parseChapterFromText('Ch3'), 3);
+  assert.equal(parseChapterFromText('Ch. 5'), 5);
+});
