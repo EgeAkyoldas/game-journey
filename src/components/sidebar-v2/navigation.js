@@ -31,6 +31,7 @@ import {
   renderActiveFilterBadges
 } from './filters.js';
 import { Storage } from '../../utils/storage.js';
+import { calculateOverallProgress } from '../header-progress.js';
 
 // DOM helpers
 const $ = (sel) => document.querySelector(sel);
@@ -224,13 +225,13 @@ function renderNavSection(section) {
   }
   
   const icon = SECTION_ICONS[section.id] || 'fa-circle';
-  const itemCount = section.items?.length || 0;
-  
+  const { completed, total } = store.getSectionProgress(section);
+
   return `
     <a href="#${section.id}" class="nav-section-link" data-section="${section.id}">
       <i class="nav-section-icon fa-solid ${icon}"></i>
       <span class="nav-section-title">${section.title}</span>
-      <span class="nav-section-count" data-count-section="${section.id}">0/${itemCount}</span>
+      <span class="nav-section-count" data-count-section="${section.id}">${completed}/${total}</span>
     </a>
   `;
 }
@@ -531,13 +532,9 @@ function updateSectionCounts() {
     
     const countEl = $(`[data-count-section="${section.id}"]`);
     if (!countEl) return;
-    
-    const completed = section.items.filter(item => 
-      store.get(item.id)
-    ).length;
-    const total = section.items.length;
-    const percent = total > 0 ? (completed / total) * 100 : 0;
-    
+
+    const { completed, total, percent } = store.getSectionProgress(section);
+
     countEl.textContent = `${completed}/${total}`;
     
     // Remove all progress classes first
@@ -567,22 +564,14 @@ function updateSectionCounts() {
  * Update total progress bar
  */
 function updateTotalProgress() {
-  let totalItems = 0;
-  let completedItems = 0;
-  
-  CHECKLIST_SECTIONS.forEach(section => {
-    if (section.isJournal || !section.items) return;
-    totalItems += section.items.length;
-    completedItems += section.items.filter(item => store.get(item.id)).length;
-  });
-  
-  const percent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
-  
+  // Same numbers as the header bar — both read calculateOverallProgress()
+  const { completed, total, percent } = calculateOverallProgress();
+
   const fill = $('#nav-stats-fill');
   const text = $('#nav-stats-text');
-  
+
   if (fill) fill.style.width = `${percent}%`;
-  if (text) text.textContent = `${completedItems} / ${totalItems} (${percent}%)`;
+  if (text) text.textContent = `${completed} / ${total} (${percent}%)`;
 }
 
 /**

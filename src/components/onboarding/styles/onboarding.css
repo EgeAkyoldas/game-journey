@@ -376,6 +376,32 @@
   }
 }
 
+/* Short viewports (landscape phones): claw back vertical space */
+@media (max-height: 560px) {
+  .onboarding-content {
+    max-height: 94vh;
+  }
+
+  .onboarding-header,
+  .onboarding-footer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .onboarding-body {
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .onboarding-lead {
+    margin-bottom: 0.65rem;
+  }
+
+  .onboarding-row {
+    padding: 7px 10px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .onboarding-modal,
   .onboarding-content,

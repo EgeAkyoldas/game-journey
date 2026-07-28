@@ -24,45 +24,32 @@ export function renderHeaderProgress() {
 }
 
 /**
- * Calculate overall progress across all sections
+ * Calculate overall progress across all sections.
+ * Sums store.getSectionProgress(), so this total always equals the sum of the
+ * per-section counts shown in the sidebar and the section headers.
+ *
  * @returns {{ completed: number, total: number, percent: number }}
  */
 export function calculateOverallProgress() {
   let completed = 0;
   let total = 0;
-  
+
   try {
     // Defensive: check if CHECKLIST_SECTIONS exists and is array
     if (!CHECKLIST_SECTIONS || !Array.isArray(CHECKLIST_SECTIONS)) {
       return { completed: 0, total: 0, percent: 0 };
     }
-    
+
     for (const section of CHECKLIST_SECTIONS) {
-      // Defensive: check if section has items array
-      if (!section?.items || !Array.isArray(section.items)) continue;
-      
-      for (const item of section.items) {
-        if (!item?.id) continue;
-        
-        // Count main item
-        total++;
-        if (store.get(item.id)) completed++;
-        
-        // Count sub-items
-        if (item.subItems && Array.isArray(item.subItems)) {
-          for (const sub of item.subItems) {
-            if (!sub?.id) continue;
-            total++;
-            if (store.get(sub.id)) completed++;
-          }
-        }
-      }
+      const sectionProgress = store.getSectionProgress(section);
+      completed += sectionProgress.completed;
+      total += sectionProgress.total;
     }
   } catch (err) {
     console.error('Error calculating progress:', err);
     return { completed: 0, total: 0, percent: 0 };
   }
-  
+
   const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
   return { completed, total, percent };
 }

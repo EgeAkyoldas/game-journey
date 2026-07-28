@@ -125,17 +125,39 @@ export const store = {
   },
 
   /**
-   * Get progress for a specific section
+   * Get progress for a specific section.
+   *
+   * Single source of truth for every counter in the app: the section headers,
+   * the sidebar section counts, the sidebar footer, and the header bar all end
+   * up here. Sub-items are tasks in their own right and are counted, so section
+   * totals sum exactly to the overall total.
+   *
    * @param {Object} section - Section object with items array
-   * @returns {{ completed: number, total: number }}
+   * @returns {{ completed: number, total: number, percent: number }}
    */
   getSectionProgress(section) {
-    if (!section.items) return { completed: 0, total: 0 };
-    
-    const total = section.items.length;
-    const completed = section.items.filter(item => this.get(item.id)).length;
-    
-    return { completed, total };
+    let completed = 0;
+    let total = 0;
+
+    if (section?.items && Array.isArray(section.items)) {
+      for (const item of section.items) {
+        if (!item?.id) continue;
+
+        total++;
+        if (this.get(item.id)) completed++;
+
+        if (Array.isArray(item.subItems)) {
+          for (const sub of item.subItems) {
+            if (!sub?.id) continue;
+            total++;
+            if (this.get(sub.id)) completed++;
+          }
+        }
+      }
+    }
+
+    const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+    return { completed, total, percent };
   },
 
   /**
