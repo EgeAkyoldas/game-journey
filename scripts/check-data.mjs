@@ -3,6 +3,7 @@
  * Data integrity assertions. Exits 1 on any violation.
  * Run before and after any backfill.
  */
+import { pathToFileURL } from 'node:url';
 import { loadItems } from './lib/load-items.mjs';
 import { REGIONS, normalizeRegion } from '../src/data/regions.js';
 
@@ -58,15 +59,17 @@ export function checkData(items, sectionCounts) {
   return { ok: errors.length === 0, errors };
 }
 
-const { items, sectionCounts } = loadItems();
-const { ok, errors } = checkData(items, sectionCounts);
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const { items, sectionCounts } = loadItems();
+  const { ok, errors } = checkData(items, sectionCounts);
 
-if (ok) {
-  console.log(`✓ data OK — ${items.length} items across ${Object.keys(sectionCounts).length} sections`);
-  process.exit(0);
+  if (ok) {
+    console.log(`✓ data OK — ${items.length} items across ${Object.keys(sectionCounts).length} sections`);
+    process.exit(0);
+  }
+
+  console.error(`✗ ${errors.length} data integrity error(s):`);
+  errors.slice(0, 50).forEach(e => console.error('  ' + e));
+  if (errors.length > 50) console.error(`  …and ${errors.length - 50} more`);
+  process.exit(1);
 }
-
-console.error(`✗ ${errors.length} data integrity error(s):`);
-errors.slice(0, 50).forEach(e => console.error('  ' + e));
-if (errors.length > 50) console.error(`  …and ${errors.length - 50} more`);
-process.exit(1);
