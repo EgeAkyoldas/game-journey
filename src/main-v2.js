@@ -11,6 +11,7 @@ import './components/showcase-v2/styles/showcase.css';  // Theme variables for c
 import './components/checklist-v2/styles/checklist.css';
 import './components/settings-panel/styles/settings-panel.css';
 import './components/journal-modal.css';
+import './components/onboarding/styles/onboarding.css';
 
 // Components
 import { initThemeSystem, attachThemeListeners } from './components/sidebar-v2/theme-system.js';
@@ -19,6 +20,7 @@ import { initChecklist, scrollToSection, refreshChecklist } from './components/c
 import { initSettingsPanel } from './components/settings-panel/index.js';
 import { initParticles } from './components/particles.js';
 import { initJournalModal } from './components/journal-modal.js';
+import { initOnboarding } from './components/onboarding/index.js';
 import { renderActions } from './components/actions.js';
 import { renderHeader, updateOverallProgress } from './components/header.js';
 import { store } from './data/state.js';
@@ -68,10 +70,13 @@ async function initApp() {
   // 9. Initialize settings panel (floating)
   initSettingsPanel('settings-panel');
   
-  // 10. Setup event listeners for component communication
+  // 10. Initialize onboarding (help FAB + first-run tour)
+  initOnboarding();
+
+  // 11. Setup event listeners for component communication
   setupEventListeners();
   
-  // 11. Update initial progress
+  // 12. Update initial progress
   updateOverallProgress();
   
   console.log('✅ V2 initialized successfully!');

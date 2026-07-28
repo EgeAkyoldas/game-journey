@@ -388,13 +388,90 @@
   transition: transform 0.2s;
 }
 
+/* Arrow points down when open, left when collapsed */
+.nav-category:not(.expanded) .nav-category-arrow {
+  transform: rotate(-90deg);
+}
+
 .nav-category-items {
   overflow: hidden;
+  /* Explicit max-height so the collapse actually animates instead of snapping */
+  max-height: 2000px;
   transition: max-height 0.3s ease;
 }
 
 .nav-category-items.collapsed {
-  max-height: 0 !important;
+  max-height: 0;
+}
+
+/* ============================================
+   SUBCATEGORIES
+   ============================================ */
+.nav-subcategory {
+  margin-top: 4px;
+}
+
+.nav-subcategory-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: rgba(244, 228, 188, 0.7);
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-subcategory-header:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-mode="day"] .nav-subcategory-header {
+  color: rgba(62, 39, 35, 0.75);
+}
+
+[data-mode="day"] .nav-subcategory-header:hover {
+  background: rgba(139, 69, 19, 0.08);
+}
+
+.nav-subcategory-icon {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  width: 14px;
+  text-align: center;
+}
+
+.nav-subcategory-title {
+  flex: 1;
+}
+
+.nav-subcategory-count {
+  font-size: 0.6rem;
+  opacity: 0.4;
+}
+
+.nav-subcategory-arrow {
+  font-size: 0.5rem;
+  opacity: 0.4;
+  transition: transform 0.2s;
+}
+
+.nav-subcategory.expanded .nav-subcategory-arrow {
+  transform: rotate(90deg);
+}
+
+.nav-subcategory-items {
+  overflow: hidden;
+  padding-left: 6px;
+  max-height: 2000px;
+  transition: max-height 0.3s ease;
+}
+
+.nav-subcategory-items.collapsed {
+  max-height: 0;
 }
 
 /* ============================================

@@ -30,6 +30,7 @@ import {
   renderFilterPanel,
   renderActiveFilterBadges
 } from './filters.js';
+import { Storage } from '../../utils/storage.js';
 
 // DOM helpers
 const $ = (sel) => document.querySelector(sel);
@@ -38,6 +39,37 @@ const $$ = (sel) => document.querySelectorAll(sel);
 // State
 let filterPanelOpen = false;
 let activeSection = null;
+let listenersAttached = false;
+
+// Persisted open/closed state. Categories default open, subcategories default closed,
+// so each is tracked as the set that differs from its default.
+const COLLAPSED_CATS_KEY = 'nav_collapsed_categories';
+const EXPANDED_SUBCATS_KEY = 'nav_expanded_subcategories';
+const collapsedCategories = new Set(Storage.load(COLLAPSED_CATS_KEY, []));
+const expandedSubcategories = new Set(Storage.load(EXPANDED_SUBCATS_KEY, []));
+
+/**
+ * Persist collapse state and reflect it on the DOM node
+ */
+function setCategoryCollapsed(categoryEl, collapsed) {
+  const id = categoryEl.dataset.category;
+  categoryEl.classList.toggle('expanded', !collapsed);
+  categoryEl.querySelector('.nav-category-items')?.classList.toggle('collapsed', collapsed);
+
+  if (collapsed) collapsedCategories.add(id);
+  else collapsedCategories.delete(id);
+  Storage.save(COLLAPSED_CATS_KEY, [...collapsedCategories]);
+}
+
+function setSubcategoryCollapsed(subcategoryEl, collapsed) {
+  const id = subcategoryEl.dataset.subcategory;
+  subcategoryEl.classList.toggle('expanded', !collapsed);
+  subcategoryEl.querySelector('.nav-subcategory-items')?.classList.toggle('collapsed', collapsed);
+
+  if (collapsed) expandedSubcategories.delete(id);
+  else expandedSubcategories.add(id);
+  Storage.save(EXPANDED_SUBCATS_KEY, [...expandedSubcategories]);
+}
 
 /**
  * Main render function - creates sidebar
@@ -139,15 +171,17 @@ function renderCategories() {
       
       if (subSections.length === 0) return '';
       
+      const subExpanded = expandedSubcategories.has(subcat.id);
+
       return `
-        <div class="nav-subcategory" data-subcategory="${subcat.id}" style="margin-top:4px;">
-          <div class="nav-subcategory-header" data-subcategory-toggle="${subcat.id}" style="display:flex;align-items:center;padding:6px 12px;cursor:pointer;color:rgba(244,228,188,0.7);font-family:var(--font-typewriter);font-size:0.8rem;font-weight:600;gap:8px;border-radius:4px;transition:background 0.2s;">
-            <i class="fa-solid ${subcat.icon}" style="font-size:0.7rem;opacity:0.6;width:14px;text-align:center;"></i>
-            <span style="flex:1;">${subcat.title}</span>
-            <span style="font-size:0.6rem;opacity:0.4;">${subSections.length} sets</span>
-            <i class="nav-subcategory-arrow fa-solid fa-chevron-right" style="font-size:0.5rem;opacity:0.4;transition:transform 0.2s;"></i>
+        <div class="nav-subcategory${subExpanded ? ' expanded' : ''}" data-subcategory="${subcat.id}">
+          <div class="nav-subcategory-header" data-subcategory-toggle="${subcat.id}">
+            <i class="nav-subcategory-icon fa-solid ${subcat.icon}"></i>
+            <span class="nav-subcategory-title">${subcat.title}</span>
+            <span class="nav-subcategory-count">${subSections.length} sets</span>
+            <i class="nav-subcategory-arrow fa-solid fa-chevron-right"></i>
           </div>
-          <div class="nav-subcategory-items" style="display:none;padding-left:6px;">
+          <div class="nav-subcategory-items${subExpanded ? '' : ' collapsed'}">
             ${subSections.map(section => renderNavSection(section)).join('')}
           </div>
         </div>
@@ -156,14 +190,16 @@ function renderCategories() {
     
     if (sections.length === 0 && !subcatHtml) return '';
     
+    const catCollapsed = collapsedCategories.has(cat.id);
+
     return `
-      <div class="nav-category expanded" data-category="${cat.id}">
+      <div class="nav-category${catCollapsed ? '' : ' expanded'}" data-category="${cat.id}">
         <div class="nav-category-header" data-category-toggle="${cat.id}">
           <i class="nav-category-icon fa-solid ${cat.icon}"></i>
           <span class="nav-category-title">${cat.title}</span>
           <i class="nav-category-arrow fa-solid fa-chevron-down"></i>
         </div>
-        <div class="nav-category-items">
+        <div class="nav-category-items${catCollapsed ? ' collapsed' : ''}">
           ${sections.map(section => renderNavSection(section)).join('')}
           ${subcatHtml}
         </div>
@@ -221,30 +257,26 @@ function renderMobileFab() {
  * Attach all navigation event listeners
  */
 export function attachNavListeners() {
+  // renderNavigation() also calls this; binding twice would toggle each accordion
+  // back to its original state on every click.
+  if (listenersAttached) return;
+  listenersAttached = true;
+
   // Event delegation
   document.addEventListener('click', (e) => {
     // Category toggle
     const catToggle = e.target.closest('[data-category-toggle]');
     if (catToggle) {
       const category = catToggle.closest('.nav-category');
-      category.classList.toggle('expanded');
-      const items = category.querySelector('.nav-category-items');
-      items.classList.toggle('collapsed');
-      const arrow = catToggle.querySelector('.nav-category-arrow');
-      arrow.style.transform = category.classList.contains('expanded') ? 'rotate(0deg)' : 'rotate(-90deg)';
+      setCategoryCollapsed(category, category.classList.contains('expanded'));
       return;
     }
-    
+
     // Subcategory toggle
     const subcatToggle = e.target.closest('[data-subcategory-toggle]');
     if (subcatToggle) {
       const subcategory = subcatToggle.closest('.nav-subcategory');
-      subcategory.classList.toggle('expanded');
-      const isExpanded = subcategory.classList.contains('expanded');
-      const items = subcategory.querySelector('.nav-subcategory-items');
-      items.style.display = isExpanded ? 'block' : 'none';
-      const arrow = subcatToggle.querySelector('.nav-subcategory-arrow');
-      arrow.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
+      setSubcategoryCollapsed(subcategory, subcategory.classList.contains('expanded'));
       return;
     }
     
@@ -252,7 +284,7 @@ export function attachNavListeners() {
     const sectionLink = e.target.closest('.nav-section-link');
     if (sectionLink) {
       const sectionId = sectionLink.dataset.section;
-      setActiveSection(sectionId);
+      setActiveSection(sectionId, true);
       
       // Dispatch event for checklist to scroll to section
       document.dispatchEvent(new CustomEvent('nav:sectionClick', { 
@@ -418,20 +450,27 @@ function toggleFilterPanel() {
  * Set active section and update UI
  * @param {string} sectionId
  */
-function setActiveSection(sectionId) {
+function setActiveSection(sectionId, expandParents = false) {
   activeSection = sectionId;
-  
+
   $$('.nav-section-link').forEach(link => {
     link.classList.toggle('active', link.dataset.section === sectionId);
   });
-  
-  // Expand parent category if collapsed
+
+  // Only reveal the parents when the user navigated here on purpose. The scroll
+  // spy must not reopen (and overwrite) a category the user deliberately closed.
+  if (!expandParents) return;
+
   const activeLink = $(`.nav-section-link[data-section="${sectionId}"]`);
   if (activeLink) {
+    const subcategory = activeLink.closest('.nav-subcategory');
+    if (subcategory && !subcategory.classList.contains('expanded')) {
+      setSubcategoryCollapsed(subcategory, false);
+    }
+
     const category = activeLink.closest('.nav-category');
     if (category && !category.classList.contains('expanded')) {
-      category.classList.add('expanded');
-      category.querySelector('.nav-category-items').classList.remove('collapsed');
+      setCategoryCollapsed(category, false);
     }
   }
 }
