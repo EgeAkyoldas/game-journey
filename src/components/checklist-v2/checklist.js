@@ -22,7 +22,8 @@ import {
   activeFilters,
   itemMatchesFilters,
   isItemCompleted,
-  statusMatches
+  statusMatches,
+  isHiddenForMissingField
 } from '../sidebar-v2/filters.js';
 
 // Audio imports - both V1 and V2 systems
@@ -520,7 +521,10 @@ function applyFiltersToChecklist(container) {
   
   // Get all sections
   const sections = container.querySelectorAll('.checklist-section');
-  
+
+  let hiddenForMissingData = 0;
+  let missingFieldName = null;
+
   // If no filters, restore normal state
   if (!hasActiveFilters) {
     sections.forEach(sectionEl => {
@@ -543,6 +547,7 @@ function applyFiltersToChecklist(container) {
         card.style.display = '';
       });
     });
+    renderUnknownNotice(container, 0, null);
     return;
   }
   
@@ -582,20 +587,16 @@ function applyFiltersToChecklist(container) {
         matchesSearch = titleMatch || tipMatch || tipDetailedMatch || tagMatch;
       }
       
-      // Build item object for filter matching
-      const filterItem = {
-        title: item.text,
-        description: item.tip || item.tip_detailed || '',
-        tags: item.tags || [],
-        chapter: item.chapter,
-        region: item.region,
-        missable: item.missable || item.isMissable,
-        reward: item.reward
-      };
-      
-      // Check structured filters (chapter, region, missable, reward)
-      const matchesStructuredFilters = itemMatchesFilters(filterItem);
-      
+      // Check structured filters against the real item — the shim dropped
+      // rewards[] and provenance, which the filter now needs.
+      const matchesStructuredFilters = itemMatchesFilters(item);
+
+      const missingField = isHiddenForMissingField(item);
+      if (missingField && !activeFilters.showUnknown) {
+        hiddenForMissingData++;
+        missingFieldName = missingField;
+      }
+
       // Status filter
       const isCompleted = store.get(item.id);
       const matchesStatus = statusMatches(isCompleted);
@@ -614,4 +615,35 @@ function applyFiltersToChecklist(container) {
       sectionEl.style.display = '';
     }
   });
+
+  renderUnknownNotice(container, hiddenForMissingData, missingFieldName);
+}
+
+/**
+ * Tell the user when a filter hid items because they lack the filtered field,
+ * rather than letting them read an empty list as "there is nothing here".
+ */
+function renderUnknownNotice(container, count, field) {
+  const existing = document.getElementById('filter-unknown-notice');
+
+  if (!count || !field) {
+    existing?.remove();
+    return;
+  }
+
+  const label = `${count} item${count === 1 ? '' : 's'} hidden — no ${field} recorded.`;
+  const notice = existing || document.createElement('div');
+  notice.id = 'filter-unknown-notice';
+  notice.className = 'filter-unknown-notice';
+  notice.innerHTML = `
+    <span>${label}</span>
+    <button type="button" id="filter-show-unknown">Show them</button>
+  `;
+
+  if (!existing) container.appendChild(notice);
+
+  document.getElementById('filter-show-unknown').onclick = () => {
+    activeFilters.showUnknown = true;
+    window.dispatchEvent(new CustomEvent('filters-changed'));
+  };
 }
