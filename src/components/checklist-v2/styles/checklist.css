@@ -1117,3 +1117,9 @@
   background: rgba(139, 69, 19, 0.1);
   border-color: #8b4513;
 }
+
+/* Derived (estimated) tag values — quiet, but never mistakable for a fact */
+.tag.tag-derived {
+  border-style: dashed;
+  opacity: 0.75;
+}
