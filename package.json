@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/",
+    "check-data": "node scripts/check-data.mjs",
+    "backfill": "node scripts/backfill-data.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",

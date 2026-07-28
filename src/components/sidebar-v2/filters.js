@@ -5,6 +5,7 @@
  */
 
 import { CHECKLIST_SECTIONS } from '../../data/index.js';
+import { REGIONS, normalizeRegion } from '../../data/regions.js';
 
 // DOM helpers
 const $ = (sel) => document.querySelector(sel);
@@ -25,57 +26,9 @@ export const activeFilters = {
 /**
  * Region data for filter chips
  * Main regions with sub-region mappings
+ * (imported above; re-exported here so existing importers keep working unchanged)
  */
-export const REGIONS = [
-  { id: 'new-hanover', name: 'New Hanover' },
-  { id: 'lemoyne', name: 'Lemoyne' },
-  { id: 'west-elizabeth', name: 'West Elizabeth' },
-  { id: 'new-austin', name: 'New Austin' },
-  { id: 'ambarino', name: 'Ambarino' }
-];
-
-/**
- * Map sub-regions to their parent main region
- */
-const SUB_REGION_MAP = {
-  // New Hanover sub-regions
-  'heartlands': 'new-hanover',
-  'cumberland': 'new-hanover',
-  'roanoke': 'new-hanover',
-  'roanoke-ridge': 'new-hanover',
-  // Ambarino sub-regions  
-  'grizzlies': 'ambarino',
-  'grizzlies-east': 'ambarino',
-  'grizzlies-west': 'ambarino',
-  // West Elizabeth sub-regions
-  'big-valley': 'west-elizabeth',
-  'tall-trees': 'west-elizabeth',
-  'great-plains': 'west-elizabeth',
-  // Lemoyne sub-regions
-  'bayou': 'lemoyne',
-  'saint-denis': 'lemoyne',
-  'scarlett-meadows': 'lemoyne',
-  'bluewater': 'lemoyne',
-  // New Austin sub-regions
-  'gaptooth': 'new-austin',
-  'rio-bravo': 'new-austin',
-  'cholla': 'new-austin',
-  'hennigans-stead': 'new-austin'
-};
-
-/**
- * Normalize a region ID to its main parent region
- * @param {string} region - Raw region from data
- * @returns {string} Normalized main region ID
- */
-export function normalizeRegion(region) {
-  if (!region) return null;
-  const lower = region.toLowerCase();
-  // Check if it's already a main region
-  if (REGIONS.some(r => r.id === lower)) return lower;
-  // Check sub-region map
-  return SUB_REGION_MAP[lower] || lower;
-}
+export { REGIONS, normalizeRegion };
 
 /**
  * Check if an item matches current filters
