@@ -97,7 +97,9 @@ Rules are applied **in this order; the first that matches wins**:
 
 Each rule is a named function taking the item and returning a value or `null`, evaluated in the order above, so reasoning is inspectable and the whole backfill is re-runnable rather than a one-off mutation.
 
-Expected outcome: `chapter` roughly 85–95%, `region` near 90%, remainder honestly `unknown`. Exact figures are not knowable until the rules run.
+Expected outcome: `chapter` roughly 85–95%, remainder honestly `unknown`. Exact figures are not knowable until the rules run.
+
+**Region coverage is not raised much by this project, and that is deliberate.** The rules above derive `chapter` only — no region-derivation rule is specified, because most items still missing a region genuinely have none: trapper crafting recipes, camp upgrades, and pamphlets are not tied to a place. Inventing a region for them would manufacture exactly the false confidence this design exists to prevent. Region therefore stays near its starting coverage, and the honest-unknown filter behaviour in Section 3 is what covers the gap. If region coverage is ever worth raising, it needs its own rules and its own project.
 
 **Deliverables:** a script under `scripts/` that rewrites the section data files, and `research/data/backfill-report.md` listing every derived value grouped by the rule that produced it, plus every unresolved conflict. Review the report, not 886 diffs.
 

@@ -110,7 +110,7 @@ This is peak Sean energy. Drunken stumbling, terrible Irish poetry, and somehow 
 🍺 *One of the funniest missions in the game. Do NOT miss this one.*`,
           missable: true,
           reward: 'Loot + Laughs',
-          region: 'lemoyne',
+          region: 'new-hanover',
           verified: true,
           source: 'data-verified.csv (robbery-lonnie)'
         },
