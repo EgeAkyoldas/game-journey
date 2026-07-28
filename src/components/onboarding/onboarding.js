@@ -59,7 +59,7 @@ const STEPS = [
       { icon: 'fa-book', label: 'Journal', text: 'A free-text notepad for your own campaign notes. Auto-saves.' },
       { icon: 'fa-palette', label: 'Themes', text: 'Four looks — Wood, Ledger, Wanted, Saloon — each in day or night.' },
       { icon: 'fa-volume-high', label: 'Sound & video', text: 'Completion sound effects and the animated background, on or off.' },
-      { icon: 'fa-floppy-disk', label: 'Backup', text: 'Progress lives in this browser only. Export a save file before clearing site data or switching device.', warn: true },
+      { icon: 'fa-floppy-disk', label: 'Backup', text: 'Progress lives in this browser only. Settings &rarr; Progress has Export and Import — grab a save file before clearing site data or switching device.', warn: true },
     ],
   },
 ];

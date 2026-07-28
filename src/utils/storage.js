@@ -74,11 +74,17 @@ export const Storage = {
   /**
    * Export all progress as JSON
    */
-  exportProgress() {
+  /**
+   * @param {{completed: number, total: number}} [stats] - true counts from the
+   *   checklist data. Without it the total can only be derived from the keys
+   *   that exist in localStorage, which counts touched items rather than all
+   *   of them.
+   */
+  exportProgress(stats) {
     const checkboxes = this.getCheckboxStates();
-    const completedCount = Object.values(checkboxes).filter(Boolean).length;
-    const totalCount = Object.keys(checkboxes).length;
-    
+    const completedCount = stats?.completed ?? Object.values(checkboxes).filter(Boolean).length;
+    const totalCount = stats?.total ?? Object.keys(checkboxes).length;
+
     const data = {
       version: 1,
       appName: "The Drifter's Ledger",

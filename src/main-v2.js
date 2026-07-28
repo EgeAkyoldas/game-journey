@@ -21,7 +21,6 @@ import { initSettingsPanel } from './components/settings-panel/index.js';
 import { initParticles } from './components/particles.js';
 import { initJournalModal } from './components/journal-modal.js';
 import { initOnboarding } from './components/onboarding/index.js';
-import { renderActions } from './components/actions.js';
 import { renderHeader, updateOverallProgress } from './components/header.js';
 import { store } from './data/state.js';
 import { CHECKLIST_SECTIONS } from './data/index.js';
@@ -61,22 +60,16 @@ async function initApp() {
   // 7. Initialize journal modal (floating FAB + popup)
   initJournalModal();
   
-  // 8. Render action buttons (export/import)
-  const actionsContainer = document.getElementById('actions');
-  if (actionsContainer) {
-    renderActions();
-  }
-  
-  // 9. Initialize settings panel (floating)
+  // 8. Initialize settings panel (floating) — also hosts export/import/reset
   initSettingsPanel('settings-panel');
   
-  // 10. Initialize onboarding (help FAB + first-run tour)
+  // 9. Initialize onboarding (help FAB + first-run tour)
   initOnboarding();
 
-  // 11. Setup event listeners for component communication
+  // 10. Setup event listeners for component communication
   setupEventListeners();
   
-  // 12. Update initial progress
+  // 11. Update initial progress
   updateOverallProgress();
   
   console.log('✅ V2 initialized successfully!');

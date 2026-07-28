@@ -10,7 +10,10 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  /* Above the journal and help FABs (z-index 1000, appended to <body> later).
+     This container creates the stacking context, so the value has to live here
+     rather than on .settings-panel, or the FABs paint over the open panel. */
+  z-index: 1100;
 }
 
 .settings-fab {
@@ -151,6 +154,109 @@
   text-align: center;
   color: #ffd700;
   opacity: 0.8;
+}
+
+/* Sections whose controls sit under the label instead of beside it */
+.settings-section--stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(139, 69, 19, 0.35);
+}
+
+.settings-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(232, 220, 200, 0.6);
+}
+
+[data-mode="day"] .settings-hint {
+  color: rgba(62, 39, 35, 0.65);
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.settings-action {
+  /* min-width:0 so the three buttons share the row instead of overflowing it */
+  flex: 1 1 0;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 4px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #d4a53c;
+  font-family: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-action:hover {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+.settings-action--danger {
+  border-color: rgba(220, 38, 38, 0.5);
+  color: #f87171;
+}
+
+.settings-action--danger:hover {
+  background: rgba(220, 38, 38, 0.15);
+  border-color: #dc2626;
+  color: #fca5a5;
+}
+
+[data-mode="day"] .settings-action {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(139, 69, 19, 0.4);
+  color: #8b4513;
+}
+
+[data-mode="day"] .settings-action:hover {
+  background: rgba(139, 69, 19, 0.12);
+  border-color: #8b4513;
+}
+
+[data-mode="day"] .settings-action--danger {
+  border-color: rgba(185, 28, 28, 0.45);
+  color: #b91c1c;
+}
+
+[data-mode="day"] .settings-action--danger:hover {
+  background: rgba(220, 38, 38, 0.12);
+  border-color: #b91c1c;
+}
+
+.settings-status {
+  margin: 0;
+  min-height: 1em;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #4ade80;
+}
+
+.settings-status.error {
+  color: #f87171;
+}
+
+[data-mode="day"] .settings-status {
+  color: #15803d;
+}
+
+[data-mode="day"] .settings-status.error {
+  color: #b91c1c;
 }
 
 /* ============================================

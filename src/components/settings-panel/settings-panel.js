@@ -10,6 +10,7 @@
 import { setUITheme as applyUITheme, setMode as applyThemeMode } from '../sidebar-v2/theme-system.js';
 import { setVolume } from '../showcase-v2/audio.js';
 import { setSoundVolume } from '../../utils/audio.js';
+import { handleExport, handleImport, handleBurn } from '../actions.js';
 
 // State
 let isOpen = false;
@@ -172,8 +173,33 @@ function renderSettingsPanel(container) {
             <span class="switch-slider"></span>
           </label>
         </div>
+
+        <!-- Progress backup -->
+        <div class="settings-section settings-section--stack">
+          <div class="settings-label">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Progress
+          </div>
+          <p class="settings-hint">
+            Your progress is stored in this browser only. Export a save file to
+            keep it, or to move it to another device.
+          </p>
+          <div class="settings-actions">
+            <button class="settings-action" id="settings-export">
+              <i class="fa-solid fa-file-export"></i> Export
+            </button>
+            <input type="file" id="settings-import-file" accept=".json,application/json" hidden>
+            <button class="settings-action" id="settings-import">
+              <i class="fa-solid fa-file-import"></i> Import
+            </button>
+            <button class="settings-action settings-action--danger" id="settings-reset">
+              <i class="fa-solid fa-fire"></i> Reset
+            </button>
+          </div>
+          <p class="settings-status" id="settings-progress-status" role="status"></p>
+        </div>
       </div>
-      
+
       <div class="settings-footer">
         <span class="settings-version">The Drifter's Ledger V2</span>
       </div>
@@ -233,13 +259,32 @@ function attachSettingsListeners(container) {
   container.querySelector('#video-toggle').addEventListener('change', (e) => {
     videoEnabled = e.target.checked;
     localStorage.setItem(STORAGE_KEYS.video, videoEnabled);
-    
+
     const video = document.querySelector('.video-background');
     if (video) {
       video.style.display = videoEnabled ? 'block' : 'none';
     }
   });
-  
+
+  // Progress: export / import / reset
+  const statusEl = container.querySelector('#settings-progress-status');
+  const report = (message, ok = true) => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.toggle('error', !ok);
+  };
+
+  container.querySelector('#settings-export').addEventListener('click', () => {
+    const summary = handleExport();
+    report(`Save file downloaded — ${summary}.`);
+  });
+
+  const fileInput = container.querySelector('#settings-import-file');
+  container.querySelector('#settings-import').addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', (e) => handleImport(e, report));
+
+  container.querySelector('#settings-reset').addEventListener('click', handleBurn);
+
   // Close on outside click
   document.addEventListener('click', (e) => {
     if (isOpen && !container.contains(e.target)) {
