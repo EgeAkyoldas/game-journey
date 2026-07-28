@@ -523,7 +523,7 @@ function applyFiltersToChecklist(container) {
   const sections = container.querySelectorAll('.checklist-section');
 
   let hiddenForMissingData = 0;
-  let missingFieldName = null;
+  const missingFields = new Set();
 
   // If no filters, restore normal state
   if (!hasActiveFilters) {
@@ -594,7 +594,7 @@ function applyFiltersToChecklist(container) {
       const missingField = isHiddenForMissingField(item);
       if (missingField && !activeFilters.showUnknown) {
         hiddenForMissingData++;
-        missingFieldName = missingField;
+        missingFields.add(missingField);
       }
 
       // Status filter
@@ -616,22 +616,26 @@ function applyFiltersToChecklist(container) {
     }
   });
 
-  renderUnknownNotice(container, hiddenForMissingData, missingFieldName);
+  renderUnknownNotice(container, hiddenForMissingData, missingFields);
 }
 
 /**
  * Tell the user when a filter hid items because they lack the filtered field,
  * rather than letting them read an empty list as "there is nothing here".
  */
-function renderUnknownNotice(container, count, field) {
+function renderUnknownNotice(container, count, fields) {
   const existing = document.getElementById('filter-unknown-notice');
 
-  if (!count || !field) {
+  if (!count || !fields || fields.size === 0) {
     existing?.remove();
     return;
   }
 
-  const label = `${count} item${count === 1 ? '' : 's'} hidden — no ${field} recorded.`;
+  // Fixed order regardless of which item was processed first, so the
+  // message reads consistently ("no chapter or region recorded").
+  const FIELD_ORDER = ['chapter', 'region'];
+  const reason = FIELD_ORDER.filter(f => fields.has(f)).join(' or ');
+  const label = `${count} item${count === 1 ? '' : 's'} hidden — no ${reason} recorded.`;
   const notice = existing || document.createElement('div');
   notice.id = 'filter-unknown-notice';
   notice.className = 'filter-unknown-notice';
