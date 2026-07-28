@@ -179,7 +179,7 @@ async function main() {
   
   const csv = [header, ...rows].join('\n');
   
-  const outputPath = path.join(__dirname, '../data-review.csv');
+  const outputPath = path.join(__dirname, '../research/data/data-review.csv');
   fs.writeFileSync(outputPath, '\ufeff' + csv, 'utf8');
   
   console.log(`\n✅ Total: ${allItems.length} items extracted`);

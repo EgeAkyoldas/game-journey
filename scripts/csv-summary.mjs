@@ -1,5 +1,5 @@
 import fs from 'fs';
-const lines = fs.readFileSync('data-review.csv', 'utf8').split('\n');
+const lines = fs.readFileSync('research/data/data-review.csv', 'utf8').split('\n');
 console.log('Total items:', lines.length - 1);
 console.log('\nBreakdown by section:');
 const sections = {};

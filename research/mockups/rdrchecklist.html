@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Drifter's Ledger V4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #f4e4bc;
+            --ink: #1a1a1a;
+            --blood: #8a0303;
+            --leather: #5d4037;
+            --faded: #5c5c5c;
+            --highlight: #3e2723;
+        }
+
+        body {
+            background-color: #dcbfa3;
+            background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+            color: var(--ink);
+            font-family: 'Special Elite', monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Dust Mote Animation */
+        @keyframes dust {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+        }
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: #6b5a4e;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            background-color: var(--paper);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 80px rgba(93, 64, 55, 0.2);
+            border: 1px solid var(--faded);
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            top: 0; bottom: 0; left: 15px;
+            width: 2px;
+            border-left: 2px dashed var(--faded);
+        }
+
+        h1 {
+            font-family: 'Rye', serif;
+            text-align: center;
+            font-size: 3.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            border-bottom: 3px double var(--ink);
+            padding-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: 'Courier Prime', monospace;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--leather);
+            margin-bottom: 40px;
+        }
+
+        /* Headers with Toggle functionality */
+        h2 {
+            font-family: 'Rye', serif;
+            font-size: 1.8rem;
+            color: var(--blood);
+            margin-top: 50px;
+            border-bottom: 1px solid var(--faded);
+            padding-bottom: 5px;
+            background: linear-gradient(90deg, rgba(138,3,3,0.05), transparent);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        h2:hover {
+            color: var(--highlight);
+        }
+
+        h2::after {
+            content: "▼";
+            font-size: 1rem;
+            color: var(--faded);
+            margin-right: 10px;
+        }
+        
+        h2.collapsed::after {
+            content: "▲";
+        }
+
+        .checklist-group {
+            margin-bottom: 30px;
+            display: block; /* Default open */
+            transition: max-height 0.3s ease-out;
+        }
+
+        .checklist-group.hidden {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            align-items: flex-start;
+            padding: 5px 0;
+            cursor: pointer;
+            transition: color 0.2s;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            font-weight: bold;
+            color: var(--highlight);
+        }
+
+        label:hover {
+            color: var(--blood);
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 22px;
+            height: 22px;
+            border: 2px solid var(--ink);
+            border-radius: 50%;
+            margin-right: 15px;
+            position: relative;
+            background-color: transparent;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: var(--ink);
+            box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--blood);
+        }
+        
+        input[type="checkbox"]:checked::after {
+            content: "✖";
+            color: var(--paper);
+            font-size: 14px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .completed-text {
+            text-decoration: line-through;
+            opacity: 0.5;
+            text-decoration-thickness: 3px;
+            text-decoration-color: var(--blood);
+        }
+
+        .tip {
+            display: block;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            color: var(--faded);
+            margin-left: 42px;
+            margin-bottom: 15px;
+            margin-top: 2px;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .journal-section {
+            margin-top: 50px;
+            background: repeating-linear-gradient(var(--paper), var(--paper) 30px, #94aca7 31px);
+            border: 1px solid var(--faded);
+            padding: 20px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: transparent;
+            border: none;
+            font-family: 'Courier Prime', monospace;
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 31px;
+            color: var(--ink);
+            resize: vertical;
+            outline: none;
+            padding-left: 10px;
+        }
+
+        .btn-burn {
+            display: block;
+            margin: 60px auto 20px;
+            background: transparent;
+            border: 2px solid var(--blood);
+            color: var(--blood);
+            font-family: 'Rye', serif;
+            font-size: 1.2rem;
+            padding: 12px 35px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-burn:hover {
+            background: var(--blood);
+            color: var(--paper);
+        }
+
+        .playlist-link {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        .playlist-link a {
+            color: var(--leather);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--leather);
+            margin: 0 10px;
+        }
+        
+        .stamp {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            border: 4px double var(--blood);
+            color: var(--blood);
+            padding: 10px;
+            font-family: 'Special Elite', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            transform: rotate(15deg);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <div class="container">
+        <div class="stamp">WANTED<br>DEAD OR ALIVE</div>
+        
+        <h1>The Drifter's Ledger</h1>
+        <div class="subtitle">Property of A. Morgan (and associates)</div>
+
+        <div class="playlist-link">
+            <a href="https://open.spotify.com/search/dust%20to%20dust" target="_blank">♫ Dust to Dust Playlist</a>
+             | 
+            <a href="https://www.youtube.com/results?search_query=red+dead+redemption+2+ambience" target="_blank">🔥 Campfire Sounds</a>
+        </div>
+
+        <h2 onclick="toggleSection('bankroll')">I. The Bankroll</h2>
+        <div id="bankroll" class="checklist-group">
+            <label><input type="checkbox" id="item1"><span>Grab the Limpany Gold Bar ($500)</span></label>
+            <span class="tip">Sheriff's desk in the burned town.</span>
+
+            <label><input type="checkbox" id="item2"><span>Solve Jack Hall Gang Map 1 ($1000)</span></label>
+            <span class="tip">Buy map from Maximo (West of Flatneck).</span>
+            
+            <label><input type="checkbox" id="item4"><span>Upgrade: Leather Working Tools</span></label>
+            <span class="tip">Essential for Satchel crafting.</span>
+
+            <label><input type="checkbox" id="item5"><span>Upgrade: Arthur's Lodgings</span></label>
+            <span class="tip">Unlocks Fast Travel.</span>
+        </div>
+
+        <h2 onclick="toggleSection('arsenal')">II. The Arsenal</h2>
+        <div id="arsenal" class="checklist-group">
+            <label><input type="checkbox" id="item6"><span>Steal Schofield Revolver</span></label>
+            <span class="tip">Valentine Doctor's Back Room.</span>
+
+            <label><input type="checkbox" id="item7"><span>Steal Lancaster Repeater</span></label>
+            <span class="tip">Rhodes Gunsmith basement.</span>
+
+            <label><input type="checkbox" id="item8"><span>Steal Semi-Auto Shotgun</span></label>
+            <span class="tip">Watson's Cabin basement (North of Strawberry).</span>
+
+            <label><input type="checkbox" id="item30"><span>Steal Bolt Action Rifle (Missable!)</span></label>
+            <span class="tip">Mission: "The First Shall Be Last". Kill LEFT bounty hunter.</span>
+
+            <label><input type="checkbox" id="item31"><span>Steal The Rare Shotgun</span></label>
+            <span class="tip">Hermit's Shack (Manito Glade).</span>
+        </div>
+
+        <h2 onclick="toggleSection('bandit')">III. Bandit Challenges (Dishonor)</h2>
+        <div id="bandit" class="checklist-group hidden">
+            <label><input type="checkbox" id="bandit1"><span>Rank 1: Hold up 5 Townsfolk</span></label>
+            <span class="tip">Aim and rob in Valentine.</span>
+            
+            <label><input type="checkbox" id="bandit2"><span>Rank 2: Rob 2 Coaches</span></label>
+            <span class="tip">Sell to Emerald Ranch fence.</span>
+            
+            <label><input type="checkbox" id="bandit3"><span>Rank 3: Rob 4 Registers in 1 Day</span></label>
+            <span class="tip">Valentine, Strawberry, Rhodes, Saint Denis. Ride fast.</span>
+            
+            <label><input type="checkbox" id="bandit4"><span>Rank 4: Rob 3 Coaches in 1 Day</span></label>
+            <span class="tip">Camp near Emerald Ranch and farm wagons.</span>
+            
+            <label><input type="checkbox" id="bandit5"><span>Rank 5: Amass $250 Bounty</span></label>
+            <span class="tip">Go on a rampage in one state.</span>
+        </div>
+
+        <h2 onclick="toggleSection('explorer')">IV. Explorer Challenges (Cash)</h2>
+        <div id="explorer" class="checklist-group">
+            <label><input type="checkbox" id="expl1"><span>Rank 1: Find Treasure Map</span></label>
+            <span class="tip">Maximo near Flatneck Station.</span>
+            
+            <label><input type="checkbox" id="expl2"><span>Rank 2-4: Jack Hall Gang Treasure</span></label>
+            <span class="tip">Complete the 3-part chain. 2 Gold Bars.</span>
+            
+            <label><input type="checkbox" id="expl3"><span>Rank 5-7: High Stakes Treasure</span></label>
+            <span class="tip">Find the random explorer on a cliff. 3 Gold Bars.</span>
+            
+            <label><input type="checkbox" id="expl4"><span>Rank 8-10: Poisonous Trail Treasure</span></label>
+            <span class="tip">Start at Cairn Lake. 4 Gold Bars.</span>
+        </div>
+
+        <h2 onclick="toggleSection('hunter')">V. Master Hunter (Satchels)</h2>
+        <div id="hunter" class="checklist-group">
+            <label><input type="checkbox" id="hunt1"><span>Rank 1: Skin 3 Deer</span></label>
+            <span class="tip">Basic food source.</span>
+            
+            <label><input type="checkbox" id="hunt2"><span>Rank 2: 3 Perfect Rabbit Pelts</span></label>
+            <span class="tip">Use Varmint Rifle. Essential for crafting.</span>
+            
+            <label><input type="checkbox" id="hunt3"><span>Rank 3: Track 10 Species</span></label>
+            <span class="tip">Use binoculars actively.</span>
+            
+            <label><input type="checkbox" id="hunt4"><span>Rank 4: Call & Clean Kill (x5)</span></label>
+            <span class="tip">Aim, press Square/X to call, headshot.</span>
+            
+            <label><input type="checkbox" id="hunt5"><span>Rank 5: Skin 3 Bears</span></label>
+            <span class="tip">Grizzly or Black Bear. North of Strawberry.</span>
+            
+            <label><input type="checkbox" id="hunt6"><span>Rank 6: Bow Kill 5 Cougars</span></label>
+            <span class="tip">Poison Arrows. North of Owanjila.</span>
+        </div>
+
+        <h2 onclick="toggleSection('herbalist')">VI. Herbalist (Tonics)</h2>
+        <div id="herbalist" class="checklist-group hidden">
+            <label><input type="checkbox" id="herb1"><span>Rank 1: Pick 6 Yarrow</span></label>
+            <span class="tip">Found in Heartlands grassy areas.</span>
+            
+            <label><input type="checkbox" id="herb2"><span>Rank 2: Eat 4 Berry Species</span></label>
+            <span class="tip">Raspberry, Blackberry, Evergreen, Wintergreen.</span>
+            
+            <label><input type="checkbox" id="herb3"><span>Rank 3: Craft 7 Sage Items</span></label>
+            <span class="tip">Potent Bitters or Seasoned Meat.</span>
+            
+            <label><input type="checkbox" id="herb4"><span>Rank 4: Feed 5 Mushrooms to Horse</span></label>
+            <span class="tip">Parasol mushrooms are common.</span>
+        </div>
+
+        <h2 onclick="toggleSection('sharpshooter')">VII. Sharpshooter (Dead Eye)</h2>
+        <div id="sharpshooter" class="checklist-group hidden">
+            <label><input type="checkbox" id="sharp1"><span>Rank 1: Kill 3 Flying Birds</span></label>
+            <span class="tip">Any bird works.</span>
+            
+            <label><input type="checkbox" id="sharp2"><span>Rank 2: 2 Species in 1 Dead Eye</span></label>
+            <span class="tip">Bird + Rabbit, or Deer + Coyote.</span>
+            
+            <label><input type="checkbox" id="sharp3"><span>Rank 3: 5 Birds from Moving Train</span></label>
+            <span class="tip">Ride on the roof. Don't get caught.</span>
+            
+            <label><input type="checkbox" id="sharp4"><span>Rank 4: 80ft Tomahawk Kill</span></label>
+            <span class="tip">Use Homing Tomahawk on a stationary guard.</span>
+        </div>
+
+        <h2 onclick="toggleSection('horseman')">VIII. Horseman (Riding)</h2>
+        <div id="horseman" class="checklist-group hidden">
+            <label><input type="checkbox" id="horse1"><span>Rank 1: 5 Rabbit Kills from Horse</span></label>
+            <span class="tip">Run them over or shoot them.</span>
+            
+            <label><input type="checkbox" id="horse2"><span>Rank 2: Jump 3 Obstacles (15s)</span></label>
+            <span class="tip">Find a fence line.</span>
+            
+            <label><input type="checkbox" id="horse3"><span>Rank 3: Valentine to Rhodes (5m)</span></label>
+            <span class="tip">Ride fast. Use stimulants.</span>
+            
+            <label><input type="checkbox" id="horse4"><span>Rank 4: Drag Victim 3300ft</span></label>
+            <span class="tip">Lasso someone and ride in circles.</span>
+        </div>
+
+        <h2 onclick="toggleSection('satchel')">IX. The Legend of the East Satchel</h2>
+        <div id="satchel" class="checklist-group">
+            <label><input type="checkbox" id="item10"><span>Hunt Legendary Buck</span></label>
+            <span class="tip">Craft the Trinket first.</span>
+            <label><input type="checkbox" id="item12"><span>7x Perfect Deer Pelts</span></label>
+            <label><input type="checkbox" id="item13"><span>1x Perfect Cougar Pelt</span></label>
+            <label><input type="checkbox" id="item14"><span>1x Perfect Wolf Pelt</span></label>
+            <label><input type="checkbox" id="item16"><span>1x Perfect Panther Pelt</span></label>
+            <label><input type="checkbox" id="item15"><span>Craft The Final Satchel</span></label>
+            <span class="tip">99 Inventory slots.</span>
+        </div>
+
+        <h2 onclick="toggleSection('journal')">X. Personal Journal</h2>
+        <div id="journal" class="journal-section">
+            <textarea id="journal-input" placeholder="October 1899. Found a good spot near the river..."></textarea>
+        </div>
+
+        <button class="btn-burn" onclick="burnLedger()">Burn the Ledger (Reset All)</button>
+    </div>
+
+    <script>
+        // --- Toggle Function ---
+        function toggleSection(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+            
+            // Toggle arrow visual
+            const header = el.previousElementSibling;
+            header.classList.toggle('collapsed');
+        }
+
+        // --- Particle Engine ---
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 25; i++) {
+            let p = document.createElement('div');
+            p.className = 'particle';
+            p.style.top = Math.random() * 100 + 'vh';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animation = `dust ${5 + Math.random() * 10}s linear infinite`;
+            p.style.animationDelay = `-${Math.random() * 5}s`;
+            particleContainer.appendChild(p);
+        }
+
+        // --- Save System (Checkboxes) ---
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(box => {
+            const savedState = localStorage.getItem(box.id);
+            if (savedState === 'true') {
+                box.checked = true;
+                toggleStyle(box);
+            }
+            box.addEventListener('change', () => {
+                localStorage.setItem(box.id, box.checked);
+                toggleStyle(box);
+            });
+        });
+
+        function toggleStyle(box) {
+            const span = box.nextElementSibling;
+            if (box.checked) {
+                span.classList.add('completed-text');
+            } else {
+                span.classList.remove('completed-text');
+            }
+        }
+
+        // --- Save System (Journal) ---
+        const journal = document.getElementById('journal-input');
+        journal.value = localStorage.getItem('drifter_journal') || '';
+        journal.addEventListener('input', () => {
+            localStorage.setItem('drifter_journal', journal.value);
+        });
+
+        function burnLedger() {
+            if(confirm("Burn the history? This wipes the journal too.")) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

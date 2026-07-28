@@ -12,9 +12,5 @@
     "@tailwindcss/vite": "^4.0.0",
     "tailwindcss": "^4.0.0",
     "vite": "^6.0.0"
-  },
-  "dependencies": {
-    "leaflet": "^1.9.4",
-    "pdf-parse": "^2.4.5"
   }
 }
