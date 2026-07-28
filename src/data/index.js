@@ -4,12 +4,17 @@
  */
 
 // Core data exports
-import { CHECKLIST_SECTIONS } from './sections/index.js';
+import { CHECKLIST_SECTIONS as RAW_SECTIONS } from './sections/index.js';
+import { BACKFILL } from './generated/backfill.js';
+import { applyBackfill } from './provenance.js';
 import { NAV_CATEGORIES } from './nav-categories.js';
 import { store } from './state.js';
 
+/** Curated sections with the generated backfill overlay merged in. */
+export const CHECKLIST_SECTIONS = applyBackfill(RAW_SECTIONS, BACKFILL);
+
 // Re-export for consumers
-export { CHECKLIST_SECTIONS, NAV_CATEGORIES, store };
+export { NAV_CATEGORIES, store };
 
 // Re-export individual sections for convenience
 export * from './sections/index.js';
