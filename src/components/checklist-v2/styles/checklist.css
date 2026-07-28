@@ -1062,3 +1062,64 @@
 .actions-bar .action-btn span {
   display: inline;
 }
+
+/* ============================================
+   FILTER UNKNOWN NOTICE
+   ============================================ */
+.filter-unknown-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem auto 2rem;
+  padding: 10px 14px;
+  max-width: 640px;
+  border: 1px dashed rgba(255, 215, 0, 0.45);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(232, 220, 200, 0.8);
+  font-family: 'Special Elite', Georgia, serif;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.filter-unknown-notice button {
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  border-radius: 5px;
+  background: transparent;
+  color: #d4a53c;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-unknown-notice button:hover {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+[data-mode="day"] .filter-unknown-notice {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(139, 69, 19, 0.4);
+  color: rgba(62, 39, 35, 0.8);
+}
+
+[data-mode="day"] .filter-unknown-notice button {
+  border-color: rgba(139, 69, 19, 0.45);
+  color: #8b4513;
+}
+
+[data-mode="day"] .filter-unknown-notice button:hover {
+  background: rgba(139, 69, 19, 0.1);
+  border-color: #8b4513;
+}
+
+/* Derived (estimated) tag values — quiet, but never mistakable for a fact */
+.tag.tag-derived {
+  border-style: dashed;
+  opacity: 0.75;
+}

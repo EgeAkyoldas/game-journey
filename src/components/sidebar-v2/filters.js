@@ -5,6 +5,8 @@
  */
 
 import { CHECKLIST_SECTIONS } from '../../data/index.js';
+import { REGIONS, normalizeRegion } from '../../data/regions.js';
+import { hasValue } from '../../data/provenance.js';
 
 // DOM helpers
 const $ = (sel) => document.querySelector(sel);
@@ -19,101 +21,69 @@ export const activeFilters = {
   region: null,
   status: 'all', // 'all' | 'incomplete' | 'complete'
   missableOnly: false,
-  hasReward: false
+  hasReward: false,
+  showUnknown: false
 };
 
 /**
  * Region data for filter chips
  * Main regions with sub-region mappings
+ * (imported above; re-exported here so existing importers keep working unchanged)
  */
-export const REGIONS = [
-  { id: 'new-hanover', name: 'New Hanover' },
-  { id: 'lemoyne', name: 'Lemoyne' },
-  { id: 'west-elizabeth', name: 'West Elizabeth' },
-  { id: 'new-austin', name: 'New Austin' },
-  { id: 'ambarino', name: 'Ambarino' }
-];
+export { REGIONS, normalizeRegion };
 
 /**
- * Map sub-regions to their parent main region
+ * Numeric ordering for chapters. Epilogue comes after chapter 6.
+ * @param {number|'epilogue'} chapter
+ * @returns {number}
  */
-const SUB_REGION_MAP = {
-  // New Hanover sub-regions
-  'heartlands': 'new-hanover',
-  'cumberland': 'new-hanover',
-  'roanoke': 'new-hanover',
-  'roanoke-ridge': 'new-hanover',
-  // Ambarino sub-regions  
-  'grizzlies': 'ambarino',
-  'grizzlies-east': 'ambarino',
-  'grizzlies-west': 'ambarino',
-  // West Elizabeth sub-regions
-  'big-valley': 'west-elizabeth',
-  'tall-trees': 'west-elizabeth',
-  'great-plains': 'west-elizabeth',
-  // Lemoyne sub-regions
-  'bayou': 'lemoyne',
-  'saint-denis': 'lemoyne',
-  'scarlett-meadows': 'lemoyne',
-  'bluewater': 'lemoyne',
-  // New Austin sub-regions
-  'gaptooth': 'new-austin',
-  'rio-bravo': 'new-austin',
-  'cholla': 'new-austin',
-  'hennigans-stead': 'new-austin'
-};
-
-/**
- * Normalize a region ID to its main parent region
- * @param {string} region - Raw region from data
- * @returns {string} Normalized main region ID
- */
-export function normalizeRegion(region) {
-  if (!region) return null;
-  const lower = region.toLowerCase();
-  // Check if it's already a main region
-  if (REGIONS.some(r => r.id === lower)) return lower;
-  // Check sub-region map
-  return SUB_REGION_MAP[lower] || lower;
+export function chapterRank(chapter) {
+  return String(chapter).toLowerCase() === 'epilogue' ? 7 : Number(chapter);
 }
 
 /**
- * Check if an item matches current filters
- * @param {Object} item
+ * Which active filter excluded this item purely for missing data.
+ * @param {object} item
+ * @returns {'chapter'|'region'|null}
+ */
+export function isHiddenForMissingField(item) {
+  if (activeFilters.chapter && !hasValue(item, 'chapter')) return 'chapter';
+  if (activeFilters.region && !hasValue(item, 'region')) return 'region';
+  return null;
+}
+
+/**
+ * Does this item pass the active structured filters?
+ * Takes a real checklist item — no shim object.
+ * @param {object} item
  * @returns {boolean}
  */
 export function itemMatchesFilters(item) {
-  // Search term
-  if (activeFilters.searchTerm) {
-    const term = activeFilters.searchTerm.toLowerCase();
-    const inTitle = item.title?.toLowerCase().includes(term);
-    const inDesc = item.description?.toLowerCase().includes(term);
-    const inTags = item.tags?.some(t => t.toLowerCase().includes(term));
-    if (!inTitle && !inDesc && !inTags) return false;
-  }
-  
-  // Chapter filter
+  // Items missing the filtered field are excluded unless the user opted in.
+  const missingField = isHiddenForMissingField(item);
+  if (missingField) return activeFilters.showUnknown;
+
+  // Chapter is cumulative: "what can I do by chapter N".
   if (activeFilters.chapter) {
-    const itemChapter = String(item.chapter || '').toLowerCase();
-    if (itemChapter !== activeFilters.chapter) return false;
+    const rank = chapterRank(item.chapter);
+    const limit = chapterRank(activeFilters.chapter);
+    // An unrankable chapter cannot be compared; treat it like missing data
+    // rather than letting it slip through the comparison.
+    if (Number.isNaN(rank) || Number.isNaN(limit)) return activeFilters.showUnknown;
+    if (rank > limit) return false;
   }
-  
-  // Region filter - normalize before comparison
+
   if (activeFilters.region) {
-    const normalizedItemRegion = normalizeRegion(item.region);
-    if (normalizedItemRegion !== activeFilters.region) return false;
+    if (normalizeRegion(item.region) !== activeFilters.region) return false;
   }
-  
-  // Missable only
-  if (activeFilters.missableOnly) {
-    if (!item.missable) return false;
-  }
-  
-  // Has reward
+
+  if (activeFilters.missableOnly && !item.missable) return false;
+
   if (activeFilters.hasReward) {
-    if (!item.reward) return false;
+    const hasAnyReward = Boolean(item.reward) || (Array.isArray(item.rewards) && item.rewards.length > 0);
+    if (!hasAnyReward) return false;
   }
-  
+
   return true;
 }
 
@@ -185,18 +155,26 @@ export function setSearchFilter(term) {
 
 /**
  * Set chapter filter
+ * showUnknown is scoped to the filter the user opted into when they clicked
+ * "Show them" — it must not silently carry over to a different chapter/region
+ * selection, or the user ends up in show-unknowns mode with no indication.
  * @param {string|null} chapter
  */
 export function setChapterFilter(chapter) {
   activeFilters.chapter = chapter;
+  activeFilters.showUnknown = false;
 }
 
 /**
  * Set region filter
+ * showUnknown is scoped to the filter the user opted into when they clicked
+ * "Show them" — it must not silently carry over to a different chapter/region
+ * selection, or the user ends up in show-unknowns mode with no indication.
  * @param {string|null} region
  */
 export function setRegionFilter(region) {
   activeFilters.region = region;
+  activeFilters.showUnknown = false;
 }
 
 /**
@@ -246,6 +224,7 @@ export function resetAllFilters() {
   activeFilters.status = 'all';
   activeFilters.missableOnly = false;
   activeFilters.hasReward = false;
+  activeFilters.showUnknown = false;
 }
 
 /**
@@ -288,7 +267,7 @@ export function renderFilterPanel() {
         <div class="filter-chips" id="filter-chips-chapter">
           ${chapters.length === 0 ? '<span class="filter-empty">No chapter data</span>' : 
             chapters.map(ch => {
-              const label = ch === 'epilogue' ? 'Epilogue' : `CH ${ch}`;
+              const label = ch === 'epilogue' ? 'Epilogue' : `By Ch ${ch}`;
               return `<button class="filter-chip chapter-chip ${activeFilters.chapter === ch ? 'active' : ''}" data-chapter="${ch}">${label}</button>`;
             }).join('')}
         </div>

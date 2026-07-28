@@ -10,6 +10,7 @@
  */
 
 import { store } from '../../data/state.js';
+import { isDerived } from '../../data/provenance.js';
 
 // Section color mapping (matches sidebar-v2 theme system)
 const SECTION_COLORS = {
@@ -141,12 +142,18 @@ function renderTags(item) {
   
   // Chapter first
   if (item.chapter) {
-    tags += `<span class="tag tag-chapter"><i class="fa-solid fa-book"></i> CH ${item.chapter}</span>`;
+    const derived = isDerived(item, 'chapter');
+    tags += `<span class="tag tag-chapter${derived ? ' tag-derived' : ''}"${
+      derived ? ' title="Estimated from section and location, not confirmed"' : ''
+    }><i class="fa-solid fa-book"></i> ${derived ? '~' : ''}CH ${item.chapter}</span>`;
   }
-  
+
   // Region
   if (item.region) {
-    tags += `<span class="tag tag-region"><i class="fa-solid fa-map-pin"></i> ${formatRegion(item.region)}</span>`;
+    const derived = isDerived(item, 'region');
+    tags += `<span class="tag tag-region${derived ? ' tag-derived' : ''}"${
+      derived ? ' title="Estimated from section and location, not confirmed"' : ''
+    }><i class="fa-solid fa-map-pin"></i> ${derived ? '~' : ''}${formatRegion(item.region)}</span>`;
   }
   
   // Process rewards - separate money from items

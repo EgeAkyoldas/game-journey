@@ -73,7 +73,6 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
 ⚠️ **Bodies despawn quickly!** Loot right after killing them or lose the weapon forever.`,
       missable: true,
       chapter: 2,
-      region: 'all',
       reward: '4 Unique Weapons',
       verified: true,
       source: 'thegamer.com, gamerant.com'

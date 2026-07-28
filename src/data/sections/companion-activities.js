@@ -35,7 +35,9 @@ This mission teaches **bow hunting basics** and starts one of the best friendshi
 🏹 *Pay attention to what he teaches. The bow'll save your life later.*`,
           missable: true,
           reward: 'Bow Training',
-          region: 'new-hanover'
+          region: 'new-hanover',
+          verified: true,
+          source: 'data-verified.csv (companion-hunting-charles)'
         },
         { 
           id: 'comp-javier-chez', 
@@ -48,7 +50,9 @@ You can go **stealth**—pickin' 'em off one by one—or go **loud** and blast y
 🔫 *Fun robbery, good loot, and you get to kill O'Driscolls. Win-win-win.*`,
           missable: true,
           reward: 'Loot + Honor',
-          region: 'new-hanover'
+          region: 'new-hanover',
+          verified: true,
+          source: 'data-verified.csv (robbery-chez-porter)'
         },
         { 
           id: 'comp-lenny-filet', 
@@ -61,7 +65,9 @@ Beat him and you win some cash. He takes the loss well—Lenny's got class.
 💰 *Good practice for the gambling challenges later.*`,
           missable: true,
           reward: 'Money',
-          region: 'new-hanover'
+          region: 'new-hanover',
+          verified: true,
+          source: 'data-verified.csv (companion-fivefinger-lenny)'
         },
         { 
           id: 'comp-uncle-cattle', 
@@ -74,7 +80,8 @@ He's as helpful as you'd expect (barely), but the banter is gold. You do the wor
 🐄 *It ain't about the money. It's about the journey. And Uncle's endless excuses.*`,
           missable: true,
           reward: 'Money + Comedy',
-          region: 'new-hanover'
+          region: 'new-hanover',
+          source: 'unconfirmed'
         }
       ]
     },
@@ -103,7 +110,9 @@ This is peak Sean energy. Drunken stumbling, terrible Irish poetry, and somehow 
 🍺 *One of the funniest missions in the game. Do NOT miss this one.*`,
           missable: true,
           reward: 'Loot + Laughs',
-          region: 'lemoyne'
+          region: 'new-hanover',
+          verified: true,
+          source: 'data-verified.csv (robbery-lonnie)'
         },
         { 
           id: 'comp-javier-fish', 
@@ -116,7 +125,9 @@ This is peak Sean energy. Drunken stumbling, terrible Irish poetry, and somehow 
 *Javier's a complicated man. This is where you start to understand him.*`,
           missable: true,
           reward: 'Character Development',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-fishing-javier)'
         },
         { 
           id: 'comp-kieran-fish', 
@@ -129,7 +140,9 @@ This is peak Sean energy. Drunken stumbling, terrible Irish poetry, and somehow 
 *Poor Kieran. He just wanted to belong.*`,
           missable: true,
           reward: 'Feels',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-fishing-kieran, missable-kieran-fish)'
         },
         { 
           id: 'comp-bill-coach', 
@@ -142,10 +155,12 @@ Bill is... chaotic. Things will go sideways. That's just how he operates.
 🔫 *Profitable despite Bill's best efforts.*`,
           missable: true,
           reward: 'Coach Loot',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-coach-bill)'
         },
-        { 
-          id: 'comp-sean-coach', 
+        {
+          id: 'comp-sean-coach',
           text: 'Rob Coach with Sean', 
           tip: '🍺 Another drunk heist. Peak Sean energy.',
           tip_detailed: `**Sean** again, and yes, **more drinking is involved**. Rob a coach while buzzed.
@@ -155,10 +170,12 @@ This is Sean in his element—loud, fun, and miraculously effective.
 🍺 *LENNY! Wait, wrong mission...*`,
           missable: true,
           reward: 'Coach Loot',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-coach-sean)'
         },
-        { 
-          id: 'comp-micah-filet', 
+        {
+          id: 'comp-micah-filet',
           text: 'Five Finger Fillet with Micah', 
           tip: '🐍 He cheats. Beat him anyway.',
           tip_detailed: `**Micah Bell** challenges you to Five Finger Fillet. He cheats—because of course he does.
@@ -168,7 +185,9 @@ Beat him anyway. For yourself. For satisfaction.
 🐍 *Everything Micah does is tainted. But victory is still sweet.*`,
           missable: true,
           reward: 'Satisfaction',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-fivefinger-micah)'
         },
         { 
           id: 'comp-tilly-dominoes', 
@@ -181,7 +200,9 @@ Good for gambling challenge progress and good company.
 🎲 *Tilly's got a sharp mind. Don't underestimate her.*`,
           missable: true,
           reward: 'Gambling Progress',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-dominoes-tilly)'
         }
       ]
     },
@@ -210,7 +231,9 @@ Good for gambling challenge progress and good company.
 *Pearson's more than the camp cook. This trip shows you that.*`,
           missable: true,
           reward: 'Pearson Character Arc',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-hunting-pearson)'
         },
         { 
           id: 'comp-lenny-coach', 
@@ -223,10 +246,12 @@ Good for gambling challenge progress and good company.
 *Lenny's dependable. You could build a crew around a man like him.*`,
           missable: true,
           reward: 'Coach Loot',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          verified: true,
+          source: 'data-verified.csv (companion-coach-lenny)'
         },
-        { 
-          id: 'comp-micah-coach', 
+        {
+          id: 'comp-micah-coach',
           text: 'Rob Coach with Micah', 
           tip: '🐍 He makes it violent. Expect chaos and high bounty.',
           tip_detailed: `**Micah** for a coach robbery. He turns it **violent**—kills when he doesn't need to, draws attention, raises alarms.
@@ -236,7 +261,8 @@ Good for gambling challenge progress and good company.
 🐍 *You'll wish you went with Lenny.*`,
           missable: true,
           reward: 'Coach Loot + Bounty',
-          region: 'lemoyne'
+          region: 'lemoyne',
+          source: 'unconfirmed'
         },
         { 
           id: 'comp-charles-bank', 
