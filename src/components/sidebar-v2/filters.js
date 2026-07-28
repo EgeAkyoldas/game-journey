@@ -155,18 +155,26 @@ export function setSearchFilter(term) {
 
 /**
  * Set chapter filter
+ * showUnknown is scoped to the filter the user opted into when they clicked
+ * "Show them" — it must not silently carry over to a different chapter/region
+ * selection, or the user ends up in show-unknowns mode with no indication.
  * @param {string|null} chapter
  */
 export function setChapterFilter(chapter) {
   activeFilters.chapter = chapter;
+  activeFilters.showUnknown = false;
 }
 
 /**
  * Set region filter
+ * showUnknown is scoped to the filter the user opted into when they clicked
+ * "Show them" — it must not silently carry over to a different chapter/region
+ * selection, or the user ends up in show-unknowns mode with no indication.
  * @param {string|null} region
  */
 export function setRegionFilter(region) {
   activeFilters.region = region;
+  activeFilters.showUnknown = false;
 }
 
 /**

@@ -95,8 +95,8 @@ export const BACKFILL = {
     }
   },
   "treasure-mended": {
-    "chapter": "epilogue",
     "provenance": {
+      "chapter": "unknown",
       "region": "unknown"
     }
   },
@@ -116,8 +116,8 @@ export const BACKFILL = {
     "chapter": 2
   },
   "weapons-unique-guns": {
-    "chapter": "epilogue",
     "provenance": {
+      "chapter": "unknown",
       "region": "unknown"
     }
   },
@@ -138,8 +138,10 @@ export const BACKFILL = {
     "region": "ambarino"
   },
   "weapons-free-guns": {
-    "chapter": 3,
-    "region": "new-hanover"
+    "provenance": {
+      "chapter": "unknown",
+      "region": "unknown"
+    }
   },
   "weapon-schofield": {
     "chapter": 2
@@ -1034,9 +1036,9 @@ export const BACKFILL = {
   },
   "hats-world": {
     "chapter": 2,
-    "region": "lemoyne",
     "provenance": {
-      "chapter": "derived"
+      "chapter": "derived",
+      "region": "unknown"
     }
   },
   "hat-tricorn": {
@@ -1061,8 +1063,11 @@ export const BACKFILL = {
     "chapter": 2
   },
   "hats-scarecrow": {
-    "chapter": "epilogue",
-    "region": "new-hanover"
+    "chapter": 2,
+    "provenance": {
+      "chapter": "derived",
+      "region": "unknown"
+    }
   },
   "hat-scarecrow-straw": {
     "chapter": 2,
@@ -1074,8 +1079,11 @@ export const BACKFILL = {
     "chapter": 2
   },
   "hats-masks": {
-    "chapter": "epilogue",
-    "region": "lemoyne"
+    "chapter": 2,
+    "provenance": {
+      "chapter": "derived",
+      "region": "unknown"
+    }
   },
   "mask-cat-skull": {
     "chapter": 2
@@ -1099,8 +1107,11 @@ export const BACKFILL = {
     }
   },
   "hats-npc": {
-    "chapter": "epilogue",
-    "region": "new-hanover"
+    "chapter": 2,
+    "provenance": {
+      "chapter": "derived",
+      "region": "unknown"
+    }
   },
   "hat-lemoyne-riders": {
     "chapter": 2,
@@ -1115,8 +1126,9 @@ export const BACKFILL = {
     }
   },
   "hats-missable": {
-    "chapter": 5,
+    "chapter": 2,
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },
@@ -1390,8 +1402,9 @@ export const BACKFILL = {
     "chapter": 2
   },
   "trinket-group-xp": {
-    "chapter": "epilogue",
+    "chapter": 2,
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },
@@ -1427,8 +1440,9 @@ export const BACKFILL = {
     }
   },
   "trinket-group-combat": {
-    "chapter": "epilogue",
+    "chapter": 2,
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },
@@ -1438,6 +1452,7 @@ export const BACKFILL = {
   "trinket-group-epilogue": {
     "chapter": "epilogue",
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },
@@ -1877,7 +1892,9 @@ export const BACKFILL = {
     "chapter": 2
   },
   "legendary-lemoyne": {
-    "chapter": 4
+    "provenance": {
+      "chapter": "unknown"
+    }
   },
   "leg-boar": {
     "chapter": 2
@@ -1897,8 +1914,8 @@ export const BACKFILL = {
     "chapter": 2
   },
   "legendary-fish": {
-    "chapter": "epilogue",
     "provenance": {
+      "chapter": "unknown",
       "region": "unknown"
     }
   },
@@ -1962,8 +1979,8 @@ export const BACKFILL = {
     "chapter": "epilogue"
   },
   "hideout-main": {
-    "chapter": "epilogue",
     "provenance": {
+      "chapter": "unknown",
       "region": "unknown"
     }
   },
@@ -2118,8 +2135,9 @@ export const BACKFILL = {
     }
   },
   "requests-charles": {
-    "chapter": "epilogue",
+    "chapter": 2,
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },
@@ -2174,8 +2192,9 @@ export const BACKFILL = {
     }
   },
   "requests-others": {
-    "chapter": 3,
+    "chapter": 4,
     "provenance": {
+      "chapter": "derived",
       "region": "unknown"
     }
   },

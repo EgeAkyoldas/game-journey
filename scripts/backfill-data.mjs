@@ -19,7 +19,13 @@ import { normalizeRegion } from '../src/data/regions.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const CSV_DIR = path.join(ROOT, 'research/data');
-const CSV_FILES = ['data-verified.csv', 'data-review.csv', 'region-data.csv'];
+// data-review.csv and region-data.csv are GENERATED from the app's own
+// section files (see extract-items-csv.mjs / extract-all-data.mjs, which
+// both write to research/data/). They are circular evidence, not an
+// independent source: merging them as "verified" would launder the app's
+// own guesses back in as verified facts (e.g. 11 confidently-wrong
+// `epilogue` chapters). Only data-verified.csv is independently curated.
+const CSV_FILES = ['data-verified.csv'];
 
 const VALID_CHAPTERS = new Set(['1', '2', '3', '4', '5', '6', 'epilogue']);
 
