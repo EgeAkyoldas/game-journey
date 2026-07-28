@@ -64,3 +64,22 @@ test('resetAllFilters clears showUnknown', () => {
   resetAllFilters();
   assert.equal(activeFilters.showUnknown, false);
 });
+
+test('unrankable chapter is excluded when chapter filter is active', () => {
+  resetAllFilters();
+  activeFilters.chapter = '3';
+  assert.equal(itemMatchesFilters({ id: 'x', chapter: 'not-a-chapter' }), false, 'garbage chapter value is excluded');
+  resetAllFilters();
+});
+
+test('unrankable chapter is included when showUnknown is true', () => {
+  resetAllFilters();
+  activeFilters.chapter = '3';
+  activeFilters.showUnknown = true;
+  assert.equal(itemMatchesFilters({ id: 'x', chapter: 'not-a-chapter' }), true, 'garbage chapter value is included with showUnknown');
+  resetAllFilters();
+});
+
+test('chapterRank returns NaN for unrankable value', () => {
+  assert.ok(Number.isNaN(chapterRank('not-a-chapter')), 'unrankable chapter returns NaN');
+});

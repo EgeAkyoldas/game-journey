@@ -65,7 +65,12 @@ export function itemMatchesFilters(item) {
 
   // Chapter is cumulative: "what can I do by chapter N".
   if (activeFilters.chapter) {
-    if (chapterRank(item.chapter) > chapterRank(activeFilters.chapter)) return false;
+    const rank = chapterRank(item.chapter);
+    const limit = chapterRank(activeFilters.chapter);
+    // An unrankable chapter cannot be compared; treat it like missing data
+    // rather than letting it slip through the comparison.
+    if (Number.isNaN(rank) || Number.isNaN(limit)) return activeFilters.showUnknown;
+    if (rank > limit) return false;
   }
 
   if (activeFilters.region) {
