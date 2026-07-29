@@ -49,7 +49,7 @@ export const collectiblesSection = {
         { id: 'dream-16', text: 'Elysian Pool South', tip: ' Big tree by a bush south of pool.', region: 'new-hanover', verified: true },
         { id: 'dream-17', text: 'Bluewater Marsh NE', tip: ' Tree at path fork in marsh.', region: 'lemoyne', verified: true },
         { id: 'dream-18', text: "Lonnie's Shack North", tip: " On a path north of the shack.", region: 'lemoyne', verified: true },
-        { id: 'dream-19', text: 'Aberdeen Pig Farm West', tip: ' Hill west of the creepy farm.', region: 'new-hanover', verified: true },
+        { id: 'dream-19', text: 'Aberdeen Pig Farm West', tip: ' Hill west of the creepy farm.', region: 'lemoyne', verified: true },
         { id: 'dream-20', text: 'Elysian Pool Area (LAST)', tip: ' Beyond old house foundation. LAST ONE → Get Map!', region: 'new-hanover', priority: true, verified: true }
       ]
     },

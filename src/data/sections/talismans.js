@@ -116,6 +116,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
       subItems: [
         { 
           id: 'trinket-buck', 
+          region: null,  // crafted at any Fence - no single location
           text: 'Buck Antler Trinket ⭐', 
           tip: '🦌 Legendary Buck Antler. HIGHER QUALITY PELTS! HUNT FIRST!',
           tip_detailed: `**Buck Antler Trinket** - gives you a **chance to get one-star-higher quality pelts** when skinning animals.
@@ -127,11 +128,14 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 *The single most important trinket in the game. Bar none.*`,
           reward: 'Better pelts always',
           priority: true,
-          region: 'west-elizabeth',
+          // These trinkets are CRAFTED at any Fence from legendary-animal parts, so they
+          // have no single location. The old region values described the animal's habitat,
+          // which is a different thing and made the region filter lie — removed.
           verified: true
         },
         { 
           id: 'trinket-fox', 
+          region: null,  // crafted at any Fence - no single location
           text: 'Fox Claw Trinket', 
           tip: '🦊 Legendary Fox Claw. +5 seconds Eagle Eye duration.',
           tip_detailed: `**Fox Claw Trinket** - extends your Eagle Eye vision by 5 seconds.
@@ -142,7 +146,6 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 *A hunter's best friend.*`,
           reward: '+5s Eagle Eye',
-          region: 'lemoyne',
           verified: true
         }
       ]
@@ -158,6 +161,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
       subItems: [
         { 
           id: 'trinket-moose', 
+          region: null,  // crafted at any Fence - no single location
           text: 'Moose Antler Trinket', 
           tip: '🫎 Legendary Moose Antler. +10% Health XP gain.',
           tip_detailed: `**Moose Antler Trinket** - 10% more Health XP from all sources.
@@ -166,7 +170,6 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 💪 *Health is the most important stat. Level it faster.*`,
           reward: '+10% Health XP',
-          region: 'new-hanover',
           verified: true
         },
         { 
@@ -211,6 +214,7 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
       subItems: [
         { 
           id: 'trinket-beaver', 
+          region: null,  // crafted at any Fence - no single location
           text: 'Beaver Tooth Trinket', 
           tip: '🦫 Legendary Beaver Tooth. -10% Weapon degradation.',
           tip_detailed: `**Beaver Tooth Trinket** - weapons degrade 10% slower.
@@ -219,11 +223,11 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 🔧 *Clean guns are accurate guns. Spend less time at the gunsmith.*`,
           reward: '-10% Weapon wear',
-          region: 'new-hanover',
           verified: true
         },
         { 
           id: 'trinket-elk', 
+          region: null,  // crafted at any Fence - no single location
           text: 'Elk Antler Trinket', 
           tip: '🦌 Legendary Elk Antler. +10% looted cash value!',
           tip_detailed: `**Elk Antler Trinket** - every corpse you loot gives 10% more cash.
@@ -232,7 +236,6 @@ Take your materials to the **Fence** (Saint Denis or other locations) and he'll 
 
 💰 *Over a full playthrough, this adds up to serious money.*`,
           reward: '+10% looted cash',
-          region: 'ambarino',
           verified: true
         },
         { 

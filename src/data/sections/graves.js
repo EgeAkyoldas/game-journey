@@ -76,7 +76,7 @@ export const gravesSection = {
 
 *He was the best of us. The smartest. If we'd listened to him...*`,
       region: 'lemoyne',
-      chapter: 4,
+      chapter: 5,
       missable: true,
       verified: true
     },
@@ -90,7 +90,7 @@ export const gravesSection = {
 
 *LENNY! ...Damn. I miss that kid.*`,
       region: 'lemoyne',
-      chapter: 4,
+      chapter: 5,
       missable: true,
       verified: true
     },
@@ -118,7 +118,7 @@ export const gravesSection = {
 
 *She held us together when nobody else could.*`,
       region: 'new-hanover',
-      chapter: 6,
+      chapter: 'epilogue',
       missable: true,
       verified: true
     },

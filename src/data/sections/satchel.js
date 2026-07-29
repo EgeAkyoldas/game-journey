@@ -104,7 +104,7 @@ This little charm gives you a **better chance of getting one-star-higher quality
 
 ⚠️ *Bison are in New Austin territory early on, so you may need to wait until Chapter 4+ or risk a bounty.*`,
       region: 'west-elizabeth',
-      chapter: 4,
+      chapter: 2,
       reward: 'Hold 99 Provisions',
       verified: true
     },

@@ -192,7 +192,7 @@ export const treasuresSection = {
  The map is hidden in the **"mouth" hole** at the base of the formation.
 
 🗿 *Nature's got a sense of humor. So did whoever hid this map.*`,
-          region: 'new-hanover',
+          region: 'lemoyne',
           verified: true
         },
         { 
@@ -304,7 +304,7 @@ export const treasuresSection = {
           tip_detailed: `First tree is **near Window Rock**. Look for the **Earth symbol** carved into the bark.
 
 🌿 *The first element. The foundation.*`,
-          region: 'new-hanover',
+          region: 'ambarino',
           verified: true
         },
         { 
@@ -519,7 +519,7 @@ export const treasuresSection = {
 *Math class finally pays off.*`,
       reward: '3 Gold Bars ($1500)',
       priority: true,
-      region: 'new-hanover',
+      region: 'ambarino',
       verified: true
     },
     {

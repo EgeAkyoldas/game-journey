@@ -85,7 +85,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
 
 🐏 *Rams spook easy. Stay downwind and move slow.*`,
           reward: 'Ram Horn Trinket',
-          region: 'ambarino',
+          region: 'new-hanover',
           verified: true
         },
         { 
@@ -100,7 +100,7 @@ These legendaries are some of the toughest in the game. Come prepared with high-
 
 🦌 *The Elk is peaceful unless threatened. Make your first shot count.*`,
           reward: 'Elk Antler Trinket',
-          region: 'ambarino',
+          region: 'new-hanover',
           verified: true
         }
       ]

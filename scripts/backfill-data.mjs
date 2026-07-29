@@ -88,8 +88,11 @@ for (const file of CSV_FILES) {
 
     if (row.region) {
       const csvRegion = row.region.trim().toLowerCase();
-      if (item.region) {
-        if (normalizeRegion(item.region) !== normalizeRegion(csvRegion)) {
+      // `!== undefined` rather than truthiness: an explicit `region: null` is a
+      // DECISION that the item has no region (e.g. a trinket crafted at any
+      // Fence). Filling it from a CSV would relitigate a settled question.
+      if (item.region !== undefined) {
+        if (item.region !== null && normalizeRegion(item.region) !== normalizeRegion(csvRegion)) {
           conflicts.push({ kind: 'app-vs-csv', id: row.id, field: 'region', app: item.region, csv: csvRegion, file });
         }
       } else if (entry.region === undefined) {

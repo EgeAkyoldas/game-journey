@@ -6,7 +6,11 @@
 export function provenanceOf(item, field) {
   const state = item?.provenance?.[field];
   if (state === 'derived' || state === 'unknown') return state;
-  return item?.[field] === undefined ? 'unknown' : 'verified';
+  // `null` means "we decided this item has no such value" — it is settled, but
+  // it is still not a usable value, so it must not read as verified or it would
+  // match no filter while claiming to be a confirmed fact.
+  const value = item?.[field];
+  return value === undefined || value === null ? 'unknown' : 'verified';
 }
 
 export function isDerived(item, field) {

@@ -230,7 +230,7 @@ export const strangersSection = {
       chapter: 6,
       reward: 'Buell (unique gold horse)',
       missable: true,
-      region: 'new-hanover',
+      region: 'ambarino',
       verified: true,
       subItems: [
         { 

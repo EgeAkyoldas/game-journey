@@ -54,3 +54,13 @@ test('curated values win over the overlay', () => {
   assert.equal(merged[0].items[0].chapter, 4);
   assert.equal(provenanceOf(merged[0].items[0], 'chapter'), 'verified');
 });
+
+test('an explicit null is settled but still not a usable value', () => {
+  // `region: null` means "this item has no region" (e.g. a trinket crafted at
+  // any Fence). It must not read as verified, or it would claim to be a
+  // confirmed fact while matching no region filter.
+  const item = { id: 'a', region: null };
+  assert.equal(provenanceOf(item, 'region'), 'unknown');
+  assert.equal(hasValue(item, 'region'), false);
+  assert.equal(isDerived(item, 'region'), false);
+});

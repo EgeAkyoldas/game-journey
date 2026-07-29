@@ -147,7 +147,7 @@ Loot his body and you get a **free Bolt Action Rifle**. Miss him, and you gotta 
 *Hamish is good people. The kind this world don't make no more.*`,
       missable: true,
       chapter: 6,
-      region: 'new-hanover',
+      region: 'ambarino',
       reward: 'Buell (Horse)',
       verified: true
     },
@@ -291,7 +291,7 @@ Do this mission. It's your only chance to really know him.
 
 *These people are your family. Take care of 'em.*`,
       missable: true,
-      chapter: 4,
+      chapter: 2,
       verified: true
     },
     {
