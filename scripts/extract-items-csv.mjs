@@ -189,7 +189,8 @@ async function main() {
   
   const csv = [header, ...rows].join('\n');
   
-  const outputPath = path.join(__dirname, '../research/data/data-review.csv');
+  const outputPath = path.join(__dirname, '../research/data/generated/app-export.csv');
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, '\ufeff' + csv, 'utf8'); // BOM for Excel
   
   console.log(`\n✅ Extracted ${allItems.length} items to ${outputPath}`);

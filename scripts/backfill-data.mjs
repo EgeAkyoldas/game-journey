@@ -19,13 +19,27 @@ import { normalizeRegion } from '../src/data/regions.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const CSV_DIR = path.join(ROOT, 'research/data');
-// data-review.csv and region-data.csv are GENERATED from the app's own
-// section files (see extract-items-csv.mjs / extract-all-data.mjs, which
-// both write to research/data/). They are circular evidence, not an
-// independent source: merging them as "verified" would launder the app's
-// own guesses back in as verified facts (e.g. 11 confidently-wrong
-// `epilogue` chapters). Only data-verified.csv is independently curated.
+// Only independently-curated sources belong here. Anything generated FROM the
+// app's own section files is circular evidence: merging it as "verified" would
+// launder the app's own guesses back in as facts. That mistake previously gave
+// 11 items a confidently-wrong `epilogue` chapter.
 const CSV_FILES = ['data-verified.csv'];
+
+// Files known to be produced by our own extract scripts. Kept as an explicit
+// denylist so re-adding one to CSV_FILES fails loudly instead of silently
+// re-introducing the circularity.
+const GENERATED_CSVS = new Set(['data-review.csv', 'region-data.csv', 'app-export.csv']);
+
+for (const file of CSV_FILES) {
+  if (GENERATED_CSVS.has(path.basename(file)) || file.includes('generated/')) {
+    console.error(
+      `✗ ${file} is generated from the app's own data (see scripts/extract-items-csv.mjs).\n` +
+      `  Using it as a backfill source is circular — it would re-import our own\n` +
+      `  guesses as verified facts. Remove it from CSV_FILES.`
+    );
+    process.exit(1);
+  }
+}
 
 const VALID_CHAPTERS = new Set(['1', '2', '3', '4', '5', '6', 'epilogue']);
 
